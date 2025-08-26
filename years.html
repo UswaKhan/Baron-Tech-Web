@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" style="overflow-x: hidden;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Middle</title>
+    <link href="./dist/output.css" rel="stylesheet">
+</head>
+<body class="font-sans h-full" style="overflow-x: hidden !important;">
+
+    <!-- Responsive Section (100% width, container centered, Tailwind CSS) -->
+    <section class="w-full bg-section-bg py-20 font-sans">
+        <div class="container mx-auto px-6 flex flex-col lg:flex-row justify-between items-center w-full">
+            <!-- Left Side: Heading and Button -->
+            <div class="w-full lg:w-1/2 mb-12 lg:mb-0">
+                <h2
+                    class="font-semibold text-section-heading mb-4 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[64px]">
+                    It's been a great few <span class="hidden xs:inline"><br></span>years
+                </h2>
+                <p class="text-section-description mb-8 text-xs sm:text-sm md:text-base lg:text-lg xl:text-[18px]">
+                    Because we believe in <span class="text-section-accent">#GrowingTogether</span> and <span
+                        class="text-section-accent">#KeepRaisingTheBar</span>
+                </p>
+                <button
+                    class="group flex items-center px-6 py-2 border border-section-btn-border rounded-md text-section-btn-border hover:bg-section-btn-hover transition text-[14px] min-w-[160px]">
+                    Get in Touch
+                    <img src="./src/assets/tild arrow.png" alt="Arrow"
+                        class="ml-2 w-8 h-8 inline-block group-hover:hidden" />
+                    <svg class="ml-2 w-8 h-8 hidden group-hover:inline-block" fill="none" stroke="currentColor"
+                        stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </button>
+            </div>
+            <!-- Right Side: Stats -->
+            <div class="w-full lg:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="border-t-2 border-section-line group p-2 flex flex-col relative">
+                    <div class="flex justify-between items-start">
+                        <span class="font-bold text-white text-[60px]">25+</span>
+                        <img src="./src/assets/team.webp" alt="Team" class="w-10 h-10 object-contain mt-2" />
+                    </div>
+                    <p class="text-section-description mt-2">Strong team of engineers</p>
+                </div>
+                <div class="border-t-2 border-section-line group p-2 flex flex-col relative">
+                    <div class="flex justify-between items-start">
+                        <span class="font-bold text-white text-[60px]">500+</span>
+                        <img src="./src/assets/web-page-1.webp" alt="Web Page" class="w-10 h-10 object-contain mt-2" />
+                    </div>
+                    <p class="text-section-description mt-2">Web Products Delivered</p>
+                </div>
+                <div class="border-t-2 border-section-line group p-2 flex flex-col relative">
+                    <div class="flex justify-between items-start">
+                        <span class="font-bold text-white text-[60px]">50+</span>
+                        <img src="./src/assets/goal.webp" alt="Goal" class="w-10 h-10 object-contain mt-2" />
+                    </div>
+                    <p class="text-section-description mt-2"> Rescue Missions</p>
+                </div>
+                <div class="border-t-2 border-section-line group p-2 flex flex-col relative">
+                    <div class="flex justify-between items-start">
+                        <span class="font-bold text-white text-[55px]">Many</span>
+                        <img src="./src/assets/guarantee-certificate.webp" alt="Guarantee Certificate"
+                            class="w-10 h-10 object-contain mt-2" />
+                    </div>
+                    <p class="text-section-description mt-2">Award Winning Products</p>
+                </div>
+            </div>
+        </div>
+    </section>
+     
+<script src="script.js"></script>
+</body>
+</html>

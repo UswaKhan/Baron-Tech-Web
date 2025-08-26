@@ -1,0 +1,2689 @@
+<!DOCTYPE html>
+<html lang="en" style="overflow-x: hidden; ">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baron Tech</title>
+  <link href="./dist/output.css" rel="stylesheet">
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- Alpine.js for testimonials -->
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <style>
+    html,
+    body {
+      overflow-x: hidden !important;
+      max-width: 100vw !important;
+      position: relative !important;
+    }
+
+    .industry-panel.active {
+      width: 50% !important;
+    }
+
+    .industry-panel:not(.active) {
+      width: 12% !important;
+    }
+
+    .industry-panel.active .vertical-text {
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .industry-panel:not(.active) .vertical-text {
+      opacity: 1;
+    }
+
+    .industry-panel.active .panel-content {
+      opacity: 1;
+      pointer-events: auto;
+      transition: opacity 0.5s ease-in-out 0.2s;
+    }
+
+    .industry-panel:not(.active) .panel-content {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .industry-panel img {
+      transition: filter 0.5s ease-in-out;
+    }
+
+    .industry-panel:not(.active) img {
+      filter: blur(4px);
+    }
+
+    .vertical-text {
+      display: none !important;
+    }
+
+    .industry-panel.active {
+      width: 45% !important;
+    }
+
+    .industry-panel:not(.active) {
+      width: 14% !important;
+    }
+
+    @media (max-width: 425px) {
+      .flex.flex-row.justify-center.md\:justify-end.w-full.md\:w-auto.order-1.md\:order-2 {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      .flex.flex-row.justify-center.md\:justify-end.w-full.md\:w-auto.order-1.md\:order-2 a {
+        margin-left: 1px !important;
+        margin-right: 1px !important;
+      }
+
+      .flex.flex-row.justify-center.md\:justify-start.w-full.md\:w-auto.order-2.md\:order-1 {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+      }
+
+      .flex.flex-row.justify-center.md\:justify-start.w-full.md\:w-auto.order-2.md\:order-1 span {
+        text-align: center !important;
+        width: 100% !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .custom-contact-grid {
+        display: block !important;
+        grid-template-columns: unset !important;
+        gap: unset !important;
+      }
+
+      .custom-contact-grid>div {
+        margin-bottom: 16px !important;
+      }
+
+      .custom-contact-grid>div:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .custom-contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr !important;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      #industry-panels {
+        overflow: hidden;
+        position: relative;
+      }
+
+      .industry-panel {
+        width: 50% !important;
+        min-width: 0;
+        flex-shrink: 0;
+      }
+
+      .industry-arrow {
+        display: flex !important;
+      }
+    }
+
+    @media (min-width: 1201px) {
+      .industry-arrow {
+        display: none !important;
+      }
+
+      .industry-panel {
+        width: 20% !important;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .industry-panel {
+        min-height: 2880px !important;
+        height: 200px !important;
+      }
+
+      .panel-content>.relative {
+        min-height: 60px !important;
+        padding: 0.25rem 0.5rem !important;
+      }
+
+      .panel-content .font-medium {
+        font-size: 0.875rem !important;
+        /* text-sm */
+      }
+
+      .panel-content .text-xs,
+      .panel-content .text-sm,
+      .panel-content .text-base,
+      .panel-content .text-lg,
+      .panel-content .text-xl {
+        font-size: 10px !important;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .industry-panel {
+        min-height: 450px !important;
+        height: 450px !important;
+        width: 100vw !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+
+      .section-industry {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+      }
+
+      #industry-panels {
+        width: 100% !important;
+        padding: 0 !important;
+      }
+    }
+
+    @media (max-width: 425px) {
+      .industry-panel {
+        width: 55% !important;
+        max-width: 55% !important;
+        min-height: 400px !important;
+        height: 420px !important;
+        margin-left: 30px !important;
+      }
+    }
+
+    @media (max-width: 425px) {
+      .industry-panel {
+        width: calc(100% - 20px) !important;
+        max-width: calc(100% - 20px) !important;
+        min-height: 300px !important;
+        height: 320px !important;
+        margin: 0 10px !important;
+        border-radius: 1rem !important;
+      }
+
+      .industry-panel .panel-content .relative {
+        width: 95% !important;
+      }
+
+      .industry-panel .panel-content .relative>.relative {
+        padding-left: 10px !important;
+      }
+
+      .industry-panel .panel-content h3 {
+        font-size: 0.75rem !important;
+        line-height: 1rem !important;
+      }
+
+      .industry-panel .panel-content p {
+        font-size: 0.65rem !important;
+        line-height: 0.85rem !important;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .section-industry h2 {
+        font-size: 36px !important;
+      }
+
+      .industry-panel .panel-content .font-medium {
+        font-size: 24px !important;
+        line-height: 1.2 !important;
+      }
+
+      .industry-panel .panel-content .text-xs,
+      .industry-panel .panel-content .text-sm,
+      .industry-panel .panel-content .text-base,
+      .industry-panel .panel-content .text-lg,
+      .industry-panel .panel-content .text-xl {
+        font-size: 16px !important;
+        line-height: 1.4 !important;
+      }
+
+      .industry-panel {
+        min-height: 500px !important;
+        height: 520px !important;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .industry-panel {
+        min-height: 460px !important;
+        height: 480px !important;
+      }
+    }
+
+    @media (max-width: 800px) {
+      .custom-contact-grid {
+        display: grid;
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+    @media (max-width: 435px) {
+      .text-section-heading.font-semibold.text-3xl {
+        font-size: 1.25rem !important;
+        margin-left: 10px !important;
+        margin-top: 10px !important;
+      }
+    }
+
+    @media (max-width: 600px) {
+      #expertise-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      #expertise-header h1 {
+        margin-bottom: 1rem;
+      }
+    }
+
+    @media (max-width: 990px) and (min-width: 426px) {
+      .industry-panel {
+        min-width: 90vw !important;
+        max-width: 600px !important;
+        margin: 0 auto !important;
+        border-radius: 1rem;
+        height: 500px !important;
+        box-sizing: border-box;
+        display: none;
+        transition: box-shadow 0.3s;
+      }
+
+      .industry-panel.active {
+        display: block !important;
+        box-shadow: 0 4px 32px rgba(0, 0, 0, 0.08);
+      }
+
+      .industry-panel img {
+        border-radius: 1rem 1rem 0 0;
+        margin: 0 !important;
+        width: 100% !important;
+        left: 0;
+        right: 0;
+        display: block;
+      }
+
+      .panel-content {
+        width: 100% !important;
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+        box-sizing: border-box;
+      }
+    }
+
+    .why-baron-container {
+      max-width: 100vw;
+      box-sizing: border-box;
+      overflow-x: hidden;
+      padding: 0;
+    }
+
+
+
+    @media (max-width: 425px) {
+      #industry-panels {
+        display: block !important;
+        width: 100vw !important;
+        padding: 0 !important;
+        max-width: 100vw !important;
+        overflow-x: hidden !important;
+      }
+
+      .industry-panel {
+        width: calc(100% - 20px) !important;
+        max-width: calc(100% - 20px) !important;
+        min-height: 400px !important;
+        height: 420px !important;
+        margin: 0 10px !important;
+      }
+
+      .section-industry .relative,
+      .section-industry .max-w-7xl,
+      .section-industry .px-2 {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+
+      section,
+      .section-industry,
+      #industry-panels,
+      .why-baron-container {
+        max-width: 100vw;
+        box-sizing: border-box;
+        overflow-x: hidden;
+      }
+    }
+
+    @media (max-width: 425px) {
+      .industry-panel {
+        width: 90vw !important;
+        max-width: 90vw !important;
+        margin: 0 auto !important;
+        border-radius: 1rem !important;
+      }
+
+      .industry-panel img {
+        width: 90vw !important;
+        max-width: 90vw !important;
+        margin: 0 auto !important;
+        border-radius: 1rem 1rem 0 0 !important;
+        display: block;
+      }
+
+      .panel-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box;
+        left: 0 !important;
+        right: 0 !important;
+        margin: 0 auto !important;
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+      }
+    }
+
+    @media (max-width: 425px) {
+      .panel-content>.relative {
+        width: 90% !important;
+        max-width: 90% !important;
+        margin: 0 auto !important;
+        box-sizing: border-box;
+        /* Remove left/right if present */
+        left: unset !important;
+        right: unset !important;
+      }
+    }
+
+    .industry-panel .absolute.inset-0.bg-black\/40.transition-all.duration-500 {
+      display: none !important;
+    }
+
+    @media (max-width: 1023px) {
+      .top-cards {
+        flex-direction: column;
+      }
+
+      .bottom-cards {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .work-with-baron {
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+    }
+
+    /* Mobile First - Max Width 528px */
+    @media (max-width: 528px) {
+
+      /* Engagement Section Container */
+      .engage-section {
+        min-height: 100vh !important;
+        padding: 40px 16px !important;
+        position: relative;
+        z-index: 10;
+        overflow: hidden;
+        margin-bottom: 60px;
+        /* ensure space below */
+      }
+
+      /* Card */
+      .engage-card {
+        height: auto !important;
+        padding: 1.5rem !important;
+        border-radius: 0.75rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+
+      /* Icon */
+      .engage-card img {
+        height: 2rem !important;
+        width: auto;
+        margin-bottom: 10px;
+      }
+
+      /* Heading */
+      .engage-card h3 {
+        font-size: 20px !important;
+        font-weight: 700;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        line-height: 1.3;
+      }
+
+      /* Top Paragraph */
+      .engage-card p {
+        font-size: 14px !important;
+        margin-bottom: 10px;
+        line-height: 1.4;
+      }
+
+      /* Bullet List */
+      .engage-card ul {
+        list-style-type: none;
+        padding-left: 0;
+        margin-bottom: 1rem;
+      }
+
+      .engage-card ul li {
+        font-size: 15px !important;
+        margin-bottom: 8px;
+        display: flex;
+        align-items: flex-start;
+        color: #f9fafb;
+      }
+
+      .engage-card ul li span {
+        display: inline-block;
+        width: 9px;
+        height: 9px;
+        background: #fff;
+        border-radius: 50%;
+        margin-top: 6px;
+        margin-right: 12px;
+        flex-shrink: 0;
+      }
+
+      /* Paragraph below bullets */
+      .engage-card p.after-bullets {
+        font-size: 14px !important;
+        margin-top: 8px;
+      }
+
+      /* Button */
+      .engage-card button {
+        width: 130px !important;
+        height: 42px !important;
+        font-size: 13px !important;
+        font-weight: 500;
+        background-color: #fff;
+        color: inherit;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        margin-top: auto;
+      }
+
+      .engage-card button:hover {
+        opacity: 0.9;
+      }
+    }
+  </style>
+</head>
+
+<body class="font-sans h-full" style="overflow-x: hidden !important;">
+
+  <section class="hero relative w-screen min-h-screen overflow-hidden bg-black">
+
+    <!-- Navbar -->
+    <nav id="navbar"
+      class="navbar fixed top-0 left-0 w-full z-30 px-20 py-4 flex items-center justify-between bg-transparent text-white group/nav hover:bg-white transition-all duration-300 ease-linear">
+      <div class="flex items-center gap-10">
+        <a href="index.html" class="logo">
+          <img class="h-14" src="/src/assets/baron-logo.webp" alt="">
+        </a>
+        <ul class="hidden md:flex space-x-6 text-lg gap-4 font-semibold group-hover/nav:text-black relative">
+
+          <!-- Services Dropdown -->
+          <li class="relative group">
+            <a href="#" class="flex items-center gap-2 hover:text-logo-blue-0">
+              Services
+              <img src="/src/assets/down-arrow.png" class="h-3 mt-1 group-hover/nav:brightness-0" />
+            </a>
+
+            <div
+              class="absolute hidden group-hover:flex justify-around pl-20 pr-60 bg-white text-black mt-4 py-6 ml-[-180px] shadow-md z-30 w-[1503px]">
+              <!-- Software Development -->
+              <div class=" flex justify-center items-start gap-4">
+                <div class="border-[0.5px] rounded-full border-logo-blue-0 mt-2"><img class=" h-6"
+                    src="/src/assets/arrow-blue.png" alt=""></div>
+                <div class="space-y-2">
+                  <h1 class="text-2xl font-bold">Software Development</h1>
+                  <a href="#" class="block hover:text-logo-blue-0 text-gray-700">Mobile App Development</a>
+                  <a href="#" class="block hover:text-logo-blue-0 text-gray-700">Custom Website Development</a>
+                  <a href="#" class="block hover:text-logo-blue-0 text-gray-700">Shopify Development</a>
+                  <a href="#" class="block hover:text-logo-blue-0 text-gray-700">WordPress Development</a>
+                  <a href="#" class="block hover:text-logo-blue-0 text-gray-700">Graphics and Designing</a>
+                  <a href="#" class="block hover:text-logo-blue-0 text-gray-700">Baron Tech Special Services</a>
+                  <a href="#" class="block hover:text-logo-blue-0 text-gray-700">CMS Development</a>
+                </div>
+              </div>
+
+              <div class="flex flex-col justify-between">
+                <!-- AI Development -->
+                <div class=" flex justify-center items-start gap-4">
+                  <div class="border-[0.5px] rounded-full border-logo-blue-0 mt-2"><img class=" h-6"
+                      src="/src/assets/arrow-blue.png" alt=""></div>
+                  <div class="space-y-2">
+                    <h1 class="text-2xl font-bold">AI Development</h1>
+                    <a href="agent_development 2.html" class="block hover:text-logo-blue-0 text-gray-700">AI Agent
+                      Development</a>
+                    <a href="gen ai app development.html" class="block hover:text-logo-blue-0 text-gray-700">Gen AI App
+                      Development</a>
+                    <a href="Ai chatbot development.html" class="block hover:text-logo-blue-0 text-gray-700">AI Chatbot
+                      Development</a>
+                    <a href="ai development services.html" class="block hover:text-logo-blue-0 text-gray-700">AI Development
+                      Services</a>
+                    <a href="Ai proof of concept.html" class="block hover:text-logo-blue-0 text-gray-700">AI Proof of
+                      Concept</a>
+                    <a href="computer vision solution.html" class="block hover:text-logo-blue-0 text-gray-700">Computer Vision
+                      Solutions</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Industries -->
+              <div class=" flex justify-center items-start gap-4">
+                <div class="border-[0.5px] rounded-full border-logo-blue-0 mt-2"><img class=" h-6"
+                    src="/src/assets/arrow-blue.png" alt=""></div>
+                <div class="space-y-2">
+                  <h1 class="text-xl font-bold">Company</h1>
+                  <a href="services.html" class="block hover:text-logo-blue-0 text-gray-700">Services</a>
+                  <a href="work_page.html" class="block hover:text-logo-blue-0 text-gray-700">Work</a>
+                  <a href="about_us.html" class="block hover:text-logo-blue-0 text-gray-700">About Us</a>
+                  <a href="careers.html" class="block hover:text-logo-blue-0 text-gray-700">Careers</a>
+                  <a href="conatct.html" class="block hover:text-logo-blue-0 text-gray-700">Contact Us</a>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- Our Company Dropdown -->
+          <li class="relative group">
+            <a href="#" class="hover:text-logo-blue-0 flex items-center justify-center gap-2">Our Company
+              <img class="h-3 mt-1 group-hover/nav:brightness-0" src="/src/assets/down-arrow.png" alt="">
+            </a>
+            <ul
+              class="absolute hidden group-hover:block bg-white text-black mt-7 p-4 w-60 space-y-2 z-30 font-semibold border">
+              <li><a href="#" class="block hover:text-logo-blue-0">About</a></li>
+              <li><a href="#" class="block hover:text-logo-blue-0">Portfolio</a></li>
+              <li><a href="#" class="block hover:text-logo-blue-0">Team</a></li>
+            </ul>
+          </li>
+
+          <!-- Others -->
+          <li><a href="#" class="hover:text-logo-blue-0">Technologies</a></li>
+          <li><a href="#" class="hover:text-logo-blue-0">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <a href="#" class="whatsapp"><img class="h-6" src="/src/assets/whatsapp-svgrepo-com.png" alt=""></a>
+        <a href="#" class="num group-hover/nav:text-black text-lg">+1 (409) 916-8275</a>
+        <button id="getQuoteBtn"
+          class="get-quote group flex items-center justify-center gap-2 text-xl border-[0.5px] rounded-md px-8 py-2 hover:text-white group-hover/nav:bg-logo-blue-0 group-hover/nav:border-logo-blue-0">
+          Get Quote
+          <img id="arrow"
+            class="h-7 group-hover:rotate-45 transition duration-300 ease-linear filter invert brightness-0 contrast-200 group-hover:filter group-hover:invert group-hover:brightness-0 group-hover:contrast-200"
+            src="/src/assets/arrow-blue.png" alt="">
+          <!-- Mobile Menu Icon (optional) -->
+          <div class="block lg:hidden">
+            <button id="menu-btn" class="focus:outline-none group-hover/nav:text-black">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Sidebar (mobile) -->
+    <div id="mobileSidebar"
+      class="fixed top-0 right-0 h-full w-80 bg-white text-black shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50 lg:hidden overflow-y-auto">
+      <div class="p-6 flex flex-col space-y-6 font-semibold text-lg">
+        <!-- Logo and Close Button -->
+        <div class="flex justify-between items-start">
+          <div><img class="h-16" src="/src/assets/baron-logo.webp" alt=""></div>
+          <button id="closeSidebar" class="self-start text-black text-4xl">&times;</button>
+        </div>
+
+        <!-- Main Links -->
+        <div class="flex flex-col gap-4 !mt-10">
+
+          <!-- Services Dropdown -->
+          <div>
+            <button id="servicesToggle"
+              class="w-full flex justify-between items-center hover:text-logo-blue-0 border-b-[0.5px] border-gray-300 pb-2">
+              Services <img class="h-4 invert transition-transform duration-300" src="/src/assets/down-arrow.png"
+                id="servicesArrow" alt="">
+            </button>
+
+            <div id="servicesMenu" class=" my-2 hidden text-sm space-y-2 text-gray-700">
+
+              <div class=" flex justify-center items-start gap-4 mt-4">
+                <div class="border-[0.5px] rounded-full border-logo-blue-0 mt-2"><img class=" h-6"
+                    src="/src/assets/arrow-blue.png" alt=""></div>
+
+                <div class="space-y-2">
+                  <h1 class="text-xl font-bold">Software Development</h1>
+                  <a href="#" class="block hover:text-logo-blue-0 text-gray-700">Mobile App Development</a>
+                  <a href="#" class="block hover:text-logo-blue-0 text-gray-700">Custom Website Development</a>
+                  <a href="#" class="block hover:text-logo-blue-0 text-gray-700">Shopify Development</a>
+                  <a href="#" class="block hover:text-logo-blue-0 text-gray-700">WordPress Development</a>
+                  <a href="#" class="block hover:text-logo-blue-0 text-gray-700">Graphics and Designing</a>
+                  <a href="#" class="block hover:text-logo-blue-0 text-gray-700">Baron Tech Special Services</a>
+                  <a href="#" class="block hover:text-logo-blue-0 text-gray-700">CMS Development</a>
+                </div>
+
+
+              </div>
+
+              <div class=" flex justify-start items-start gap-4 mt-4">
+                <div class="border-[0.5px] rounded-full border-logo-blue-0 mt-2"><img class=" h-6"
+                    src="/src/assets/arrow-blue.png" alt=""></div>
+                <div class="space-y-2">
+                  <h1 class="text-xl font-bold">AI Development</h1>
+                  <h1 class="text-2xl font-bold">AI Development</h1>
+                    <a href="agent_development 2.html" class="block hover:text-logo-blue-0 text-gray-700">AI Agent
+                      Development</a>
+                    <a href="gen ai app development.html" class="block hover:text-logo-blue-0 text-gray-700">Gen AI App
+                      Development</a>
+                    <a href="Ai chatbot development.html" class="block hover:text-logo-blue-0 text-gray-700">AI Chatbot
+                      Development</a>
+                    <a href="ai development services.html" class="block hover:text-logo-blue-0 text-gray-700">AI Development
+                      Services</a>
+                    <a href="Ai proof of concept.html" class="block hover:text-logo-blue-0 text-gray-700">AI Proof of
+                      Concept</a>
+                    <a href="computer vision solution.html" class="block hover:text-logo-blue-0 text-gray-700">Computer Vision
+                      Solutions</a>
+                </div>
+              </div>
+
+              <div class=" flex justify-start items-start gap-4 mt-4">
+                <div class="border-[0.5px] rounded-full border-logo-blue-0 mt-2"><img class=" h-6"
+                    src="/src/assets/arrow-blue.png" alt=""></div>
+                <div class="space-y-2">
+                  <h1 class="text-xl font-bold">Optimization</h1>
+                  <a href="#" class="block hover:text-logo-blue-0 text-gray-700">Quality Assurance & Testing</a>
+                  <a href="#" class="block hover:text-logo-blue-0 text-gray-700">Support & Maintenance</a>
+                </div>
+              </div>
+
+              <div class=" flex justify-start items-start gap-4 mt-4">
+                <div class="border-[0.5px] rounded-full border-logo-blue-0 mt-2"><img class=" h-6"
+                    src="/src/assets/arrow-blue.png" alt=""></div>
+                <div class="space-y-2">
+                  <h1 class="text-xl font-bold">Company</h1>
+                  <a href="services.html" class="block hover:text-logo-blue-0 text-gray-700">Services</a>
+                  <a href="work_page.html" class="block hover:text-logo-blue-0 text-gray-700">Work</a>
+                  <a href="about_us.html" class="block hover:text-logo-blue-0 text-gray-700">About Us</a>
+                  <a href="careers.html" class="block hover:text-logo-blue-0 text-gray-700">Careers</a>
+                  <a href="conatct.html" class="block hover:text-logo-blue-0 text-gray-700">Contact Us</a>
+                </div>
+              </div>
+
+            </div>
+
+
+          </div>
+
+          <!-- Our Company Dropdown -->
+          <div>
+            <button id="companyToggle"
+              class="w-full flex justify-between items-center hover:text-logo-blue-0 border-b-[0.5px] border-gray-300 pb-2">
+              Our Company <img class="h-4 invert transition-transform duration-300" src="/src/assets/down-arrow.png"
+                id="companyArrow" alt="">
+            </button>
+            <div id="companyMenu" class="ml-4 mt-2 hidden text-sm space-y-2 text-gray-700">
+              <a href="#" class="block hover:text-logo-blue-0">About</a>
+              <a href="#" class="block hover:text-logo-blue-0">Portfolio</a>
+              <a href="#" class="block hover:text-logo-blue-0">Team</a>
+            </div>
+          </div>
+
+          <!-- Other Links -->
+          <a href="#" class="hover:text-logo-blue-0 border-b-[0.5px] border-gray-300 pb-2">Technologies</a>
+          <a href="#" class="hover:text-logo-blue-0 border-b-[0.5px] border-gray-300 pb-2">Blog</a>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <p class="text-sm text-gray-500">Contact</p>
+          <a href="tel:+14099168275" class="hover:text-logo-blue-0">+1 (409) 916-8275</a>
+        </div>
+
+        <!-- Button -->
+        <button
+          class="bg-logo-blue-0 text-white px-4 py-2 rounded-md border border-logo-blue-0 hover:bg-white hover:text-logo-blue-0 transition">
+          Get Quote
+        </button>
+      </div>
+    </div>
+
+    <!-- Backdrop Overlay -->
+    <div id="sidebarOverlay"
+      class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden transition-opacity duration-300 lg:hidden">
+    </div>
+
+    <div id="hero"></div>
+
+    <!-- Swiper (Auto slider) -->
+    <div class="relative z-0 min-h-screen">
+      <div class="swiper mySwiper w-full">
+        <div class="swiper-wrapper h-full">
+          <div class="swiper-slide min-h-screen flex items-center justify-center text-white px-20 pt-40">
+            <div class="slide1 flex">
+              <div class="slide flex flex-col justify-center gap-16 w-[60%]">
+                <h1 class="text-5xl font-semibold">Revolutionizing Business with AI & Custom Software Development</h1>
+                <p class="text-xl">Let's Empower your Business with Cutting-Edge AI Solutions and Custom Software
+                  Development!</p>
+                <button
+                  class="w-[200px] get-quote2 group flex items-center justify-center gap-2 text-xl border-[0.5px] rounded-md px-8 py-2 hover:bg-logo-blue-0 hover:border-logo-blue-0">
+                  Get Quote
+                  <img class="h-7 group-hover:rotate-45 transition duration-300 ease-linear"
+                    src="/src/assets/arrow-up-right.png" alt="">
+                </button>
+                <div class="spacing flex flex-col gap-10 mt-20">
+                  <h1 class="bottom-nav text-lg font-medium border-b-[0.5px] pb-2 w-[90%]">Awards</h1>
+                  <ul class="nav-li flex justify-start gap-10 mb-20">
+                    <li><img class="h-20 grayscale hover:grayscale-0" src="/src/assets/award1.webp" alt=""></li>
+                    <li><img class="h-20 grayscale hover:grayscale-0" src="/src/assets/award2.webp" alt=""></li>
+                    <li><img class="h-20 grayscale hover:grayscale-0" src="/src/assets/award3.webp" alt=""></li>
+                    <li><img class="h-20 grayscale hover:grayscale-0" src="/src/assets/award4.webp" alt=""></li>
+                    <li><img class="h-20 grayscale hover:grayscale-0" src="/src/assets/award5.webp" alt=""></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide min-h-screen flex items-center justify-center text-white px-20 pt-40">
+            <div class="slide2 flex">
+              <div class="slide flex flex-col justify-evenly gap-16 w-[60%]">
+                <h1 class="text-5xl font-semibold">The Best Fit Service Models for Your Needs</h1>
+                <p class="text-xl">We are a full-cycle software development company with a variety of technologies
+                  ranging from developing a complete platform to improve existing technologies.</p>
+                <button
+                  class="w-[200px] get-quote2 group flex items-center justify-center gap-2 text-xl border-[0.5px] rounded-md px-8 py-2 hover:bg-logo-blue-0 hover:border-logo-blue-0">
+                  Get Quote
+                  <img class="h-7 group-hover:rotate-45 transition duration-300 ease-linear"
+                    src="/src/assets/arrow-up-right.png" alt="">
+                </button>
+                <div class="spacing flex flex-col gap-10 mt-20">
+                  <h1 class="bottom-nav text-lg font-medium border-b-[0.5px] pb-2 w-[90%]">Services</h1>
+                  <ul class="nav-li flex justify-start gap-10 text-xl italic font-semibold mb-32">
+                    <li class="hover:text-logo-blue-0">Software Development</li>
+                    <li class="hover:text-logo-blue-0">AI Development</li>
+                    <li class="hover:text-logo-blue-0">Optimization</li>
+                    <li class="hover:text-logo-blue-0">Industries</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide min-h-screen text-white px-20 pt-40">
+            <div class="slide3 flex">
+              <div class="slide flex flex-col justify-evenly gap-16 w-[60%]">
+                <h1 class="text-5xl font-semibold">We have been working with multiple companies</h1>
+                <p class="text-xl">Get access to the top talent of experienced product managers, smartest designers, and
+                  engineers.</p>
+                <button
+                  class="w-[200px] get-quote2 group flex items-center justify-center gap-2 text-xl border-[0.5px] rounded-md px-8 py-2 hover:bg-logo-blue-0 hover:border-logo-blue-0">
+                  Get Quote
+                  <img class="h-7 group-hover:rotate-45 transition duration-300 ease-linear"
+                    src="/src/assets/arrow-up-right.png" alt="">
+                </button>
+                <div class="spacing flex flex-col gap-10 mt-20">
+                  <h1 class="bottom-nav text-lg font-medium border-b-[0.5px] pb-2 w-[90%]">Clients</h1>
+                  <ul class="nav-li flex justify-start gap-10 mb-[60px]">
+                    <li><img class="h-24 grayscale hover:grayscale-0" src="/src/assets/client7-removebg-preview.png"
+                        alt=""></li>
+                    <li><img class="h-20 grayscale hover:grayscale-0" src="/src/assets/client2.webp" alt=""></li>
+                    <li><img class="h-20 grayscale hover:grayscale-0" src="/src/assets/client3.webp" alt=""></li>
+                    <li><img class="h-20 grayscale hover:grayscale-0" src="/src/assets/client4.webp" alt=""></li>
+                    <li><img class="h-24 grayscale hover:grayscale-0" src="/src/assets/client9-removebg-preview.png"
+                        alt=""></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- how we impact your business -->
+  <section class=" impact relative bg-white py-20 w-full px-20 sm:px-6 md:px-20">
+    <div class="impact-header flex justify-between items-center w-full mb-10">
+      <h1 class="heading-impact text-black font-semibold text-3xl">How we impact your business?</h1>
+      <!-- Swiper Arrows -->
+      <div class="swiper-buttons flex items-center space-x-3 ml-6">
+        <button
+          class="all-services flex group justify-center items-center border-[0.5px] border-logo-blue-0 text-logo-blue-0 gap-2 rounded-full px-4 py-2 hover:bg-logo-blue-0 hover:text-white transition-all 3s ease-linear">All
+          Services
+          <img
+            class="group-hover:rotate-45 transition-all 3s ease-linear h-6 filter group-hover:invert group-hover:brightness-0 group-hover:contrast-200"
+            src="/src/assets/arrow-blue.png" alt="">
+        </button>
+        <button
+          class="swiper-button-prev-custom border-[0.5px] border-logo-blue-0 rounded-full w-11 h-11 flex items-center justify-center transition hover:bg-logo-blue-0 hover:border-logo-blue-0 group">
+          <img src="/src/assets/left-blue.png" alt="Left Arrow"
+            class="h-8 w-8 transition-all duration-300 group-hover:invert group-hover:brightness-0 group-hover:contrast-200" />
+        </button>
+        <button
+          class="swiper-button-next-custom border-[0.5px] border-logo-blue-0 rounded-full w-11 h-11 flex items-center justify-center transition hover:bg-logo-blue-0 hover:border-logo-blue-0 group">
+          <img src="/src/assets/arrow-blue.png" alt="Right Arrow"
+            class="h-8 w-8 rotate-45 transition-all duration-300 group-hover:invert group-hover:brightness-0 group-hover:contrast-200" />
+
+        </button>
+      </div>
+    </div>
+
+    <div class="w-full">
+      <div class="swiper project-swiper w-full">
+        <div class="swiper-wrapper">
+          <!-- Card 1 -->
+          <div
+            class="swiper-slide group border-logo-blue-0 border-[1px] p-4 flex items-center justify-center min-w-[260px] !h-[440px] transition-all duration-300 relative cursor-pointer overflow-hidden rounded-md bg-white">
+            <div class="flex flex-col justify-center items-center h-full w-full">
+
+              <!-- Content Section -->
+
+              <div
+                class="flex flex-col gap-4 items-center text-center transition-all duration-500 group-hover:-translate-y-24 z-10">
+                <div><img class="h-20 transition-all duration-300" src="/src/assets/rocket.png" alt=""></div>
+                <div class="flex flex-col gap-4">
+                  <h1 class="text-2xl font-semibold">Digital Consulting & Advisory</h1>
+                  <p class="text-lg group-hover:hidden">Explore your needs better with our expert consultants. We help
+                    you streamline your
+                    business processes and upgrade your IT infrastructures.</p>
+                </div>
+              </div>
+
+
+              <!-- Button Section (Initially hidden) -->
+              <div
+                class="absolute bottom-6 left-0 right-0 flex flex-col items-center gap-2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-10 group-hover:translate-y-0 z-20">
+                <button
+                  class="testie hover:bg-logo-blue-0 group/button w-[300px] flex justify-between hover:text-white text-logo-blue-0 border-logo-blue-0 border-[0.5px] px-4 py-2 rounded-full text-sm">
+                  Digital Transformation
+                  <img
+                    class="group-hover/button:rotate-45 transition-all 3s ease-linear h-6 filter group-hover/button:invert group-hover/button:brightness-0 group-hover/button:contrast-200"
+                    src="/src/assets/arrow-blue.png" alt="">
+                </button>
+                <button
+                  class="testie hover:bg-logo-blue-0 group/button w-[300px] flex gap-2 justify-between hover:text-white text-logo-blue-0 border-logo-blue-0 border-[0.5px] px-4 py-2 rounded-full text-sm">Technical
+                  Feasibility
+                  <img
+                    class="group-hover/button:rotate-45 transition-all 3s ease-linear h-6 filter group-hover/button:invert group-hover/button:brightness-0 group-hover/button:contrast-200"
+                    src="/src/assets/arrow-blue.png" alt="">
+                </button>
+                <button
+                  class="testie hover:bg-logo-blue-0 group/button w-[300px] flex gap-2 justify-between hover:text-white text-logo-blue-0 border-logo-blue-0 border-[0.5px] px-4 py-2 rounded-full text-sm">Discovery
+                  Workshop
+                  <img
+                    class="group-hover/button:rotate-45 transition-all 3s ease-linear h-6 filter group-hover/button:invert group-hover/button:brightness-0 group-hover/button:contrast-200"
+                    src="/src/assets/arrow-blue.png" alt="">
+                </button>
+                <button
+                  class="testie hover:bg-logo-blue-0 group/button w-[300px] flex gap-2 justify-between hover:text-white text-logo-blue-0 border-logo-blue-0 border-[0.5px] px-4 py-2 rounded-full text-sm">User
+                  Experience & Design
+                  <img
+                    class="group-hover/button:rotate-45 transition-all 3s ease-linear h-6 filter group-hover/button:invert group-hover/button:brightness-0 group-hover/button:contrast-200"
+                    src="/src/assets/arrow-blue.png" alt="">
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="swiper-slide group border-logo-blue-0 border-[1px] p-4 flex items-center justify-center min-w-[260px] !h-[440px] transition-all duration-300 relative cursor-pointer overflow-hidden rounded-md bg-white">
+            <div class="flex flex-col justify-center items-center h-full w-full">
+
+              <!-- Content Section -->
+
+              <div
+                class="flex flex-col gap-4 items-center text-center transition-all duration-500 group-hover:-translate-y-24 z-10">
+                <div><img class="h-20 transition-all duration-300" src="/src/assets/html.png" alt=""></div>
+                <div class="flex flex-col gap-4">
+                  <h1 class="text-2xl font-semibold">Engineering</h1>
+                  <p class="text-lg group-hover:hidden">Accelerate efficiency and drive business growth with our agile
+                    software development
+                    approach — empowering you to innovate faster and achieve your goals.</p>
+                </div>
+              </div>
+
+              <!-- Button Section (Initially hidden) -->
+              <div class=" absolute bottom-6 left-0 right-0 flex flex-col items-center gap-2 opacity-0
+                    group-hover:opacity-100 transition-all duration-500 translate-y-10 group-hover:translate-y-0 z-20">
+                <button
+                  class="testie hover:bg-logo-blue-0 group/button w-[300px] flex justify-between hover:text-white text-logo-blue-0 border-logo-blue-0 border-[0.5px] px-4 py-2 rounded-full text-sm">
+                  Development
+                  <img
+                    class="group-hover/button:rotate-45 transition-all 3s ease-linear h-6 filter group-hover/button:invert group-hover/button:brightness-0 group-hover/button:contrast-200"
+                    src="/src/assets/arrow-blue.png" alt="">
+                </button>
+                <button
+                  class="testie hover:bg-logo-blue-0 group/button w-[300px] flex justify-between hover:text-white text-logo-blue-0 border-logo-blue-0 border-[0.5px] px-4 py-2 rounded-full text-sm">
+                  Modernization
+                  <img
+                    class="group-hover/button:rotate-45 transition-all 3s ease-linear h-6 filter group-hover/button:invert group-hover/button:brightness-0 group-hover/button:contrast-200"
+                    src="/src/assets/arrow-blue.png" alt="">
+                </button>
+                <button
+                  class="testie hover:bg-logo-blue-0 group/button w-[300px] flex justify-between hover:text-white text-logo-blue-0 border-logo-blue-0 border-[0.5px] px-4 py-2 rounded-full text-sm">
+                  Development
+                  <img
+                    class="group-hover/button:rotate-45 transition-all 3s ease-linear h-6 filter group-hover/button:invert group-hover/button:brightness-0 group-hover/button:contrast-200"
+                    src="/src/assets/arrow-blue.png" alt="">
+                </button>
+                <button
+                  class="testie hover:bg-logo-blue-0 group/button w-[300px] flex justify-between hover:text-white text-logo-blue-0 border-logo-blue-0 border-[0.5px] px-4 py-2 rounded-full text-sm">
+                  Engineering
+                  <img
+                    class="group-hover/button:rotate-45 transition-all 3s ease-linear h-6 filter group-hover/button:invert group-hover/button:brightness-0 group-hover/button:contrast-200"
+                    src="/src/assets/arrow-blue.png" alt="">
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="swiper-slide group border-logo-blue-0 border-[1px] p-4 flex items-center justify-center min-w-[260px] !h-[440px] transition-all duration-300 relative cursor-pointer overflow-hidden rounded-md bg-white">
+            <div class="flex flex-col justify-center items-center h-full w-full">
+              <!-- Content Section -->
+              <div
+                class="flex flex-col gap-4 items-center text-center transition-all duration-500 group-hover:-translate-y-24 z-10">
+                <div><img class="h-20 transition-all duration-300" src="/src/assets/ai.png" alt=""></div>
+                <div class="flex flex-col gap-4">
+                  <h1 class="text-2xl font-semibold">AI & Data</h1>
+                  <p class="text-lg group-hover:hidden">Leverage technologies of the future tailored to your unique
+                    needs and drive values
+                    as well as transformative outcomes for your business.</p>
+                </div>
+              </div>
+
+              <!-- Button Section (Initially hidden) -->
+              <div
+                class="absolute bottom-6 left-0 right-0 flex flex-col items-center gap-2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-10 group-hover:translate-y-0 z-20">
+                <button
+                  class="testie hover:bg-logo-blue-0 group/button w-[300px] flex justify-between hover:text-white text-logo-blue-0 border-logo-blue-0 border-[0.5px] px-4 py-2 rounded-full text-sm">
+                  Engineering
+                  <img
+                    class="group-hover/button:rotate-45 transition-all 3s ease-linear h-6 filter group-hover/button:invert group-hover/button:brightness-0 group-hover/button:contrast-200"
+                    src="/src/assets/arrow-blue.png" alt="">
+                </button>
+                <button
+                  class="testie hover:bg-logo-blue-0 group/button w-[300px] flex justify-between hover:text-white text-logo-blue-0 border-logo-blue-0 border-[0.5px] px-4 py-2 rounded-full text-sm">
+                  Science
+                  <img
+                    class="group-hover/button:rotate-45 transition-all 3s ease-linear h-6 filter group-hover/button:invert group-hover/button:brightness-0 group-hover/button:contrast-200"
+                    src="/src/assets/arrow-blue.png" alt="">
+                </button>
+                <button
+                  class="testie hover:bg-logo-blue-0 group/button w-[300px] flex justify-between hover:text-white text-logo-blue-0 border-logo-blue-0 border-[0.5px] px-4 py-2 rounded-full text-sm">
+                  Services
+                  <img
+                    class="group-hover/button:rotate-45 transition-all 3s ease-linear h-6 filter group-hover/button:invert group-hover/button:brightness-0 group-hover/button:contrast-200"
+                    src="/src/assets/arrow-blue.png" alt="">
+                </button>
+                <button
+                  class="testie hover:bg-logo-blue-0 group/button w-[300px] flex justify-between hover:text-white text-logo-blue-0 border-logo-blue-0 border-[0.5px] px-4 py-2 rounded-full text-sm">
+                  PoC & AI MVP
+                  <img
+                    class="group-hover/button:rotate-45 transition-all 3s ease-linear h-6 filter group-hover/button:invert group-hover/button:brightness-0 group-hover/button:contrast-200"
+                    src="/src/assets/arrow-blue.png" alt="">
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Card 4 -->
+          <div
+            class="swiper-slide group border-logo-blue-0 border-[1px] p-4 flex items-center justify-center min-w-[260px] !h-[440px] transition-all duration-300 relative cursor-pointer overflow-hidden rounded-md bg-white">
+            <div class="flex flex-col justify-center items-center h-full w-full">
+              <!-- Content Section -->
+              <div
+                class="flex flex-col gap-4 items-center text-center transition-all duration-500 group-hover:-translate-y-24 z-10">
+                <div><img class="h-20 transition-all duration-300" src="/src/assets/settings.png" alt=""></div>
+                <div class="flex flex-col gap-4">
+                  <h1 class="text-2xl font-semibold">Optimization</h1>
+                  <p class="text-lg group-hover:hidden">Comprehensive quality assurance and support services. Gain
+                    insights into your
+                    software's health and efficiency through expert software audits.</p>
+                </div>
+              </div>
+
+              <!-- Button Section (Initially hidden) -->
+              <div
+                class="absolute bottom-6 left-0 right-0 flex flex-col items-center gap-2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-10 group-hover:translate-y-0 z-20">
+                <button
+                  class="testie hover:bg-logo-blue-0 group/button w-[300px] flex justify-between hover:text-white text-logo-blue-0 border-logo-blue-0 border-[0.5px] px-4 py-2 rounded-full text-sm">
+                  Assurance & Testing
+                  <img
+                    class="group-hover/button:rotate-45 transition-all 3s ease-linear h-6 filter group-hover/button:invert group-hover/button:brightness-0 group-hover/button:contrast-200"
+                    src="/src/assets/arrow-blue.png" alt="">
+                </button>
+                <button
+                  class="testie hover:bg-logo-blue-0 group/button w-[300px] flex justify-between hover:text-white text-logo-blue-0 border-logo-blue-0 border-[0.5px] px-4 py-2 rounded-full text-sm">
+                  Audit
+                  <img
+                    class="group-hover/button:rotate-45 transition-all 3s ease-linear h-6 filter group-hover/button:invert group-hover/button:brightness-0 group-hover/button:contrast-200"
+                    src="/src/assets/arrow-blue.png" alt="">
+                </button>
+                <button
+                  class="testie hover:bg-logo-blue-0 group/button w-[300px] flex justify-between hover:text-white text-logo-blue-0 border-logo-blue-0 border-[0.5px] px-4 py-2 rounded-full text-sm">
+                  & Maintenance
+                  <img
+                    class="group-hover/button:rotate-45 transition-all 3s ease-linear h-6 filter group-hover/button:invert group-hover/button:brightness-0 group-hover/button:contrast-200"
+                    src="/src/assets/arrow-blue.png" alt="">
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Card 5 -->
+          <div
+            class="swiper-slide group border-logo-blue-0 border-[1px] p-4 flex items-center justify-center min-w-[260px] !h-[440px] transition-all duration-300 relative cursor-pointer overflow-hidden rounded-md bg-white">
+            <div class="flex flex-col justify-center items-center h-full w-full">
+              <!-- Content Section -->
+              <div
+                class="flex flex-col gap-4 items-center text-center transition-all duration-500 group-hover:-translate-y-24 z-10">
+                <div><img class="h-20 transition-all duration-300" src="/src/assets/puzzle.png" alt=""></div>
+                <div class="flex flex-col gap-4">
+                  <h1 class="text-2xl font-semibold">Dedicated Teams</h1>
+                  <p class="text-lg group-hover:hidden">Our flexible and expert engineers seamlessly integrate with
+                    your processes,
+                    ensuring top-notch performance and efficiency.</p>
+                </div>
+              </div>
+
+              <!-- Button Section (Initially hidden) -->
+              <div
+                class="absolute bottom-6 left-0 right-0 flex flex-col items-center gap-2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-10 group-hover:translate-y-0 z-20">
+                <button
+                  class="testie hover:bg-logo-blue-0 group/button w-[300px] flex justify-between hover:text-white text-logo-blue-0 border-logo-blue-0 border-[0.5px] px-4 py-2 rounded-full text-sm">
+                  Teams
+                  <img
+                    class="group-hover/button:rotate-45 transition-all 3s ease-linear h-6 filter group-hover/button:invert group-hover/button:brightness-0 group-hover/button:contrast-200"
+                    src="/src/assets/arrow-blue.png" alt="">
+                </button>
+                <button
+                  class="testie hover:bg-logo-blue-0 group/button w-[300px] flex justify-between hover:text-white text-logo-blue-0 border-logo-blue-0 border-[0.5px] px-4 py-2 rounded-full text-sm">
+                  Delivery
+                  <img
+                    class="group-hover/button:rotate-45 transition-all 3s ease-linear h-6 filter group-hover/button:invert group-hover/button:brightness-0 group-hover/button:contrast-200"
+                    src="/src/assets/arrow-blue.png" alt="">
+                </button>
+                <button
+                  class="testie hover:bg-logo-blue-0 group/button w-[300px] flex justify-between hover:text-white text-logo-blue-0 border-logo-blue-0 border-[0.5px] px-4 py-2 rounded-full text-sm">
+                  Engagement
+                  <img
+                    class="group-hover/button:rotate-45 transition-all 3s ease-linear h-6 filter group-hover/button:invert group-hover/button:brightness-0 group-hover/button:contrast-200"
+                    src="/src/assets/arrow-blue.png" alt="">
+                </button>
+                <button
+                  class="testie hover:bg-logo-blue-0 group/button w-[300px] flex justify-between hover:text-white text-logo-blue-0 border-logo-blue-0 border-[0.5px] px-4 py-2 rounded-full text-sm">
+                  ODCs
+                  <img
+                    class="group-hover/button:rotate-45 transition-all 3s ease-linear h-6 filter group-hover/button:invert group-hover/button:brightness-0 group-hover/button:contrast-200"
+                    src="/src/assets/arrow-blue.png" alt="">
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- our customers section -->
+  <section class="bg-dark-blue-0 py-16 px-8 md:px-20">
+    <h2 class="text-white text-3xl font-semibold mb-12">Our Customers</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+      <!-- Card1 -->
+      <div x-data="{
+    showTestimonial: false,
+    testimonialHeight: 0,
+    toggleTestimonial() {
+      this.showTestimonial = !this.showTestimonial;
+      this.$nextTick(() => {
+        this.testimonialHeight = this.showTestimonial ? this.$refs.testimonial.scrollHeight : 0;
+      });
+    }
+  }" class="client-img bg-white max-h-[525px] rounded-xl overflow-hidden shadow-lg relative text-white transition-all duration-500 grayscale hover:grayscale-0">
+        <!-- Background Image -->
+        <div class="h-full flex justify-end items-end">
+          <img src="/src/assets/man1.webp" alt="Charles Shawn"
+            class="customer-img w-full  object-cover transition duration-1000 ease-in-out" />
+        </div>
+
+        <!-- Dark overlay when testimonial is shown -->
+        <div x-show="showTestimonial" x-transition.opacity
+          class="absolute top-0 left-0 w-full h-full bg-black/40 z-0 pointer-events-none">
+        </div>
+
+        <!-- Gradient + Content -->
+        <div
+          class="p-6 bg-gradient-to-t from-black/70 to-transparent absolute bottom-0 w-full transition-all duration-700">
+
+          <!-- Always-visible Info -->
+          <div class="space-y-2 transition-all duration-500">
+            <h3 class="text-lg font-semibold">Charles Shawn</h3>
+            <p class="text-sm">CTO</p>
+          </div>
+
+          <!-- Animated Testimonial Wrapper -->
+          <div x-ref="testimonialWrapper" :style="{ height: testimonialHeight + 'px' }"
+            class="overflow-hidden transition-all duration-500 ease-in-out">
+            <div x-ref="testimonial" class="mt-4 text-sm text-gray-100">
+              <p>
+                Our demand of world class quality is met through Baron Tech (Pvt) Limited. It is please to be part of
+                such good team. We are confident that we can continue to work closely with such exceptional group.
+              </p>
+            </div>
+          </div>
+
+          <!-- Toggle Button -->
+          <button @click="toggleTestimonial"
+            class="mt-4 inline-flex group items-center group gap-1 text-white text-sm border border-white px-4 py-2 rounded-full hover:bg-logo-blue-0 hover:text-white hover:border-logo-blue-0 transition">
+            <span x-text="showTestimonial ? 'Hide Testimonial' : 'View Testimonial'"></span>
+            <span>
+              <img class="h-5 group-hover:rotate-45 transition duration-500 ease-linear"
+                src="/src/assets/arrow-up-right.png" alt="">
+            </span>
+          </button>
+
+        </div>
+      </div>
+
+      <!-- Card2 -->
+      <div x-data="{
+    showTestimonial: false,
+    testimonialHeight: 0,
+    toggleTestimonial() {
+      this.showTestimonial = !this.showTestimonial;
+      this.$nextTick(() => {
+        this.testimonialHeight = this.showTestimonial ? this.$refs.testimonial.scrollHeight : 0;
+      });
+    }
+  }" class="client-img bg-white max-h-[525px] rounded-xl overflow-hidden shadow-lg relative text-white transition-all duration-500 grayscale hover:grayscale-0">
+        <!-- Background Image -->
+        <div class="h-full flex justify-end items-end">
+          <img src="/src/assets/man2.webp" alt="Jahaad Beckford"
+            class="customer-img w-full object-cover transition duration-1000 ease-in-out" />
+        </div>
+
+        <!-- Dark overlay when testimonial is shown -->
+        <div x-show="showTestimonial" x-transition.opacity
+          class="absolute top-0 left-0 w-full h-full bg-black/40 z-0 pointer-events-none">
+        </div>
+
+        <!-- Gradient + Content -->
+        <div
+          class="p-6 bg-gradient-to-t from-black/70 to-transparent absolute bottom-0 w-full transition-all duration-700">
+
+          <!-- Always-visible Info -->
+          <div class="space-y-2 transition-all duration-500">
+            <h3 class="text-lg font-semibold">Jahaad Beckford</h3>
+            <p class="text-sm">Customer</p>
+          </div>
+
+          <!-- Animated Testimonial Wrapper -->
+          <div x-ref="testimonialWrapper" :style="{ height: testimonialHeight + 'px' }"
+            class="overflow-hidden transition-all duration-500 ease-in-out">
+            <div x-ref="testimonial" class="mt-4 text-sm text-gray-100 ">
+              <p>
+                I love how passionate these guys are! They have worked on my Beckford & Peoples Applications and did an
+                incredible job! Keep it up.</p>
+            </div>
+          </div>
+
+          <!-- Toggle Button -->
+          <button @click="toggleTestimonial"
+            class="mt-4 inline-flex group items-center gap-1 text-white text-sm border group border-white px-4 py-2 rounded-full hover:bg-logo-blue-0 hover:text-white hover:border-logo-blue-0 transition">
+            <span x-text="showTestimonial ? 'Hide Testimonial' : 'View Testimonial'"></span>
+            <span>
+              <img class="h-5 group-hover:rotate-45 transition duration-500 ease-linear"
+                src="/src/assets/arrow-up-right.png" alt="">
+            </span>
+          </button>
+
+        </div>
+      </div>
+
+      <!-- Card3 -->
+      <div x-data="{
+    showTestimonial: false,
+    testimonialHeight: 0,
+    toggleTestimonial() {
+      this.showTestimonial = !this.showTestimonial;
+      this.$nextTick(() => {
+        this.testimonialHeight = this.showTestimonial ? this.$refs.testimonial.scrollHeight : 0;
+      });
+    }
+  }" class="client-img bg-white max-h-[525px] rounded-xl overflow-hidden shadow-lg relative text-white transition-all duration-500 grayscale hover:grayscale-0">
+        <!-- Background Image -->
+        <div class="h-full flex justify-end items-end">
+          <img src="/src/assets/man3.webp" alt="Jahaad Beckford"
+            class="customer-img w-full object-cover transition duration-1000 ease-in-out" />
+        </div>
+
+        <!-- Dark overlay when testimonial is shown -->
+        <div x-show="showTestimonial" x-transition.opacity
+          class="absolute top-0 left-0 w-full h-full bg-black/40 z-0 pointer-events-none">
+        </div>
+
+        <!-- Gradient + Content -->
+        <div
+          class="p-6 bg-gradient-to-t from-black/70 to-transparent absolute bottom-0 w-full transition-all duration-700">
+
+          <!-- Always-visible Info -->
+          <div class="space-y-2 transition-all duration-500">
+            <h3 class="text-lg font-semibold">Maria Franks</h3>
+            <p class="text-sm">Manager</p>
+          </div>
+
+          <!-- Animated Testimonial Wrapper -->
+          <div x-ref="testimonialWrapper" :style="{ height: testimonialHeight + 'px' }"
+            class="overflow-hidden transition-all duration-500 ease-in-out">
+            <div x-ref="testimonial" class="mt-4 text-sm text-gray-100">
+              <p>
+                Baron Tech (Pvt) Limited made my website look more powerful and eye catching. They are supportive and
+                well communicative.
+                Over all best experience
+              </p>
+            </div>
+          </div>
+
+          <!-- Toggle Button -->
+          <button @click="toggleTestimonial"
+            class="mt-4 inline-flex group items-center gap-1 text-white text-sm border group border-white px-4 py-2 rounded-full hover:bg-logo-blue-0 hover:text-white hover:border-logo-blue-0 transition">
+            <span x-text="showTestimonial ? 'Hide Testimonial' : 'View Testimonial'"></span>
+            <span>
+              <img class="h-5 group-hover:rotate-45 transition duration-500 ease-linear"
+                src="/src/assets/arrow-up-right.png" alt="">
+            </span>
+          </button>
+
+        </div>
+      </div>
+
+      <!-- Card4 -->
+      <div x-data="{
+    showTestimonial: false,
+    testimonialHeight: 0,
+    toggleTestimonial() {
+      this.showTestimonial = !this.showTestimonial;
+      this.$nextTick(() => {
+        this.testimonialHeight = this.showTestimonial ? this.$refs.testimonial.scrollHeight : 0;
+      });
+    }
+  }" class="client-img bg-white max-h-[525px] rounded-xl overflow-hidden shadow-lg relative text-white transition-all duration-500 grayscale hover:grayscale-0">
+        <!-- Background Image -->
+        <div class="h-full flex justify-end items-end">
+          <img src="/src/assets/man4.webp" alt="Jahaad Beckford"
+            class="customer-img w-full object-cover transition duration-1000 ease-in-out" />
+        </div>
+
+        <!-- Dark overlay when testimonial is shown -->
+        <div x-show="showTestimonial" x-transition.opacity
+          class="absolute top-0 left-0 w-full h-full bg-black/40 z-0 pointer-events-none">
+        </div>
+
+        <!-- Gradient + Content -->
+        <div
+          class="p-6 bg-gradient-to-t from-black/70 to-transparent absolute bottom-0 w-full transition-all duration-700">
+
+          <!-- Always-visible Info -->
+          <div class="space-y-2 transition-all duration-500">
+            <h3 class="text-lg font-semibold">Eden Clubs</h3>
+            <p class="text-sm">Customer</p>
+          </div>
+
+          <!-- Animated Testimonial Wrapper -->
+          <div x-ref="testimonialWrapper" :style="{ height: testimonialHeight + 'px' }"
+            class="overflow-hidden transition-all duration-500 ease-in-out">
+            <div x-ref="testimonial" class="mt-4 text-sm text-gray-100">
+              <p>
+                Baron Tech (Pvt) Limited is managing tech side of my Eden clubs. They did good job with website and
+                mobile App as well as members database. I recommend this company to anyone looking for business
+                solutions
+              </p>
+            </div>
+          </div>
+
+          <!-- Toggle Button -->
+          <button @click="toggleTestimonial"
+            class="mt-4 inline-flex group items-center gap-1 text-white text-sm border border-white px-4 py-2 group rounded-full hover:bg-logo-blue-0 hover:text-white hover:border-logo-blue-0 transition">
+            <span x-text="showTestimonial ? 'Hide Testimonial' : 'View Testimonial'"></span>
+            <span>
+              <img class="h-5 group-hover:rotate-45 transition duration-500 ease-linear"
+                src="/src/assets/arrow-up-right.png" alt="">
+            </span>
+          </button>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- our work  -->
+  <section class="our-work p-20 ">
+    <div class="our-work-heading flex justify-between w-full mb-10">
+      <h1 class="text-black font-semibold text-3xl">Our Work</h1>
+      <button
+        class="flex group justify-center items-center border-[0.5px] border-logo-blue-0 text-logo-blue-0 gap-2 rounded-full px-4 py-2 hover:bg-logo-blue-0 hover:text-white transition-all 3s ease-linear">All
+        View all Work
+        <img
+          class="group-hover:rotate-45 transition-all 3s ease-linear h-6 filter group-hover:invert group-hover:brightness-0 group-hover:contrast-200"
+          src="/src/assets/arrow-blue.png" alt="">
+      </button>
+    </div>
+
+    <section>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- Card 1 -->
+        <div class="relative group rounded-xl overflow-hidden border h-[400px]">
+
+          <!-- Image with blur on hover -->
+          <div class="w-full h-full absolute inset-0 transition-all duration-500 group-hover:blur-sm">
+            <img src="/src/assets/work1.png" alt="LSU" class="w-full h-full object-cover" />
+          </div>
+
+          <!-- Overlay Content -->
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent p-6 flex flex-col justify-end gap-4 z-10">
+
+            <!-- Logo -->
+            <div>
+              <img class="h-10 invert" src="/src/assets/l1.webp" alt="">
+            </div>
+
+            <!-- Text + Button Wrapper -->
+            <div class="overflow-hidden">
+              <p
+                class="text-white w-[70%] transition-all duration-500 ease-in-out line-clamp-3 group-hover:line-clamp-none group-hover:translate-y-0 translate-y-4">
+                Darren Booth is an award-winning Commercial Artist based in Canada. He specializes in Lettering,
+                Illustration, Portraiture, and Pattern Design. He has worked with major brands and publications
+                worldwide.
+              </p>
+
+              <!-- Button -->
+              <button
+                class="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-white border border-white rounded-full px-4 py-1 text-sm flex gap-2 hover:bg-logo-blue-0 hover:border-logo-blue-0">
+                Learn More
+                <img class="h-6 group-hover:rotate-45" src="/src/assets/arrow-up-right.png" alt="">
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+
+        <!-- Card 2 -->
+        <div class="relative group rounded-xl overflow-hidden border h-[400px]">
+
+          <!-- Image with blur on hover -->
+          <div class="w-full h-full absolute inset-0 transition-all duration-500 group-hover:blur-sm">
+            <img src="/src/assets/work2.jpg" alt="LSU" class="w-full h-full object-cover" />
+          </div>
+
+          <!-- Overlay Content -->
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent p-6 flex flex-col justify-end gap-4 z-10">
+
+            <!-- Logo -->
+            <div>
+              <img class="h-14 filter brightness-200" src="/src/assets/l2.webp" alt="">
+            </div>
+
+            <!-- Text + Button Wrapper -->
+            <div class="overflow-hidden">
+              <p
+                class="text-white w-[70%] transition-all duration-500 ease-in-out line-clamp-3 group-hover:line-clamp-none group-hover:translate-y-0 translate-y-4">
+                ErasmusWise has been created to bridge the communication gap between students ensuring they are able to
+                make the most of the well-rounded experience studing abroad has to offer!
+              </p>
+
+              <!-- Button -->
+              <button
+                class="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-white border border-white rounded-full px-4 py-1 text-sm flex gap-2 hover:bg-logo-blue-0 hover:border-logo-blue-0">
+                Learn More
+                <img class="h-6 group-hover:rotate-45" src="/src/assets/arrow-up-right.png" alt="">
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="relative group rounded-xl overflow-hidden border h-[400px]">
+
+          <!-- Image with blur on hover -->
+          <div class="w-full h-full absolute inset-0 transition-all duration-500 group-hover:blur-sm">
+            <img src="/src/assets/work(3).jpg" alt="LSU" class="w-full h-full object-cover" />
+          </div>
+
+          <!-- Overlay Content -->
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent p-6 flex flex-col justify-end gap-4 z-10">
+
+            <!-- Logo -->
+            <div>
+              <img class="h-16 brightness-200" src="/src/assets/l3.webp" alt="">
+            </div>
+
+            <!-- Text + Button Wrapper -->
+            <div class="overflow-hidden">
+              <p
+                class="text-white w-[70%] transition-all duration-500 ease-in-out line-clamp-3 group-hover:line-clamp-none group-hover:translate-y-0 translate-y-4">
+                The Ultimate Online Cannabis Delivery Experience Cannabis Delivery is the most convinient way to order
+                cannabis online bacause of new technology.
+              </p>
+
+              <!-- Button -->
+              <button
+                class="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-white border border-white rounded-full px-4 py-1 text-sm flex gap-2 hover:bg-logo-blue-0 hover:border-logo-blue-0">
+                Learn More
+                <img class="h-6 group-hover:rotate-45" src="/src/assets/arrow-up-right.png" alt="">
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="relative group rounded-xl overflow-hidden border h-[400px]">
+
+          <!-- Image with blur on hover -->
+          <div class="w-full h-full absolute inset-0 transition-all duration-500 group-hover:blur-sm">
+            <img src="/src/assets/work(2).jpg" alt="LSU" class="w-full h-full object-cover" />
+          </div>
+
+          <!-- Overlay Content -->
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent p-6 flex flex-col justify-end gap-4 z-10">
+
+            <!-- Logo -->
+            <div>
+              <img class="h-10 invert" src="/src/assets/l1.webp" alt="">
+            </div>
+
+            <!-- Text + Button Wrapper -->
+            <div class="overflow-hidden">
+              <p
+                class="text-white w-[70%] transition-all duration-500 ease-in-out line-clamp-3 group-hover:line-clamp-none group-hover:translate-y-0 translate-y-4">
+                Darren Booth is an award-winning Commercial Artist based in Canada. He specializes in Lettering,
+                Illustration, Portraiture, and Pattern Design. He has worked with major brands and publications
+                worldwide.
+              </p>
+
+              <!-- Button -->
+              <button
+                class="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-white border border-white rounded-full px-4 py-1 text-sm flex gap-2 hover:bg-logo-blue-0 hover:border-logo-blue-0">
+                Learn More
+                <img class="h-6 group-hover:rotate-45" src="/src/assets/arrow-up-right.png" alt="">
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- awards section  -->
+    <section class="py-16 px-6">
+      <div class="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-10 place-items-center">
+
+        <!-- Single Logo with Button -->
+        <div class="flex flex-col items-center gap-2 relative group">
+          <img src="/src/assets/client1.webp" alt="Nielsen" class="h-10 object-contain" />
+
+          <button class="tooltip border border-logo-blue-0 text-xs text-logo-blue-0 rounded-full px-2">
+            Case Study
+          </button>
+
+          <!-- Tooltip -->
+          <div class="tooltip absolute bottom-12 left-1/2 translate-x-1/4 w-96
+               bg-white text-gray-800 text-xs leading-snug rounded-lg shadow-lg p-4
+               opacity-0 scale-95 pointer-events-none
+               transition duration-200
+               group-hover:opacity-100 group-hover:scale-100 z-30 flex flex-col gap-6">
+            <div>
+              <img class="h-10" src="/src/assets/client1.webp" alt="">
+            </div>
+            <p class="text-[15px]">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis totam, odit qui
+              eius dolore,
+              doloremque corporis tenetur libero accusantium, aut tempore reprehenderit quibusdam quae nihil consequatur
+              eos perspiciatis aut itaque similique exercitationem.</p>
+            <div class="flex gap-2 border-t border-t-gray-500 pt-2">
+              <img class="rounded-full h-10 border border-dark-blue-0" src="/src/assets/tooltip.webp" alt="">
+              <div class="flex flex-col gap-1/2">
+                <span class="text-[14px]">Cyrus Pars</span>
+                <span class="text-[14px]">Associate Director-It Operations</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center gap-2">
+          <img src="/src/assets/client2.webp" alt="AstraZeneca" class="h-16 object-contain " />
+        </div>
+
+        <div class="flex flex-col items-center gap-2 relative group">
+          <img src="/src/assets/client3.webp" alt="Nielsen" class="h-16 object-contain" />
+
+          <button class="tooltip border border-logo-blue-0 text-xs text-logo-blue-0 rounded-full px-2">
+            Case Study
+          </button>
+
+          <!-- Tooltip -->
+          <div class="tooltip absolute bottom-12 left-1/2 -translate-x-1/2 w-96
+               bg-white text-gray-800 text-xs leading-snug rounded-lg shadow-lg p-4
+               opacity-0 scale-95 pointer-events-none
+               transition duration-200
+               group-hover:opacity-100 group-hover:scale-100 z-30 flex flex-col gap-6">
+            <div>
+              <img class="h-10" src="/src/assets/client3.webp" alt="">
+            </div>
+            <p class="text-[15px]">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis totam, odit qui
+              eius dolore,
+              doloremque corporis tenetur libero accusantium, aut tempore reprehenderit quibusdam quae nihil consequatur
+              eos perspiciatis aut itaque similique exercitationem.</p>
+            <div class="flex gap-2 border-t border-t-gray-500 pt-2">
+              <img class="rounded-full h-10 border border-dark-blue-0" src="/src/assets/tooltip.webp" alt="">
+              <div class="flex flex-col gap-1/2">
+                <span class="text-[14px]">Cyrus Pars</span>
+                <span class="text-[14px]">Associate Director-It Operations</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center gap-2">
+          <img src="/src/assets/client4.webp" alt="Caribbean Airlines" class="h-16 object-contain " />
+        </div>
+
+        <div class="flex flex-col items-center gap-2 relative group">
+          <img src="/src/assets/client5.webp" alt="Nielsen" class="h-10 object-contain" />
+
+          <button class="tooltip border border-logo-blue-0 text-xs text-logo-blue-0 rounded-full px-2">
+            Case Study
+          </button>
+
+          <!-- Tooltip -->
+          <div class="tooltip absolute bottom-12 right-1/2 translate-x-1/4 w-96
+               bg-white text-gray-800 text-xs leading-snug rounded-lg shadow-lg p-4
+               opacity-0 scale-95 pointer-events-none
+               transition duration-200
+               group-hover:opacity-100 group-hover:scale-100 z-30 flex flex-col gap-6">
+            <div>
+              <img class="h-10" src="/src/assets/client5.webp" alt="">
+            </div>
+            <p class="text-[15px]">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis totam, odit qui
+              eius dolore,
+              doloremque corporis tenetur libero accusantium, aut tempore reprehenderit quibusdam quae nihil consequatur
+              eos perspiciatis aut itaque similique exercitationem.</p>
+            <div class="flex gap-2 border-t border-t-gray-500 pt-2">
+              <img class="rounded-full h-10 border border-dark-blue-0" src="/src/assets/tooltip.webp" alt="">
+              <div class="flex flex-col gap-1/2">
+                <span class="text-[14px]">Cyrus Pars</span>
+                <span class="text-[14px]">Associate Director-It Operations</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Second Row -->
+        <div class="flex flex-col items-center gap-2">
+          <img src="/src/assets/client6.webp" alt="Pharmasift" class="h-16 object-contain " />
+        </div>
+
+        <div class="flex flex-col items-center gap-2 relative group">
+          <img src="/src/assets/client7.webp" alt="Nielsen" class="h-16 object-contain" />
+
+          <button class="tooltip border border-logo-blue-0 text-xs text-logo-blue-0 rounded-full px-2">
+            Case Study
+          </button>
+
+          <!-- Tooltip -->
+          <div class="tooltip absolute bottom-12 left-1/2 -translate-x-1/2 w-96
+               bg-white text-gray-800 text-xs leading-snug rounded-lg shadow-lg p-4
+               opacity-0 scale-95 pointer-events-none
+               transition duration-200
+               group-hover:opacity-100 group-hover:scale-100 z-30 flex flex-col gap-6">
+            <div>
+              <img class="h-10" src="/src/assets/client7.webp" alt="">
+            </div>
+            <p class="text-[15px]">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis totam, odit qui
+              eius dolore,
+              doloremque corporis tenetur libero accusantium, aut tempore reprehenderit quibusdam quae nihil consequatur
+              eos perspiciatis aut itaque similique exercitationem.</p>
+            <div class="flex gap-2 border-t border-t-gray-500 pt-2">
+              <img class="rounded-full h-10 border border-dark-blue-0" src="/src/assets/tooltip.webp" alt="">
+              <div class="flex flex-col gap-1/2">
+                <span class="text-[14px]">Cyrus Pars</span>
+                <span class="text-[14px]">Associate Director-It Operations</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center gap-2">
+          <img src="/src/assets/client8.webp" alt="DNA Behavior" class="h-8 object-contain " />
+        </div>
+
+        <div class="flex flex-col items-center gap-2 relative group">
+          <img src="/src/assets/client1.webp" alt="Nielsen" class="h-8 object-contain" />
+
+          <button class="tooltip border border-logo-blue-0 text-xs text-logo-blue-0 rounded-full px-2">
+            Case Study
+          </button>
+
+          <!-- Tooltip -->
+          <div class="tooltip absolute bottom-12 left-1/2 -translate-x-1/2 w-96
+               bg-white text-gray-800 text-xs leading-snug rounded-lg shadow-lg p-4
+               opacity-0 scale-95 pointer-events-none
+               transition duration-200
+               group-hover:opacity-100 group-hover:scale-100 z-30 flex flex-col gap-6">
+            <div>
+              <img class="h-10" src="/src/assets/client1.webp" alt="">
+            </div>
+            <p class="text-[15px]">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis totam, odit qui
+              eius dolore,
+              doloremque corporis tenetur libero accusantium, aut tempore reprehenderit quibusdam quae nihil consequatur
+              eos perspiciatis aut itaque similique exercitationem.</p>
+            <div class="flex gap-2 border-t border-t-gray-500 pt-2">
+              <img class="rounded-full h-10 border border-dark-blue-0" src="/src/assets/tooltip.webp" alt="">
+              <div class="flex flex-col gap-1/2">
+                <span class="text-[14px]">Cyrus Pars</span>
+                <span class="text-[14px]">Associate Director-It Operations</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center gap-2">
+          <img src="/src/assets/client2.webp" alt="Steel and Pipes" class="h-16 object-contain " />
+        </div>
+
+        <div class="flex flex-col items-center gap-2 relative group">
+          <img src="/src/assets/client3.webp" alt="Nielsen" class="h-16 object-contain" />
+
+          <button class="tooltip border border-logo-blue-0 text-xs text-logo-blue-0 rounded-full px-2">
+            Case Study
+          </button>
+
+          <!-- Tooltip -->
+          <div class="tooltip absolute bottom-12 left-1/2 translate-x-1/4 w-96
+               bg-white text-gray-800 text-xs leading-snug rounded-lg shadow-lg p-4
+               opacity-0 scale-95 pointer-events-none
+               transition duration-200
+               group-hover:opacity-100 group-hover:scale-100 z-30 flex flex-col gap-6">
+            <div>
+              <img class="h-10" src="/src/assets/client3.webp" alt="">
+            </div>
+            <p class="text-[15px]">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis totam, odit qui
+              eius dolore,
+              doloremque corporis tenetur libero accusantium, aut tempore reprehenderit quibusdam quae nihil consequatur
+              eos perspiciatis aut itaque similique exercitationem.</p>
+            <div class="flex gap-2 border-t border-t-gray-500 pt-2">
+              <img class="rounded-full h-10 border border-dark-blue-0" src="/src/assets/tooltip.webp" alt="">
+              <div class="flex flex-col gap-1/2">
+                <span class="text-[14px]">Cyrus Pars</span>
+                <span class="text-[14px]">Associate Director-It Operations</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center gap-2">
+          <img src="/src/assets/client4.webp" alt="Valis" class="h-16 object-contain " />
+        </div>
+
+        <div class="flex flex-col items-center gap-2 relative group">
+          <img src="/src/assets/client5.webp" alt="Nielsen" class="h-10 object-contain" />
+
+          <button class="tooltip border border-logo-blue-0 text-xs text-logo-blue-0 rounded-full px-2">
+            Case Study
+          </button>
+
+          <!-- Tooltip -->
+          <div class="tooltip absolute bottom-12 left-1/2 -translate-x-1/2 w-96
+               bg-white text-gray-800 text-xs leading-snug rounded-lg shadow-lg p-4
+               opacity-0 scale-95 pointer-events-none
+               transition duration-200
+               group-hover:opacity-100 group-hover:scale-100 z-30 flex flex-col gap-6">
+            <div>
+              <img class="h-10" src="/src/assets/client5.webp" alt="">
+            </div>
+            <p class="text-[15px]">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis totam, odit qui
+              eius dolore,
+              doloremque corporis tenetur libero accusantium, aut tempore reprehenderit quibusdam quae nihil consequatur
+              eos perspiciatis aut itaque similique exercitationem.</p>
+            <div class="flex gap-2 border-t border-t-gray-500 pt-2">
+              <img class="rounded-full h-10 border border-dark-blue-0" src="/src/assets/tooltip.webp" alt="">
+              <div class="flex flex-col gap-1/2">
+                <span class="text-[14px]">Cyrus Pars</span>
+                <span class="text-[14px]">Associate Director-It Operations</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center gap-2">
+          <img src="/src/assets/client6.webp" alt="Simplifed" class="h-16 object-contain " />
+        </div>
+
+        <div class="flex flex-col items-center gap-2 relative group">
+          <img src="/src/assets/client7.webp" alt="Nielsen" class="h-16 object-contain" />
+
+          <button class="tooltip border border-logo-blue-0 text-xs text-logo-blue-0 rounded-full px-2">
+            Case Study
+          </button>
+
+          <!-- Tooltip -->
+          <div class="tooltip absolute bottom-12 right-1/4 -translate-x-1/2 w-96
+               bg-white text-gray-800 text-xs leading-snug rounded-lg shadow-lg p-4
+               opacity-0 scale-95 pointer-events-none
+               transition duration-200
+               group-hover:opacity-100 group-hover:scale-100 z-30 flex flex-col gap-6">
+            <div>
+              <img class="h-8" src="/src/assets/client7.webp" alt="">
+            </div>
+            <p class="text-[15px]">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis totam, odit qui
+              eius dolore,
+              doloremque corporis tenetur libero accusantium, aut tempore reprehenderit quibusdam quae nihil consequatur
+              eos perspiciatis aut itaque similique exercitationem.</p>
+            <div class="flex gap-2 border-t border-t-gray-500 pt-2">
+              <img class="rounded-full h-10 border border-dark-blue-0" src="/src/assets/tooltip.webp" alt="">
+              <div class="flex flex-col gap-1/2">
+                <span class="text-[14px]">Cyrus Pars</span>
+                <span class="text-[14px]">Associate Director-It Operations</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </section>
+
+  <!-- Responsive Section (100% width, container centered, Tailwind CSS) -->
+  <section class="w-full bg-section-bg py-20 font-sans">
+    <div class="container mx-auto px-6 flex flex-col lg:flex-row justify-between items-center w-full">
+      <!-- Left Side: Heading and Button -->
+      <div class="w-full lg:w-1/2 mb-12 lg:mb-0">
+        <h2 class="font-semibold text-section-heading mb-4 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[64px]">
+          It's been a great few <span class="hidden xs:inline"><br></span>years
+        </h2>
+        <p class="text-section-description mb-8 text-xs sm:text-sm md:text-base lg:text-lg xl:text-[18px]">
+          Because we believe in <span class="text-section-accent">#GrowingTogether</span> and <span
+            class="text-section-accent">#KeepRaisingTheBar</span>
+        </p>
+        <button
+          class="group flex items-center px-6 py-2 border border-section-btn-border rounded-md text-section-btn-border hover:bg-section-btn-hover transition text-[14px] min-w-[160px]">
+          Get in Touch
+          <img src="./src/assets/tild arrow.png" alt="Arrow" class="ml-2 w-8 h-8 inline-block group-hover:hidden" />
+          <svg class="ml-2 w-8 h-8 hidden group-hover:inline-block" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+      <!-- Right Side: Stats -->
+      <div class="w-full lg:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="border-t-2 border-section-line group p-2 flex flex-col relative">
+          <div class="flex justify-between items-start">
+            <span class="font-bold text-white text-[60px]">25+</span>
+            <img src="./src/assets/team.webp" alt="Team" class="w-10 h-10 object-contain mt-2" />
+          </div>
+          <p class="text-section-description mt-2">Strong team of engineers</p>
+        </div>
+        <div class="border-t-2 border-section-line group p-2 flex flex-col relative">
+          <div class="flex justify-between items-start">
+            <span class="font-bold text-white text-[60px]">500+</span>
+            <img src="./src/assets/web-page-1.webp" alt="Web Page" class="w-10 h-10 object-contain mt-2" />
+          </div>
+          <p class="text-section-description mt-2">Web Products Delivered</p>
+        </div>
+        <div class="border-t-2 border-section-line group p-2 flex flex-col relative">
+          <div class="flex justify-between items-start">
+            <span class="font-bold text-white text-[60px]">50+</span>
+            <img src="./src/assets/goal.webp" alt="Goal" class="w-10 h-10 object-contain mt-2" />
+          </div>
+          <p class="text-section-description mt-2"> Rescue Missions</p>
+        </div>
+        <div class="border-t-2 border-section-line group p-2 flex flex-col relative">
+          <div class="flex justify-between items-start">
+            <span class="font-bold text-white text-[55px]">Many</span>
+            <img src="./src/assets/guarantee-certificate.webp" alt="Guarantee Certificate"
+              class="w-10 h-10 object-contain mt-2" />
+          </div>
+          <p class="text-section-description mt-2">Award Winning Products</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- enaggement model section -->
+  <section class="engage-card w-full px-20 pt-20 font-sans">
+    <div>
+      <h1 class="text-black font-semibold text-3xl mb-10">Engagement Models</h1>
+    </div>
+    <div class="max-w-none mx-auto">
+      <div class="engage-grid flex flex-col gap-4">
+        <div class="top-cards flex gap-8">
+          <!-- Card 1 -->
+          <div
+            class="engage-card engage-card-1 border rounded-xl p-10 shadow-sm font-sans flex flex-col justify-between h-[600px] w-full"
+            style="background: #18B6F6;">
+            <div class="flex justify-between items-center">
+              <h3 class="font-bold text-white" style="font-size:35px;">Fixed Price</h3>
+              <img src="/src/assets/price.png" alt="Icon" class="h-16">
+            </div>
+            <p class="text-white font-medium" style="font-size:25px;">Our “Risk-buster” Approach to software
+              development.</p>
+            <ul class="text-white font-medium flex flex-col gap-4" style="list-style: none;">
+              <li class="flex items-start" style="font-size:20px;">
+                <span
+                  style="display:inline-block;width:9px;height:9px;background:#fff;border-radius:50%;margin-top:8px;margin-right:14px;flex-shrink:0;"></span>
+                Assess specs to cover all the if’s but’s and whatif’s.
+              </li>
+              <li class="flex items-start" style="font-size:20px;">
+                <span
+                  style="display:inline-block;width:9px;height:9px;background:#fff;border-radius:50%;margin-top:8px;margin-right:14px;flex-shrink:0;"></span>
+                Visualise your end product without spending money on development.
+              </li>
+            </ul>
+            <p class="text-white font-medium" style="font-size:25px;">On time. Within budget. As per
+              expectations.</p>
+            <button class=" bg-white text-[#18B6F6] font-semibold rounded-md px-6 py-2"
+              style="font-size:18px; width: 160px; height:50px;">Learn More</button>
+          </div>
+          <!-- Card 2 -->
+          <div
+            class="engage-card bg-dark-blue-0 engage-card-1 border rounded-xl p-10 shadow-sm font-sans flex flex-col justify-between h-[600px] w-full">
+            <div class="flex justify-between items-center">
+              <h3 class="font-bold text-white" style="font-size:35px;">Dedicated Teams</h3>
+              <img src="/src/assets/team (1).png" alt="Icon" class="h-16">
+            </div>
+            <p class="text-white font-medium" style="font-size:25px;">High-performing, on-demand teams of engineers.</p>
+            <ul class="text-white font-medium flex flex-col gap-4" style="list-style: none;">
+              <li class="flex items-start" style="font-size:20px;">
+                <span
+                  style="display:inline-block;width:9px;height:9px;background:#fff;border-radius:50%;margin-top:8px;margin-right:14px;flex-shrink:0;"></span>
+                Augment your existing in-house / external team.
+              </li>
+              <li class="flex items-start" style="font-size:20px;">
+                <span
+                  style="display:inline-block;width:9px;height:9px;background:#fff;border-radius:50%;margin-top:8px;margin-right:14px;flex-shrink:0;"></span>
+                Develop a product – working in a true agile fashion.
+              </li>
+              <li class="flex items-start" style="font-size:20px;">
+                <span
+                  style="display:inline-block;width:9px;height:9px;background:#fff;border-radius:50%;margin-top:8px;margin-right:14px;flex-shrink:0;"></span>
+                Maintain & support your existing product.
+              </li>
+            </ul>
+            <p class="text-white font-medium" style="font-size:25px;">Highly effective onboarding & execution process.
+            </p>
+            <button class=" bg-white text-dark-blue-0 font-semibold rounded-md px-6 py-2"
+              style="font-size:18px; width: 160px; height:50px;">Learn More</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- panel section -->
+  <section class="section-industry w-full py-20 bg-white font-sans overflow-hidden">
+    <div class="max-w-7xl mx-auto px-2">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-medium mb-2">
+        Transforming industries with purpose-built technology solutions
+      </h2>
+      <div class="flex justify-center items-center mb-8">
+        <button id="industry-left"
+          class="industry-arrow border-[0.5px] border-logo-blue-0 hover:bg-section-btn-hover rounded-full w-11 h-11 flex items-center justify-center transition group mr-2"
+          style="display:none;">
+          <img src="/src/assets/left (1).png" alt="Left Arrow"
+            class="h-8 w-8 filter grayscale brightness-50 group-hover:filter-none" />
+        </button>
+        <button id="industry-right"
+          class="industry-arrow border-[0.5px] border-logo-blue-0 hover:bg-section-btn-hover rounded-full w-11 h-11 flex items-center justify-center transition group ml-2"
+          style="display:none;">
+          <img src="/src/assets/right.png" alt="Right Arrow"
+            class="h-8 w-8 filter grayscale brightness-50 group-hover:filter-none" />
+        </button>
+      </div>
+      <div class="relative">
+        <div id="industry-panels"
+          class="flex flex-row gap-4 justify-center items-stretch h-[500px] max-w-full overflow-x-auto transition-all duration-500">
+          <!-- Panel 1 (Healthcare) -->
+          <div
+            class="industry-panel active group relative rounded-xl overflow-hidden cursor-pointer transition-all duration-500 border-2 border-transparent">
+            <img src="/src/assets/healthcare.webp" alt="Healthcare"
+              class="absolute inset-0 w-full h-full object-cover transition-all duration-500" />
+            <div class="absolute inset-0 bg-black/40 transition-all duration-500"></div>
+            <div class="vertical-text absolute inset-0 flex items-end p-4">
+              <span class="text-white font-bold text-lg transform -rotate-90 origin-bottom-left whitespace-nowrap"
+                style="height: 10px;">Healthcare</span>
+            </div>
+            <div
+              class="panel-content absolute bottom-0 left-0 w-full p-6 text-white transition-all duration-500 z-10 flex justify-center items-end">
+              <div class="relative w-[100%]">
+                <div class="absolute inset-0 bg-black/30 backdrop-blur-md rounded-lg shadow-lg"
+                  style="box-shadow: 0 0 40px 8px rgba(0, 183, 255, 0.25) inset, 0 0 0 1px rgba(0,255,150,0.15) inset;">
+                </div>
+                <div class="relative z-10 p-4">
+                  <div
+                    class="flex items-center gap-2 font-medium text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">
+                    Healthcare
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                  <div class="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl mt-2">AI healthcare solutions
+                    improve patient care by analyzing medical data, predicting treatment responses, and supporting
+                    better clinical decisions.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel 2 (Education) -->
+          <div
+            class="industry-panel group relative rounded-xl overflow-hidden cursor-pointer transition-all duration-500 border-2 border-transparent">
+            <img src="\src\assets\education.jpg" alt="Education"
+              class="absolute inset-0 w-full h-full object-cover transition-all duration-500" />
+            <div class="absolute inset-0 bg-black/40 transition-all duration-500"></div>
+            <div class="vertical-text absolute inset-0 flex items-end p-4">
+              <span class="text-white font-bold text-lg transform -rotate-90 origin-bottom-left whitespace-nowrap"
+                style="height: 10px;">Education</span>
+            </div>
+            <div
+              class="panel-content absolute bottom-0 left-0 w-full p-6 text-white transition-all duration-500 z-10 flex justify-center items-end">
+              <div class="relative w-[100%]">
+                <div class="absolute inset-0 bg-black/30 backdrop-blur-md rounded-lg shadow-lg"
+                  style="box-shadow: 0 0 40px 8px  rgba(0, 183, 255, 0.25) inset, 0 0 0 1px rgba(0,255,150,0.15) inset;">
+                </div>
+                <div class="relative z-10 p-4">
+                  <div
+                    class="flex items-center gap-2 font-medium text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">
+                    Education
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                  <div class="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl mt-2">AI in education enhances
+                    learning by analyzing student data, predicting learning trends, and enabling personalized teaching
+                    for better outcomes.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel 3 (Real Estate) -->
+          <div
+            class="industry-panel group relative rounded-xl overflow-hidden cursor-pointer transition-all duration-500 border-2 border-transparent">
+            <img src="\src\assets\realestate.jpg" alt="Real Estate"
+              class="absolute inset-0 w-full h-full object-cover transition-all duration-500" />
+            <div class="absolute inset-0 bg-black/40 transition-all duration-500"></div>
+            <div class="vertical-text absolute inset-0 flex items-end p-4">
+              <span class="text-white font-bold text-lg transform -rotate-90 origin-bottom-left whitespace-nowrap"
+                style="height: 10px;">Real Estate</span>
+            </div>
+            <div
+              class="panel-content absolute bottom-0 left-0 w-full p-6 text-white transition-all duration-500 z-10 flex justify-center items-end">
+              <div class="relative w-[100%]">
+                <div class="absolute inset-0 bg-black/30 backdrop-blur-md rounded-lg shadow-lg"
+                  style="box-shadow: 0 0 40px 8px  rgba(0, 183, 255, 0.25) inset, 0 0 0 1px rgba(0,255,150,0.15) inset;">
+                </div>
+                <div class="relative z-10 p-4">
+                  <div
+                    class="flex items-center gap-2 font-medium text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">
+                    Real Estate
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                  <div class="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl mt-2">AI real estate tools boost
+                    property management by analyzing market data, predicting values, and guiding smarter investment
+                    decisions.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel 4 (FinTech) -->
+          <div
+            class="industry-panel group relative rounded-xl overflow-hidden cursor-pointer transition-all duration-500 border-2 border-transparent">
+            <img src="\src\assets\fintech.jpg" alt="FinTech"
+              class="absolute inset-0 w-full h-full object-cover transition-all duration-500" />
+            <div class="absolute inset-0 bg-black/40 transition-all duration-500"></div>
+            <div class="vertical-text absolute inset-0 flex items-end p-4">
+              <span class="text-white font-bold text-lg transform -rotate-90 origin-bottom-left whitespace-nowrap"
+                style="height: 10px;">FinTech</span>
+            </div>
+            <div
+              class="panel-content absolute bottom-0 left-0 w-full p-6 text-white transition-all duration-500 z-10 flex justify-center items-end">
+              <div class="relative w-[100%]">
+                <div class="absolute inset-0 bg-black/30 backdrop-blur-md rounded-lg shadow-lg"
+                  style="box-shadow: 0 0 40px 8px  rgba(0, 183, 255, 0.25)inset, 0 0 0 1px rgba(0,255,150,0.15) inset;">
+                </div>
+                <div class="relative z-10 p-4">
+                  <div
+                    class="flex items-center gap-2 font-medium text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">
+                    FinTech
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                  <div class="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl mt-2">FinTech uses AI to analyze
+                    transaction data, predict market trends, and deliver personalized financial strategies for stronger
+                    economic results.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel 5 (Ecommerce) -->
+          <div
+            class="industry-panel group relative rounded-xl overflow-hidden cursor-pointer transition-all duration-500 border-2 border-transparent">
+            <img src="\src\assets\ecommerce.jpg" alt="Ecommerce"
+              class="absolute inset-0 w-full h-full object-cover transition-all duration-500" />
+            <div class="absolute inset-0 bg-black/40 transition-all duration-500"></div>
+            <div class="vertical-text absolute inset-0 flex items-end p-4">
+              <span class="text-white font-bold text-lg transform -rotate-90 origin-bottom-left whitespace-nowrap"
+                style="height: 10px;">Ecommerce</span>
+            </div>
+            <div
+              class="panel-content absolute bottom-0 left-0 w-full p-6 text-white transition-all duration-500 z-10 flex justify-center items-end">
+              <div class="relative w-[100%]">
+                <div class="absolute inset-0 bg-black/30 backdrop-blur-md rounded-lg shadow-lg"
+                  style="box-shadow: 0 0 40px 8px  rgba(0, 183, 255, 0.25) inset, 0 0 0 1px  inset;"></div>
+                <div class="relative z-10 p-4">
+                  <div
+                    class="flex items-center gap-2 font-medium text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">
+                    Ecommerce
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                  <div class="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl mt-2">AI-powered e-commerce improves
+                    shopping by analyzing customer data, predicting buying behavior, and optimizing decisions for better
+                    satisfaction and sales.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- awards section  -->
+  <section class="font:sans" style="width: 100%; background-color: #0F1C2E; padding: 5rem 1rem; overflow: hidden;">
+    <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+      <h2 style="font-size: 2rem; font-weight: 600; color: white; margin-bottom: 3rem;">
+        Awards, Certifications and Partnerships
+      </h2>
+
+      <div id="awardsGrid" style="
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5rem 2rem;
+      justify-items: center;
+      margin-right: 0;
+    ">
+        <img src="/src/assets/award1.webp" alt="Forbes"
+          style="height: 74px; max-width: 100px; width: auto; object-fit: contain;" />
+        <img src="/src/assets/award2.webp" alt="FT"
+          style="height: 74px; max-width: 100px; width: auto; object-fit: contain;" />
+        <img src="/src/assets/award3.webp" alt="Globee"
+          style="height: 74px; max-width: 100px; width: auto; object-fit: contain;" />
+        <img src="/src/assets/award4.webp" alt="Clutch 1"
+          style="height: 74px; max-width: 100px; width: auto; object-fit: contain;" />
+        <img src="/src/assets/award5.webp" alt="Clutch 2"
+          style="height: 74px; max-width: 100px; width: auto; object-fit: contain;" />
+        <img src="/src/assets/award6.webp" alt="Award 6"
+          style="height: 74px; max-width: 100px; width: auto; object-fit: contain;" />
+        <img src="/src/assets/award7.webp" alt="Manufacturers Alliance"
+          style="height: 74px; max-width: 100px; width: auto; object-fit: contain;" />
+        <img src="/src/assets/award8.webp" alt="AWS"
+          style="height: 74px; max-width: 100px; width: auto; object-fit: contain;" />
+        <img src="/src/assets/award9.webp" alt="Microsoft"
+          style="height: 74px; max-width: 100px; width: auto; object-fit: contain;" />
+        <img src="/src/assets/award10.webp" alt="Salesforce"
+          style="height: 74px; max-width: 100px; width: auto; object-fit: contain;" />
+        <img src="/src/assets/award11.webp" alt="ISO 27001"
+          style="height: 74px; max-width: 100px; width: auto; object-fit: contain;" />
+        <img src="/src/assets/award12.webp" alt="ISO 9001"
+          style="height: 74px; max-width: 100px; width: auto; object-fit: contain;" />
+      </div>
+    </div>
+  </section>
+
+  <!-- why work with baron tech -->
+  <section class="work-with-baron w-full px-20 py-20 font-sans">
+    <div>
+      <h1 class="text-black font-semibold text-3xl mb-10">Why Work With Baron Tech (Pvt) Limited?</h1>
+    </div>
+    <div class="max-w-none mx-auto">
+      <div class="whybaron-grid flex flex-col gap-4">
+        <div class="top-cards flex gap-4">
+          <!-- Card 1 -->
+          <div class="whybaron-card whybaron-card-1 border rounded-xl p-6 shadow-sm font-sans"
+            style="background: rgb(249 249 249 / 1);">
+            <img src="\src\assets\coding.webp" alt="Icon" class="h-12 mb-4">
+            <h3 class="font-bold mb-2" style="font-size: 21px;">Worry-free software development</h3>
+            <p class="text-gray-700" style="font-size: 14px;">Baron Tech (Pvt) Limited utilizes years of experience in
+              the development of projects of all sizes in various domains from start to finish of all the projects we
+              undertake. Our demonstrated ability to honestly produce products that satisfy our clients starts with our
+              project management approach and well-designed processes.</p>
+          </div>
+          <!-- Card 2 -->
+          <div class="whybaron-card whybaron-card-2 border rounded-xl p-6 shadow-sm font-sans"
+            style="background: rgb(249 249 249 / 1);">
+            <img src="\src\assets\good-idea.webp" alt="Icon" class="h-12 mb-4">
+            <h3 class="font-bold mb-2" style="font-size: 21px;">Software Development Life Cycle</h3>
+            <p class="text-gray-700" style="font-size: 14px;">It is a process that we design, develop and test
+              state-of-the-art software. Baron Tech (Pvt) Limited uses this process to produce high-quality software
+              that meets customer expectations, achieving completion between time and cost estimates. It contains a
+              detailed program.</p>
+          </div>
+          <!-- Card 3 -->
+          <div class="whybaron-card whybaron-card-3 border rounded-xl p-6 shadow-sm font-sans"
+            style="background: rgb(249 249 249 / 1);">
+            <img src="\src\assets\compliant.webp" alt="Icon" class="h-12 mb-4">
+            <h3 class="font-bold mb-2" style="font-size: 21px;">Life Cycle for Agile Software Development</h3>
+            <p class="text-gray-700" style="font-size: 14px;">We use the Agile SDLC approach because we believe that
+              every project needs to be managed differently and the existing methods need to be adapted to best fit the
+              needs of the project. In Agile, tasks are divided into short-term intervals to deliver specific output
+              features.</p>
+          </div>
+        </div>
+        <div class="bottom-cards flex gap-4">
+          <!-- Card 4 (first in second row, half width on xl) -->
+          <div
+            class="whybaron-card whybaron-card-4 border rounded-xl p-6 shadow-sm font-sans xl:col-span-2 xl:row-start-2 xl:col-start-1"
+            style="background: rgb(249 249 249 / 1);">
+            <img src="\src\assets\coworking.webp" alt="Icon" class="h-12 mb-4">
+            <h3 class="font-bold mb-2" style="font-size: 21px;">First Meeting</h3>
+            <p class="text-gray-700" style="font-size: 14px;">We will answer any questions you have about us through
+              this meeting and listen to the details of your project and your priorities. With a fully detailed process,
+              we will be creating a short proposal for your project at a reasonable cost.</p>
+          </div>
+          <!-- Card 5 (second in second row, half width on xl) -->
+          <div
+            class="whybaron-card whybaron-card-5 border rounded-xl p-6 shadow-sm font-sans xl:col-span-2 xl:row-start-2 xl:col-start-3"
+            style="background: rgb(249 249 249 / 1);">
+            <img src="\src\assets\svgviewer-png-output.png" alt="Icon" class="h-16 mb-4">
+            <h3 class="font-bold mb-2" style="font-size: 21px;">Global security & quality standards</h3>
+            <p class="text-gray-700" style="font-size: 14px;">Keeping your data and operations secure is paramount. We
+              adhere to the highest international security and quality standards, ensuring peace of mind throughout the
+              modernization process.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal for Expertise Learn More -->
+  <div id="expertise-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40 hidden">
+    <div
+      class="bg-white shadow-lg w-[80vw] max-w-2xl h-[60vh] flex flex-col justify-center items-center p-10 relative mx-1">
+      <button id="close-expertise-modal"
+        class="absolute top-2 right-2 text-gray-400 hover:text-black text-2xl font-bold">&times;</button>
+      <h2 id="expertise-modal-title" class="text-2xl font-bold mb-4 text-center w-full"></h2>
+      <p id="expertise-modal-desc" class="text-gray-700 text-center w-full max-w-2xl"></p>
+    </div>
+  </div>
+
+  <!-- Contact Section (Styled like screenshot) -->
+  <section class="w-full min-h-[60vh] bg-section-bg py-16 px-0 flex items-center justify-center font-sans">
+    <div class="w-full mx-4 sm:mx-8 md:mx-16 flex flex-col md:flex-row gap-12 md:gap-0">
+      <!-- Left Side -->
+      <div
+        class="md:w-1/2 w-full flex flex-col justify-center md:pr-12 text-left md:text-left text-center md:text-left">
+        <h2 class="font-bold text-white mb-12 leading-tight text-3xl md:text-4xl lg:text-5xl xl:text-6xl">Start growing
+          your<br>business with us</h2>
+        <div class="space-y-6">
+          <div class="bg-light-blue-0 rounded-lg p-6 text-black">
+            <div class="mb-1 opacity-80 text-[16px]">Sales and general inquires</div>
+            <div class="font-semibold text-black text-xl xl:text-2xl 2xl:text-3xl lg:text-xl md:text-base sm:text-sm">
+              info@barontechs.com</div>
+          </div>
+          <div class="bg-light-blue-0 rounded-lg p-6 text-black">
+            <div class="mb-1 opacity-80 text-[16px]">Call us</div>
+            <div class="font-medium text-black text-xl xl:text-2xl 2xl:text-3xl lg:text-xl md:text-base sm:text-sm"> +1
+              (409) 916-8275</div>
+          </div>
+        </div>
+      </div>
+      <!-- Right Side (Form) -->
+      <div class="md:w-1/2 w-full flex flex-col justify-center">
+        <form class="w-full gap-6 custom-contact-grid">
+          <div class="col-span-1">
+            <label class="block text-white text-sm mb-2">Enter your name*</label>
+            <input type="text"
+              class="w-full bg-transparent border-b border-gray-400 text-white py-2 px-0 focus:outline-none focus:border-light-blue-0"
+              required>
+          </div>
+          <div class="col-span-1">
+            <label class="block text-white text-sm mb-2">Enter your email*</label>
+            <input type="email"
+              class="w-full bg-transparent border-b border-gray-400 text-white py-2 px-0 focus:outline-none focus:border-light-blue-0"
+              required>
+          </div>
+          <div class="col-span-1">
+            <label class="block text-white text-sm mb-2">Enter your phone number</label>
+            <input type="text"
+              class="w-full bg-transparent border-b border-gray-400 text-white py-2 px-0 focus:outline-none focus:border-light-blue-0">
+          </div>
+          <div class="col-span-1 flex flex-col justify-end">
+            <div class="relative" id="budget-dropdown-wrapper">
+              <button type="button" id="budget-dropdown-btn"
+                class="w-full bg-transparent border-b border-gray-400 text-white py-2 px-0 flex justify-between items-center focus:outline-none focus:border-light-blue-0">
+                <span id="budget-dropdown-selected" class="font-semibold">Select your budget</span>
+                <svg class="w-4 h-4 ml-2 text-white" fill="none" stroke="currentColor" stroke-width="2"
+                  viewBox="0 0 24 24">
+                  <path d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div id="budget-dropdown-menu"
+                class="absolute right-0 left-0 mt-2 bg-light-blue-0 border border-gray-600 rounded-md shadow-lg z-20 hidden">
+                <div class="py-1">
+                  <button type="button" class="w-full text-left px-4 py-2 text-black hover:bg-[#3dc8ff]"
+                    data-value="Still Evaluating">Select Your Budget</button>
+                  <button type="button" class="w-full text-left px-4 py-2 text-black hover:bg-[#3dc8ff]"
+                    data-value="Still Evaluating">Still Evaluating</button>
+                  <button type="button" class="w-full text-left px-4 py-2 text-black hover:bg-[#3dc8ff]"
+                    data-value="Less than $20,000">Less than $20,000</button>
+                  <button type="button" class="w-full text-left px-4 py-2 text-black hover:bg-[#3dc8ff]"
+                    data-value="$20,000 - $50,000">$20,000 - $50,000</button>
+                  <button type="button" class="w-full text-left px-4 py-2 text-black hover:bg-[#3dc8ff]"
+                    data-value="$50,000 - $100,000">$50,000 - $100,000</button>
+                  <button type="button" class="w-full text-left px-4 py-2 text-black hover:bg-[#3dc8ff]"
+                    data-value="More than $100,000">More than $100,000</button>
+                </div>
+              </div>
+              <input type="hidden" name="budget" id="budget-dropdown-input">
+            </div>
+          </div>
+          <div class="col-span-2">
+            <label class="block text-white text-sm mb-2">Enter your message*</label>
+            <textarea
+              class="w-full bg-transparent border-b border-gray-400 text-white py-2 px-0 focus:outline-none focus:border-light-blue-0 min-h-[80px]"
+              required></textarea>
+          </div>
+          <div class="col-span-1 flex items-center mt-2">
+            <input type="checkbox" id="nda" class="mr-2">
+            <label for="nda" class="text-white text-sm">This project requires an NDA</label>
+          </div>
+          <div class="col-span-2 mt-4 flex items-center justify-left">
+            <button type="submit"
+              class="border border-light-blue-0 text-white px-8 py-2 rounded-full flex items-center gap-2 hover:bg-section-btn-hover transition">
+              Send Message
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="w-full bg-white border-t border-gray-200">
+    <div class="max-w-7xl mx-auto w-full px-2 md:px-5 lg:px-[70px] py-[70px]">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Our Location -->
+        <div>
+          <h3 class="font-bold text-lg mb-4" style="margin-left: 20px;">Our Location</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li
+              class="flex items-center gap-2 cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent">
+              <img src="./src/assets/icons8-location-50.png" alt="Location Icon" class="w-6 h-6 object-contain" />
+              United States
+            </li>
+            <li
+              class="flex items-center gap-2 cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent">
+              <img src="./src/assets/icons8-location-50.png" alt="Location Icon" class="w-6 h-6 object-contain" />
+              United Kingdom
+            </li>
+            <li
+              class="flex items-center gap-2 cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent">
+              <img src="./src/assets/icons8-location-50.png" alt="Location Icon" class="w-6 h-6 object-contain" />
+              United Arab Emirates
+            </li>
+            <li
+              class="flex items-center gap-2 cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent">
+              <img src="./src/assets/icons8-location-50.png" alt="Location Icon" class="w-6 h-6 object-contain" />
+              Pakistan
+            </li>
+          </ul>
+        </div>
+        <!-- Our Services -->
+        <div>
+          <h3 class="font-bold text-lg mb-4" style="margin-left: 20px;">Our Services</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li class="cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent">Mobile App
+              Development</li>
+            <li class="cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent">Custom Website
+              Development</li>
+            <li class="cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent">Shopify Development
+            </li>
+            <li class="cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent">WordPress Development
+            </li>
+            <li class="cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent">Graphics and
+              Designing</li>
+            <li class="cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent">Baron Tech Special
+              Services</li>
+            <li class="cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent">CMS Development</li>
+          </ul>
+        </div>
+        <!-- Industries -->
+        <div>
+          <h3 class="font-bold text-lg mb-4" style="margin-left: 20px;">Company</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li class="cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent">Services</li>
+            <li class="cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent">Work</li>
+            <li class="cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent">About Us</li>
+            <li class="cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent">Careers</li>
+            <li class="cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent">Contact Us</li>
+          </ul>
+        </div>
+        <!-- Connect With Us -->
+        <div>
+          <h3 class="font-bold text-lg mb-4" style="margin-left: 20px;">CONNECT WITH US</h3>
+          <div class="flex gap-2 mb-4" style="margin-left: 15px;">
+            <a href="https://www.facebook.com/barontechh" aria-label="Facebook"
+              class="cursor-pointer rounded p-1 transition ">
+              <img src="./src/assets/facebook-svgrepo-com.png" alt="Facebook" class="w-7 h-7 object-contain" />
+            </a>
+            <a href="https://www.instagram.com/barontech.co/" aria-label="Instagram"
+              class="cursor-pointer rounded p-1 transition ">
+              <img src="./src/assets/instagram-f-svgrepo-com.png" alt="Instagram" class="w-6 h-6 object-contain" />
+            </a>
+            <a href="https://www.linkedin.com/company/barontech-pvt-limited" aria-label="LinkedIn"
+              class="cursor-pointer rounded p-1 transition">
+              <img src="./src/assets/linkedin-round-svgrepo-com.png" alt="LinkedIn" class="w-6 h-6 object-contain" />
+            </a>
+            <a href="https://twitter.com/barontech_co" aria-label="Twitter"
+              class="cursor-pointer rounded p-1 transition">
+              <img src="./src/assets/twitter-2-svgrepo-com.png" alt="Twitter" class="w-6 h-6 object-contain" />
+            </a>
+          </div>
+          <div class="space-y-2 text-gray-700">
+            <div
+              class="flex items-center gap-2 cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="currentColor"
+                viewBox="0 0 512 512">
+                <path
+                  d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z" />
+              </svg>
+              <span>info@barontech.co</span>
+            </div>
+            <div
+              class="flex items-center gap-2 cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="currentColor"
+                viewBox="0 0 512 512">
+                <path
+                  d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z" />
+              </svg>
+              <span>+1 (409) 916-8275</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <section
+    class="w-full bg-section-bg py-4 px-4 flex flex-col md:flex-row items-center md:justify-between text-white text-xs sm:text-sm md:text-base">
+    <div class="flex flex-col w-full md:flex-row md:items-center md:justify-between max-w-7xl mx-auto px-4">
+      <div class="flex flex-row justify-center md:justify-start w-full md:w-auto order-2 md:order-1 mt-2 md:mt-0">
+        <span class="w-full text-center md:text-left">© Copyrights 2024 Reserved By <span class="font-bold">Baron Tech
+            (Pvt) Limited.</span></span>
+      </div>
+      <div class="flex flex-row justify-center md:justify-end w-full md:w-auto order-1 md:order-2">
+        <a href="#" class="text-logo-blue-0 hover:underline cursor-pointer rounded px-2 py-1 transition ">Privacy
+          Policy</a>
+        <a href="#"
+          class="text-logo-blue-0 hover:underline cursor-pointer rounded px-2 py-1 transition mx-1 md:mx-4 ">Terms of
+          Use</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const swiper = new Swiper(".mySwiper", {
+        loop: true,
+        slidesPerView: 1,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      new Swiper('.project-swiper', {
+        slidesPerView: 3,
+        spaceBetween: 32,
+        loop: true,
+        navigation: {
+          nextEl: '.swiper-button-next-custom',
+          prevEl: '.swiper-button-prev-custom',
+        },
+        breakpoints: {
+          0: { slidesPerView: 1 },
+          640: { slidesPerView: 1 },
+          900: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+        },
+      });
+    });
+
+  </script>
+
+  <script>
+    function openExpertiseModal(btn) {
+      document.getElementById('expertise-modal-title').textContent = btn.getAttribute('data-title');
+      document.getElementById('expertise-modal-desc').textContent = btn.getAttribute('data-desc');
+      document.getElementById('expertise-modal').classList.remove('hidden');
+    }
+    document.getElementById('close-expertise-modal').onclick = function () {
+      document.getElementById('expertise-modal').classList.add('hidden');
+    };
+    document.getElementById('expertise-modal').onclick = function (e) {
+      if (e.target === this) this.classList.add('hidden');
+    };
+  </script>
+  <script src="./script.js"></script>
+
+
+  <script>
+    // Custom dropdown for budget
+    const budgetBtn = document.getElementById('budget-dropdown-btn');
+    const budgetMenu = document.getElementById('budget-dropdown-menu');
+    const budgetSelected = document.getElementById('budget-dropdown-selected');
+    const budgetInput = document.getElementById('budget-dropdown-input');
+
+    budgetBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      budgetMenu.classList.toggle('hidden');
+    });
+
+    budgetMenu.querySelectorAll('button').forEach(option => {
+      option.addEventListener('click', function () {
+        budgetSelected.textContent = this.textContent;
+        budgetInput.value = this.getAttribute('data-value');
+        budgetMenu.classList.add('hidden');
+      });
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!document.getElementById('budget-dropdown-wrapper').contains(e.target)) {
+        budgetMenu.classList.add('hidden');
+      }
+    });
+
+    // Industry Panels
+    document.addEventListener('DOMContentLoaded', () => {
+      const panels = document.querySelectorAll('.industry-panel');
+
+      panels.forEach(panel => {
+        panel.addEventListener('click', () => {
+          panels.forEach(p => p.classList.remove('active'));
+          panel.classList.add('active');
+        });
+      });
+    });
+
+    // Responsive industry panels slider
+    (function () {
+      const panels = Array.from(document.querySelectorAll('.industry-panel'));
+      const leftBtn = document.getElementById('industry-left');
+      const rightBtn = document.getElementById('industry-right');
+      let startIdx = 0;
+      let activeIdx = 0;
+
+      function updatePanels() {
+        const isMobile = window.innerWidth <= 560;
+        const isTablet = window.innerWidth <= 1200 && window.innerWidth > 560;
+        panels.forEach((panel, i) => {
+          if (!isTablet && !isMobile) {
+            panel.style.display = '';
+            panel.classList.toggle('active', i === activeIdx);
+          } else if (isTablet) {
+            // Tablet: show 2 panels (one open, one closed)
+            if (i === startIdx) {
+              panel.style.display = '';
+              panel.classList.add('active');
+            } else if (i === startIdx + 1) {
+              panel.style.display = '';
+              panel.classList.remove('active');
+            } else {
+              panel.style.display = 'none';
+              panel.classList.remove('active');
+            }
+          } else {
+            // Mobile: show only 1 panel (active)
+            if (i === startIdx) {
+              panel.style.display = '';
+              panel.classList.add('active');
+            } else {
+              panel.style.display = 'none';
+              panel.classList.remove('active');
+            }
+          }
+        });
+        if (isMobile) {
+          leftBtn.style.display = startIdx > 0 ? 'flex' : 'none';
+          rightBtn.style.display = startIdx < panels.length - 1 ? 'flex' : 'none';
+        } else if (isTablet) {
+          leftBtn.style.display = startIdx > 0 ? 'flex' : 'none';
+          rightBtn.style.display = startIdx < panels.length - 2 ? 'flex' : 'none';
+        } else {
+          leftBtn.style.display = 'none';
+          rightBtn.style.display = 'none';
+        }
+      }
+
+      leftBtn && leftBtn.addEventListener('click', function () {
+        if (window.innerWidth <= 560) {
+          if (startIdx > 0) {
+            startIdx--;
+            activeIdx = startIdx;
+            updatePanels();
+          }
+        } else if (window.innerWidth <= 1200) {
+          if (startIdx > 0) {
+            startIdx--;
+            activeIdx = startIdx;
+            updatePanels();
+          }
+        }
+      });
+      rightBtn && rightBtn.addEventListener('click', function () {
+        if (window.innerWidth <= 560) {
+          if (startIdx < panels.length - 1) {
+            startIdx++;
+            activeIdx = startIdx;
+            updatePanels();
+          }
+        } else if (window.innerWidth <= 1200) {
+          if (startIdx < panels.length - 2) {
+            startIdx++;
+            activeIdx = startIdx;
+            updatePanels();
+          }
+        }
+      });
+      panels.forEach((panel, i) => {
+        panel.addEventListener('mouseenter', () => {
+          if (window.innerWidth > 1200) {
+            panels.forEach(p => p.classList.remove('active'));
+            panel.classList.add('active');
+            activeIdx = i;
+          }
+        });
+        panel.addEventListener('click', () => {
+          if (window.innerWidth > 1200) {
+            panels.forEach(p => p.classList.remove('active'));
+            panel.classList.add('active');
+            activeIdx = i;
+          } else if (window.innerWidth <= 560) {
+            // On mobile, clicking does nothing (arrows only)
+          } else {
+            // On tablet, clicking the closed panel makes it active and moves the window
+            if (i === startIdx + 1) {
+              startIdx++;
+              activeIdx = startIdx;
+              updatePanels();
+            }
+          }
+        });
+      });
+      window.addEventListener('resize', updatePanels);
+      updatePanels();
+    })();
+
+
+  </script>
+</body>
+
+</html>
