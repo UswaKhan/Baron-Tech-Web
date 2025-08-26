@@ -115,74 +115,81 @@
         padding: 15px !important;
       }
     }
+/* ✅ Timeline Styles */
+.timeline-line {
+  position: relative;
+  margin: 0 auto;
+  padding-left: 14px;
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 50px; /* more space between line/dot and text */
+  margin-bottom: 120px;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  min-height: 250px;
+}
+
+.timeline-item.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #4a90e2;
+  border: 3px solid #fff;
+  z-index: 2;
+}
+
+/* ✅ Line that goes BELOW each dot */
+.timeline-item::after {
+  content: "";
+  position: absolute;
+  left: 8px; /* align with center of dot */
+  top: 18px; /* start right below dot */
+  width: 2px;
+  height: calc(100% - 18px); /* stop at next item */
+  background: #fff;
+  z-index: 1;
+}
+
+/* Remove line for the last item */
+.timeline-item:last-child::after {
+  display: none;
+}
+
+/* ✅ Text Styling */
+.timeline-content h3 {
+  font-size: 30px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.timeline-content p {
+  font-size: 20px;   /* bigger paragraph text */
+  line-height: 1.6;
+  color: #f1f1f1;    /* lighter white */
+  margin-left: 5px;  /* indent paragraph */
+}
 .timeline-section {
-      height: 990px;
-      background-color: #1a202c;
-      padding: 40px;
-      border-radius: 24px;
-      overflow: hidden;
-    }
+  height: 1400px;
+}
 
-    .timeline-line {
-      position: relative;
-      margin-left: 28px;
-      padding-left: 14px;
-    }
-
-    .timeline-line::before {
-      content: "";
-      position: absolute;
-      top: 12px;
-      left: 5px;
-      width: 2px;
-      height: calc(100% - 12px);
-      background-color: white;
-      z-index: -1;
-    }
-
-    .timeline-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      position: absolute;
-      left: 0px;
-      top: 0px;
-      z-index: 10;
-      background-color: #4a90e2;
-      border: 2px solid white;
-    }
-
-    .timeline-item {
-      position: relative;
-      padding-left: 30px;
-      margin-bottom: 64px;
-    }
-
-    .timeline-content {
-      margin-left: 24px;
-    }
-
-    .hidden-timeline {
-      opacity: 0;
-      transform: translateY(100px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    .visible-timeline {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .right-form {
-      padding: 40px;
-      margin-left: 20px;
-    }
   </style>
 </head>
 
 <body class="font-sans h-full" style="overflow-x: hidden !important;">
   <!-- Navbar -->
-  <nav id="navbar"
+  <nav
     class="navbar fixed top-0 left-0 w-full z-30 px-20 py-4 flex items-center justify-between bg-transparent text-white group/nav hover:bg-white transition-all duration-300 ease-linear">
     <div class="flex items-center gap-10">
       <a href="index.html" class="logo">
@@ -422,71 +429,86 @@
   <div id="sidebarOverlay"
     class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden transition-opacity duration-300 lg:hidden">
   </div>
-  <!-- main sec -->
-  <section class="timeline-section w-full max-w-7xl mx-auto flex flex-col md:flex-row gap-6">
+<!-- main sec -->
+<section class="timeline-section flex flex-row items-center justify-center min-h-[500px] bg-section-bg">
+  <!-- ✅ Timeline Section (Left Side) -->
+  <div class="flex justify-center items-center h-full" style="margin-top: 300px;">
+  <div class="w-full max-w-3xl px-6" style="margin-top: 180px; margin-left: 30px;">
+      <h1 class="md:text-7xl font-bold text-white mb-4 text-left" style="font-size: 60px;">
+        Where do we go<br>from <span class="text-logo-blue-0">here?</span>
+      </h1>
+      <p class="font-medium text-left" style="color: #C9C9C9; font-size: 20px; margin-top: 10px; margin-bottom: 40px;">
+        You will hear from our team within the next 24 hours.
+      </p>
 
-    <!-- Left Side -->
-    <div class="w-full md:w-1/2 flex flex-col justify-start">
-      <h1 class="text-4xl md:text-5xl font-bold text-teal-400 mb-4">Where do we go from here?</h1>
-      <p class="text-lg text-gray-300 mb-8">You will hear from our team within the next 24 hours.</p>
-
-      <div class="relative timeline-line" id="timelineSection">
+      <!-- Line + Items -->
+      <div class="relative timeline-line mx-auto" id="timelineSection">
+        
         <!-- Item 1 -->
-        <div class="relative timeline-item" data-aos="fade-up" data-aos-delay="100">
-          <div class="timeline-dot" data-aos="fade-up" data-aos-delay="150"></div>
+        <div class="relative timeline-item">
+          <div class="timeline-dot"></div>
           <div class="timeline-content">
-            <h3 class="text-xl font-semibold mb-2">1. Join us for a discovery call</h3>
-            <p class="text-base text-gray-300">Our experts will engage with you to understand your business requirements, technical specifications, and project objectives.</p>
+            <h3 class="font-medium mb-2 text-white" style="font-size: 21px;">1. Join us for a discovery call</h3>
+            <p class="" style=" color: #C9C9C9; font-size: 18px;">Our experts will engage with you to understand your business requirements, technical specifications, and project objectives.</p>
           </div>
         </div>
 
         <!-- Item 2 -->
-        <div class="relative timeline-item" data-aos="fade-up" data-aos-delay="400">
-          <div class="timeline-dot" data-aos="fade-up" data-aos-delay="450"></div>
+        <div class="relative timeline-item">
+          <div class="timeline-dot"></div>
           <div class="timeline-content">
-            <h3 class="text-xl font-semibold mb-2">2. We map the project plan</h3>
-            <p class="text-base text-gray-300">Through iterative discovery sessions, we will define your project scope, align solutions with your vision, and propose a roadmap with a phased timeline.</p>
+            <h3 class="font-medium mb-2 text-white" style="font-size: 21px;">2. We map the project plan</h3>
+            <p class="" style=" color: #C9C9C9; font-size: 18px;">Through iterative discovery sessions, we will define your project scope, align solutions with your vision, and propose a roadmap with a phased timeline.</p>
           </div>
         </div>
 
         <!-- Item 3 -->
-        <div class="relative timeline-item" data-aos="fade-up" data-aos-delay="700">
-          <div class="timeline-dot" data-aos="fade-up" data-aos-delay="750"></div>
+        <div class="relative timeline-item" style="margin-bottom: 300px;">
+          <div class="timeline-dot"></div>
           <div class="timeline-content">
-            <h3 class="text-xl font-semibold mb-2">3. Onboard the team</h3>
-            <p class="text-base text-gray-300">Once you finalize the team, they will be ready to integrate with your team and collaborate on your project.</p>
+            <h3 class="font-medium mb-2 text-white" style="font-size: 21px;">3. Onboard the team</h3>
+            <p class="" style=" color: #C9C9C9; font-size: 18px;">Once you finalize the team, they will be ready to integrate with your team and collaborate on your project.</p>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Right Side -->
-    <div class="w-full md:w-1/2 bg-white text-gray-900 rounded-2xl right-form hidden-section" id="formSection">
-      <div class="w-full">
-        <p class="mb-4">Feel free to reach out to discuss your idea, get estimates for your project, or seek expert advice.</p>
-        <p class="mb-4">To apply for a job, please visit the career page.</p>
-
+  <!-- ✅ Right Side (Form) [unchanged] -->
+  <div class="z-10" style="margin-right: 73px; width: 670px;">
+    <div class="bg-white text-gray-900 shadow-lg p-10 w-full" id="formSection" style="border-radius:24px; min-height:1000px;">
+      <p class="mb-4 text-3xl font-medium">Feel free to reach out to discuss your idea, get estimates for your project, or seek expert advice.</p>
+      <p class="mb-4" style="color: #4F4F4F;">To apply for a job, please visit the <a href="careers.html" class="font-semibold text-teal-400" style="text-decoration: underline;">career page</a>.</p>
+      <form class="space-y-4">
         <h3 class="font-semibold mb-2">1. Tell us about your company.</h3>
-        <input type="text" placeholder="Name*" class="w-full p-2 mb-2 border rounded">
-        <input type="email" placeholder="Email*" class="w-full p-2 mb-2 border rounded">
-        <input type="text" placeholder="Phone number*" class="w-full p-2 mb-2 border rounded">
-        <input type="text" placeholder="Company name or website*" class="w-full p-2 mb-2 border rounded">
-
+        <div class="flex flex-row md:flex-row gap-4" style="margin-bottom: 14px;">
+          <input type="text" placeholder="Name*" class="flex-1 p-2 border rounded" style="min-width:300px;" required>
+          <input type="email" placeholder="Email*" class="flex-1 p-2 border rounded" style="min-width:300px;" required>
+        </div>
+        <div class="flex flex-col md:flex-col gap-4">
+          <input type="text" placeholder="Phone number*" class="flex-1 p-2 border rounded" required>
+          <input type="text" placeholder="Company name or website*" class="flex-1 p-2 border rounded" required>
+        </div>
         <h3 class="font-semibold mb-2 mt-4">2. Tell us more about your project.</h3>
-        <input type="text" placeholder="Describe your project briefly*" class="w-full p-2 mb-2 border rounded">
-        <input type="text" placeholder="Select your budget*" class="w-full p-2 mb-2 border rounded">
-
+        <textarea placeholder="Describe your project briefly*" class="w-full p-2 border rounded mb-4" rows="2" required></textarea>
+        <select class="w-full p-2 border rounded text-[#4F4F4F] " required>
+          <option value="" disabled selected style="color: #4F4F4F;">Select your budget</option>
+          <option value="Still Evaluating">Still Evaluating</option>
+          <option value="Less than $20,000">Less than $20,000</option>
+          <option value="$20,000 - $50,000">$20,000 - $50,000</option>
+          <option value="$50,000 - $100,000">$50,000 - $100,000</option>
+          <option value="More than $100,000">More than $100,000</option>
+        </select>
         <h3 class="font-semibold mb-2 mt-4">3. Where did you hear about us?</h3>
-        <input type="text" placeholder="How did you hear about us?" class="w-full p-2 mb-2 border rounded">
-
+        <input type="text" placeholder="How did you hear about us?" class="w-full p-2 mb-2 border rounded ">
         <label class="flex items-center mb-2">
           <input type="checkbox" class="mr-2"> This project requires an NDA
         </label>
-        <button class="bg-green-700 text-white p-2 rounded w-full">Submit</button>
-      </div>
+        <button class="bg-section-bg text-white font-bold px-8 py-3 rounded-md mt-4" style="background-color: #005847; color: #fff; width: 110px; height: 45px;">Submit</button>
+      </form>
     </div>
-
-  </section>
+  </div>
+</section>
  <!-- enaggement model section -->
   <section class="engage-sec w-full px-20 pt-20 font-sans">
     <div class="max-w-none mx-auto">
@@ -1475,22 +1497,24 @@
       offset: 120,
     });
 
-    window.addEventListener('scroll', () => {
-      const timelineSection = document.getElementById('timelineSection');
-      const formSection = document.getElementById('formSection');
-      const timelineRect = timelineSection.getBoundingClientRect();
-      const formRect = formSection.getBoundingClientRect();
+document.addEventListener('DOMContentLoaded', function () {
+  const items = document.querySelectorAll('.timeline-item');
 
-      if (timelineRect.top < window.innerHeight) {
-        timelineSection.classList.add('visible-timeline');
-        timelineSection.classList.remove('hidden-timeline');
-      }
-
-      if (formRect.top < window.innerHeight) {
-        formSection.classList.add('visible-section');
-        formSection.classList.remove('hidden-section');
+  function checkItems() {
+    const triggerBottom = window.innerHeight * 0.8;
+    items.forEach(item => {
+      const boxTop = item.getBoundingClientRect().top;
+      if (boxTop < triggerBottom && boxTop > 0) {
+        item.classList.add('active');
+      } else {
+        item.classList.remove('active'); // reset so it replays each scroll
       }
     });
+  }
+
+  window.addEventListener('scroll', checkItems);
+  checkItems(); // run on load
+});
   </script>
 </body>
 
