@@ -98,101 +98,112 @@
         padding: 6px 12px !important;
       }
     }
+
     @media (max-width: 800px) {
       .cards {
         display: flex;
-        flex-direction: column;   
+        flex-direction: column;
       }
     }
+
     @media(max-width: 650px) {
       .engage-sec {
-       padding-left: 20px !important;
-       padding-right: 20px !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
       }
-    } 
+    }
+
     @media(max-width: 400px) {
-      .card-1{
+      .card-1 {
         padding: 15px !important;
       }
     }
-/* ✅ Timeline Styles */
-.timeline-line {
-  position: relative;
-  margin: 0 auto;
-  padding-left: 14px;
-}
 
-.timeline-item {
-  position: relative;
-  padding-left: 50px; /* more space between line/dot and text */
-  margin-bottom: 120px;
-  opacity: 0;
-  transform: translateY(60px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-  min-height: 250px;
-}
+    /* ✅ Timeline Styles */
+    .timeline-line {
+      position: relative;
+      margin: 0 auto;
+      padding-left: 14px;
+    }
 
-.timeline-item.active {
-  opacity: 1;
-  transform: translateY(0);
-}
+    .timeline-item {
+      position: relative;
+      padding-left: 50px;
+      /* more space between line/dot and text */
+      margin-bottom: 120px;
+      opacity: 0;
+      transform: translateY(60px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+      min-height: 250px;
+    }
 
-.timeline-dot {
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  background: #4a90e2;
-  border: 3px solid #fff;
-  z-index: 2;
-}
+    .timeline-item.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-/* ✅ Line that goes BELOW each dot */
-.timeline-item::after {
-  content: "";
-  position: absolute;
-  left: 8px; /* align with center of dot */
-  top: 18px; /* start right below dot */
-  width: 2px;
-  height: calc(100% - 18px); /* stop at next item */
-  background: #fff;
-  z-index: 1;
-}
+    .timeline-dot {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: #4a90e2;
+      border: 3px solid #fff;
+      z-index: 2;
+    }
 
-/* Remove line for the last item */
-.timeline-item:last-child::after {
-  display: none;
-}
+    /* ✅ Line that goes BELOW each dot */
+    .timeline-item::after {
+      content: "";
+      position: absolute;
+      left: 8px;
+      /* align with center of dot */
+      top: 18px;
+      /* start right below dot */
+      width: 2px;
+      height: calc(100% - 18px);
+      /* stop at next item */
+      background: #fff;
+      z-index: 1;
+    }
 
-/* ✅ Text Styling */
-.timeline-content h3 {
-  font-size: 30px;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 12px;
-}
+    /* Remove line for the last item */
+    .timeline-item:last-child::after {
+      display: none;
+    }
 
-.timeline-content p {
-  font-size: 20px;   /* bigger paragraph text */
-  line-height: 1.6;
-  color: #f1f1f1;    /* lighter white */
-  margin-left: 5px;  /* indent paragraph */
-}
-.timeline-section {
-  height: 1400px;
-}
+    /* ✅ Text Styling */
+    .timeline-content h3 {
+      font-size: 30px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 12px;
+    }
 
+    .timeline-content p {
+      font-size: 20px;
+      /* bigger paragraph text */
+      line-height: 1.6;
+      color: #f1f1f1;
+      /* lighter white */
+      margin-left: 5px;
+      /* indent paragraph */
+    }
+
+    .timeline-section {
+      height: 1400px;
+    }
   </style>
 </head>
 
 <body class="font-sans h-full" style="overflow-x: hidden !important;">
   <!-- Navbar -->
-  <nav
-    class="navbar fixed top-0 left-0 w-full z-30 px-20 py-4 flex items-center justify-between bg-transparent text-white group/nav hover:bg-white transition-all duration-300 ease-linear">
-    <div class="flex items-center gap-10">
-      <a href="index.html" class="logo">
+  <nav id="navbar"
+    class="navbar fixed top-0 left-0 w-full z-50 px-20 py-4 flex items-center justify-between bg-transparent text-white group/nav hover:bg-white transition-all duration-300 ease-linear">
+    <div class="flex items-center gap-10 z-40">
+      <a href="index.html" class="logo z-40">
         <img class="h-14" src="/src/assets/baron-logo.webp" alt="">
       </a>
       <ul class="hidden md:flex space-x-6 text-lg gap-4 font-semibold group-hover/nav:text-black relative">
@@ -205,7 +216,7 @@
           </a>
 
           <div
-            class="absolute hidden group-hover:flex justify-around pl-20 pr-60 bg-white text-black mt-4 py-6 ml-[-180px] shadow-md z-30 w-[1503px]">
+            class="services-dropdown absolute hidden group-hover:flex justify-around pl-20 pr-60 bg-white text-black py-12 ml-[-180px] shadow-md w-[1503px] ">
             <!-- Software Development -->
             <div class=" flex justify-center items-start gap-4">
               <div class="border-[0.5px] rounded-full border-logo-blue-0 mt-2"><img class=" h-6"
@@ -248,16 +259,27 @@
             </div>
 
             <!-- Industries -->
-            <div class=" flex justify-center items-start gap-4">
-              <div class="border-[0.5px] rounded-full border-logo-blue-0 mt-2"><img class=" h-6"
-                  src="/src/assets/arrow-blue.png" alt=""></div>
-              <div class="space-y-2">
-                <h1 class="text-xl font-bold">Company</h1>
-                <a href="services.html" class="block hover:text-logo-blue-0 text-gray-700">Services</a>
-                <a href="work_page.html" class="block hover:text-logo-blue-0 text-gray-700">Work</a>
-                <a href="about_us.html" class="block hover:text-logo-blue-0 text-gray-700">About Us</a>
-                <a href="careers.html" class="block hover:text-logo-blue-0 text-gray-700">Careers</a>
-                <a href="conatct.html" class="block hover:text-logo-blue-0 text-gray-700">Contact Us</a>
+            <div class=" flex flex-col items-start gap-4">
+              <div class="flex justify-center items-start gap-4">
+                <div class="border-[0.5px] rounded-full border-logo-blue-0 mt-2"><img class=" h-6"
+                    src="/src/assets/arrow-blue.png" alt=""></div>
+                <div class="space-y-2">
+                  <h1 class="text-2xl font-bold">Optimization</h1>
+                  <a href="services.html" class="block hover:text-logo-blue-0 text-gray-700">Quality Assurance and
+                    Testing</a>
+                  <a href="work_page.html" class="block hover:text-logo-blue-0 text-gray-700">Support and
+                    Maintenance</a>
+                </div>
+              </div>
+              <div class="flex justify-center items-start gap-4">
+                <div class="border-[0.5px] rounded-full border-logo-blue-0 mt-2"><img class=" h-6"
+                    src="/src/assets/arrow-blue.png" alt=""></div>
+                <div class="space-y-2">
+                  <h1 class="text-2xl font-bold">Company</h1>
+                  <a href="services.html" class="block hover:text-logo-blue-0 text-gray-700">Services</a>
+                  <a href="work_page.html" class="block hover:text-logo-blue-0 text-gray-700">Work</a>
+                  <a href="Contact Us.html" class="block hover:text-logo-blue-0 text-gray-700">Contact Us</a>
+                </div>
               </div>
             </div>
           </div>
@@ -268,8 +290,7 @@
           <a href="#" class="hover:text-logo-blue-0 flex items-center justify-center gap-2">Our Company
             <img class="h-3 mt-1 group-hover/nav:brightness-0" src="/src/assets/down-arrow.png" alt="">
           </a>
-          <ul
-            class="absolute hidden group-hover:block bg-white text-black mt-7 p-4 w-60 space-y-2 z-30 font-semibold border">
+          <ul class="absolute hidden group-hover:block bg-white text-black px-4 py-6 w-60 space-y-2 font-semibold">
             <li><a href="#" class="block hover:text-logo-blue-0">About</a></li>
             <li><a href="#" class="block hover:text-logo-blue-0">Portfolio</a></li>
             <li><a href="#" class="block hover:text-logo-blue-0">Team</a></li>
@@ -286,7 +307,7 @@
       <a href="#" class="whatsapp"><img class="h-6" src="/src/assets/whatsapp-svgrepo-com.png" alt=""></a>
       <a href="#" class="num group-hover/nav:text-black text-lg">+1 (409) 916-8275</a>
       <button id="getQuoteBtn"
-        class="get-quote group flex items-center justify-center gap-2 text-xl border-[0.5px] rounded-md px-8 py-2 hover:text-white group-hover/nav:bg-logo-blue-0 group-hover/nav:border-logo-blue-0">
+        class="get-quote group z-40 flex items-center justify-center gap-2 text-xl border-[0.5px] rounded-md px-8 py-2 hover:text-white group-hover/nav:bg-logo-blue-0 group-hover/nav:border-logo-blue-0">
         Get Quote
         <img id="arrow"
           class="h-7 group-hover:rotate-45 transition duration-300 ease-linear filter invert brightness-0 contrast-200 group-hover:filter group-hover:invert group-hover:brightness-0 group-hover:contrast-200"
@@ -302,6 +323,7 @@
       </button>
     </div>
   </nav>
+
   <!-- Sidebar (mobile) -->
   <div id="mobileSidebar"
     class="fixed top-0 right-0 h-full w-80 bg-white text-black shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50 lg:hidden overflow-y-auto">
@@ -318,14 +340,14 @@
         <!-- Services Dropdown -->
         <div>
           <button id="servicesToggle"
-            class="w-full flex justify-between items-center hover:text-logo-blue-0 border-b-[0.5px] border-gray-300 pb-2">
+            class="w-full flex justify-between items-center hover:text-logo-blue-0 border-b-[0.5px] border-gray-300">
             Services <img class="h-4 invert transition-transform duration-300" src="/src/assets/down-arrow.png"
               id="servicesArrow" alt="">
           </button>
 
           <div id="servicesMenu" class=" my-2 hidden text-sm space-y-2 text-gray-700">
 
-            <div class=" flex justify-center items-start gap-4 mt-4">
+            <div class=" flex justify-center items-start gap-4">
               <div class="border-[0.5px] rounded-full border-logo-blue-0 mt-2"><img class=" h-6"
                   src="/src/assets/arrow-blue.png" alt=""></div>
 
@@ -348,14 +370,14 @@
                   src="/src/assets/arrow-blue.png" alt=""></div>
               <div class="space-y-2">
                 <h1 class="text-xl font-bold">AI Development</h1>
-                <h1 class="text-2xl font-bold">AI Development</h1>
                 <a href="agent_development 2.html" class="block hover:text-logo-blue-0 text-gray-700">AI Agent
                   Development</a>
                 <a href="gen ai app development.html" class="block hover:text-logo-blue-0 text-gray-700">Gen AI App
                   Development</a>
                 <a href="Ai chatbot development.html" class="block hover:text-logo-blue-0 text-gray-700">AI Chatbot
                   Development</a>
-                <a href="ai development services.html" class="block hover:text-logo-blue-0 text-gray-700">AI Development
+                <a href="ai development services.html" class="block hover:text-logo-blue-0 text-gray-700">AI
+                  Development
                   Services</a>
                 <a href="Ai proof of concept.html" class="block hover:text-logo-blue-0 text-gray-700">AI Proof of
                   Concept</a>
@@ -382,9 +404,7 @@
                 <h1 class="text-xl font-bold">Company</h1>
                 <a href="services.html" class="block hover:text-logo-blue-0 text-gray-700">Services</a>
                 <a href="work_page.html" class="block hover:text-logo-blue-0 text-gray-700">Work</a>
-                <a href="about_us.html" class="block hover:text-logo-blue-0 text-gray-700">About Us</a>
-                <a href="careers.html" class="block hover:text-logo-blue-0 text-gray-700">Careers</a>
-                <a href="conatct.html" class="block hover:text-logo-blue-0 text-gray-700">Contact Us</a>
+                <a href="Contact Us.html" class="block hover:text-logo-blue-0 text-gray-700">Contact Us</a>
               </div>
             </div>
 
@@ -429,87 +449,97 @@
   <div id="sidebarOverlay"
     class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden transition-opacity duration-300 lg:hidden">
   </div>
-<!-- main sec -->
-<section class="timeline-section flex flex-row items-center justify-center min-h-[500px] bg-section-bg">
-  <!-- ✅ Timeline Section (Left Side) -->
-  <div class="flex justify-center items-center h-full" style="margin-top: 300px;">
-  <div class="w-full max-w-3xl px-6" style="margin-top: 180px; margin-left: 30px;">
-      <h1 class="md:text-7xl font-bold text-white mb-4 text-left" style="font-size: 60px;">
-        Where do we go<br>from <span class="text-logo-blue-0">here?</span>
-      </h1>
-      <p class="font-medium text-left" style="color: #C9C9C9; font-size: 20px; margin-top: 10px; margin-bottom: 40px;">
-        You will hear from our team within the next 24 hours.
-      </p>
+  <!-- main sec -->
+  <section class="timeline-section flex flex-row items-center justify-center min-h-[500px] bg-section-bg">
+    <!-- ✅ Timeline Section (Left Side) -->
+    <div class="flex justify-center items-center h-full" style="margin-top: 300px;">
+      <div class="w-full max-w-3xl px-6" style="margin-top: 180px; margin-left: 30px;">
+        <h1 class="md:text-7xl font-bold text-white mb-4 text-left" style="font-size: 60px;">
+          Where do we go<br>from <span class="text-logo-blue-0">here?</span>
+        </h1>
+        <p class="font-medium text-left"
+          style="color: #C9C9C9; font-size: 20px; margin-top: 10px; margin-bottom: 40px;">
+          You will hear from our team within the next 24 hours.
+        </p>
 
-      <!-- Line + Items -->
-      <div class="relative timeline-line mx-auto" id="timelineSection">
-        
-        <!-- Item 1 -->
-        <div class="relative timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <h3 class="font-medium mb-2 text-white" style="font-size: 21px;">1. Join us for a discovery call</h3>
-            <p class="" style=" color: #C9C9C9; font-size: 18px;">Our experts will engage with you to understand your business requirements, technical specifications, and project objectives.</p>
+        <!-- Line + Items -->
+        <div class="relative timeline-line mx-auto" id="timelineSection">
+
+          <!-- Item 1 -->
+          <div class="relative timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3 class="font-medium mb-2 text-white" style="font-size: 21px;">1. Join us for a discovery call</h3>
+              <p class="" style=" color: #C9C9C9; font-size: 18px;">Our experts will engage with you to understand your
+                business requirements, technical specifications, and project objectives.</p>
+            </div>
           </div>
-        </div>
 
-        <!-- Item 2 -->
-        <div class="relative timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <h3 class="font-medium mb-2 text-white" style="font-size: 21px;">2. We map the project plan</h3>
-            <p class="" style=" color: #C9C9C9; font-size: 18px;">Through iterative discovery sessions, we will define your project scope, align solutions with your vision, and propose a roadmap with a phased timeline.</p>
+          <!-- Item 2 -->
+          <div class="relative timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3 class="font-medium mb-2 text-white" style="font-size: 21px;">2. We map the project plan</h3>
+              <p class="" style=" color: #C9C9C9; font-size: 18px;">Through iterative discovery sessions, we will define
+                your project scope, align solutions with your vision, and propose a roadmap with a phased timeline.</p>
+            </div>
           </div>
-        </div>
 
-        <!-- Item 3 -->
-        <div class="relative timeline-item" style="margin-bottom: 300px;">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <h3 class="font-medium mb-2 text-white" style="font-size: 21px;">3. Onboard the team</h3>
-            <p class="" style=" color: #C9C9C9; font-size: 18px;">Once you finalize the team, they will be ready to integrate with your team and collaborate on your project.</p>
+          <!-- Item 3 -->
+          <div class="relative timeline-item" style="margin-bottom: 300px;">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3 class="font-medium mb-2 text-white" style="font-size: 21px;">3. Onboard the team</h3>
+              <p class="" style=" color: #C9C9C9; font-size: 18px;">Once you finalize the team, they will be ready to
+                integrate with your team and collaborate on your project.</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- ✅ Right Side (Form) [unchanged] -->
-  <div class="z-10" style="margin-right: 73px; width: 670px;">
-    <div class="bg-white text-gray-900 shadow-lg p-10 w-full" id="formSection" style="border-radius:24px; min-height:1000px;">
-      <p class="mb-4 text-3xl font-medium">Feel free to reach out to discuss your idea, get estimates for your project, or seek expert advice.</p>
-      <p class="mb-4" style="color: #4F4F4F;">To apply for a job, please visit the <a href="careers.html" class="font-semibold text-teal-400" style="text-decoration: underline;">career page</a>.</p>
-      <form class="space-y-4">
-        <h3 class="font-semibold mb-2">1. Tell us about your company.</h3>
-        <div class="flex flex-row md:flex-row gap-4" style="margin-bottom: 14px;">
-          <input type="text" placeholder="Name*" class="flex-1 p-2 border rounded" style="min-width:300px;" required>
-          <input type="email" placeholder="Email*" class="flex-1 p-2 border rounded" style="min-width:300px;" required>
-        </div>
-        <div class="flex flex-col md:flex-col gap-4">
-          <input type="text" placeholder="Phone number*" class="flex-1 p-2 border rounded" required>
-          <input type="text" placeholder="Company name or website*" class="flex-1 p-2 border rounded" required>
-        </div>
-        <h3 class="font-semibold mb-2 mt-4">2. Tell us more about your project.</h3>
-        <textarea placeholder="Describe your project briefly*" class="w-full p-2 border rounded mb-4" rows="2" required></textarea>
-        <select class="w-full p-2 border rounded text-[#4F4F4F] " required>
-          <option value="" disabled selected style="color: #4F4F4F;">Select your budget</option>
-          <option value="Still Evaluating">Still Evaluating</option>
-          <option value="Less than $20,000">Less than $20,000</option>
-          <option value="$20,000 - $50,000">$20,000 - $50,000</option>
-          <option value="$50,000 - $100,000">$50,000 - $100,000</option>
-          <option value="More than $100,000">More than $100,000</option>
-        </select>
-        <h3 class="font-semibold mb-2 mt-4">3. Where did you hear about us?</h3>
-        <input type="text" placeholder="How did you hear about us?" class="w-full p-2 mb-2 border rounded ">
-        <label class="flex items-center mb-2">
-          <input type="checkbox" class="mr-2"> This project requires an NDA
-        </label>
-        <button class="bg-section-bg text-white font-bold px-8 py-3 rounded-md mt-4" style="background-color: #005847; color: #fff; width: 110px; height: 45px;">Submit</button>
-      </form>
+    <!-- ✅ Right Side (Form) [unchanged] -->
+    <div class="z-10" style="margin-right: 73px; width: 670px;">
+      <div class="bg-white text-gray-900 shadow-lg p-10 w-full" id="formSection"
+        style="border-radius:24px; min-height:1000px;">
+        <p class="mb-4 text-3xl font-medium">Feel free to reach out to discuss your idea, get estimates for your
+          project, or seek expert advice.</p>
+        <p class="mb-4" style="color: #4F4F4F;">To apply for a job, please visit the <a href="careers.html"
+            class="font-semibold text-teal-400" style="text-decoration: underline;">career page</a>.</p>
+        <form class="space-y-4">
+          <h3 class="font-semibold mb-2">1. Tell us about your company.</h3>
+          <div class="flex flex-row md:flex-row gap-4" style="margin-bottom: 14px;">
+            <input type="text" placeholder="Name*" class="flex-1 p-2 border rounded" style="min-width:300px;" required>
+            <input type="email" placeholder="Email*" class="flex-1 p-2 border rounded" style="min-width:300px;"
+              required>
+          </div>
+          <div class="flex flex-col md:flex-col gap-4">
+            <input type="text" placeholder="Phone number*" class="flex-1 p-2 border rounded" required>
+            <input type="text" placeholder="Company name or website*" class="flex-1 p-2 border rounded" required>
+          </div>
+          <h3 class="font-semibold mb-2 mt-4">2. Tell us more about your project.</h3>
+          <textarea placeholder="Describe your project briefly*" class="w-full p-2 border rounded mb-4" rows="2"
+            required></textarea>
+          <select class="w-full p-2 border rounded text-[#4F4F4F] " required>
+            <option value="" disabled selected style="color: #4F4F4F;">Select your budget</option>
+            <option value="Still Evaluating">Still Evaluating</option>
+            <option value="Less than $20,000">Less than $20,000</option>
+            <option value="$20,000 - $50,000">$20,000 - $50,000</option>
+            <option value="$50,000 - $100,000">$50,000 - $100,000</option>
+            <option value="More than $100,000">More than $100,000</option>
+          </select>
+          <h3 class="font-semibold mb-2 mt-4">3. Where did you hear about us?</h3>
+          <input type="text" placeholder="How did you hear about us?" class="w-full p-2 mb-2 border rounded ">
+          <label class="flex items-center mb-2">
+            <input type="checkbox" class="mr-2"> This project requires an NDA
+          </label>
+          <button class="bg-section-bg text-white font-bold px-8 py-3 rounded-md mt-4"
+            style="background-color: #005847; color: #fff; width: 110px; height: 45px;">Submit</button>
+        </form>
+      </div>
     </div>
-  </div>
-</section>
- <!-- enaggement model section -->
+  </section>
+  <!-- enaggement model section -->
   <section class="engage-sec w-full px-20 pt-20 font-sans">
     <div class="max-w-none mx-auto">
       <div class="flex flex-col gap-4">
@@ -520,18 +550,15 @@
             <div class="flex justify-between items-center">
               <h3 class="font-medium text-black" style="font-size:25px;">Explore our services</h3>
             </div>
-            <p class="font-sans" style="font-size:21px; color: #4F4F4F; font-weight:100; padding-top: 20px;">Intrigued to know about our services and how you can benefit from them? Head on to our services page to learn more.</p>
-<div class="w-fit">
-  <button
-    class="group inline-flex items-center px-4 py-2 border bg-dark-blue-0 rounded-md text-white hover:bg-section-btn-hover transition text-[14px] w-fit"
-    style="margin-top: 40px;">
-    View All Services
-    <img src="./src/assets/tild arrow.png" alt="Arrow" class="ml-2 w-8 h-8 inline-block group-hover:hidden" />
-    <svg class="ml-2 w-8 h-8 hidden group-hover:inline-block" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7" />
-    </svg>
-  </button>
-</div>
+            <p class="font-sans" style="font-size:21px; color: #4F4F4F; font-weight:100; padding-top: 20px;">Intrigued
+              to know about our services and how you can benefit from them? Head on to our services page to learn more.
+            </p>
+            <div class="w-fit">
+             <button class="flex group justify-center items-center border-[0.5px] bg-dark-blue-0 text-white gap-2 rounded-lg px-4 py-2 hover:bg-logo-blue-0 hover:text-white transition-all 3s ease-linear" style="margin-top: 40px;">
+              View All Services
+              <img class="group-hover:rotate-45 transition-all 3s ease-linear h-6 filter invert brightness-0 contrast-200 group-hover:invert group-hover:brightness-0 group-hover:contrast-200" src="/src/assets/arrow-blue.png" alt="">
+            </button>
+            </div>
           </div>
           <!-- Card 2 -->
           <div
@@ -539,21 +566,18 @@
             <div class="flex justify-between items-center">
               <h3 class="font-medium text-black" style="font-size:25px;">Careers at Code District</h3>
             </div>
-            <p class="font-sans" style="font-size:21px; color: #4F4F4F; font-weight:100; padding-top: 20px;">Be part of 150+ disruptors working to create software and AI experiences with a whole new vibe for the leading global brands.</p>
-             <div class="w-fit">
-  <button
-    class="group inline-flex items-center px-4 py-2 border bg-dark-blue-0 rounded-md text-white hover:bg-section-btn-hover transition text-[14px] w-fit"
-    style="margin-top: 40px;">
-    View Current Openings
-    <img src="./src/assets/tild arrow.png" alt="Arrow" class="ml-2 w-8 h-8 inline-block group-hover:hidden" />
-    <svg class="ml-2 w-8 h-8 hidden group-hover:inline-block" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7" />
-    </svg>
-  </button>
-</div>
+            <p class="font-sans" style="font-size:21px; color: #4F4F4F; font-weight:100; padding-top: 20px;">Be part of
+              150+ disruptors working to create software and AI experiences with a whole new vibe for the leading global
+              brands.</p>
+            <div class="w-fit">
+             <button class="flex group justify-center items-center border-[0.5px] bg-dark-blue-0 text-white gap-2 rounded-lg px-4 py-2 hover:bg-logo-blue-0 hover:text-white transition-all 3s ease-linear" style="margin-top: 40px;">
+              View Current Openings
+              <img class="group-hover:rotate-45 transition-all 3s ease-linear h-6 filter invert brightness-0 contrast-200 group-hover:invert group-hover:brightness-0 group-hover:contrast-200" src="/src/assets/arrow-blue.png" alt="">
+            </button>
+            </div>
           </div>
+        </div>
       </div>
-    </div>
     </div>
   </section>
   <!-- awards section  -->
@@ -1081,7 +1105,7 @@
             </div>
           </div>
           <!-- Card 2 -->
-           <div class="swiper-slide relative overflow-hidden rounded-xl min-w-[260px] !h-[440px] cursor-pointer">
+          <div class="swiper-slide relative overflow-hidden rounded-xl min-w-[260px] !h-[440px] cursor-pointer">
             <img src="/src/assets/canada.jpg" alt="UAE" class="absolute inset-0 w-full h-full object-cover" />
             <div class="absolute inset-0 bg-black/40"></div> <!-- Overlay for prominence -->
             <div class="absolute inset-0 flex items-end justify-center pb-5 z-10">
@@ -1091,7 +1115,7 @@
           </div>
 
           <!-- Card 3 -->
-           <div class="swiper-slide relative overflow-hidden rounded-xl min-w-[260px] !h-[440px] cursor-pointer">
+          <div class="swiper-slide relative overflow-hidden rounded-xl min-w-[260px] !h-[440px] cursor-pointer">
             <img src="/src/assets/netherlands.jpg" alt="UAE" class="absolute inset-0 w-full h-full object-cover" />
             <div class="absolute inset-0 bg-black/40"></div> <!-- Overlay for prominence -->
             <div class="absolute inset-0 flex items-end justify-center pb-5 z-10">
@@ -1101,7 +1125,7 @@
           </div>
 
           <!-- Card 4 -->
-           <div class="swiper-slide relative overflow-hidden rounded-xl min-w-[260px] !h-[440px] cursor-pointer">
+          <div class="swiper-slide relative overflow-hidden rounded-xl min-w-[260px] !h-[440px] cursor-pointer">
             <img src="/src/assets/pakistan.jpg" alt="UAE" class="absolute inset-0 w-full h-full object-cover" />
             <div class="absolute inset-0 bg-black/40"></div> <!-- Overlay for prominence -->
             <div class="absolute inset-0 flex items-end justify-center pb-5 z-10">
@@ -1110,7 +1134,7 @@
             </div>
           </div>
           <!-- Card 5 -->
-           <div class="swiper-slide relative overflow-hidden rounded-xl min-w-[260px] !h-[440px] cursor-pointer">
+          <div class="swiper-slide relative overflow-hidden rounded-xl min-w-[260px] !h-[440px] cursor-pointer">
             <img src="/src/assets/uae.jpg" alt="UAE" class="absolute inset-0 w-full h-full object-cover" />
             <div class="absolute inset-0 bg-black/40"></div> <!-- Overlay for prominence -->
             <div class="absolute inset-0 flex items-end justify-center pb-5 z-10">
@@ -1119,7 +1143,7 @@
             </div>
           </div>
           <!-- Card 6 -->
-           <div class="swiper-slide relative overflow-hidden rounded-xl min-w-[260px] !h-[440px] cursor-pointer">
+          <div class="swiper-slide relative overflow-hidden rounded-xl min-w-[260px] !h-[440px] cursor-pointer">
             <img src="/src/assets/uk.jpg" alt="UAE" class="absolute inset-0 w-full h-full object-cover" />
             <div class="absolute inset-0 bg-black/40"></div> <!-- Overlay for prominence -->
             <div class="absolute inset-0 flex items-end justify-center pb-5 z-10">
@@ -1128,7 +1152,7 @@
             </div>
           </div>
           <!-- Card 7 -->
-           <div class="swiper-slide relative overflow-hidden rounded-xl min-w-[260px] !h-[440px] cursor-pointer">
+          <div class="swiper-slide relative overflow-hidden rounded-xl min-w-[260px] !h-[440px] cursor-pointer">
             <img src="/src/assets/usa.jpg" alt="UAE" class="absolute inset-0 w-full h-full object-cover" />
             <div class="absolute inset-0 bg-black/40"></div> <!-- Overlay for prominence -->
             <div class="absolute inset-0 flex items-end justify-center pb-5 z-10">
@@ -1158,16 +1182,10 @@
             step and see how we can help you.
           </div>
         </h2>
-        <button
-          class="group flex items-center px-6  py-2 border border-section-btn-border rounded-md text-section-btn-border hover:bg-section-btn-hover transition text-[14px] min-w-[160px]"
-          style="margin-top: 40px; ">
-          Book a Discovery Call
-          <img src="./src/assets/tild arrow.png" alt="Arrow" class="ml-2 w-8 h-8 inline-block group-hover:hidden" />
-          <svg class="ml-2 w-8 h-8 hidden group-hover:inline-block" fill="none" stroke="currentColor" stroke-width="2"
-            viewBox="0 0 24 24">
-            <path d="M5 12h14M12 5l7 7-7 7" />
-          </svg>
-        </button>
+        <button class="flex group justify-center items-center border-[0.5px] border-logo-blue-0 text-logo-blue-0 gap-2 rounded-lg px-4 py-2 hover:bg-logo-blue-0 hover:text-white transition-all 3s ease-linear" style="margin-top: 40px;">All
+              Book a Discovery Call
+              <img class="group-hover:rotate-45 transition-all 3s ease-linear h-6 filter group-hover:invert group-hover:brightness-0 group-hover:contrast-200" src="/src/assets/arrow-blue.png" alt="">
+            </button>
       </div>
     </div>
   </section>
@@ -1253,12 +1271,9 @@
             <label for="nda" class="text-white text-sm">This project requires an NDA</label>
           </div>
           <div class="col-span-2 mt-4 flex items-center justify-left">
-            <button type="submit"
-              class="border border-light-blue-0 text-white px-8 py-2 rounded-full flex items-center gap-2 hover:bg-section-btn-hover transition">
+            <button class="flex group justify-center items-center border-[0.5px] border-logo-blue-0 text-logo-blue-0 gap-2 rounded-full px-4 py-2 hover:bg-logo-blue-0 hover:text-white transition-all 3s ease-linear">All
               Send Message
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
+              <img class="group-hover:rotate-45 transition-all 3s ease-linear h-6 filter group-hover:invert group-hover:brightness-0 group-hover:contrast-200" src="/src/assets/arrow-blue.png" alt="">
             </button>
           </div>
         </form>
@@ -1418,11 +1433,6 @@
         .then(data => {
           document.getElementById('hero').innerHTML = data;
         });
-      fetch('navbar.html')
-        .then(res => res.text())
-        .then(data => {
-          document.getElementById('navbar').innerHTML = data;
-        });
       fetch('work.html')
         .then(res => res.text())
         .then(data => {
@@ -1488,34 +1498,34 @@
       window.addEventListener('DOMContentLoaded', movePoweredBy);
       window.addEventListener('resize', movePoweredBy);
     </script>
-     <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      once: false,
-      duration: 700,
-      offset: 120,
-    });
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: false,
+        duration: 700,
+        offset: 120,
+      });
 
-document.addEventListener('DOMContentLoaded', function () {
-  const items = document.querySelectorAll('.timeline-item');
+      document.addEventListener('DOMContentLoaded', function () {
+        const items = document.querySelectorAll('.timeline-item');
 
-  function checkItems() {
-    const triggerBottom = window.innerHeight * 0.8;
-    items.forEach(item => {
-      const boxTop = item.getBoundingClientRect().top;
-      if (boxTop < triggerBottom && boxTop > 0) {
-        item.classList.add('active');
-      } else {
-        item.classList.remove('active'); // reset so it replays each scroll
-      }
-    });
-  }
+        function checkItems() {
+          const triggerBottom = window.innerHeight * 0.8;
+          items.forEach(item => {
+            const boxTop = item.getBoundingClientRect().top;
+            if (boxTop < triggerBottom && boxTop > 0) {
+              item.classList.add('active');
+            } else {
+              item.classList.remove('active'); // reset so it replays each scroll
+            }
+          });
+        }
 
-  window.addEventListener('scroll', checkItems);
-  checkItems(); // run on load
-});
-  </script>
+        window.addEventListener('scroll', checkItems);
+        checkItems(); // run on load
+      });
+    </script>
 </body>
 
 </html>
