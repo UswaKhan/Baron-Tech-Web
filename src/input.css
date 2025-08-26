@@ -258,4 +258,11 @@
   }
 }
 
+@media (max-width: 1260px){
+  .services-dropdown{
+    padding-left: 0 !important;
+  }
+  
+}
+
 
