@@ -652,6 +652,34 @@ video {
   top: 0.5rem;
 }
 
+.top-full {
+  top: 100%;
+}
+
+.top-\[-10\] {
+  top: -10;
+}
+
+.top-10 {
+  top: 2.5rem;
+}
+
+.top-6 {
+  top: 1.5rem;
+}
+
+.top-4 {
+  top: 1rem;
+}
+
+.top-7 {
+  top: 1.75rem;
+}
+
+.top-8 {
+  top: 2rem;
+}
+
 .z-0 {
   z-index: 0;
 }
@@ -674,6 +702,10 @@ video {
 
 .z-50 {
   z-index: 50;
+}
+
+.-z-10 {
+  z-index: -10;
 }
 
 .order-1 {
@@ -764,10 +796,6 @@ video {
   margin-left: 1.5rem;
 }
 
-.ml-\[-180px\] {
-  margin-left: -180px;
-}
-
 .mr-2 {
   margin-right: 0.5rem;
 }
@@ -788,8 +816,8 @@ video {
   margin-top: 1rem;
 }
 
-.mt-7 {
-  margin-top: 1.75rem;
+.ml-\[-180px\] {
+  margin-left: -180px;
 }
 
 .line-clamp-3 {
@@ -801,10 +829,6 @@ video {
 
 .block {
   display: block;
-}
-
-.inline-block {
-  display: inline-block;
 }
 
 .flex {
@@ -1009,10 +1033,6 @@ video {
 
 .w-screen {
   width: 100vw;
-}
-
-.min-w-\[160px\] {
-  min-width: 160px;
 }
 
 .min-w-\[260px\] {
@@ -1309,19 +1329,9 @@ video {
   border-color: rgb(75 85 99 / var(--tw-border-opacity, 1));
 }
 
-.border-light-blue-0 {
-  --tw-border-opacity: 1;
-  border-color: rgb(228 247 255 / var(--tw-border-opacity, 1));
-}
-
 .border-logo-blue-0 {
   --tw-border-opacity: 1;
   border-color: rgb(25 180 241 / var(--tw-border-opacity, 1));
-}
-
-.border-section-btn-border {
-  --tw-border-opacity: 1;
-  border-color: rgb(210 247 255 / var(--tw-border-opacity, 1));
 }
 
 .border-section-line {
@@ -1522,6 +1532,16 @@ video {
   padding-bottom: 70px;
 }
 
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
 .pb-2 {
   padding-bottom: 0.5rem;
 }
@@ -1700,11 +1720,6 @@ video {
 .text-section-accent {
   --tw-text-opacity: 1;
   color: rgb(76 225 255 / var(--tw-text-opacity, 1));
-}
-
-.text-section-btn-border {
-  --tw-text-opacity: 1;
-  color: rgb(210 247 255 / var(--tw-text-opacity, 1));
 }
 
 .text-section-description {
@@ -2107,6 +2122,16 @@ video {
   border-color: #d2f7ff !important;
 }
 
+@media (max-width: 768px) {
+  .work-with-baron{
+    padding: 5rem 2rem !important;
+  }
+
+  .industry-panel{
+    margin: 0 !important;
+  }
+}
+
 .hover\:border-logo-blue-0:hover {
   --tw-border-opacity: 1;
   border-color: rgb(25 180 241 / var(--tw-border-opacity, 1));
@@ -2180,10 +2205,6 @@ video {
 
 .group:hover .group-hover\:block {
   display: block;
-}
-
-.group:hover .group-hover\:inline-block {
-  display: inline-block;
 }
 
 .group:hover .group-hover\:flex {

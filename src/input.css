@@ -248,4 +248,14 @@
   border-color: #d2f7ff !important;
 }
 
+@media (max-width: 768px) {
+  .work-with-baron{
+    padding: 5rem 2rem !important;
+  }
+
+  .industry-panel{
+    margin: 0 !important;
+  }
+}
+
 

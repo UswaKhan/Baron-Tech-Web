@@ -530,9 +530,9 @@
 
     <!-- Navbar -->
     <nav id="navbar"
-      class="navbar fixed top-0 left-0 w-full z-30 px-20 py-4 flex items-center justify-between bg-transparent text-white group/nav hover:bg-white transition-all duration-300 ease-linear">
-      <div class="flex items-center gap-10">
-        <a href="index.html" class="logo">
+      class="navbar fixed top-0 left-0 w-full z-50 px-20 py-4 flex items-center justify-between bg-transparent text-white group/nav hover:bg-white transition-all duration-300 ease-linear">
+      <div class="flex items-center gap-10 z-40">
+        <a href="index.html" class="logo z-40">
           <img class="h-14" src="/src/assets/baron-logo.webp" alt="">
         </a>
         <ul class="hidden md:flex space-x-6 text-lg gap-4 font-semibold group-hover/nav:text-black relative">
@@ -545,7 +545,7 @@
             </a>
 
             <div
-              class="absolute hidden group-hover:flex justify-around pl-20 pr-60 bg-white text-black mt-4 py-6 ml-[-180px] shadow-md z-30 w-[1503px]">
+              class="absolute hidden group-hover:flex justify-around pl-20 pr-60 bg-white text-black py-12 ml-[-180px] shadow-md w-[1503px] ">
               <!-- Software Development -->
               <div class=" flex justify-center items-start gap-4">
                 <div class="border-[0.5px] rounded-full border-logo-blue-0 mt-2"><img class=" h-6"
@@ -592,7 +592,7 @@
                 <div class="border-[0.5px] rounded-full border-logo-blue-0 mt-2"><img class=" h-6"
                     src="/src/assets/arrow-blue.png" alt=""></div>
                 <div class="space-y-2">
-                  <h1 class="text-xl font-bold">Company</h1>
+                  <h1 class="text-2xl font-bold">Company</h1>
                   <a href="services.html" class="block hover:text-logo-blue-0 text-gray-700">Services</a>
                   <a href="work_page.html" class="block hover:text-logo-blue-0 text-gray-700">Work</a>
                   <a href="about_us.html" class="block hover:text-logo-blue-0 text-gray-700">About Us</a>
@@ -609,7 +609,7 @@
               <img class="h-3 mt-1 group-hover/nav:brightness-0" src="/src/assets/down-arrow.png" alt="">
             </a>
             <ul
-              class="absolute hidden group-hover:block bg-white text-black mt-7 p-4 w-60 space-y-2 z-30 font-semibold border">
+              class="absolute hidden group-hover:block bg-white text-black px-4 py-6 w-60 space-y-2 font-semibold">
               <li><a href="#" class="block hover:text-logo-blue-0">About</a></li>
               <li><a href="#" class="block hover:text-logo-blue-0">Portfolio</a></li>
               <li><a href="#" class="block hover:text-logo-blue-0">Team</a></li>
@@ -626,7 +626,7 @@
         <a href="#" class="whatsapp"><img class="h-6" src="/src/assets/whatsapp-svgrepo-com.png" alt=""></a>
         <a href="#" class="num group-hover/nav:text-black text-lg">+1 (409) 916-8275</a>
         <button id="getQuoteBtn"
-          class="get-quote group flex items-center justify-center gap-2 text-xl border-[0.5px] rounded-md px-8 py-2 hover:text-white group-hover/nav:bg-logo-blue-0 group-hover/nav:border-logo-blue-0">
+          class="get-quote group z-40 flex items-center justify-center gap-2 text-xl border-[0.5px] rounded-md px-8 py-2 hover:text-white group-hover/nav:bg-logo-blue-0 group-hover/nav:border-logo-blue-0">
           Get Quote
           <img id="arrow"
             class="h-7 group-hover:rotate-45 transition duration-300 ease-linear filter invert brightness-0 contrast-200 group-hover:filter group-hover:invert group-hover:brightness-0 group-hover:contrast-200"
@@ -659,14 +659,14 @@
           <!-- Services Dropdown -->
           <div>
             <button id="servicesToggle"
-              class="w-full flex justify-between items-center hover:text-logo-blue-0 border-b-[0.5px] border-gray-300 pb-2">
+              class="w-full flex justify-between items-center hover:text-logo-blue-0 border-b-[0.5px] border-gray-300">
               Services <img class="h-4 invert transition-transform duration-300" src="/src/assets/down-arrow.png"
                 id="servicesArrow" alt="">
             </button>
 
             <div id="servicesMenu" class=" my-2 hidden text-sm space-y-2 text-gray-700">
 
-              <div class=" flex justify-center items-start gap-4 mt-4">
+              <div class=" flex justify-center items-start gap-4">
                 <div class="border-[0.5px] rounded-full border-logo-blue-0 mt-2"><img class=" h-6"
                     src="/src/assets/arrow-blue.png" alt=""></div>
 
@@ -689,7 +689,6 @@
                     src="/src/assets/arrow-blue.png" alt=""></div>
                 <div class="space-y-2">
                   <h1 class="text-xl font-bold">AI Development</h1>
-                  <h1 class="text-2xl font-bold">AI Development</h1>
                   <a href="agent_development 2.html" class="block hover:text-logo-blue-0 text-gray-700">AI Agent
                     Development</a>
                   <a href="gen ai app development.html" class="block hover:text-logo-blue-0 text-gray-700">Gen AI App
