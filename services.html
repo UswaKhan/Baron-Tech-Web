@@ -711,9 +711,124 @@
         </div>
     </section>
 
-    <div id="years"></div>
+    <!-- Responsive Section (100% width, container centered, Tailwind CSS) -->
+  <section class="w-full bg-section-bg py-20 font-sans">
+    <div class="container mx-auto px-6 flex flex-col lg:flex-row justify-between items-center w-full">
+      <!-- Left Side: Heading and Button -->
+      <div class="w-full lg:w-1/2 mb-12 lg:mb-0">
+        <h2 class="font-semibold text-section-heading mb-4 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[64px]">
+          It's been a great few <span class="hidden xs:inline"><br></span>years
+        </h2>
+        <p class="text-section-description mb-8 text-xs sm:text-sm md:text-base lg:text-lg xl:text-[18px]">
+          Because we believe in <span class="text-section-accent">#GrowingTogether</span> and <span
+            class="text-section-accent">#KeepRaisingTheBar</span>
+        </p>
+        <button
+          class="w-[200px] group flex items-center text-white justify-center gap-2 border-[0.5px] rounded-md py-2 hover:bg-logo-blue-0 hover:border-logo-blue-0">
+          <div>Get in Touch</div>
+          <img class="h-7 group-hover:rotate-45 transition duration-300 ease-linear"
+            src="/src/assets/arrow-up-right.png" alt="">
+        </button>
+      </div>
+      <!-- Right Side: Stats -->
+      <div class="w-full lg:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="border-t-2 border-section-line group p-2 flex flex-col relative">
+          <div class="flex justify-between items-start">
+            <span class="font-bold text-white text-[60px]">25+</span>
+            <img src="./src/assets/team.webp" alt="Team" class="w-10 h-10 object-contain mt-2" />
+          </div>
+          <p class="text-section-description mt-2">Strong team of engineers</p>
+        </div>
+        <div class="border-t-2 border-section-line group p-2 flex flex-col relative">
+          <div class="flex justify-between items-start">
+            <span class="font-bold text-white text-[60px]">500+</span>
+            <img src="./src/assets/web-page-1.webp" alt="Web Page" class="w-10 h-10 object-contain mt-2" />
+          </div>
+          <p class="text-section-description mt-2">Web Products Delivered</p>
+        </div>
+        <div class="border-t-2 border-section-line group p-2 flex flex-col relative">
+          <div class="flex justify-between items-start">
+            <span class="font-bold text-white text-[60px]">50+</span>
+            <img src="./src/assets/goal.webp" alt="Goal" class="w-10 h-10 object-contain mt-2" />
+          </div>
+          <p class="text-section-description mt-2"> Rescue Missions</p>
+        </div>
+        <div class="border-t-2 border-section-line group p-2 flex flex-col relative">
+          <div class="flex justify-between items-start">
+            <span class="font-bold text-white text-[55px]">Many</span>
+            <img src="./src/assets/guarantee-certificate.webp" alt="Guarantee Certificate"
+              class="w-10 h-10 object-contain mt-2" />
+          </div>
+          <p class="text-section-description mt-2">Award Winning Products</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <div id="work"></div>
+   <!-- why work with baron tech -->
+  <section class="work-with-baron w-full px-20 py-20 font-sans">
+    <div>
+      <h1 class="text-black font-semibold text-3xl mb-10">Why Work With Baron Tech (Pvt) Limited?</h1>
+    </div>
+    <div class="max-w-none mx-auto">
+      <div class="whybaron-grid flex flex-col gap-4">
+        <div class="top-cards flex gap-4">
+          <!-- Card 1 -->
+          <div class="whybaron-card whybaron-card-1 border rounded-xl p-6 shadow-sm font-sans"
+            style="background: rgb(249 249 249 / 1);">
+            <img src="\src\assets\coding.webp" alt="Icon" class="h-12 mb-4">
+            <h3 class="font-bold mb-2" style="font-size: 21px;">Worry-free software development</h3>
+            <p class="text-gray-700" style="font-size: 14px;">Baron Tech (Pvt) Limited utilizes years of experience in
+              the development of projects of all sizes in various domains from start to finish of all the projects we
+              undertake. Our demonstrated ability to honestly produce products that satisfy our clients starts with our
+              project management approach and well-designed processes.</p>
+          </div>
+          <!-- Card 2 -->
+          <div class="whybaron-card whybaron-card-2 border rounded-xl p-6 shadow-sm font-sans"
+            style="background: rgb(249 249 249 / 1);">
+            <img src="\src\assets\good-idea.webp" alt="Icon" class="h-12 mb-4">
+            <h3 class="font-bold mb-2" style="font-size: 21px;">Software Development Life Cycle</h3>
+            <p class="text-gray-700" style="font-size: 14px;">It is a process that we design, develop and test
+              state-of-the-art software. Baron Tech (Pvt) Limited uses this process to produce high-quality software
+              that meets customer expectations, achieving completion between time and cost estimates. It contains a
+              detailed program.</p>
+          </div>
+          <!-- Card 3 -->
+          <div class="whybaron-card whybaron-card-3 border rounded-xl p-6 shadow-sm font-sans"
+            style="background: rgb(249 249 249 / 1);">
+            <img src="\src\assets\compliant.webp" alt="Icon" class="h-12 mb-4">
+            <h3 class="font-bold mb-2" style="font-size: 21px;">Life Cycle for Agile Software Development</h3>
+            <p class="text-gray-700" style="font-size: 14px;">We use the Agile SDLC approach because we believe that
+              every project needs to be managed differently and the existing methods need to be adapted to best fit the
+              needs of the project. In Agile, tasks are divided into short-term intervals to deliver specific output
+              features.</p>
+          </div>
+        </div>
+        <div class="bottom-cards flex gap-4">
+          <!-- Card 4 (first in second row, half width on xl) -->
+          <div
+            class="whybaron-card whybaron-card-4 border rounded-xl p-6 shadow-sm font-sans xl:col-span-2 xl:row-start-2 xl:col-start-1"
+            style="background: rgb(249 249 249 / 1);">
+            <img src="\src\assets\coworking.webp" alt="Icon" class="h-12 mb-4">
+            <h3 class="font-bold mb-2" style="font-size: 21px;">First Meeting</h3>
+            <p class="text-gray-700" style="font-size: 14px;">We will answer any questions you have about us through
+              this meeting and listen to the details of your project and your priorities. With a fully detailed process,
+              we will be creating a short proposal for your project at a reasonable cost.</p>
+          </div>
+          <!-- Card 5 (second in second row, half width on xl) -->
+          <div
+            class="whybaron-card whybaron-card-5 border rounded-xl p-6 shadow-sm font-sans xl:col-span-2 xl:row-start-2 xl:col-start-3"
+            style="background: rgb(249 249 249 / 1);">
+            <img src="\src\assets\svgviewer-png-output.png" alt="Icon" class="h-16 mb-4">
+            <h3 class="font-bold mb-2" style="font-size: 21px;">Global security & quality standards</h3>
+            <p class="text-gray-700" style="font-size: 14px;">Keeping your data and operations secure is paramount. We
+              adhere to the highest international security and quality standards, ensuring peace of mind throughout the
+              modernization process.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
     <!-- Contact Section (Styled like screenshot) -->
     <section class="w-full min-h-[60vh] bg-section-bg py-16 px-0 flex items-center justify-center font-sans">
