@@ -32,7 +32,7 @@
 
   <section class="hero relative w-screen min-h-screen overflow-hidden bg-black">
 
-    <!-- Navbar -->
+   <!-- Navbar -->
     <nav id="navbar"
       class="navbar fixed top-0 left-0 w-full z-50 px-20 py-4 flex items-center justify-between bg-transparent text-white group/nav hover:bg-white transition-all duration-300 ease-linear">
       <div class="flex items-center gap-10 z-40">
@@ -276,25 +276,29 @@
         </button>
       </div>
     </div>
-
     <!-- Backdrop Overlay -->
     <div id="sidebarOverlay"
       class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden transition-opacity duration-300 lg:hidden">
     </div>
 
-    <div class="hero-sec min-h-screen relative flex items-center justify-center text-white px-20 pt-10">
-      <!-- Background Video -->
-      <div id="hero"></div>
+    <div class="hero-sec min-h-screen relative flex text-white px-20 pt-0">
+      <video autoplay muted loop playsinline
+        style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;">
+        <source src="/src/assets/banner-vid-1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <!-- Dark Overlay -->
+      <div class="overlay absolute inset-0 "></div>
+
 
       <!-- Content -->
       <div class="slide1 flex relative z-10">
-        <div class="slide flex flex-col justify-center gap-16 w-[60%]">
-          <h1 class="text-5xl font-semibold">AI Development Services</h1>
+        <div class="slide flex flex-col justify-center gap-16 w-[90%]">
+          <h1 class="text-5xl font-semibold">Disrupt the ordinary with Generative AI solutions</h1>
           <p class="text-xl">
-            Unlock the full potential of artificial intelligence with our cutting-edge AI development
-            services. Designed to fuel innovation, enhance efficiency, and propel your business toward
-            unprecedented success, our intelligent solutions redefine what’s possible in the digital
-            landscape.
+            Utilize Generative AI to enhance productivity, spark innovation, and achieve groundbreaking results
+            effortlessly.
           </p>
           <button
             class="w-[200px] get-quote2 group flex items-center justify-center gap-2 text-xl border-[0.5px] rounded-md px-8 py-2 hover:bg-logo-blue-0 hover:border-logo-blue-0">
@@ -766,7 +770,6 @@
 
 
   </section>
-
 
   <!-- Responsive Section (100% width, container centered, Tailwind CSS) -->
   <section class="w-full bg-section-bg py-20 font-sans">
