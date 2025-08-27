@@ -118,83 +118,337 @@
         padding: 15px !important;
       }
     }
+/* General styles for the timeline section */
+.timeline-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  min-height: 500px;
+  background-color: #1F2937; /* Matches bg-section-bg */
+  height: 1400px; /* Maintain original height */
+}
 
-    /* ✅ Timeline Styles */
-    .timeline-line {
-      position: relative;
-      margin: 0 auto;
-      padding-left: 14px;
-    }
+/* Timeline section (left side) */
+.timeline-section .timeline-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  max-width: 50%;
+  padding: 0 1.5rem;
+  margin-top: 0; /* Aligned with form section */
+}
 
-    .timeline-item {
-      position: relative;
-      padding-left: 50px;
-      /* more space between line/dot and text */
-      margin-bottom: 120px;
-      opacity: 0;
-      transform: translateY(60px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-      min-height: 250px;
-    }
+.timeline-section .timeline-inner {
+  width: 100%;
+  max-width: 48rem; /* Matches max-w-3xl */
+  margin-top: 0; /* Moved upward */
+  margin-left: 30px;
+}
 
-    .timeline-item.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
+.timeline-section h1 {
+  font-size: 60px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1rem;
+  text-align: left;
+}
 
-    .timeline-dot {
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      position: absolute;
-      left: 0;
-      top: 0;
-      background: #4a90e2;
-      border: 3px solid #fff;
-      z-index: 2;
-    }
+.timeline-section h1 span {
+  color: #4a90e2; /* Matches text-logo-blue-0 */
+}
 
-    /* ✅ Line that goes BELOW each dot */
-    .timeline-item::after {
-      content: "";
-      position: absolute;
-      left: 8px;
-      /* align with center of dot */
-      top: 18px;
-      /* start right below dot */
-      width: 2px;
-      height: calc(100% - 18px);
-      /* stop at next item */
-      background: #fff;
-      z-index: 1;
-    }
+.timeline-section p {
+  font-size: 17px !important;
+  font-weight: 500;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  text-align: left;
+}
 
-    /* Remove line for the last item */
-    .timeline-item:last-child::after {
-      display: none;
-    }
+/* Timeline styles */
+.timeline-line {
+  position: relative;
+  margin: 0 auto;
+  padding-left: 14px;
+}
 
-    /* ✅ Text Styling */
-    .timeline-content h3 {
-      font-size: 30px;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 12px;
-    }
+.timeline-item {
+  position: relative;
+  padding-left: 50px;
+  margin-bottom: 60px;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  min-height: 150px;
+}
 
-    .timeline-content p {
-      font-size: 20px;
-      /* bigger paragraph text */
-      line-height: 1.6;
-      color: #f1f1f1;
-      /* lighter white */
-      margin-left: 5px;
-      /* indent paragraph */
-    }
+.timeline-item.active {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-    .timeline-section {
-      height: 1400px;
-    }
+.timeline-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #4a90e2;
+  border: 3px solid #fff;
+  z-index: 2;
+}
+
+.timeline-item::after {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 18px;
+  width: 1px;
+  height: calc(100% + 60px);
+  background: #fff;
+  z-index: 1;
+}
+
+.timeline-item:last-child::after {
+  display: none;
+}
+
+.timeline-content h3 {
+  font-size: 21px;
+  font-weight: 700;
+  color: #ffff;
+  margin-bottom: 12px;
+}
+
+.timeline-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #C9C9C9;
+  margin-left: 5px;
+}
+
+/* Form section (right side) */
+.form-section {
+  z-index: 10;
+  width: 800px; /* Increased width for 1440px and above */
+  margin-right: 73px;
+}
+
+.form-section .form-container {
+  background-color: white;
+  color: #1F2937; /* Matches text-gray-900 */
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  padding: 2.5rem;
+  border-radius: 24px;
+  width: 100%;
+  min-height: 1000px;
+}
+
+.form-section p:first-child {
+  font-size: 1.875rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.form-section p:nth-child(2) {
+  color: #4F4F4F;
+  margin-bottom: 1rem;
+}
+
+.form-section a {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.form-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-section h3 {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.form-section .flex-row {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-bottom: 14px;
+}
+
+.form-section .flex-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-section input,
+.form-section textarea,
+.form-section select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #D1D5DB; /* Matches border */
+  border-radius: 0.375rem;
+}
+
+.form-section input[placeholder="Name*"],
+.form-section input[placeholder="Email*"] {
+  min-width: 300px;
+}
+
+.form-section textarea {
+  resize: vertical;
+}
+
+.form-section select {
+  color: #4F4F4F;
+}
+
+.form-section button {
+  background-color: #005847;
+  color: white;
+  font-weight: 700;
+  padding: 0.75rem 2rem;
+  border-radius: 0.375rem;
+  width: 110px;
+  height: 45px;
+  cursor: pointer;
+}
+
+.form-section button:hover {
+  background-color: #004735;
+}
+
+.form-section label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (min-width: 1440px) {
+  .form-section {
+    width: 800px; /* Increased width */
+  }
+  .form-section label {
+    margin-top: 0; /* Ensure label is in one line below "Where did you hear about us" */
+  }
+}
+
+@media (max-width: 1280px) and (min-width: 1231px) {
+  .timeline-content h3 {
+    font-size: 24px;
+  }
+  .timeline-content p {
+    font-size: 14px;
+  }
+  .form-section {
+    width: 800px; /* Increased width */
+  }
+  .form-section .form-container {
+    padding: 2.5rem;
+  }
+  .form-section p:first-child {
+    font-size: 1.875rem;
+  }
+  .form-section .flex-row:first-child {
+    flex-direction: row; /* Name and email in same row */
+  }
+  .form-section input[placeholder="Name*"],
+  .form-section input[placeholder="Email*"] {
+    min-width: 50%; /* Adjust to fit in row */
+  }
+}
+
+@media (max-width: 1230px) {
+  .timeline-section {
+    flex-direction: column !important;
+    height: auto;
+    padding: 2rem 0.5rem;
+  }
+  .timeline-section .timeline-container,
+  .form-section {
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 120px !important;
+    justify-content: start;
+    margin-left: 50px !important
+    
+  }
+  .timeline-section .timeline-inner {
+    margin: -50px 0 0 0; /* Moved left section more upwards */
+    padding: 0;
+  }
+  .form-section {
+    margin-top: 70px; /* Fixed top gap */
+    width: 90%;
+    max-width: 100%;
+    margin-left: 20px !important; 
+   }
+  .form-section .form-container {
+    max-width: 100%;
+    margin: 0 auto;
+    min-height: auto;
+  }
+  .form-section .flex-row:first-child {
+    flex-direction: column; /* Move email below name when out of screen */
+  }
+  .form-section input[placeholder="Name*"],
+  .form-section input[placeholder="Email*"] {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline-section .timeline-container {
+    display: none !important;
+  }
+  .timeline-section {
+    padding: 0.5rem 0.25rem;
+  }
+  .form-section {
+    padding: 0 0.25rem; /* Reduced gaps */
+    margin: 70px auto 0; /* Fixed top gap */
+    width: 90%;
+    max-width: 100%;
+    margin-top: 90px !important;
+  }
+  .form-section .form-container {
+    padding: 1.5rem;
+  }
+  .form-section .flex-row {
+    flex-direction: column;
+  }
+  .form-section input[placeholder="Name*"],
+  .form-section input[placeholder="Email*"] {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 425px) {
+  .form-section {
+    padding: 0; /* No left/right gaps */
+    margin: 50px auto 0; /* Fixed top gap */
+  }
+  .form-section .form-container {
+    padding: 1rem;
+    border-radius: 20px; /* Set border radius to 0 */
+  }
+  .form-section p:first-child {
+    font-size: 1rem; /* Reduced */
+  }
+  .space-y-4 h3 {
+    font-size: 16px; /* Reduced */
+    font-weight: 600;
+  }
+}
   </style>
 </head>
 
@@ -450,95 +704,72 @@
     class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden transition-opacity duration-300 lg:hidden">
   </div>
   <!-- main sec -->
-  <section class="timeline-section flex flex-row items-center justify-center min-h-[500px] bg-section-bg">
-    <!-- ✅ Timeline Section (Left Side) -->
-    <div class="flex justify-center items-center h-full" style="margin-top: 300px;">
-      <div class="w-full max-w-3xl px-6" style="margin-top: 180px; margin-left: 30px;">
-        <h1 class="md:text-7xl font-bold text-white mb-4 text-left" style="font-size: 60px;">
-          Where do we go<br>from <span class="text-logo-blue-0">here?</span>
-        </h1>
-        <p class="font-medium text-left"
-          style="color: #C9C9C9; font-size: 20px; margin-top: 10px; margin-bottom: 40px;">
-          You will hear from our team within the next 24 hours.
-        </p>
-
-        <!-- Line + Items -->
-        <div class="relative timeline-line mx-auto" id="timelineSection">
-
-          <!-- Item 1 -->
-          <div class="relative timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <h3 class="font-medium mb-2 text-white" style="font-size: 21px;">1. Join us for a discovery call</h3>
-              <p class="" style=" color: #C9C9C9; font-size: 18px;">Our experts will engage with you to understand your
-                business requirements, technical specifications, and project objectives.</p>
-            </div>
+<section class="timeline-section flex flex-col lg:flex-row items-center justify-center min-h-[500px]">
+  <div class="timeline-container">
+    <div class="timeline-inner">
+      <h1>Where do we go<br>from <span class="text-logo-blue-0">here?</span></h1>
+      <p style="color: #C9C9C9; font-size:17px;">You will hear from our team within the next 24 hours.</p>
+      <div class="relative timeline-line mx-auto" id="timelineSection">
+        <div class="relative timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>1. Join us for a discovery call</h3>
+            <p>Our experts will engage with you to understand your business requirements, technical specifications, and project objectives.</p>
           </div>
-
-          <!-- Item 2 -->
-          <div class="relative timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <h3 class="font-medium mb-2 text-white" style="font-size: 21px;">2. We map the project plan</h3>
-              <p class="" style=" color: #C9C9C9; font-size: 18px;">Through iterative discovery sessions, we will define
-                your project scope, align solutions with your vision, and propose a roadmap with a phased timeline.</p>
-            </div>
+        </div>
+        <div class="relative timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>2. We map the project plan</h3>
+            <p>Through iterative discovery sessions, we will define your project scope, align solutions with your vision, and propose a roadmap with a phased timeline.</p>
           </div>
-
-          <!-- Item 3 -->
-          <div class="relative timeline-item" style="margin-bottom: 300px;">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <h3 class="font-medium mb-2 text-white" style="font-size: 21px;">3. Onboard the team</h3>
-              <p class="" style=" color: #C9C9C9; font-size: 18px;">Once you finalize the team, they will be ready to
-                integrate with your team and collaborate on your project.</p>
-            </div>
+        </div>
+        <div class="relative timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>3. Onboard the team</h3>
+            <p>Once you finalize the team, they will be ready to integrate with your team and collaborate on your project.</p>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- ✅ Right Side (Form) [unchanged] -->
-    <div class="z-10" style="margin-right: 73px; width: 670px;">
-      <div class="bg-white text-gray-900 shadow-lg p-10 w-full" id="formSection"
-        style="border-radius:24px; min-height:1000px;">
-        <p class="mb-4 text-3xl font-medium">Feel free to reach out to discuss your idea, get estimates for your
-          project, or seek expert advice.</p>
-        <p class="mb-4" style="color: #4F4F4F;">To apply for a job, please visit the <a href="careers.html"
-            class="font-semibold text-teal-400" style="text-decoration: underline;">career page</a>.</p>
-        <form class="space-y-4">
-          <h3 class="font-semibold mb-2">1. Tell us about your company.</h3>
-          <div class="flex flex-row md:flex-row gap-4" style="margin-bottom: 14px;">
-            <input type="text" placeholder="Name*" class="flex-1 p-2 border rounded" style="min-width:300px;" required>
-            <input type="email" placeholder="Email*" class="flex-1 p-2 border rounded" style="min-width:300px;"
-              required>
-          </div>
-          <div class="flex flex-col md:flex-col gap-4">
-            <input type="text" placeholder="Phone number*" class="flex-1 p-2 border rounded" required>
-            <input type="text" placeholder="Company name or website*" class="flex-1 p-2 border rounded" required>
-          </div>
-          <h3 class="font-semibold mb-2 mt-4">2. Tell us more about your project.</h3>
-          <textarea placeholder="Describe your project briefly*" class="w-full p-2 border rounded mb-4" rows="2"
-            required></textarea>
-          <select class="w-full p-2 border rounded text-[#4F4F4F] " required>
-            <option value="" disabled selected style="color: #4F4F4F;">Select your budget</option>
-            <option value="Still Evaluating">Still Evaluating</option>
-            <option value="Less than $20,000">Less than $20,000</option>
-            <option value="$20,000 - $50,000">$20,000 - $50,000</option>
-            <option value="$50,000 - $100,000">$50,000 - $100,000</option>
-            <option value="More than $100,000">More than $100,000</option>
-          </select>
-          <h3 class="font-semibold mb-2 mt-4">3. Where did you hear about us?</h3>
-          <input type="text" placeholder="How did you hear about us?" class="w-full p-2 mb-2 border rounded ">
-          <label class="flex items-center mb-2">
-            <input type="checkbox" class="mr-2"> This project requires an NDA
-          </label>
-          <button class="bg-section-bg text-white font-bold px-8 py-3 rounded-md mt-4"
-            style="background-color: #005847; color: #fff; width: 110px; height: 45px;">Submit</button>
-        </form>
-      </div>
+  </div>
+  <div class="form-section">
+    <div class="form-container" id="formSection">
+      <p>Feel free to reach out to discuss your idea, get estimates for your project, or seek expert advice.</p>
+      <p>To apply for a job, please visit the <a href="careers.html" class="font-semibold text-logo-blue-0">career page</a>.</p>
+      <form class="space-y-4">
+        <h3 style="font-size: 20px; font-weight:bold;">1. Tell us about your company.</h3>
+        <div class="flex-row">
+          <input type="text" placeholder="Name*" class="flex-1 p-2 border rounded" required>
+        </div>
+        <div class="flex-row">
+          <input type="email" placeholder="Email*" class="flex-1 p-2 border rounded" required>
+        </div>
+        <div class="flex-col">
+          <input type="text" placeholder="Phone number*" class="flex-1 p-2 border rounded" required>
+          <input type="text" placeholder="Company name or website*" class="flex-1 p-2 border rounded" required>
+        </div>
+        <h3 style="font-size: 20px; font-weight:bold;">2. Tell us more about your project.</h3>
+        <textarea placeholder="Describe your project briefly*" class="w-full p-2 border rounded mb-4" rows="2" required></textarea>
+        <select class="w-full p-2 border rounded text-[#4F4F4F]" required>
+          <option value="" disabled selected>Select your budget</option>
+          <option value="Still Evaluating">Still Evaluating</option>
+          <option value="Less than $20,000">Less than $20,000</option>
+          <option value="$20,000 - $50,000">$20,000 - $50,000</option>
+          <option value="$50,000 - $100,000">$50,000 - $100,000</option>
+          <option value="More than $100,000">More than $100,000</option>
+        </select>
+        <h3 style="font-size: 20px; font-weight:bold;">3. Where did you hear about us?</h3>
+        <input type="text" placeholder="How did you hear about us?" class="w-full p-2 mb-2 border rounded">
+        <label class="flex items-center mb-2">
+          <input type="checkbox" class="mr-2" style="width: 14px;"> This project requires an NDA
+        </label>
+        <button>Submit</button>
+      </form>
     </div>
-  </section>
+  </div>
+</section>
   <!-- enaggement model section -->
   <section class="engage-sec w-full px-20 pt-20 font-sans">
     <div class="max-w-none mx-auto">
