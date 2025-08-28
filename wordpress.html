@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quality Assurance and Maintenance</title>
+  <title>Wordpress Development</title>
   <link href="./dist/output.css" rel="stylesheet">
   <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -14,6 +14,10 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <style>
+  .overlay{
+    background-color: rgb(0 0 0 / 0.5);
+    }
+    
   @media (max-width: 1024px) {
     .expertise-container {
       flex-direction: row;
@@ -117,6 +121,18 @@
     .hero-sec {
       padding: 6rem;
       /* Adjust padding for smaller screens */
+    }
+
+    .heading-impact{
+      margin-right: 0;
+      font-size: 22px;
+      padding: 0 8px;
+
+    }
+
+    .impact{
+      padding: 0 20px !important;
+      margin: 80px 0;
     }
 
   }
@@ -265,23 +281,23 @@
 
   @media (max-width: 425px) {
 
-    #navbar {
+    #navbar{
       padding: 1rem !important;
     }
 
-    #getQuoteBtn {
+    #getQuoteBtn{
       display: none;
     }
 
-    .hero-sec {
+    .hero-sec{
       padding: 1rem !important;
     }
 
-    .slide1 .slide {
+    .slide1 .slide{
       width: 100%;
     }
 
-    .slide1 {
+    .slide1{
       margin-top: 60px;
     }
 
@@ -298,20 +314,20 @@
   }
 
   @media (max-width: 767px) {
-
-    #navbar {
+ 
+    #navbar{
       padding: 2rem;
     }
 
-    .hero-sec {
+    .hero-sec{
       padding: 2rem !important;
     }
 
-    .slide1 .slide {
+    .slide1 .slide{
       width: 100%;
     }
 
-    .slide1 {
+    .slide1{
       margin-top: 60px;
     }
 
@@ -328,7 +344,7 @@
       margin-right: 140px;
     }
 
-    .time-line {
+    .time-line{
       margin-top: 80px;
     }
 
@@ -361,38 +377,12 @@
       height: 140px !important;
     }
   }
-
-  .overlay {
-    background-color: rgb(0 0 0 / 0.5);
-  }
-
-  .transition-transform {
-    transition: transform 0.5s ease-in-out;
-  }
-
-  @media (max-width: 425px){
-    .heading-impact{
-      margin-right: 0;
-      font-size: 22px;
-      padding: 0 8px;
-
-    }
-
-    .impact{
-      padding: 0 20px !important;
-      margin: 80px 0;
-    }
-
-    .tools{
-      margin: 0px 20px 80px !important;
-    }
-  }
 </style>
 
 <body class="font-sans h-full">
   <section class="hero relative w-screen min-h-screen overflow-hidden bg-black">
 
-   <!-- Navbar -->
+    <!-- Navbar -->
     <nav id="navbar"
       class="navbar fixed top-0 left-0 w-full z-50 px-20 py-4 flex items-center justify-between bg-transparent text-white group/nav hover:bg-white transition-all duration-300 ease-linear">
       <div class="flex items-center gap-10 z-40">
@@ -647,7 +637,7 @@
       class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden transition-opacity duration-300 lg:hidden">
     </div>
 
-    <div class="hero-sec min-h-screen relative flex text-white px-20 pt-0">
+    <div class="hero-sec min-h-screen relative flex items-center justify-center text-white px-20 pt-0">
       <video autoplay muted loop playsinline
         style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;">
         <source src="/src/assets/banner-vid-1.mp4" type="video/mp4">
@@ -660,11 +650,13 @@
 
       <!-- Content -->
       <div class="slide1 flex relative z-10">
-        <div class="slide flex flex-col justify-center gap-16 w-[90%]">
-          <h1 class="text-5xl font-semibold">Disrupt the ordinary with Generative AI solutions</h1>
+        <div class="slide flex flex-col justify-center gap-16 w-[60%]">
+          <h1 class="text-5xl font-semibold">AI Development Services</h1>
           <p class="text-xl">
-            Utilize Generative AI to enhance productivity, spark innovation, and achieve groundbreaking results
-            effortlessly.
+            Unlock the full potential of artificial intelligence with our cutting-edge AI development
+            services. Designed to fuel innovation, enhance efficiency, and propel your business toward
+            unprecedented success, our intelligent solutions redefine what’s possible in the digital
+            landscape.
           </p>
           <button
             class="w-[200px] get-quote2 group flex items-center justify-center gap-2 text-xl border-[0.5px] rounded-md px-8 py-2 hover:bg-logo-blue-0 hover:border-logo-blue-0">
@@ -702,248 +694,6 @@
         <img src="/src/assets/client4.webp" class="h-14 object-contain grayscale" alt="Client 4">
         <img src="/src/assets/client5-removebg-preview.png" class="h-14 object-contain grayscale" alt="Client 5">
       </div>
-    </div>
-  </section>
-
-  <section class="sec1 bg-white px-20 mt-20 flex justify-center flex-col gap-12">
-    <h1 class="heading-impact text-black font-semibold text-3xl">How Generative AI address your biggest challenges</h1>
-    <div class="flex flex-col lg:flex-row max-w-[1600px]  gap-10 min-h-[600px]"
-      style="margin-left: 20px; margin-right: 20px;">
-      <!-- Left Section -->
-      <div>
-        <img class="h-[85%] rounded-lg" src="src/assets/Ai-img-3.jpg" alt="">
-      </div>
-
-      <!-- Right Section -->
-      <div class="w-full lg:w-3/5 flex-shrink-0">
-        <div class="space-y-4">
-          <!-- Item Template -->
-          <div class="border-b" x-data="{ open: false }">
-            <button class="w-full text-left text-xl flex justify-between items-center py-4 text-gray-700 font-medium"
-              onclick="toggleAccordion(this)">
-              Consistently generate new ideas
-              <span class="text-2xl font-bold">+</span>
-            </button>
-            <div class="hidden pb-4 text-gray-600">
-              Overcome creative blocks with AI that generates innovative ideas and concepts, keeping your business ahead
-              of the curve.
-            </div>
-          </div>
-
-          <div class="border-b" x-data="{ open: false }">
-            <button class="w-full text-left text-xl flex justify-between items-center py-4 text-gray-700 font-medium"
-              onclick="toggleAccordion(this)">
-              Automate repetitive tasks
-              <span class="text-2xl font-bold">+</span>
-            </button>
-            <div class="hidden pb-4 text-gray-600">
-              Save time and reduce errors by automating mundane tasks like data entry, report generation, and content
-              creation, allowing your team to focus on higher-value work.
-            </div>
-          </div>
-
-          <div class="border-b">
-            <button class="w-full text-left text-xl flex justify-between items-center py-4 text-gray-700 font-medium"
-              onclick="toggleAccordion(this)">
-              Optimize operational efficiency
-              <span class="text-2xl font-bold">+</span>
-            </button>
-            <div class="hidden pb-4 text-gray-600">
-              Streamline and refine your business processes with AI-driven insights and automation, leading to
-              significant improvements in productivity and resource management.
-            </div>
-          </div>
-
-          <div class="border-b">
-            <button class="w-full text-left text-xl flex justify-between items-center py-4 text-gray-700 font-medium"
-              onclick="toggleAccordion(this)">
-              Optimize operational efficiency
-              <span class="text-2xl font-bold">+</span>
-            </button>
-            <div class="hidden pb-4 text-gray-600">
-              Streamline and refine your business processes with AI-driven insights and automation, leading to
-              significant improvements in productivity and resource management.
-            </div>
-          </div>
-
-          <div class="border-b">
-            <button class="w-full text-left text-xl flex justify-between items-center py-4 text-gray-700 font-medium"
-              onclick="toggleAccordion(this)">
-              Making sense of large data
-              <span class="text-2xl font-bold">+</span>
-            </button>
-            <div class="hidden pb-4 text-gray-600">
-              Use generative AI to analyze vast amounts of data quickly and accurately, providing you with clear,
-              actionable insights for strategic decision-making.
-            </div>
-          </div>
-
-          <div class="border-b">
-            <button class="w-full text-left text-xl flex justify-between items-center py-4 text-gray-700 font-medium"
-              onclick="toggleAccordion(this)">
-              Improving customer personalization
-              <span class="text-2xl font-bold">+</span>
-            </button>
-            <div class="hidden pb-4 text-gray-600">
-              Enhance customer satisfaction and loyalty by using AI to deliver tailored recommendations, customer
-              support, personalized marketing, and personalized service experiences.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-   <!-- how we impact your business -->
-  <section class=" impact relative bg-white mb-20 w-full px-20 sm:px-6 md:px-20">
-    <div class="impact-header flex justify-between items-center w-full mb-10">
-      <h1 class="heading-impact text-black font-semibold text-3xl">Smart AI services for a smarter future</h1>
-      <!-- Swiper Arrows -->
-      <div class="swiper-buttons flex items-center space-x-3 ml-6">
-        <button
-          class="all-services flex group justify-center items-center border-[0.5px] border-logo-blue-0 text-logo-blue-0 gap-2 rounded-full px-4 py-2 hover:bg-logo-blue-0 hover:text-white transition-all 3s ease-linear">All
-          Services
-          <img
-            class="group-hover:rotate-45 transition-all 3s ease-linear h-6 filter group-hover:invert group-hover:brightness-0 group-hover:contrast-200"
-            src="/src/assets/arrow-blue.png" alt="">
-        </button>
-        <button
-          class="swiper-button-prev-custom border-[0.5px] border-logo-blue-0 rounded-full w-11 h-11 flex items-center justify-center transition hover:bg-logo-blue-0 hover:border-logo-blue-0 group">
-          <img src="/src/assets/left-blue.png" alt="Left Arrow"
-            class="h-8 w-8 transition-all duration-300 group-hover:invert group-hover:brightness-0 group-hover:contrast-200" />
-        </button>
-        <button
-          class="swiper-button-next-custom border-[0.5px] border-logo-blue-0 rounded-full w-11 h-11 flex items-center justify-center transition hover:bg-logo-blue-0 hover:border-logo-blue-0 group">
-          <img src="/src/assets/arrow-blue.png" alt="Right Arrow"
-            class="h-8 w-8 rotate-45 transition-all duration-300 group-hover:invert group-hover:brightness-0 group-hover:contrast-200" />
-
-        </button>
-      </div>
-    </div>
-
-    <div class="w-full">
-      <div class="swiper project-swiper w-full">
-        <div class="swiper-wrapper">
-          <!-- Card 1 -->
-          <div
-            class="swiper-slide group border-logo-blue-0 border-[1px] p-8 flex items-center justify-center !h-[365px] min-w-[260px] transition-all duration-300 relative cursor-pointer overflow-hidden rounded-md bg-white">
-            <div class="flex flex-col justify-center items-center h-full w-full">
-              <!-- Content Section -->
-              <div class="flex flex-col gap-8 transition-all duration-500 z-10">
-                <div><img class="h-20 transition-all duration-300" src="/src/assets/rocket.png" alt=""></div>
-                <div class="flex flex-col gap-4">
-                  <h1 class="text-2xl font-semibold">AI Consulting Services</h1>
-                  <ul class="list-disc ml-3 text-sm">
-                    <li>Assessing current data infrastructure</li>
-                    <li>Conducting feasibility studies for AI technology selection</li>
-                    <li>Crafting AI strategies tailored to unique business needs</li>
-                    <li>Developing roadmaps for seamless AI integration</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 2 -->
-          <div
-            class="swiper-slide group border-logo-blue-0 border-[1px] p-8 flex items-center justify-center !h-[365px] min-w-[260px] transition-all duration-300 relative cursor-pointer overflow-hidden rounded-md bg-white">
-            <div class="flex flex-col justify-center items-center h-full w-full">
-              <!-- Content Section -->
-              <div class="flex flex-col gap-8 transition-all duration-500 z-10">
-                <div><img class="h-20 transition-all duration-300" src="/src/assets/html.png" alt=""></div>
-                <div class="flex flex-col gap-4">
-                  <h1 class="text-2xl font-semibold">AI Development Services</h1>
-                  <ul class="list-disc ml-3 text-sm">
-                    <li>Building custom AI and ML software from the ground up</li>
-                    <li>Evaluating and enhancing existing AI software performance</li>
-                    <li>Adding new AI modules and features</li>
-                    <li>Providing ongoing maintenance, monitoring, and support for AI software</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 3 -->
-          <div
-            class="swiper-slide group border-logo-blue-0 border-[1px] p-8 flex items-center justify-center !h-[365px] min-w-[260px] transition-all duration-300 relative cursor-pointer overflow-hidden rounded-md bg-white">
-            <div class="flex flex-col justify-center items-center h-full w-full">
-              <!-- Content Section -->
-              <div class="flex flex-col gap-8 transition-all duration-500 z-10">
-                <div><img class="h-20 transition-all duration-300" src="/src/assets/ai.png" alt=""></div>
-                <div class="flex flex-col gap-4">
-                  <h1 class="text-2xl font-semibold">AI App Development Services</h1>
-                  <ul class="list-disc ml-3 text-sm">
-                    <li>Defining project objectives and business requirements</li>
-                    <li>Collecting data essential for AI app development</li>
-                    <li>Selecting appropriate AI models for specific business challengesSetting goals for chatbot development</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 4 -->
-          <div
-            class="swiper-slide group border-logo-blue-0 border-[1px] p-8 flex items-center justify-center !h-[365px] min-w-[260px] transition-all duration-300 relative cursor-pointer overflow-hidden rounded-md bg-white">
-            <div class="flex flex-col justify-center items-center h-full w-full">
-              <!-- Content Section -->
-              <div class="flex flex-col gap-8 transition-all duration-500 z-10">
-                <div><img class="h-20 transition-all duration-300" src="/src/assets/settings.png" alt=""></div>
-                <div class="flex flex-col gap-4">
-                  <h1 class="text-2xl font-semibold">Chatbot Development Services</h1>
-                  <ul class="list-disc ml-3 text-sm">
-                    <li>Setting goals for chatbot development</li>
-                    <li>Designing and integrating various chatbot solutions</li>
-                    <li>Creating conversation flows for optimal user engagement</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 5 -->
-          <div
-            class="swiper-slide group border-logo-blue-0 border-[1px] p-8 flex items-center justify-center !h-[365px] min-w-[260px] transition-all duration-300 relative cursor-pointer overflow-hidden rounded-md bg-white">
-            <div class="flex flex-col justify-center items-center h-full w-full">
-              <!-- Content Section -->
-              <div class="flex flex-col gap-8 transition-all duration-500 z-10">
-                <div><img class="h-20 transition-all duration-300" src="/src/assets/puzzle.png" alt=""></div>
-                <div class="flex flex-col gap-4">
-                  <h1 class="text-2xl font-semibold">Natural Language Processing Services</h1>
-                  <ul class="list-disc ml-3 text-sm">
-                    <li>Developing speech recognition solutions</li>
-                    <li>Implementing advanced text analysis features</li>
-                    <li>Automating digital content processing</li>
-                    <li>Providing language translation solutions</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 6 -->
-          <div
-            class="swiper-slide group border-logo-blue-0 border-[1px] p-8 flex items-center justify-center !h-[365px] min-w-[260px] transition-all duration-300 relative cursor-pointer overflow-hidden rounded-md bg-white">
-            <div class="flex flex-col justify-center items-center h-full w-full">
-              <!-- Content Section -->
-              <div class="flex flex-col gap-8 transition-all duration-500 z-10">
-                <div><img class="h-20 transition-all duration-300" src="/src/assets/ai.png" alt=""></div>
-                <div class="flex flex-col gap-4">
-                  <h1 class="text-2xl font-semibold">Generative AI Development Services</h1>
-                  <ul class="list-disc ml-3 text-sm">
-                    <li>Creating software for generating text, audio, video, and images</li>
-                    <li>Training and integrating generative AI models</li>
-                    <li>Adding generative AI components to existing software systems</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
     </div>
   </section>
 
@@ -1143,247 +893,80 @@
     </div>
   </section>
 
-  <!-- how we impact your business -->
-  <section class=" impact relative bg-white mt-20 w-full px-20 sm:px-6 md:px-20">
-    <div class="impact-header flex justify-between items-center w-full mb-10">
-      <h1 class="heading-impact text-black font-semibold text-3xl">Smart AI services for a smarter future</h1>
-      <!-- Swiper Arrows -->
-      <div class="swiper-buttons flex items-center space-x-3 ml-6">
-        <button
-          class="all-services flex group justify-center items-center border-[0.5px] border-logo-blue-0 text-logo-blue-0 gap-2 rounded-full px-4 py-2 hover:bg-logo-blue-0 hover:text-white transition-all 3s ease-linear">All
-          Services
-          <img
-            class="group-hover:rotate-45 transition-all 3s ease-linear h-6 filter group-hover:invert group-hover:brightness-0 group-hover:contrast-200"
-            src="/src/assets/arrow-blue.png" alt="">
-        </button>
-        <button
-          class="swiper-button-prev-custom border-[0.5px] border-logo-blue-0 rounded-full w-11 h-11 flex items-center justify-center transition hover:bg-logo-blue-0 hover:border-logo-blue-0 group">
-          <img src="/src/assets/left-blue.png" alt="Left Arrow"
-            class="h-8 w-8 transition-all duration-300 group-hover:invert group-hover:brightness-0 group-hover:contrast-200" />
-        </button>
-        <button
-          class="swiper-button-next-custom border-[0.5px] border-logo-blue-0 rounded-full w-11 h-11 flex items-center justify-center transition hover:bg-logo-blue-0 hover:border-logo-blue-0 group">
-          <img src="/src/assets/arrow-blue.png" alt="Right Arrow"
-            class="h-8 w-8 rotate-45 transition-all duration-300 group-hover:invert group-hover:brightness-0 group-hover:contrast-200" />
-
-        </button>
-      </div>
+  <!-- enaggement model section -->
+  <section class="engage-card2 w-full px-20 my-20 font-sans">
+    <div>
+      <h1 class="text-black font-semibold text-3xl mb-10">Engagement Models</h1>
     </div>
-
-    <div class="w-full">
-      <div class="swiper project-swiper w-full">
-        <div class="swiper-wrapper">
+        <div class="top-cards flex gap-8">
           <!-- Card 1 -->
           <div
-            class="swiper-slide group border-logo-blue-0 border-[1px] p-8 flex items-center justify-center !h-[365px] min-w-[260px] transition-all duration-300 relative cursor-pointer overflow-hidden rounded-md bg-white">
-            <div class="flex flex-col justify-center items-center h-full w-full">
-              <!-- Content Section -->
-              <div class="flex flex-col gap-8 transition-all duration-500 z-10">
-                <div><img class="h-20 transition-all duration-300" src="/src/assets/rocket.png" alt=""></div>
-                <div class="flex flex-col gap-4">
-                  <h1 class="text-2xl font-semibold">AI Consulting Services</h1>
-                  <ul class="list-disc ml-3 text-sm">
-                    <li>Assessing current data infrastructure</li>
-                    <li>Conducting feasibility studies for AI technology selection</li>
-                    <li>Crafting AI strategies tailored to unique business needs</li>
-                    <li>Developing roadmaps for seamless AI integration</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+            class="engage1 bg-black border rounded-xl p-14 shadow-sm font-sans flex gap-8 flex-col justify-between w-full">
+            <img class="h-24 w-24" src="src/assets/three-cubes.png" alt="">
+            <h1 class="text-white font-semibold text-3xl">Project-based Development</h1>
+            <p class="text-gray-400 text-lg">Streamline your projects with minimal risk, ensuring top-notch quality and timely, on-budget delivery.</p>
+            <a href="#" class="text-logo-blue-0 flex justify-center gap-1 items-center border border-logo-blue-0 px-4 py-2 w-fit rounded-md group hover:bg-logo-blue-0 hover:text-white transition 3s ease-linear">Get in Touch
+              <img class="h-6 group-hover:rotate-45 transition 3s ease-linear filter group-hover:invert group-hover:brightness-0 group-hover:contrast-200" src="src/assets/arrow-blue.png" alt="">
+            </a>
           </div>
-
           <!-- Card 2 -->
           <div
-            class="swiper-slide group border-logo-blue-0 border-[1px] p-8 flex items-center justify-center !h-[365px] min-w-[260px] transition-all duration-300 relative cursor-pointer overflow-hidden rounded-md bg-white">
-            <div class="flex flex-col justify-center items-center h-full w-full">
-              <!-- Content Section -->
-              <div class="flex flex-col gap-8 transition-all duration-500 z-10">
-                <div><img class="h-20 transition-all duration-300" src="/src/assets/html.png" alt=""></div>
-                <div class="flex flex-col gap-4">
-                  <h1 class="text-2xl font-semibold">AI Development Services</h1>
-                  <ul class="list-disc ml-3 text-sm">
-                    <li>Building custom AI and ML software from the ground up</li>
-                    <li>Evaluating and enhancing existing AI software performance</li>
-                    <li>Adding new AI modules and features</li>
-                    <li>Providing ongoing maintenance, monitoring, and support for AI software</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+            class="engage1 bg-dark-blue-0 border rounded-xl p-14 shadow-sm font-sans flex gap-8 flex-col justify-between w-full">
+            <img class="h-24 w-24" src="src/assets/circles-lines.png" alt="">
+            <h1 class="text-white font-semibold text-3xl">Dedicated Teams</h1>
+            <p class="text-gray-400 text-lg">Accelerate your projects with our expert team, combining technical prowess and management skills for seamless collaboration and success.</p>
+            <a href="#" class="text-logo-blue-0 flex justify-center gap-1 items-center border border-logo-blue-0 px-4 py-2 w-fit rounded-md group hover:bg-logo-blue-0 hover:text-white transition 3s ease-linear">Get in Touch
+              <img class="h-6 group-hover:rotate-45 transition 3s ease-linear filter group-hover:invert group-hover:brightness-0 group-hover:contrast-200" src="src/assets/arrow-blue.png" alt="">
+            </a>
           </div>
-
-          <!-- Card 3 -->
-          <div
-            class="swiper-slide group border-logo-blue-0 border-[1px] p-8 flex items-center justify-center !h-[365px] min-w-[260px] transition-all duration-300 relative cursor-pointer overflow-hidden rounded-md bg-white">
-            <div class="flex flex-col justify-center items-center h-full w-full">
-              <!-- Content Section -->
-              <div class="flex flex-col gap-8 transition-all duration-500 z-10">
-                <div><img class="h-20 transition-all duration-300" src="/src/assets/ai.png" alt=""></div>
-                <div class="flex flex-col gap-4">
-                  <h1 class="text-2xl font-semibold">AI App Development Services</h1>
-                  <ul class="list-disc ml-3 text-sm">
-                    <li>Defining project objectives and business requirements</li>
-                    <li>Collecting data essential for AI app development</li>
-                    <li>Selecting appropriate AI models for specific business challengesSetting goals for chatbot development</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 4 -->
-          <div
-            class="swiper-slide group border-logo-blue-0 border-[1px] p-8 flex items-center justify-center !h-[365px] min-w-[260px] transition-all duration-300 relative cursor-pointer overflow-hidden rounded-md bg-white">
-            <div class="flex flex-col justify-center items-center h-full w-full">
-              <!-- Content Section -->
-              <div class="flex flex-col gap-8 transition-all duration-500 z-10">
-                <div><img class="h-20 transition-all duration-300" src="/src/assets/settings.png" alt=""></div>
-                <div class="flex flex-col gap-4">
-                  <h1 class="text-2xl font-semibold">Chatbot Development Services</h1>
-                  <ul class="list-disc ml-3 text-sm">
-                    <li>Setting goals for chatbot development</li>
-                    <li>Designing and integrating various chatbot solutions</li>
-                    <li>Creating conversation flows for optimal user engagement</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 5 -->
-          <div
-            class="swiper-slide group border-logo-blue-0 border-[1px] p-8 flex items-center justify-center !h-[365px] min-w-[260px] transition-all duration-300 relative cursor-pointer overflow-hidden rounded-md bg-white">
-            <div class="flex flex-col justify-center items-center h-full w-full">
-              <!-- Content Section -->
-              <div class="flex flex-col gap-8 transition-all duration-500 z-10">
-                <div><img class="h-20 transition-all duration-300" src="/src/assets/puzzle.png" alt=""></div>
-                <div class="flex flex-col gap-4">
-                  <h1 class="text-2xl font-semibold">Natural Language Processing Services</h1>
-                  <ul class="list-disc ml-3 text-sm">
-                    <li>Developing speech recognition solutions</li>
-                    <li>Implementing advanced text analysis features</li>
-                    <li>Automating digital content processing</li>
-                    <li>Providing language translation solutions</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 6 -->
-          <div
-            class="swiper-slide group border-logo-blue-0 border-[1px] p-8 flex items-center justify-center !h-[365px] min-w-[260px] transition-all duration-300 relative cursor-pointer overflow-hidden rounded-md bg-white">
-            <div class="flex flex-col justify-center items-center h-full w-full">
-              <!-- Content Section -->
-              <div class="flex flex-col gap-8 transition-all duration-500 z-10">
-                <div><img class="h-20 transition-all duration-300" src="/src/assets/ai.png" alt=""></div>
-                <div class="flex flex-col gap-4">
-                  <h1 class="text-2xl font-semibold">Generative AI Development Services</h1>
-                  <ul class="list-disc ml-3 text-sm">
-                    <li>Creating software for generating text, audio, video, and images</li>
-                    <li>Training and integrating generative AI models</li>
-                    <li>Adding generative AI components to existing software systems</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
-      </div>
-    </div>
-    </div>
   </section>
 
-  <!-- Timeline Section -->
-  <section class="sec1 time-line w-full py-20 px-4 sm:px-10 md:px-20 ">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row">
+  <section class="sec1 expertise w-full px-20 md:px-16 sm:px-8 xs:px-4 ">
+    <h1 class="text-black font-semibold text-3xl mb-10">Our Expertise</h1>
 
-      <!-- Left Side: Sticky Centered Heading -->
-      <div class="md:w-1/2 relative">
-        <div class="left-sec h-full flex items-center">
-          <div class="sticky top-1/2 -translate-y-1/2">
-            <!-- Replace Image with Video -->
-            <video class="w-[100px] mb-1" autoplay muted loop playsinline>
-              <source src="src/assets/saphere-vid.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-
-            <!-- Heading -->
-            <h2 class="text-[32px] font-bold leading-tight mb-8 max-w-[580px]">
-              Emerging Technologies Know-How
-            </h2>
-
-            <!-- Get in Touch Button with Hover Arrow -->
-            <button
-              class="flex group justify-center items-center border-[0.5px] border-logo-blue-0 text-logo-blue-0 gap-2 rounded-lg px-4 py-2 hover:bg-logo-blue-0 hover:text-white transition-all 3s ease-linear">
-              Get in Touch
-              <img
-                class="group-hover:rotate-45 transition-all 3s ease-linear h-6 filter group-hover:invert group-hover:brightness-0 group-hover:contrast-200"
-                src="/src/assets/arrow-blue.png" alt="">
-            </button>
-          </div>
+    <div class="flex flex-col gap-4">
+      <!-- Row 1 -->
+      <div class="flex flex-wrap gap-4 expertise-container">
+        <div
+          class="expertise-card bg-dark-blue-0 text-white flex flex-col gap-6 p-10 rounded-xl min-h-[300px] w-full md:w-[48%]">
+          <div><img src="src/assets/ai-img-1.svg" alt=""></div>
+          <h1 class="font-semibold text-2xl">End-to-End AI Development</h1>
+          <p>We provide comprehensive AI development services, covering everything from initial strategy and
+            design to implementation and ongoing support, ensuring seamless integration and optimal
+            performance.</p>
+        </div>
+        <div
+          class="expertise-card bg-dark-blue-0 text-white flex flex-col gap-6 p-10 rounded-xl min-h-[300px] w-full md:w-[48%]">
+          <div><img src="src/assets/ai-img-2.svg" alt=""></div>
+          <h1 class="font-semibold text-2xl">AI-Powered Digital Transformation</h1>
+          <p>Enhance your existing digital infrastructure with AI-driven solutions that improve efficiency,
+            automate workflows, and unlock new growth opportunities.</p>
         </div>
       </div>
 
-      <!-- Right Side: Timeline -->
-      <div class="md:w-1/2 relative timeline-line">
-        <!-- Timeline Items -->
-        <div class="relative pl-8 mb-12 timeline-item" data-aos="fade-up" data-aos-delay="100">
-          <div class="absolute left-0 top-1 timeline-dot"></div>
-          <h3 class="text-[18px] font-semibold mb-2">Wearable Tech</h3>
-          <p class="text-[16px] text-gray-600 leading-relaxed">
-            We'll help you ideate, design, develop and launch your Wearable app. Apps would be supported by strong
-            back-end, cloud based web systems.
-          </p>
+      <!-- Row 2 -->
+      <div class="flex flex-wrap gap-4 expertise-container">
+        <div
+          class="expertise-card bg-dark-blue-0 text-white flex flex-col gap-6 p-10 rounded-xl min-h-[300px] w-full md:w-[48%]">
+          <div><img src="src/assets/ai-img-3.svg" alt=""></div>
+          <h1 class="font-semibold text-2xl">Enterprise AI Solutions</h1>
+          <p>We develop cutting-edge AI solutions tailored for B2B, B2E, and B2C enterprises, seamlessly
+            integrating with your corporate systems to drive innovation and efficiency.</p>
         </div>
-        <div class="relative pl-8 mb-12 timeline-item" data-aos="fade-up" data-aos-delay="200">
-          <div class="absolute left-0 top-1 timeline-dot"></div>
-          <h3 class="text-[18px] font-semibold mb-2">Geo Tracking</h3>
-          <p class="text-[16px] text-gray-600 leading-relaxed">
-            We have leveraged GPS technology for apps built for mobile workforce management, fleet tracking to
-            geo-fencing, geo-targeting and location aware in-app messaging.
-          </p>
-        </div>
-        <div class="relative pl-8 mb-12 timeline-item" data-aos="fade-up" data-aos-delay="300">
-          <div class="absolute left-0 top-1 timeline-dot"></div>
-          <h3 class="text-[18px] font-semibold mb-2">Internet of Things</h3>
-          <p class="text-[16px] text-gray-600 leading-relaxed">
-            We deliver mobile-enabled IoT, solutions for equipment and appliances controlled via mobile, including
-            connected home solutions, real-time tracking and monitoring services, and many more.
-          </p>
-        </div>
-        <div class="relative pl-8 mb-12 timeline-item" data-aos="fade-up" data-aos-delay="400">
-          <div class="absolute left-0 top-1 timeline-dot"></div>
-          <h3 class="text-[18px] font-semibold mb-2">Location Tracking</h3>
-          <p class="text-[16px] text-gray-600 leading-relaxed">
-            We developed enhanced in-store experiences to capture secure contactless payments, indoor location sensing
-            and contextual coupon delivery leveraging technologies like BLE Beacons, NFC etc.
-          </p>
-        </div>
-        <div class="relative pl-8 mb-12 timeline-item" data-aos="fade-up" data-aos-delay="500">
-          <div class="absolute left-0 top-1 timeline-dot"></div>
-          <h3 class="text-[18px] font-semibold mb-2">AR/VR Reality</h3>
-          <p class="text-[16px] text-gray-600 leading-relaxed">
-            With the new ARKit coming out from Apple and Android, we are set to deliver compelling AR mobile apps
-            overlaying information and interactivity over real-world scenes.
-          </p>
-        </div>
-        <div class="relative pl-8 timeline-item" data-aos="fade-up" data-aos-delay="600">
-          <div class="absolute left-0 top-1 timeline-dot"></div>
-          <h3 class="text-[18px] font-semibold mb-2">Launch, monitor, improve</h3>
-          <p class="text-[16px] text-gray-600 leading-relaxed">
-            We deploy your agent with real-time observability and iterate as your workflows evolve — optimizing for
-            output, reliability, and autonomy.
-          </p>
+        <div
+          class="expertise-card bg-dark-blue-0 text-white flex flex-col gap-6 p-10 rounded-xl min-h-[300px] w-full md:w-[48%]">
+          <div><img src="src/assets/ai-img-4.svg" alt=""></div>
+          <h1 class="font-semibold text-2xl">Unlock the Power of AI for Your Business</h1>
+          <p>Harness the potential of AI to formulate intelligent strategies that transform operations, reduce
+            costs, and optimize business processes for sustained success.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Responsive Section (100% width, container centered, Tailwind CSS) -->
-  <section class="w-full bg-section-bg py-20 font-sans">
+  <section class="w-full bg-section-bg py-20  mt-20 font-sans">
     <div class="container mx-auto px-6 flex flex-col lg:flex-row justify-between items-center w-full">
       <!-- Left Side: Heading and Button -->
       <div class="w-full lg:w-1/2 mb-12 lg:mb-0">
@@ -1436,178 +1019,8 @@
     </div>
   </section>
 
-    <!-- our work  -->
-  <section class="sec1 our-work p-20 ">
-    <div class="our-work-heading flex justify-between w-full mb-10">
-      <h1 class="text-black font-semibold text-3xl">Our Work</h1>
-      <button
-        class="flex group justify-center items-center border-[0.5px] border-logo-blue-0 text-logo-blue-0 gap-2 rounded-full px-4 py-2 hover:bg-logo-blue-0 hover:text-white transition-all 3s ease-linear">All
-        View all Work
-        <img
-          class="group-hover:rotate-45 transition-all 3s ease-linear h-6 filter group-hover:invert group-hover:brightness-0 group-hover:contrast-200"
-          src="/src/assets/arrow-blue.png" alt="">
-      </button>
-    </div>
-
-    <section>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-        <!-- Card 1 -->
-        <div class="relative group rounded-xl overflow-hidden border h-[400px]">
-
-          <!-- Image with blur on hover -->
-          <div class="w-full h-full absolute inset-0 transition-all duration-500 group-hover:blur-sm">
-            <img src="/src/assets/work1.png" alt="LSU" class="w-full h-full object-cover" />
-          </div>
-
-          <!-- Overlay Content -->
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent p-6 flex flex-col justify-end gap-4 z-10">
-
-            <!-- Logo -->
-            <div>
-              <img class="h-10 invert" src="/src/assets/l1.webp" alt="">
-            </div>
-
-            <!-- Text + Button Wrapper -->
-            <div class="overflow-hidden">
-              <p
-                class="text-white w-[70%] transition-all duration-500 ease-in-out line-clamp-3 group-hover:line-clamp-none group-hover:translate-y-0 translate-y-4">
-                Darren Booth is an award-winning Commercial Artist based in Canada. He specializes in
-                Lettering,
-                Illustration, Portraiture, and Pattern Design. He has worked with major brands and
-                publications
-                worldwide.
-              </p>
-
-              <!-- Button -->
-              <button
-                class="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-white border border-white rounded-full px-4 py-1 text-sm flex gap-2 hover:bg-logo-blue-0 hover:border-logo-blue-0">
-                Learn More
-                <img class="h-6 group-hover:rotate-45" src="/src/assets/arrow-up-right.png" alt="">
-              </button>
-            </div>
-          </div>
-        </div>
-
-
-
-        <!-- Card 2 -->
-        <div class="relative group rounded-xl overflow-hidden border h-[400px]">
-
-          <!-- Image with blur on hover -->
-          <div class="w-full h-full absolute inset-0 transition-all duration-500 group-hover:blur-sm">
-            <img src="/src/assets/work2.jpg" alt="LSU" class="w-full h-full object-cover" />
-          </div>
-
-          <!-- Overlay Content -->
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent p-6 flex flex-col justify-end gap-4 z-10">
-
-            <!-- Logo -->
-            <div>
-              <img class="h-14 filter brightness-200" src="/src/assets/l2.webp" alt="">
-            </div>
-
-            <!-- Text + Button Wrapper -->
-            <div class="overflow-hidden">
-              <p
-                class="text-white w-[70%] transition-all duration-500 ease-in-out line-clamp-3 group-hover:line-clamp-none group-hover:translate-y-0 translate-y-4">
-                ErasmusWise has been created to bridge the communication gap between students ensuring
-                they are able to
-                make the most of the well-rounded experience studing abroad has to offer!
-              </p>
-
-              <!-- Button -->
-              <button
-                class="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-white border border-white rounded-full px-4 py-1 text-sm flex gap-2 hover:bg-logo-blue-0 hover:border-logo-blue-0">
-                Learn More
-                <img class="h-6 group-hover:rotate-45" src="/src/assets/arrow-up-right.png" alt="">
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="relative group rounded-xl overflow-hidden border h-[400px]">
-
-          <!-- Image with blur on hover -->
-          <div class="w-full h-full absolute inset-0 transition-all duration-500 group-hover:blur-sm">
-            <img src="/src/assets/work(3).jpg" alt="LSU" class="w-full h-full object-cover" />
-          </div>
-
-          <!-- Overlay Content -->
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent p-6 flex flex-col justify-end gap-4 z-10">
-
-            <!-- Logo -->
-            <div>
-              <img class="h-16 brightness-200" src="/src/assets/l3.webp" alt="">
-            </div>
-
-            <!-- Text + Button Wrapper -->
-            <div class="overflow-hidden">
-              <p
-                class="text-white w-[70%] transition-all duration-500 ease-in-out line-clamp-3 group-hover:line-clamp-none group-hover:translate-y-0 translate-y-4">
-                The Ultimate Online Cannabis Delivery Experience Cannabis Delivery is the most
-                convinient way to order
-                cannabis online bacause of new technology.
-              </p>
-
-              <!-- Button -->
-              <button
-                class="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-white border border-white rounded-full px-4 py-1 text-sm flex gap-2 hover:bg-logo-blue-0 hover:border-logo-blue-0">
-                Learn More
-                <img class="h-6 group-hover:rotate-45" src="/src/assets/arrow-up-right.png" alt="">
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="relative group rounded-xl overflow-hidden border h-[400px]">
-
-          <!-- Image with blur on hover -->
-          <div class="w-full h-full absolute inset-0 transition-all duration-500 group-hover:blur-sm">
-            <img src="/src/assets/work(2).jpg" alt="LSU" class="w-full h-full object-cover" />
-          </div>
-
-          <!-- Overlay Content -->
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent p-6 flex flex-col justify-end gap-4 z-10">
-
-            <!-- Logo -->
-            <div>
-              <img class="h-10 invert" src="/src/assets/l1.webp" alt="">
-            </div>
-
-            <!-- Text + Button Wrapper -->
-            <div class="overflow-hidden">
-              <p
-                class="text-white w-[70%] transition-all duration-500 ease-in-out line-clamp-3 group-hover:line-clamp-none group-hover:translate-y-0 translate-y-4">
-                Darren Booth is an award-winning Commercial Artist based in Canada. He specializes in
-                Lettering,
-                Illustration, Portraiture, and Pattern Design. He has worked with major brands and
-                publications
-                worldwide.
-              </p>
-
-              <!-- Button -->
-              <button
-                class="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-white border border-white rounded-full px-4 py-1 text-sm flex gap-2 hover:bg-logo-blue-0 hover:border-logo-blue-0">
-                Learn More
-                <img class="h-6 group-hover:rotate-45" src="/src/assets/arrow-up-right.png" alt="">
-              </button>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-  </section>
-
-    <!-- how we impact your business -->
-  <section class="sec1 impact relative bg-white mb-20 w-full px-20 sm:px-6 md:px-20">
+  <!-- how we impact your business -->
+  <section class="sec1 impact relative bg-white my-20 w-full px-20 sm:px-6 md:px-20">
     <div class="impact-header flex justify-between items-center w-full mb-10">
       <h1 class="heading-impact text-black font-semibold text-3xl">Success Stories</h1>
       <!-- Swiper Arrows -->
@@ -1688,7 +1101,7 @@
     </div>
   </section>
 
-   <!-- why work with baron tech -->
+  <!-- why work with baron tech -->
   <section class="sec1 work-with-baron w-full px-20 md:px-16 sm:px-6 xs:px-4 mb-20 font-sans">
     <div>
       <h1 class="text-black font-semibold text-3xl mb-10">Why Work With Baron Tech (Pvt) Limited?</h1>
@@ -1976,9 +1389,6 @@
     </div>
   </section>
 
-
-
-
   <script src="script.js"></script>
   <script>
     function toggleAccordion(button) {
@@ -2004,7 +1414,6 @@
       }
     }
   </script>
-
 
   <!-- In your existing JS script -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -2064,64 +1473,5 @@
     });
   </script>
 
-  <script>
-    const logos = [
-      "/src/assets/tool-logo-1.svg",
-      "/src/assets/tool-logo-2.svg",
-      "/src/assets/tool-logo-3.svg",
-      "/src/assets/tool-logo-4.svg",
-      "/src/assets/tool-logo-5.svg",
-      "/src/assets/tool-logo-6.svg",
-      "/src/assets/tool-logo-7.svg",
-      "/src/assets/tool-logo-8.webp",
-      "/src/assets/tool-logo-9.webp",
-      "/src/assets/tool-logo-10.webp",
-      "/src/assets/tool-logo-11.webp",
-      "/src/assets/tool-logo-12.webp",
-      "/src/assets/tool-logo-13.webp",
-      "/src/assets/tool-logo-14.webp",
-      "/src/assets/tool-logo-15.webp"
-    ];
-
-    const track = document.getElementById("carousel-track");
-
-    // Create a large enough loop by duplicating logos
-    const totalClones = 20;
-    for (let i = 0; i < totalClones; i++) {
-      logos.forEach(src => {
-        const img = document.createElement("img");
-        img.src = src;
-        img.alt = "logo";
-        img.className = "h-16 w-auto mx-4 inline-block";
-        track.appendChild(img);
-      });
-    }
-
-    let currentIndex = 0;
-    const items = track.children;
-    const itemWidth = items[0].offsetWidth + 32; // width + mx-4 (16px + 16px)
-    const delay = 1000; // 1 seconds
-
-    function moveCarousel() {
-      currentIndex++;
-      track.style.transform = `translateX(-${itemWidth * currentIndex}px)`;
-
-      // Reset if halfway through to prevent overflow
-      if (currentIndex > items.length / 2) {
-        track.style.transition = "none";
-        currentIndex = 0;
-        track.style.transform = `translateX(0)`;
-
-        // Re-enable transition
-        requestAnimationFrame(() => {
-          track.style.transition = "transform 0.5s ease-in-out";
-        });
-      }
-    }
-
-    setInterval(moveCarousel, delay);
-  </script>
-
 </body>
-
 </html>

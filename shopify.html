@@ -1,0 +1,1950 @@
+<!DOCTYPE html>
+<html lang="en" style="overflow-x: hidden;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopify Developmentle</title>
+    <link href="./dist/output.css" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Alpine.js for testimonials -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<style>
+    .overlay {
+        background-color: rgb(0 0 0 / 0.5);
+    }
+
+    @media (max-width: 1024px) {
+        .expertise-container {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .expertise-card {
+            width: 100%;
+        }
+
+        .engage-card2 {
+            padding: 0 40px !important;
+        }
+    }
+
+    @media (max-width: 900px) {
+        .expertise-container {
+            flex-direction: column !important;
+            align-items: center;
+        }
+
+        .expertise-card {
+            width: 100% !important;
+            max-width: 600px;
+        }
+    }
+
+    .why-baron-container {
+        max-width: 100vw;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        padding: 0;
+    }
+
+    .bg-dark-blue-0 {
+        background-color: #0A192F !important;
+        /* Replace with your custom blue if different */
+    }
+
+    .active-btn {
+        background-color: #0A192F !important;
+        color: white !important;
+    }
+
+    .industry-btn:not(.active-btn):hover {
+        background-color: #E5E7EB !important;
+        /* gray-200 */
+    }
+
+    .timeline-line::before {
+        content: "";
+        position: absolute;
+        top: 20px;
+        left: 6px;
+        width: 2px;
+        height: calc(100% - 20px);
+        background-color: #D1D5DB;
+        z-index: -1;
+    }
+
+    .timeline-dot {
+        border: 2px solid #D1D5DB;
+        background-color: white;
+        width: 14px;
+        height: 14px;
+        border-radius: 9999px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .timeline-dot::after {
+        content: "";
+        width: 6px;
+        height: 6px;
+        background-color: #9CA3AF;
+        border-radius: 9999px;
+    }
+
+    .arrow-default {
+        display: inline-block;
+    }
+
+    .arrow-hover {
+        display: none;
+    }
+
+    .group:hover .arrow-default {
+        display: none;
+    }
+
+    .group:hover .arrow-hover {
+        display: inline-block;
+    }
+
+    .timeline-item {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .timeline-item:hover {
+        transform: translateY(-6px);
+    }
+
+    @media (max-width: 425px) {
+        .hero-sec {
+            padding: 6rem;
+            /* Adjust padding for smaller screens */
+
+        }
+
+        .heading-impact {
+            margin-right: 0;
+            font-size: 22px;
+            padding: 0 8px;
+
+        }
+
+        .impact {
+            padding: 0 20px !important;
+            margin: 80px 0;
+        }
+
+    }
+
+    /* Custom responsive styling */
+    @media (max-width: 900px) {
+        .success-swiper-wrapper {
+            flex-direction: column !important;
+            display: flex !important;
+            align-items: center !important;
+        }
+
+        .success-card {
+            width: 100% !important;
+            max-width: 600px;
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    @media (min-width: 901px) {
+        .success-card {
+            min-width: 260px;
+            max-width: 360px;
+        }
+    }
+
+    @media (min-width: 900px) and (max-width: 1023px) {
+        .custom-layout {
+            display: grid !important;
+            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        }
+
+        .custom-layout>*:nth-child(5) {
+            grid-column: span 2;
+            /* 5th card takes full width */
+        }
+    }
+
+    @media (max-width: 900px) {
+        .baron-grid-row {
+            flex-direction: column !important;
+            align-items: center;
+        }
+
+        .whybaron-card {
+            width: 100% !important;
+            max-width: 600px;
+        }
+    }
+
+    @media (min-width: 900px) and (max-width: 1024px) {
+        .whybaron-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .whybaron-last-card {
+            grid-column: 1 / span 2;
+            justify-self: stretch;
+            width: 100%;
+        }
+    }
+
+    @media (min-width: 1280px) {
+        .whybaron-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .whybaron-card {
+            flex: 1;
+            min-width: calc(33.333% - 0.67rem);
+        }
+
+        .whybaron-card:nth-child(4),
+        .whybaron-last-card {
+            flex: 0 0 calc(50% - 0.5rem);
+            min-width: calc(50% - 0.5rem);
+        }
+    }
+
+    @media (min-width: 900px) and (max-width: 1024px) {
+        .industry-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .industry-last-card {
+            grid-column: 1 / span 2;
+            justify-self: stretch;
+            width: 100%;
+        }
+    }
+
+    @media (min-width: 1025px) {
+        .industry-last-card {
+            grid-column: auto;
+            width: 100%;
+        }
+    }
+
+    @media (min-width: 1280px) {
+        .industry-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .industry-card {
+            grid-column: auto;
+        }
+
+        .industry-card:nth-child(4) {
+            grid-column: 1 / span 1;
+        }
+
+        .industry-last-card {
+            grid-column: 2 / span 1;
+            width: 100%;
+            justify-self: stretch;
+        }
+    }
+
+    @media (min-width: 1280px) {
+        .whybaron-grid {
+            display: flex !important;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .top-cards {
+            display: flex !important;
+            gap: 1rem;
+        }
+
+        .bottom-cards {
+            display: flex !important;
+            gap: 1rem;
+        }
+
+        .bottom-cards .whybaron-card {
+            flex: 1 1 0%;
+            min-width: 0;
+        }
+    }
+
+    @media (max-width: 425px) {
+
+        #navbar {
+            padding: 1rem !important;
+        }
+
+        #getQuoteBtn {
+            display: none;
+        }
+
+        .hero-sec {
+            padding: 1rem !important;
+        }
+
+        .slide1 .slide {
+            width: 100%;
+        }
+
+        .slide1 {
+            margin-top: 60px;
+        }
+
+        .sec1,
+        .container,
+        .whybaron-grid,
+        .top-cards,
+        .bottom-cards {
+            padding-left: 12px !important;
+            padding-right: 12px !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+        }
+    }
+
+    @media (max-width: 767px) {
+
+        #navbar {
+            padding: 2rem;
+        }
+
+        .hero-sec {
+            padding: 2rem !important;
+        }
+
+        .slide1 .slide {
+            width: 100%;
+        }
+
+        .slide1 {
+            margin-top: 60px;
+        }
+
+
+        .container .flex>.w-full.md\:w-1\/3>.rounded-xl.bg-gray-100 {
+            height: auto !important;
+            min-height: 0 !important;
+            padding-bottom: 1rem !important;
+        }
+
+        .top-cards {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    @media (max-width: 425px) {
+        .heading-impact {
+            margin-right: 140px;
+        }
+
+        .time-line {
+            margin-top: 80px;
+        }
+
+        .swiper-buttons {
+            margin-right: 100px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .whybaron-grid {
+            margin-left: 10px;
+        }
+    }
+
+    @media (max-width: 426px) {
+        .whybaron-grid {
+            margin-left: 0px;
+        }
+    }
+
+    @media (max-width: 425px) {
+        .sliding-belt {
+            padding-left: 0px !important;
+            padding-right: 0px !important;
+        }
+
+        .engage-card2 {
+            padding: 0 20px !important;
+        }
+
+        .engage1 {
+            padding: 40px 20px !important;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .left-sec {
+            height: 140px !important;
+        }
+    }
+</style>
+
+<body class="font-sans h-full">
+    <section class="hero relative w-screen min-h-screen overflow-hidden bg-black">
+
+        <!-- Navbar -->
+        <nav id="navbar"
+            class="navbar fixed top-0 left-0 w-full z-50 px-20 py-4 flex items-center justify-between bg-transparent text-white group/nav hover:bg-white transition-all duration-300 ease-linear">
+            <div class="flex items-center gap-10 z-40">
+                <a href="index.html" class="logo z-40">
+                    <img class="h-14" src="/src/assets/baron-logo.webp" alt="">
+                </a>
+                <ul class="hidden md:flex space-x-6 text-lg gap-4 font-semibold group-hover/nav:text-black relative">
+
+                    <!-- Services Dropdown -->
+                    <li class="relative group">
+                        <a href="#" class="flex items-center gap-2 hover:text-logo-blue-0">
+                            Services
+                            <img src="/src/assets/down-arrow.png" class="h-3 mt-1 group-hover/nav:brightness-0" />
+                        </a>
+
+                        <div
+                            class="services-dropdown absolute hidden group-hover:flex justify-around pl-20 pr-60 bg-white text-black py-12 ml-[-180px] shadow-md w-[1503px] ">
+                            <!-- Software Development -->
+                            <div class=" flex justify-center items-start gap-4">
+                                <div class="border-[0.5px] rounded-full border-logo-blue-0 mt-2"><img class=" h-6"
+                                        src="/src/assets/arrow-blue.png" alt=""></div>
+                                <div class="space-y-2">
+                                    <h1 class="text-2xl font-bold">Software Development</h1>
+                                    <a href="mobile-app.html" class="block hover:text-logo-blue-0 text-gray-700">Mobile
+                                        App
+                                        Development</a>
+                                    <a href="custom-website.html"
+                                        class="block hover:text-logo-blue-0 text-gray-700">Custom Website
+                                        Development</a>
+                                    <a href="shopify.html" class="block hover:text-logo-blue-0 text-gray-700">Shopify
+                                        Development</a>
+                                    <a href="wordpress.html"
+                                        class="block hover:text-logo-blue-0 text-gray-700">WordPress Development</a>
+                                    <a href="graphic-designing.html"
+                                        class="block hover:text-logo-blue-0 text-gray-700">Graphics and Designing</a>
+                                    <a href="baron-tech-services.html"
+                                        class="block hover:text-logo-blue-0 text-gray-700">Baron Tech Special
+                                        Services</a>
+                                    <a href="cms.html" class="block hover:text-logo-blue-0 text-gray-700">CMS
+                                        Development</a>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col justify-between">
+                                <!-- AI Development -->
+                                <div class=" flex justify-center items-start gap-4">
+                                    <div class="border-[0.5px] rounded-full border-logo-blue-0 mt-2"><img class=" h-6"
+                                            src="/src/assets/arrow-blue.png" alt=""></div>
+                                    <div class="space-y-2">
+                                        <h1 class="text-2xl font-bold">AI Development</h1>
+                                        <a href="ai-agent-development.html"
+                                            class="block hover:text-logo-blue-0 text-gray-700">AI Agent
+                                            Development</a>
+                                        <a href="gen-ai-app-development.html"
+                                            class="block hover:text-logo-blue-0 text-gray-700">Gen AI App
+                                            Development</a>
+                                        <a href="ai-chatbot-development.html"
+                                            class="block hover:text-logo-blue-0 text-gray-700">AI Chatbot
+                                            Development</a>
+                                        <a href="ai-development-services.html"
+                                            class="block hover:text-logo-blue-0 text-gray-700">AI
+                                            Development
+                                            Services</a>
+                                        <a href="ai-proof-of-concept.html"
+                                            class="block hover:text-logo-blue-0 text-gray-700">AI Proof of
+                                            Concept</a>
+                                        <a href="computer-vision-solution.html"
+                                            class="block hover:text-logo-blue-0 text-gray-700">Computer
+                                            Vision
+                                            Solutions</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Industries -->
+                            <div class=" flex flex-col items-start gap-4">
+                                <div class="flex justify-center items-start gap-4">
+                                    <div class="border-[0.5px] rounded-full border-logo-blue-0 mt-2"><img class=" h-6"
+                                            src="/src/assets/arrow-blue.png" alt=""></div>
+                                    <div class="space-y-2">
+                                        <h1 class="text-2xl font-bold">Optimization</h1>
+                                        <a href="quality-assurance.html"
+                                            class="block hover:text-logo-blue-0 text-gray-700">Quality
+                                            Assurance and Testing</a>
+                                        <a href="support.html"
+                                            class="block hover:text-logo-blue-0 text-gray-700">Support and
+                                            Maintenance</a>
+                                    </div>
+                                </div>
+                                <div class="flex justify-center items-start gap-4">
+                                    <div class="border-[0.5px] rounded-full border-logo-blue-0 mt-2"><img class=" h-6"
+                                            src="/src/assets/arrow-blue.png" alt=""></div>
+                                    <div class="space-y-2">
+                                        <h1 class="text-2xl font-bold">Company</h1>
+                                        <a href="services.html"
+                                            class="block hover:text-logo-blue-0 text-gray-700">Services</a>
+                                        <a href="work_page.html"
+                                            class="block hover:text-logo-blue-0 text-gray-700">Work</a>
+                                        <a href="contact-us.html"
+                                            class="block hover:text-logo-blue-0 text-gray-700">Contact Us</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Our Company Dropdown -->
+                    <li class="relative group">
+                        <a href="#" class="hover:text-logo-blue-0 flex items-center justify-center gap-2">Our Company
+                            <img class="h-3 mt-1 group-hover/nav:brightness-0" src="/src/assets/down-arrow.png" alt="">
+                        </a>
+                        <ul
+                            class="absolute hidden group-hover:block bg-white text-black px-4 py-6 w-60 space-y-2 font-semibold">
+                            <li><a href="#" class="block hover:text-logo-blue-0">About</a></li>
+                            <li><a href="#" class="block hover:text-logo-blue-0">Portfolio</a></li>
+                            <li><a href="Team.html" class="block hover:text-logo-blue-0">Team</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Others -->
+                    <li><a href="#" class="hover:text-logo-blue-0">Technologies</a></li>
+                    <li><a href="#" class="hover:text-logo-blue-0">Blog</a></li>
+                </ul>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="#" class="whatsapp"><img class="h-6" src="/src/assets/whatsapp-svgrepo-com.png" alt=""></a>
+                <a href="#" class="num group-hover/nav:text-black text-lg">+1 (409) 916-8275</a>
+                <button id="getQuoteBtn"
+                    class="get-quote group z-40 flex items-center justify-center gap-2 text-xl border-[0.5px] rounded-md px-8 py-2 hover:text-white group-hover/nav:bg-logo-blue-0 group-hover/nav:border-logo-blue-0">
+                    Get Quote
+                    <img id="arrow"
+                        class="h-7 group-hover:rotate-45 transition duration-300 ease-linear filter invert brightness-0 contrast-200 group-hover:filter group-hover:invert group-hover:brightness-0 group-hover:contrast-200"
+                        src="/src/assets/arrow-blue.png" alt="">
+                    <!-- Mobile Menu Icon (optional) -->
+                    <div class="block lg:hidden">
+                        <button id="menu-btn" class="focus:outline-none group-hover/nav:text-black">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </button>
+                    </div>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Sidebar (mobile) -->
+        <div id="mobileSidebar"
+            class="fixed top-0 right-0 h-full w-80 bg-white text-black shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50 lg:hidden overflow-y-auto">
+            <div class="p-6 flex flex-col space-y-6 font-semibold text-lg">
+                <!-- Logo and Close Button -->
+                <div class="flex justify-between items-start">
+                    <div><img class="h-16" src="/src/assets/baron-logo.webp" alt=""></div>
+                    <button id="closeSidebar" class="self-start text-black text-4xl">&times;</button>
+                </div>
+
+                <!-- Main Links -->
+                <div class="flex flex-col gap-4 !mt-10">
+
+                    <!-- Services Dropdown -->
+                    <div>
+                        <button id="servicesToggle"
+                            class="w-full flex justify-between items-center hover:text-logo-blue-0 border-b-[0.5px] border-gray-300">
+                            Services <img class="h-4 invert transition-transform duration-300"
+                                src="/src/assets/down-arrow.png" id="servicesArrow" alt="">
+                        </button>
+
+                        <div id="servicesMenu" class=" my-2 hidden text-sm space-y-2 text-gray-700">
+
+                            <div class=" flex justify-center items-start gap-4">
+                                <div class="border-[0.5px] rounded-full border-logo-blue-0 mt-2"><img class=" h-6"
+                                        src="/src/assets/arrow-blue.png" alt=""></div>
+
+                                <div class="space-y-2">
+                                    <h1 class="text-xl font-bold">Software Development</h1>
+                                    <a href="mobile-app.html" class="block hover:text-logo-blue-0 text-gray-700">Mobile
+                                        App
+                                        Development</a>
+                                    <a href="custom-website.html"
+                                        class="block hover:text-logo-blue-0 text-gray-700">Custom Website
+                                        Development</a>
+                                    <a href="shopify.html" class="block hover:text-logo-blue-0 text-gray-700">Shopify
+                                        Development</a>
+                                    <a href="wordpress.html"
+                                        class="block hover:text-logo-blue-0 text-gray-700">WordPress Development</a>
+                                    <a href="graphic-designing.html"
+                                        class="block hover:text-logo-blue-0 text-gray-700">Graphics and Designing</a>
+                                    <a href="baron-tech-services.html"
+                                        class="block hover:text-logo-blue-0 text-gray-700">Baron Tech Special
+                                        Services</a>
+                                    <a href="cms.html" class="block hover:text-logo-blue-0 text-gray-700">CMS
+                                        Development</a>
+                                </div>
+
+
+                            </div>
+
+                            <div class=" flex justify-start items-start gap-4 mt-4">
+                                <div class="border-[0.5px] rounded-full border-logo-blue-0 mt-2"><img class=" h-6"
+                                        src="/src/assets/arrow-blue.png" alt=""></div>
+                                <div class="space-y-2">
+                                    <h1 class="text-xl font-bold">AI Development</h1>
+                                    <a href="ai-agent-development.html"
+                                        class="block hover:text-logo-blue-0 text-gray-700">AI Agent
+                                        Development</a>
+                                    <a href="gen-ai-app-development.html"
+                                        class="block hover:text-logo-blue-0 text-gray-700">Gen AI App
+                                        Development</a>
+                                    <a href="ai-chatbot-development.html"
+                                        class="block hover:text-logo-blue-0 text-gray-700">AI Chatbot
+                                        Development</a>
+                                    <a href="ai-development-services.html"
+                                        class="block hover:text-logo-blue-0 text-gray-700">AI
+                                        Development
+                                        Services</a>
+                                    <a href="ai-proof-of-concept.html"
+                                        class="block hover:text-logo-blue-0 text-gray-700">AI Proof of
+                                        Concept</a>
+                                    <a href="computer-vision-solution.html"
+                                        class="block hover:text-logo-blue-0 text-gray-700">Computer
+                                        Vision
+                                        Solutions</a>
+                                </div>
+                            </div>
+
+                            <div class=" flex justify-start items-start gap-4 mt-4">
+                                <div class="border-[0.5px] rounded-full border-logo-blue-0 mt-2"><img class=" h-6"
+                                        src="/src/assets/arrow-blue.png" alt=""></div>
+                                <div class="space-y-2">
+                                    <h1 class="text-xl font-bold">Optimization</h1>
+                                    <a href="quality-assurance.html"
+                                        class="block hover:text-logo-blue-0 text-gray-700">Quality Assurance
+                                        & Testing</a>
+                                    <a href="support.html" class="block hover:text-logo-blue-0 text-gray-700">Support &
+                                        Maintenance</a>
+                                </div>
+                            </div>
+
+                            <div class=" flex justify-start items-start gap-4 mt-4">
+                                <div class="border-[0.5px] rounded-full border-logo-blue-0 mt-2"><img class=" h-6"
+                                        src="/src/assets/arrow-blue.png" alt=""></div>
+                                <div class="space-y-2">
+                                    <h1 class="text-xl font-bold">Company</h1>
+                                    <a href="services.html"
+                                        class="block hover:text-logo-blue-0 text-gray-700">Services</a>
+                                    <a href="work_page.html" class="block hover:text-logo-blue-0 text-gray-700">Work</a>
+                                    <a href="contact-us.html" class="block hover:text-logo-blue-0 text-gray-700">Contact
+                                        Us</a>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                    <!-- Our Company Dropdown -->
+                    <div>
+                        <button id="companyToggle"
+                            class="w-full flex justify-between items-center hover:text-logo-blue-0 border-b-[0.5px] border-gray-300 pb-2">
+                            Our Company <img class="h-4 invert transition-transform duration-300"
+                                src="/src/assets/down-arrow.png" id="companyArrow" alt="">
+                        </button>
+                        <div id="companyMenu" class="ml-4 mt-2 hidden text-sm space-y-2 text-gray-700">
+                            <a href="#" class="block hover:text-logo-blue-0">About</a>
+                            <a href="#" class="block hover:text-logo-blue-0">Portfolio</a>
+                            <a href="#" class="block hover:text-logo-blue-0">Team</a>
+                        </div>
+                    </div>
+
+                    <!-- Other Links -->
+                    <a href="#" class="hover:text-logo-blue-0 border-b-[0.5px] border-gray-300 pb-2">Technologies</a>
+                    <a href="#" class="hover:text-logo-blue-0 border-b-[0.5px] border-gray-300 pb-2">Blog</a>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <p class="text-sm text-gray-500">Contact</p>
+                    <a href="tel:+14099168275" class="hover:text-logo-blue-0">+1 (409) 916-8275</a>
+                </div>
+
+                <!-- Button -->
+                <button
+                    class="bg-logo-blue-0 text-white px-4 py-2 rounded-md border border-logo-blue-0 hover:bg-white hover:text-logo-blue-0 transition">
+                    Get Quote
+                </button>
+            </div>
+        </div>
+
+        <!-- Backdrop Overlay -->
+        <div id="sidebarOverlay"
+            class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden transition-opacity duration-300 lg:hidden">
+        </div>
+
+        <div class="hero-sec min-h-screen relative flex items-center justify-center text-white px-20 pt-0">
+            <video autoplay muted loop playsinline
+                style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;">
+                <source src="/src/assets/banner-vid-1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+            <!-- Dark Overlay -->
+            <div class="overlay absolute inset-0 "></div>
+
+
+            <!-- Content -->
+            <div class="slide1 flex relative z-10">
+                <div class="slide flex flex-col justify-center gap-16 w-[60%]">
+                    <h1 class="text-5xl font-semibold">AI Development Services</h1>
+                    <p class="text-xl">
+                        Unlock the full potential of artificial intelligence with our cutting-edge AI development
+                        services. Designed to fuel innovation, enhance efficiency, and propel your business toward
+                        unprecedented success, our intelligent solutions redefine what’s possible in the digital
+                        landscape.
+                    </p>
+                    <button
+                        class="w-[200px] get-quote2 group flex items-center justify-center gap-2 text-xl border-[0.5px] rounded-md px-8 py-2 hover:bg-logo-blue-0 hover:border-logo-blue-0">
+                        Get Quote
+                        <img class="h-7 group-hover:rotate-45 transition duration-300 ease-linear"
+                            src="/src/assets/arrow-up-right.png" alt="">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sliding Belt Section -->
+    <section class=" sliding-belt overflow-hidden bg-white">
+        <div class="relative w-full overflow-hidden bg-black">
+            <div class="flex justify-center items-center gap-16 animate-marquee whitespace-nowrap py-4 ">
+                <!-- Logos - duplicated for seamless loop -->
+                <img src="/src/assets/client8-removebg-preview.png" class="h-8 object-contain grayscale" alt="Client 1">
+                <img src="/src/assets/client2.webp" class="h-14 object-contain grayscale" alt="Client 2">
+                <img src="/src/assets/client3-removebg-preview.png" class="h-14 object-contain grayscale"
+                    alt="Client 3">
+                <img src="/src/assets/client4.webp" class="h-14 object-contain grayscale" alt="Client 4">
+                <img src="/src/assets/client5-removebg-preview.png" class="h-14 object-contain grayscale"
+                    alt="Client 5">
+
+                <!-- Duplicated logos for loop -->
+                <img src="/src/assets/client8-removebg-preview.png" class="h-8 object-contain grayscale" alt="Client 1">
+                <img src="/src/assets/client2.webp" class="h-14 object-contain grayscale" alt="Client 2">
+                <img src="/src/assets/client3-removebg-preview.png" class="h-14 object-contain grayscale"
+                    alt="Client 3">
+                <img src="/src/assets/client4.webp" class="h-14 object-contain grayscale" alt="Client 4">
+                <img src="/src/assets/client5-removebg-preview.png" class="h-14 object-contain grayscale"
+                    alt="Client 5">
+
+                <!-- Duplicated logos for loop -->
+                <img src="/src/assets/client8-removebg-preview.png" class="h-8 object-contain grayscale" alt="Client 1">
+                <img src="/src/assets/client2.webp" class="h-14 object-contain grayscale" alt="Client 2">
+                <img src="/src/assets/client3-removebg-preview.png" class="h-14 object-contain grayscale"
+                    alt="Client 3">
+                <img src="/src/assets/client4.webp" class="h-14 object-contain grayscale" alt="Client 4">
+                <img src="/src/assets/client5-removebg-preview.png" class="h-14 object-contain grayscale"
+                    alt="Client 5">
+            </div>
+        </div>
+    </section>
+
+    <!-- how we impact your business -->
+  <section class=" impact relative bg-white my-20 w-full px-20 sm:px-6 md:px-20">
+    <div class="impact-header flex justify-between items-center w-full mb-10">
+      <h1 class="heading-impact text-black font-semibold text-3xl">Smart AI services for a smarter future</h1>
+      <!-- Swiper Arrows -->
+      <div class="swiper-buttons flex items-center space-x-3 ml-6">
+        <button
+          class="all-services flex group justify-center items-center border-[0.5px] border-logo-blue-0 text-logo-blue-0 gap-2 rounded-full px-4 py-2 hover:bg-logo-blue-0 hover:text-white transition-all 3s ease-linear">All
+          Services
+          <img
+            class="group-hover:rotate-45 transition-all 3s ease-linear h-6 filter group-hover:invert group-hover:brightness-0 group-hover:contrast-200"
+            src="/src/assets/arrow-blue.png" alt="">
+        </button>
+        <button
+          class="swiper-button-prev-custom border-[0.5px] border-logo-blue-0 rounded-full w-11 h-11 flex items-center justify-center transition hover:bg-logo-blue-0 hover:border-logo-blue-0 group">
+          <img src="/src/assets/left-blue.png" alt="Left Arrow"
+            class="h-8 w-8 transition-all duration-300 group-hover:invert group-hover:brightness-0 group-hover:contrast-200" />
+        </button>
+        <button
+          class="swiper-button-next-custom border-[0.5px] border-logo-blue-0 rounded-full w-11 h-11 flex items-center justify-center transition hover:bg-logo-blue-0 hover:border-logo-blue-0 group">
+          <img src="/src/assets/arrow-blue.png" alt="Right Arrow"
+            class="h-8 w-8 rotate-45 transition-all duration-300 group-hover:invert group-hover:brightness-0 group-hover:contrast-200" />
+
+        </button>
+      </div>
+    </div>
+
+    <div class="w-full">
+      <div class="swiper project-swiper w-full">
+        <div class="swiper-wrapper">
+          <!-- Card 1 -->
+          <div
+            class="swiper-slide group border-logo-blue-0 border-[1px] p-8 flex items-center justify-center !h-[365px] min-w-[260px] transition-all duration-300 relative cursor-pointer overflow-hidden rounded-md bg-white">
+            <div class="flex flex-col justify-center items-center h-full w-full">
+              <!-- Content Section -->
+              <div class="flex flex-col gap-8 transition-all duration-500 z-10">
+                <div><img class="h-20 transition-all duration-300" src="/src/assets/rocket.png" alt=""></div>
+                <div class="flex flex-col gap-4">
+                  <h1 class="text-2xl font-semibold">AI Consulting Services</h1>
+                  <ul class="list-disc ml-3 text-sm">
+                    <li>Assessing current data infrastructure</li>
+                    <li>Conducting feasibility studies for AI technology selection</li>
+                    <li>Crafting AI strategies tailored to unique business needs</li>
+                    <li>Developing roadmaps for seamless AI integration</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="swiper-slide group border-logo-blue-0 border-[1px] p-8 flex items-center justify-center !h-[365px] min-w-[260px] transition-all duration-300 relative cursor-pointer overflow-hidden rounded-md bg-white">
+            <div class="flex flex-col justify-center items-center h-full w-full">
+              <!-- Content Section -->
+              <div class="flex flex-col gap-8 transition-all duration-500 z-10">
+                <div><img class="h-20 transition-all duration-300" src="/src/assets/html.png" alt=""></div>
+                <div class="flex flex-col gap-4">
+                  <h1 class="text-2xl font-semibold">AI Development Services</h1>
+                  <ul class="list-disc ml-3 text-sm">
+                    <li>Building custom AI and ML software from the ground up</li>
+                    <li>Evaluating and enhancing existing AI software performance</li>
+                    <li>Adding new AI modules and features</li>
+                    <li>Providing ongoing maintenance, monitoring, and support for AI software</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="swiper-slide group border-logo-blue-0 border-[1px] p-8 flex items-center justify-center !h-[365px] min-w-[260px] transition-all duration-300 relative cursor-pointer overflow-hidden rounded-md bg-white">
+            <div class="flex flex-col justify-center items-center h-full w-full">
+              <!-- Content Section -->
+              <div class="flex flex-col gap-8 transition-all duration-500 z-10">
+                <div><img class="h-20 transition-all duration-300" src="/src/assets/ai.png" alt=""></div>
+                <div class="flex flex-col gap-4">
+                  <h1 class="text-2xl font-semibold">AI App Development Services</h1>
+                  <ul class="list-disc ml-3 text-sm">
+                    <li>Defining project objectives and business requirements</li>
+                    <li>Collecting data essential for AI app development</li>
+                    <li>Selecting appropriate AI models for specific business challengesSetting goals for chatbot development</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div
+            class="swiper-slide group border-logo-blue-0 border-[1px] p-8 flex items-center justify-center !h-[365px] min-w-[260px] transition-all duration-300 relative cursor-pointer overflow-hidden rounded-md bg-white">
+            <div class="flex flex-col justify-center items-center h-full w-full">
+              <!-- Content Section -->
+              <div class="flex flex-col gap-8 transition-all duration-500 z-10">
+                <div><img class="h-20 transition-all duration-300" src="/src/assets/settings.png" alt=""></div>
+                <div class="flex flex-col gap-4">
+                  <h1 class="text-2xl font-semibold">Chatbot Development Services</h1>
+                  <ul class="list-disc ml-3 text-sm">
+                    <li>Setting goals for chatbot development</li>
+                    <li>Designing and integrating various chatbot solutions</li>
+                    <li>Creating conversation flows for optimal user engagement</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div
+            class="swiper-slide group border-logo-blue-0 border-[1px] p-8 flex items-center justify-center !h-[365px] min-w-[260px] transition-all duration-300 relative cursor-pointer overflow-hidden rounded-md bg-white">
+            <div class="flex flex-col justify-center items-center h-full w-full">
+              <!-- Content Section -->
+              <div class="flex flex-col gap-8 transition-all duration-500 z-10">
+                <div><img class="h-20 transition-all duration-300" src="/src/assets/puzzle.png" alt=""></div>
+                <div class="flex flex-col gap-4">
+                  <h1 class="text-2xl font-semibold">Natural Language Processing Services</h1>
+                  <ul class="list-disc ml-3 text-sm">
+                    <li>Developing speech recognition solutions</li>
+                    <li>Implementing advanced text analysis features</li>
+                    <li>Automating digital content processing</li>
+                    <li>Providing language translation solutions</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div
+            class="swiper-slide group border-logo-blue-0 border-[1px] p-8 flex items-center justify-center !h-[365px] min-w-[260px] transition-all duration-300 relative cursor-pointer overflow-hidden rounded-md bg-white">
+            <div class="flex flex-col justify-center items-center h-full w-full">
+              <!-- Content Section -->
+              <div class="flex flex-col gap-8 transition-all duration-500 z-10">
+                <div><img class="h-20 transition-all duration-300" src="/src/assets/ai.png" alt=""></div>
+                <div class="flex flex-col gap-4">
+                  <h1 class="text-2xl font-semibold">Generative AI Development Services</h1>
+                  <ul class="list-disc ml-3 text-sm">
+                    <li>Creating software for generating text, audio, video, and images</li>
+                    <li>Training and integrating generative AI models</li>
+                    <li>Adding generative AI components to existing software systems</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+    <section class="sec1 bg-white px-20 mt-20 flex justify-center">
+        <div class="flex flex-col lg:flex-row max-w-[1600px]  gap-10 min-h-[600px]"
+            style="margin-left: 20px; margin-right: 20px;">
+            <!-- Left Section -->
+            <div class="bg-dark-blue-0 text-white rounded-xl p-10 w-full lg:w-2/5 flex-shrink-0 flex flex-col justify-center"
+                style="height:530px;">
+                <h2 class="text-3xl font-bold mb-4">Unmatched AI Expertise</h2>
+                <p class="text-lg text-gray-300">
+                    Leverage our deep AI expertise to develop intelligent solutions that enhance productivity, drive
+                    engagement, and foster customer loyalty. Our cutting-edge AI technologies empower businesses to
+                    innovate, automate, and scale with precision.
+                </p>
+            </div>
+
+            <!-- Right Section -->
+            <div class="w-full lg:w-3/5 flex-shrink-0">
+                <div class="space-y-4">
+                    <!-- Item Template -->
+                    <div class="border-b" x-data="{ open: false }">
+                        <button
+                            class="w-full text-left text-xl flex justify-between items-center py-4 text-gray-700 font-medium"
+                            onclick="toggleAccordion(this)">
+                            AI-Powered Solutions for Every Platform
+                            <span class="text-2xl font-bold">+</span>
+                        </button>
+                        <div class="hidden pb-4 text-gray-600">
+                            Baron Tech (Pvt) Limited specializes in building cutting-edge AI-driven applications
+                            tailored for businesses worldwide, leveraging advanced machine learning and automation to
+                            drive innovation.
+                        </div>
+                    </div>
+
+                    <div class="border-b" x-data="{ open: false }">
+                        <button
+                            class="w-full text-left text-xl flex justify-between items-center py-4 text-gray-700 font-medium"
+                            onclick="toggleAccordion(this)">
+                            Full-Stack AI Engineering
+                            <span class="text-2xl font-bold">+</span>
+                        </button>
+                        <div class="hidden pb-4 text-gray-600">
+                            Our expert AI engineers develop intelligent systems that seamlessly integrate across various
+                            platforms, enhancing efficiency and delivering scalable solutions for diverse business
+                            needs.
+                        </div>
+                    </div>
+
+                    <div class="border-b">
+                        <button
+                            class="w-full text-left text-xl flex justify-between items-center py-4 text-gray-700 font-medium"
+                            onclick="toggleAccordion(this)">
+                            AI-Driven Process Automation
+                            <span class="text-2xl font-bold">+</span>
+                        </button>
+                        <div class="hidden pb-4 text-gray-600">
+                            We provide comprehensive AI-powered automation solutions, optimizing workflows, streamlining
+                            operations, and enhancing productivity with precision and accuracy.
+                        </div>
+                    </div>
+
+                    <div class="border-b">
+                        <button
+                            class="w-full text-left text-xl flex justify-between items-center py-4 text-gray-700 font-medium"
+                            onclick="toggleAccordion(this)">
+                            Intelligent Reservation Systems
+                            <span class="text-2xl font-bold">+</span>
+                        </button>
+                        <div class="hidden pb-4 text-gray-600">
+                            Leverage AI-driven reservation platforms designed with adaptive algorithms, ensuring
+                            seamless user experiences and efficient resource management.
+                        </div>
+                    </div>
+
+                    <div class="border-b">
+                        <button
+                            class="w-full text-left text-xl flex justify-between items-center py-4 text-gray-700 font-medium"
+                            onclick="toggleAccordion(this)">
+                            Cross-Platform AI Development
+                            <span class="text-2xl font-bold">+</span>
+                        </button>
+                        <div class="hidden pb-4 text-gray-600">
+                            We build powerful AI-enabled solutions that function seamlessly across multiple platforms,
+                            ensuring flexibility, performance, and user-centric experiences.
+                        </div>
+                    </div>
+
+                    <div class="border-b">
+                        <button
+                            class="w-full text-left text-xl flex justify-between items-center py-4 text-gray-700 font-medium"
+                            onclick="toggleAccordion(this)">
+                            AI-Enhanced User Experiences
+                            <span class="text-2xl font-bold">+</span>
+                        </button>
+                        <div class="hidden pb-4 text-gray-600">
+                            Our AI-driven designs focus on intuitive user interfaces, creating seamless interactions
+                            that enhance customer engagement and satisfaction.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- how we impact your business -->
+  <section class=" impact relative bg-white mb-20 w-full px-20 sm:px-6 md:px-20">
+    <div class="impact-header flex justify-between items-center w-full mb-10">
+      <h1 class="heading-impact text-black font-semibold text-3xl">Smart AI services for a smarter future</h1>
+      <!-- Swiper Arrows -->
+      <div class="swiper-buttons flex items-center space-x-3 ml-6">
+        <button
+          class="all-services flex group justify-center items-center border-[0.5px] border-logo-blue-0 text-logo-blue-0 gap-2 rounded-full px-4 py-2 hover:bg-logo-blue-0 hover:text-white transition-all 3s ease-linear">All
+          Services
+          <img
+            class="group-hover:rotate-45 transition-all 3s ease-linear h-6 filter group-hover:invert group-hover:brightness-0 group-hover:contrast-200"
+            src="/src/assets/arrow-blue.png" alt="">
+        </button>
+        <button
+          class="swiper-button-prev-custom border-[0.5px] border-logo-blue-0 rounded-full w-11 h-11 flex items-center justify-center transition hover:bg-logo-blue-0 hover:border-logo-blue-0 group">
+          <img src="/src/assets/left-blue.png" alt="Left Arrow"
+            class="h-8 w-8 transition-all duration-300 group-hover:invert group-hover:brightness-0 group-hover:contrast-200" />
+        </button>
+        <button
+          class="swiper-button-next-custom border-[0.5px] border-logo-blue-0 rounded-full w-11 h-11 flex items-center justify-center transition hover:bg-logo-blue-0 hover:border-logo-blue-0 group">
+          <img src="/src/assets/arrow-blue.png" alt="Right Arrow"
+            class="h-8 w-8 rotate-45 transition-all duration-300 group-hover:invert group-hover:brightness-0 group-hover:contrast-200" />
+
+        </button>
+      </div>
+    </div>
+
+    <div class="w-full">
+      <div class="swiper project-swiper w-full">
+        <div class="swiper-wrapper">
+          <!-- Card 1 -->
+          <div
+            class="swiper-slide group border-logo-blue-0 border-[1px] p-8 flex items-center justify-center !h-[365px] min-w-[260px] transition-all duration-300 relative cursor-pointer overflow-hidden rounded-md bg-white">
+            <div class="flex flex-col justify-center items-center h-full w-full">
+              <!-- Content Section -->
+              <div class="flex flex-col gap-8 transition-all duration-500 z-10">
+                <div><img class="h-20 transition-all duration-300" src="/src/assets/rocket.png" alt=""></div>
+                <div class="flex flex-col gap-4">
+                  <h1 class="text-2xl font-semibold">AI Consulting Services</h1>
+                  <ul class="list-disc ml-3 text-sm">
+                    <li>Assessing current data infrastructure</li>
+                    <li>Conducting feasibility studies for AI technology selection</li>
+                    <li>Crafting AI strategies tailored to unique business needs</li>
+                    <li>Developing roadmaps for seamless AI integration</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="swiper-slide group border-logo-blue-0 border-[1px] p-8 flex items-center justify-center !h-[365px] min-w-[260px] transition-all duration-300 relative cursor-pointer overflow-hidden rounded-md bg-white">
+            <div class="flex flex-col justify-center items-center h-full w-full">
+              <!-- Content Section -->
+              <div class="flex flex-col gap-8 transition-all duration-500 z-10">
+                <div><img class="h-20 transition-all duration-300" src="/src/assets/html.png" alt=""></div>
+                <div class="flex flex-col gap-4">
+                  <h1 class="text-2xl font-semibold">AI Development Services</h1>
+                  <ul class="list-disc ml-3 text-sm">
+                    <li>Building custom AI and ML software from the ground up</li>
+                    <li>Evaluating and enhancing existing AI software performance</li>
+                    <li>Adding new AI modules and features</li>
+                    <li>Providing ongoing maintenance, monitoring, and support for AI software</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="swiper-slide group border-logo-blue-0 border-[1px] p-8 flex items-center justify-center !h-[365px] min-w-[260px] transition-all duration-300 relative cursor-pointer overflow-hidden rounded-md bg-white">
+            <div class="flex flex-col justify-center items-center h-full w-full">
+              <!-- Content Section -->
+              <div class="flex flex-col gap-8 transition-all duration-500 z-10">
+                <div><img class="h-20 transition-all duration-300" src="/src/assets/ai.png" alt=""></div>
+                <div class="flex flex-col gap-4">
+                  <h1 class="text-2xl font-semibold">AI App Development Services</h1>
+                  <ul class="list-disc ml-3 text-sm">
+                    <li>Defining project objectives and business requirements</li>
+                    <li>Collecting data essential for AI app development</li>
+                    <li>Selecting appropriate AI models for specific business challengesSetting goals for chatbot development</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div
+            class="swiper-slide group border-logo-blue-0 border-[1px] p-8 flex items-center justify-center !h-[365px] min-w-[260px] transition-all duration-300 relative cursor-pointer overflow-hidden rounded-md bg-white">
+            <div class="flex flex-col justify-center items-center h-full w-full">
+              <!-- Content Section -->
+              <div class="flex flex-col gap-8 transition-all duration-500 z-10">
+                <div><img class="h-20 transition-all duration-300" src="/src/assets/settings.png" alt=""></div>
+                <div class="flex flex-col gap-4">
+                  <h1 class="text-2xl font-semibold">Chatbot Development Services</h1>
+                  <ul class="list-disc ml-3 text-sm">
+                    <li>Setting goals for chatbot development</li>
+                    <li>Designing and integrating various chatbot solutions</li>
+                    <li>Creating conversation flows for optimal user engagement</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div
+            class="swiper-slide group border-logo-blue-0 border-[1px] p-8 flex items-center justify-center !h-[365px] min-w-[260px] transition-all duration-300 relative cursor-pointer overflow-hidden rounded-md bg-white">
+            <div class="flex flex-col justify-center items-center h-full w-full">
+              <!-- Content Section -->
+              <div class="flex flex-col gap-8 transition-all duration-500 z-10">
+                <div><img class="h-20 transition-all duration-300" src="/src/assets/puzzle.png" alt=""></div>
+                <div class="flex flex-col gap-4">
+                  <h1 class="text-2xl font-semibold">Natural Language Processing Services</h1>
+                  <ul class="list-disc ml-3 text-sm">
+                    <li>Developing speech recognition solutions</li>
+                    <li>Implementing advanced text analysis features</li>
+                    <li>Automating digital content processing</li>
+                    <li>Providing language translation solutions</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div
+            class="swiper-slide group border-logo-blue-0 border-[1px] p-8 flex items-center justify-center !h-[365px] min-w-[260px] transition-all duration-300 relative cursor-pointer overflow-hidden rounded-md bg-white">
+            <div class="flex flex-col justify-center items-center h-full w-full">
+              <!-- Content Section -->
+              <div class="flex flex-col gap-8 transition-all duration-500 z-10">
+                <div><img class="h-20 transition-all duration-300" src="/src/assets/ai.png" alt=""></div>
+                <div class="flex flex-col gap-4">
+                  <h1 class="text-2xl font-semibold">Generative AI Development Services</h1>
+                  <ul class="list-disc ml-3 text-sm">
+                    <li>Creating software for generating text, audio, video, and images</li>
+                    <li>Training and integrating generative AI models</li>
+                    <li>Adding generative AI components to existing software systems</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+    <section class="sec1 bg-white px-20 mt-20 flex justify-center flex-col gap-12">
+        <h1 class="heading-impact text-black font-semibold text-3xl">How Generative AI address your biggest challenges
+        </h1>
+        <div class="flex flex-col lg:flex-row max-w-[1600px]  gap-10 min-h-[600px]"
+            style="margin-left: 20px; margin-right: 20px;">
+            <!-- Left Section -->
+            <div>
+                <img class="h-[85%] rounded-lg" src="src/assets/Ai-img-3.jpg" alt="">
+            </div>
+
+            <!-- Right Section -->
+            <div class="w-full lg:w-3/5 flex-shrink-0">
+                <div class="space-y-4">
+                    <!-- Item Template -->
+                    <div class="border-b" x-data="{ open: false }">
+                        <button
+                            class="w-full text-left text-xl flex justify-between items-center py-4 text-gray-700 font-medium"
+                            onclick="toggleAccordion(this)">
+                            Consistently generate new ideas
+                            <span class="text-2xl font-bold">+</span>
+                        </button>
+                        <div class="hidden pb-4 text-gray-600">
+                            Overcome creative blocks with AI that generates innovative ideas and concepts, keeping your
+                            business ahead
+                            of the curve.
+                        </div>
+                    </div>
+
+                    <div class="border-b" x-data="{ open: false }">
+                        <button
+                            class="w-full text-left text-xl flex justify-between items-center py-4 text-gray-700 font-medium"
+                            onclick="toggleAccordion(this)">
+                            Automate repetitive tasks
+                            <span class="text-2xl font-bold">+</span>
+                        </button>
+                        <div class="hidden pb-4 text-gray-600">
+                            Save time and reduce errors by automating mundane tasks like data entry, report generation,
+                            and content
+                            creation, allowing your team to focus on higher-value work.
+                        </div>
+                    </div>
+
+                    <div class="border-b">
+                        <button
+                            class="w-full text-left text-xl flex justify-between items-center py-4 text-gray-700 font-medium"
+                            onclick="toggleAccordion(this)">
+                            Optimize operational efficiency
+                            <span class="text-2xl font-bold">+</span>
+                        </button>
+                        <div class="hidden pb-4 text-gray-600">
+                            Streamline and refine your business processes with AI-driven insights and automation,
+                            leading to
+                            significant improvements in productivity and resource management.
+                        </div>
+                    </div>
+
+                    <div class="border-b">
+                        <button
+                            class="w-full text-left text-xl flex justify-between items-center py-4 text-gray-700 font-medium"
+                            onclick="toggleAccordion(this)">
+                            Optimize operational efficiency
+                            <span class="text-2xl font-bold">+</span>
+                        </button>
+                        <div class="hidden pb-4 text-gray-600">
+                            Streamline and refine your business processes with AI-driven insights and automation,
+                            leading to
+                            significant improvements in productivity and resource management.
+                        </div>
+                    </div>
+
+                    <div class="border-b">
+                        <button
+                            class="w-full text-left text-xl flex justify-between items-center py-4 text-gray-700 font-medium"
+                            onclick="toggleAccordion(this)">
+                            Making sense of large data
+                            <span class="text-2xl font-bold">+</span>
+                        </button>
+                        <div class="hidden pb-4 text-gray-600">
+                            Use generative AI to analyze vast amounts of data quickly and accurately, providing you with
+                            clear,
+                            actionable insights for strategic decision-making.
+                        </div>
+                    </div>
+
+                    <div class="border-b">
+                        <button
+                            class="w-full text-left text-xl flex justify-between items-center py-4 text-gray-700 font-medium"
+                            onclick="toggleAccordion(this)">
+                            Improving customer personalization
+                            <span class="text-2xl font-bold">+</span>
+                        </button>
+                        <div class="hidden pb-4 text-gray-600">
+                            Enhance customer satisfaction and loyalty by using AI to deliver tailored recommendations,
+                            customer
+                            support, personalized marketing, and personalized service experiences.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- enaggement model section -->
+    <section class="engage-card2 w-full px-20 mb-20 font-sans">
+        <div>
+            <h1 class="text-black font-semibold text-3xl mb-10">Engagement Models</h1>
+        </div>
+        <div class="top-cards flex gap-8">
+            <!-- Card 1 -->
+            <div
+                class="engage1 bg-black border rounded-xl p-14 shadow-sm font-sans flex gap-8 flex-col justify-between w-full">
+                <img class="h-24 w-24" src="src/assets/three-cubes.png" alt="">
+                <h1 class="text-white font-semibold text-3xl">Project-based Development</h1>
+                <p class="text-gray-400 text-lg">Streamline your projects with minimal risk, ensuring top-notch quality
+                    and timely, on-budget delivery.</p>
+                <a href="#"
+                    class="text-logo-blue-0 flex justify-center gap-1 items-center border border-logo-blue-0 px-4 py-2 w-fit rounded-md group hover:bg-logo-blue-0 hover:text-white transition 3s ease-linear">Get
+                    in Touch
+                    <img class="h-6 group-hover:rotate-45 transition 3s ease-linear filter group-hover:invert group-hover:brightness-0 group-hover:contrast-200"
+                        src="src/assets/arrow-blue.png" alt="">
+                </a>
+            </div>
+            <!-- Card 2 -->
+            <div
+                class="engage1 bg-dark-blue-0 border rounded-xl p-14 shadow-sm font-sans flex gap-8 flex-col justify-between w-full">
+                <img class="h-24 w-24" src="src/assets/circles-lines.png" alt="">
+                <h1 class="text-white font-semibold text-3xl">Dedicated Teams</h1>
+                <p class="text-gray-400 text-lg">Accelerate your projects with our expert team, combining technical
+                    prowess and management skills for seamless collaboration and success.</p>
+                <a href="#"
+                    class="text-logo-blue-0 flex justify-center gap-1 items-center border border-logo-blue-0 px-4 py-2 w-fit rounded-md group hover:bg-logo-blue-0 hover:text-white transition 3s ease-linear">Get
+                    in Touch
+                    <img class="h-6 group-hover:rotate-45 transition 3s ease-linear filter group-hover:invert group-hover:brightness-0 group-hover:contrast-200"
+                        src="src/assets/arrow-blue.png" alt="">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Responsive Section (100% width, container centered, Tailwind CSS) -->
+    <section class="w-full bg-section-bg py-20  mt-20 font-sans">
+        <div class="container mx-auto px-6 flex flex-col lg:flex-row justify-between items-center w-full">
+            <!-- Left Side: Heading and Button -->
+            <div class="w-full lg:w-1/2 mb-12 lg:mb-0">
+                <h2
+                    class="font-semibold text-section-heading mb-4 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[64px]">
+                    It's been a great few <span class="hidden xs:inline"><br></span>years
+                </h2>
+                <p class="text-section-description mb-8 text-xs sm:text-sm md:text-base lg:text-lg xl:text-[18px]">
+                    Because we believe in <span class="text-section-accent">#GrowingTogether</span> and <span
+                        class="text-section-accent">#KeepRaisingTheBar</span>
+                </p>
+                <button
+                    class="w-[200px] group flex items-center text-white justify-center gap-2 border-[0.5px] rounded-md py-2 hover:bg-logo-blue-0 hover:border-logo-blue-0">
+                    <div>Get in Touch</div>
+                    <img class="h-7 group-hover:rotate-45 transition duration-300 ease-linear"
+                        src="/src/assets/arrow-up-right.png" alt="">
+                </button>
+            </div>
+            <!-- Right Side: Stats -->
+            <div class="w-full lg:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="border-t-2 border-section-line group p-2 flex flex-col relative">
+                    <div class="flex justify-between items-start">
+                        <span class="font-bold text-white text-[60px]">25+</span>
+                        <img src="./src/assets/team.webp" alt="Team" class="w-10 h-10 object-contain mt-2" />
+                    </div>
+                    <p class="text-section-description mt-2">Strong team of engineers</p>
+                </div>
+                <div class="border-t-2 border-section-line group p-2 flex flex-col relative">
+                    <div class="flex justify-between items-start">
+                        <span class="font-bold text-white text-[60px]">500+</span>
+                        <img src="./src/assets/web-page-1.webp" alt="Web Page" class="w-10 h-10 object-contain mt-2" />
+                    </div>
+                    <p class="text-section-description mt-2">Web Products Delivered</p>
+                </div>
+                <div class="border-t-2 border-section-line group p-2 flex flex-col relative">
+                    <div class="flex justify-between items-start">
+                        <span class="font-bold text-white text-[60px]">50+</span>
+                        <img src="./src/assets/goal.webp" alt="Goal" class="w-10 h-10 object-contain mt-2" />
+                    </div>
+                    <p class="text-section-description mt-2"> Rescue Missions</p>
+                </div>
+                <div class="border-t-2 border-section-line group p-2 flex flex-col relative">
+                    <div class="flex justify-between items-start">
+                        <span class="font-bold text-white text-[55px]">Many</span>
+                        <img src="./src/assets/guarantee-certificate.webp" alt="Guarantee Certificate"
+                            class="w-10 h-10 object-contain mt-2" />
+                    </div>
+                    <p class="text-section-description mt-2">Award Winning Products</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- our work  -->
+    <section class="sec1 our-work px-20 my-20">
+        <div class="our-work-heading flex justify-between w-full mb-10">
+            <h1 class="text-black font-semibold text-3xl">Our Work</h1>
+            <button
+                class="flex group justify-center items-center border-[0.5px] border-logo-blue-0 text-logo-blue-0 gap-2 rounded-full px-4 py-2 hover:bg-logo-blue-0 hover:text-white transition-all 3s ease-linear">All
+                View all Work
+                <img class="group-hover:rotate-45 transition-all 3s ease-linear h-6 filter group-hover:invert group-hover:brightness-0 group-hover:contrast-200"
+                    src="/src/assets/arrow-blue.png" alt="">
+            </button>
+        </div>
+
+        <section>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                <!-- Card 1 -->
+                <div class="relative group rounded-xl overflow-hidden border h-[400px]">
+
+                    <!-- Image with blur on hover -->
+                    <div class="w-full h-full absolute inset-0 transition-all duration-500 group-hover:blur-sm">
+                        <img src="/src/assets/work1.png" alt="LSU" class="w-full h-full object-cover" />
+                    </div>
+
+                    <!-- Overlay Content -->
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent p-6 flex flex-col justify-end gap-4 z-10">
+
+                        <!-- Logo -->
+                        <div>
+                            <img class="h-10 invert" src="/src/assets/l1.webp" alt="">
+                        </div>
+
+                        <!-- Text + Button Wrapper -->
+                        <div class="overflow-hidden">
+                            <p
+                                class="text-white w-[70%] transition-all duration-500 ease-in-out line-clamp-3 group-hover:line-clamp-none group-hover:translate-y-0 translate-y-4">
+                                Darren Booth is an award-winning Commercial Artist based in Canada. He specializes in
+                                Lettering,
+                                Illustration, Portraiture, and Pattern Design. He has worked with major brands and
+                                publications
+                                worldwide.
+                            </p>
+
+                            <!-- Button -->
+                            <button
+                                class="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-white border border-white rounded-full px-4 py-1 text-sm flex gap-2 hover:bg-logo-blue-0 hover:border-logo-blue-0">
+                                Learn More
+                                <img class="h-6 group-hover:rotate-45" src="/src/assets/arrow-up-right.png" alt="">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Card 2 -->
+                <div class="relative group rounded-xl overflow-hidden border h-[400px]">
+
+                    <!-- Image with blur on hover -->
+                    <div class="w-full h-full absolute inset-0 transition-all duration-500 group-hover:blur-sm">
+                        <img src="/src/assets/work2.jpg" alt="LSU" class="w-full h-full object-cover" />
+                    </div>
+
+                    <!-- Overlay Content -->
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent p-6 flex flex-col justify-end gap-4 z-10">
+
+                        <!-- Logo -->
+                        <div>
+                            <img class="h-14 filter brightness-200" src="/src/assets/l2.webp" alt="">
+                        </div>
+
+                        <!-- Text + Button Wrapper -->
+                        <div class="overflow-hidden">
+                            <p
+                                class="text-white w-[70%] transition-all duration-500 ease-in-out line-clamp-3 group-hover:line-clamp-none group-hover:translate-y-0 translate-y-4">
+                                ErasmusWise has been created to bridge the communication gap between students ensuring
+                                they are able to
+                                make the most of the well-rounded experience studing abroad has to offer!
+                            </p>
+
+                            <!-- Button -->
+                            <button
+                                class="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-white border border-white rounded-full px-4 py-1 text-sm flex gap-2 hover:bg-logo-blue-0 hover:border-logo-blue-0">
+                                Learn More
+                                <img class="h-6 group-hover:rotate-45" src="/src/assets/arrow-up-right.png" alt="">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="relative group rounded-xl overflow-hidden border h-[400px]">
+
+                    <!-- Image with blur on hover -->
+                    <div class="w-full h-full absolute inset-0 transition-all duration-500 group-hover:blur-sm">
+                        <img src="/src/assets/work(3).jpg" alt="LSU" class="w-full h-full object-cover" />
+                    </div>
+
+                    <!-- Overlay Content -->
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent p-6 flex flex-col justify-end gap-4 z-10">
+
+                        <!-- Logo -->
+                        <div>
+                            <img class="h-16 brightness-200" src="/src/assets/l3.webp" alt="">
+                        </div>
+
+                        <!-- Text + Button Wrapper -->
+                        <div class="overflow-hidden">
+                            <p
+                                class="text-white w-[70%] transition-all duration-500 ease-in-out line-clamp-3 group-hover:line-clamp-none group-hover:translate-y-0 translate-y-4">
+                                The Ultimate Online Cannabis Delivery Experience Cannabis Delivery is the most
+                                convinient way to order
+                                cannabis online bacause of new technology.
+                            </p>
+
+                            <!-- Button -->
+                            <button
+                                class="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-white border border-white rounded-full px-4 py-1 text-sm flex gap-2 hover:bg-logo-blue-0 hover:border-logo-blue-0">
+                                Learn More
+                                <img class="h-6 group-hover:rotate-45" src="/src/assets/arrow-up-right.png" alt="">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="relative group rounded-xl overflow-hidden border h-[400px]">
+
+                    <!-- Image with blur on hover -->
+                    <div class="w-full h-full absolute inset-0 transition-all duration-500 group-hover:blur-sm">
+                        <img src="/src/assets/work(2).jpg" alt="LSU" class="w-full h-full object-cover" />
+                    </div>
+
+                    <!-- Overlay Content -->
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent p-6 flex flex-col justify-end gap-4 z-10">
+
+                        <!-- Logo -->
+                        <div>
+                            <img class="h-10 invert" src="/src/assets/l1.webp" alt="">
+                        </div>
+
+                        <!-- Text + Button Wrapper -->
+                        <div class="overflow-hidden">
+                            <p
+                                class="text-white w-[70%] transition-all duration-500 ease-in-out line-clamp-3 group-hover:line-clamp-none group-hover:translate-y-0 translate-y-4">
+                                Darren Booth is an award-winning Commercial Artist based in Canada. He specializes in
+                                Lettering,
+                                Illustration, Portraiture, and Pattern Design. He has worked with major brands and
+                                publications
+                                worldwide.
+                            </p>
+
+                            <!-- Button -->
+                            <button
+                                class="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-white border border-white rounded-full px-4 py-1 text-sm flex gap-2 hover:bg-logo-blue-0 hover:border-logo-blue-0">
+                                Learn More
+                                <img class="h-6 group-hover:rotate-45" src="/src/assets/arrow-up-right.png" alt="">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </section>
+
+    <!-- how we impact your business -->
+    <section class="sec1 impact relative bg-white mb-20 mt-20 w-full px-20 sm:px-6 md:px-20">
+        <div class="impact-header flex justify-between items-center w-full mb-10">
+            <h1 class="heading-impact text-black font-semibold text-3xl">Success Stories</h1>
+            <!-- Swiper Arrows -->
+            <div class="swiper-buttons flex items-center space-x-3 ml-6">
+                <button
+                    class="all-services flex group justify-center items-center border-[0.5px] border-logo-blue-0 text-logo-blue-0 gap-2 rounded-full px-4 py-2 hover:bg-logo-blue-0 hover:text-white transition-all 3s ease-linear">All
+                    Services
+                    <img class="group-hover:rotate-45 transition-all 3s ease-linear h-6 filter group-hover:invert group-hover:brightness-0 group-hover:contrast-200"
+                        src="/src/assets/arrow-blue.png" alt="">
+                </button>
+                <button
+                    class="swiper-button-prev-custom border-[0.5px] border-logo-blue-0 rounded-full w-11 h-11 flex items-center justify-center transition hover:bg-logo-blue-0 hover:border-logo-blue-0 group">
+                    <img src="/src/assets/left-blue.png" alt="Left Arrow"
+                        class="h-8 w-8 transition-all duration-300 group-hover:invert group-hover:brightness-0 group-hover:contrast-200" />
+                </button>
+                <button
+                    class="swiper-button-next-custom border-[0.5px] border-logo-blue-0 rounded-full w-11 h-11 flex items-center justify-center transition hover:bg-logo-blue-0 hover:border-logo-blue-0 group">
+                    <img src="/src/assets/arrow-blue.png" alt="Right Arrow"
+                        class="h-8 w-8 rotate-45 transition-all duration-300 group-hover:invert group-hover:brightness-0 group-hover:contrast-200" />
+
+                </button>
+            </div>
+        </div>
+
+        <div class="w-full">
+            <div class="swiper project-swiper w-full">
+                <div class="swiper-wrapper">
+                    <!-- Card 1 -->
+                    <div
+                        class="swiper-slide group p-4 flex items-center justify-center min-w-[260px]  transition-all duration-300 relative cursor-pointer overflow-hidden rounded-md bg-white">
+                        <div class="flex flex-col gap-4">
+                            <div><img src="/src/assets/success-card-1.webp" alt=""></div>
+                            <div><img class="h-12" src="src/assets/raviant.webp" alt=""></div>
+                            <p>Our focus that we will provide competitive, high-quality electronic accessories to our
+                                valuable customers around the world.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div
+                        class="swiper-slide group p-4 flex items-center justify-center min-w-[260px] transition-all duration-300 relative cursor-pointer overflow-hidden rounded-md bg-white">
+                        <div class="flex flex-col gap-4">
+                            <div><img src="/src/assets/success-card-2.webp" alt=""></div>
+                            <div><img class="h-12" src="src/assets/client4.webp" alt=""></div>
+                            <p> The WIFIPRONO team has set up a capital management system from which you will benefit
+                                every day: The prono safe, the semifun, and the fun.</p>
+                        </div>
+
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div
+                        class="swiper-slide group p-4 flex items-center justify-center min-w-[260px] transition-all duration-300 relative cursor-pointer overflow-hidden rounded-md bg-white">
+                        <div class="flex flex-col gap-4">
+                            <div><img src="/src/assets/success-card-3.webp" alt=""></div>
+                            <div><img class="h-12" src="src/assets/client3-removebg-preview.png" alt=""></div>
+                            <p> If you trade on a Rekt, and have always wanted to be able to set your own sell price or
+                                buy price and walk away with piece of mind.</p>
+                        </div>
+
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div
+                        class="swiper-slide group p-4 flex items-center justify-center min-w-[260px] transition-all duration-300 relative cursor-pointer overflow-hidden rounded-md bg-white">
+                        <div class="flex flex-col gap-4">
+                            <div><img src="/src/assets/success-card-4.webp" alt=""></div>
+                            <div><img class="h-12" src="src/assets/Safwa_logo.webp" alt=""></div>
+                            <p>We provide the latest styles &amp; high-quality fabric in ladies' clothing in LAWN,
+                                LINEN, COTTON, KHADDAR and SILK dresses. We offer Online Shopping anywhere within
+                                Pakistan.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section (Styled like screenshot) -->
+    <section class="w-full min-h-[60vh] bg-section-bg py-16 px-0 flex items-center justify-center font-sans">
+        <div class="w-full mx-4 sm:mx-8 md:mx-16 flex flex-col md:flex-row gap-12 md:gap-0">
+            <!-- Left Side -->
+            <div
+                class="md:w-1/2 w-full flex flex-col justify-center md:pr-12 text-left md:text-left text-center md:text-left">
+                <h2 class="font-bold text-white mb-12 leading-tight text-3xl md:text-4xl lg:text-5xl xl:text-6xl">Start
+                    growing
+                    your<br>business with us</h2>
+                <div class="space-y-6">
+                    <div class="bg-light-blue-0 rounded-lg p-6 text-black">
+                        <div class="mb-1 opacity-80 text-[16px]">Sales and general inquires</div>
+                        <div
+                            class="font-semibold text-black text-xl xl:text-2xl 2xl:text-3xl lg:text-xl md:text-base sm:text-sm">
+                            info@barontechs.com</div>
+                    </div>
+                    <div class="bg-light-blue-0 rounded-lg p-6 text-black">
+                        <div class="mb-1 opacity-80 text-[16px]">Call us</div>
+                        <div
+                            class="font-medium text-black text-xl xl:text-2xl 2xl:text-3xl lg:text-xl md:text-base sm:text-sm">
+                            +1
+                            (409) 916-8275</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Right Side (Form) -->
+            <div class="md:w-1/2 w-full flex flex-col justify-center">
+                <form class="w-full gap-6 custom-contact-grid">
+                    <div class="col-span-1">
+                        <label class="block text-white text-sm mb-2">Enter your name*</label>
+                        <input type="text"
+                            class="w-full bg-transparent border-b border-gray-400 text-white py-2 px-0 focus:outline-none focus:border-light-blue-0"
+                            required>
+                    </div>
+                    <div class="col-span-1">
+                        <label class="block text-white text-sm mb-2">Enter your email*</label>
+                        <input type="email"
+                            class="w-full bg-transparent border-b border-gray-400 text-white py-2 px-0 focus:outline-none focus:border-light-blue-0"
+                            required>
+                    </div>
+                    <div class="col-span-1">
+                        <label class="block text-white text-sm mb-2">Enter your phone number</label>
+                        <input type="text"
+                            class="w-full bg-transparent border-b border-gray-400 text-white py-2 px-0 focus:outline-none focus:border-light-blue-0">
+                    </div>
+                    <div class="col-span-1 flex flex-col justify-end">
+                        <div class="relative" id="budget-dropdown-wrapper">
+                            <button type="button" id="budget-dropdown-btn"
+                                class="w-full bg-transparent border-b border-gray-400 text-white py-2 px-0 flex justify-between items-center focus:outline-none focus:border-light-blue-0">
+                                <span id="budget-dropdown-selected" class="font-semibold">Select your budget</span>
+                                <svg class="w-4 h-4 ml-2 text-white" fill="none" stroke="currentColor" stroke-width="2"
+                                    viewBox="0 0 24 24">
+                                    <path d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <div id="budget-dropdown-menu"
+                                class="absolute right-0 left-0 mt-2 bg-light-blue-0 border border-gray-600 rounded-md shadow-lg z-20 hidden">
+                                <div class="py-1">
+                                    <button type="button"
+                                        class="w-full text-left px-4 py-2 text-black hover:bg-[#3dc8ff]"
+                                        data-value="Still Evaluating">Select Your Budget</button>
+                                    <button type="button"
+                                        class="w-full text-left px-4 py-2 text-black hover:bg-[#3dc8ff]"
+                                        data-value="Still Evaluating">Still Evaluating</button>
+                                    <button type="button"
+                                        class="w-full text-left px-4 py-2 text-black hover:bg-[#3dc8ff]"
+                                        data-value="Less than $20,000">Less than $20,000</button>
+                                    <button type="button"
+                                        class="w-full text-left px-4 py-2 text-black hover:bg-[#3dc8ff]"
+                                        data-value="$20,000 - $50,000">$20,000 - $50,000</button>
+                                    <button type="button"
+                                        class="w-full text-left px-4 py-2 text-black hover:bg-[#3dc8ff]"
+                                        data-value="$50,000 - $100,000">$50,000 - $100,000</button>
+                                    <button type="button"
+                                        class="w-full text-left px-4 py-2 text-black hover:bg-[#3dc8ff]"
+                                        data-value="More than $100,000">More than $100,000</button>
+                                </div>
+                            </div>
+                            <input type="hidden" name="budget" id="budget-dropdown-input">
+                        </div>
+                    </div>
+                    <div class="col-span-2">
+                        <label class="block text-white text-sm mb-2">Enter your message*</label>
+                        <textarea
+                            class="w-full bg-transparent border-b border-gray-400 text-white py-2 px-0 focus:outline-none focus:border-light-blue-0 min-h-[80px]"
+                            required></textarea>
+                    </div>
+                    <div class="col-span-1 flex items-center mt-2">
+                        <input type="checkbox" id="nda" class="mr-2">
+                        <label for="nda" class="text-white text-sm">This project requires an NDA</label>
+                    </div>
+                    <div class="col-span-2 mt-4 flex items-center justify-left">
+                        <button
+                            class="flex group justify-center items-center border-[0.5px] border-logo-blue-0 text-logo-blue-0 gap-2 rounded-full px-4 py-2 hover:bg-logo-blue-0 hover:text-white transition-all 3s ease-linear">All
+                            Send Message
+                            <img class="group-hover:rotate-45 transition-all 3s ease-linear h-6 filter group-hover:invert group-hover:brightness-0 group-hover:contrast-200"
+                                src="/src/assets/arrow-blue.png" alt="">
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="w-full bg-white border-t border-gray-200">
+        <div class="max-w-7xl mx-auto w-full px-2 md:px-5 lg:px-[70px] py-[70px]">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Our Location -->
+                <div>
+                    <h3 class="font-bold text-lg mb-4" style="margin-left: 20px;">Our Location</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li
+                            class="flex items-center gap-2 cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent">
+                            <img src="./src/assets/icons8-location-50.png" alt="Location Icon"
+                                class="w-6 h-6 object-contain" />
+                            United States
+                        </li>
+                        <li
+                            class="flex items-center gap-2 cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent">
+                            <img src="./src/assets/icons8-location-50.png" alt="Location Icon"
+                                class="w-6 h-6 object-contain" />
+                            United Kingdom
+                        </li>
+                        <li
+                            class="flex items-center gap-2 cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent">
+                            <img src="./src/assets/icons8-location-50.png" alt="Location Icon"
+                                class="w-6 h-6 object-contain" />
+                            United Arab Emirates
+                        </li>
+                        <li
+                            class="flex items-center gap-2 cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent">
+                            <img src="./src/assets/icons8-location-50.png" alt="Location Icon"
+                                class="w-6 h-6 object-contain" />
+                            Pakistan
+                        </li>
+                    </ul>
+                </div>
+                <!-- Our Services -->
+                <div>
+                    <h3 class="font-bold text-lg mb-4" style="margin-left: 20px;">Our Services</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent">Mobile
+                            App
+                            Development</li>
+                        <li class="cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent">Custom
+                            Website
+                            Development</li>
+                        <li class="cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent">Shopify
+                            Development
+                        </li>
+                        <li class="cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent">WordPress
+                            Development
+                        </li>
+                        <li class="cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent">Graphics
+                            and
+                            Designing</li>
+                        <li class="cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent">Baron
+                            Tech Special
+                            Services</li>
+                        <li class="cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent">CMS
+                            Development</li>
+                    </ul>
+                </div>
+                <!-- Industries -->
+                <div>
+                    <h3 class="font-bold text-lg mb-4" style="margin-left: 20px;">Company</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent">Services
+                        </li>
+                        <li class="cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent">Work</li>
+                        <li class="cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent">About Us
+                        </li>
+                        <li class="cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent">Careers
+                        </li>
+                        <li class="cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent">Contact
+                            Us</li>
+                    </ul>
+                </div>
+                <!-- Connect With Us -->
+                <div>
+                    <h3 class="font-bold text-lg mb-4" style="margin-left: 20px;">CONNECT WITH US</h3>
+                    <div class="flex gap-2 mb-4" style="margin-left: 15px;">
+                        <a href="https://www.facebook.com/barontechh" aria-label="Facebook"
+                            class="cursor-pointer rounded p-1 transition ">
+                            <img src="./src/assets/facebook-svgrepo-com.png" alt="Facebook"
+                                class="w-7 h-7 object-contain" />
+                        </a>
+                        <a href="https://www.instagram.com/barontech.co/" aria-label="Instagram"
+                            class="cursor-pointer rounded p-1 transition ">
+                            <img src="./src/assets/instagram-f-svgrepo-com.png" alt="Instagram"
+                                class="w-6 h-6 object-contain" />
+                        </a>
+                        <a href="https://www.linkedin.com/company/barontech-pvt-limited" aria-label="LinkedIn"
+                            class="cursor-pointer rounded p-1 transition">
+                            <img src="./src/assets/linkedin-round-svgrepo-com.png" alt="LinkedIn"
+                                class="w-6 h-6 object-contain" />
+                        </a>
+                        <a href="https://twitter.com/barontech_co" aria-label="Twitter"
+                            class="cursor-pointer rounded p-1 transition">
+                            <img src="./src/assets/twitter-2-svgrepo-com.png" alt="Twitter"
+                                class="w-6 h-6 object-contain" />
+                        </a>
+                    </div>
+                    <div class="space-y-2 text-gray-700">
+                        <div
+                            class="flex items-center gap-2 cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="currentColor"
+                                viewBox="0 0 512 512">
+                                <path
+                                    d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z" />
+                            </svg>
+                            <span>info@barontech.co</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-2 cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="currentColor"
+                                viewBox="0 0 512 512">
+                                <path
+                                    d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z" />
+                            </svg>
+                            <span>+1 (409) 916-8275</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <section
+        class="w-full bg-section-bg py-4 px-4 flex flex-col md:flex-row items-center md:justify-between text-white text-xs sm:text-sm md:text-base">
+        <div class="flex flex-col w-full md:flex-row md:items-center md:justify-between max-w-7xl mx-auto px-4">
+            <div class="flex flex-row justify-center md:justify-start w-full md:w-auto order-2 md:order-1 mt-2 md:mt-0">
+                <span class="w-full text-center md:text-left">© Copyrights 2024 Reserved By <span
+                        class="font-bold">Baron Tech
+                        (Pvt) Limited.</span></span>
+            </div>
+            <div class="flex flex-row justify-center md:justify-end w-full md:w-auto order-1 md:order-2">
+                <a href="#"
+                    class="text-logo-blue-0 hover:underline cursor-pointer rounded px-2 py-1 transition ">Privacy
+                    Policy</a>
+                <a href="#"
+                    class="text-logo-blue-0 hover:underline cursor-pointer rounded px-2 py-1 transition mx-1 md:mx-4 ">Terms
+                    of
+                    Use</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        function toggleAccordion(button) {
+            const content = button.nextElementSibling;
+            const symbol = button.querySelector('span');
+            const isAlreadyOpen = content.classList.contains('block');
+
+            // Close all items
+            document.querySelectorAll('.border-b > div:nth-child(2)').forEach((el) => {
+                el.classList.add('hidden');
+                el.classList.remove('block');
+            });
+
+            document.querySelectorAll('.border-b > button span').forEach((el) => {
+                el.textContent = '+';
+            });
+
+            // Only open the clicked item if it wasn't already open
+            if (!isAlreadyOpen) {
+                content.classList.remove('hidden');
+                content.classList.add('block');
+                symbol.textContent = '−';
+            }
+        }
+    </script>
+
+    <!-- In your existing JS script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: false,  // <-- change made here
+            duration: 700,
+            offset: 120,
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            new Swiper('.project-swiper', {
+                slidesPerView: 3,
+                spaceBetween: 32,
+                loop: true,
+                navigation: {
+                    nextEl: '.swiper-button-next-custom',
+                    prevEl: '.swiper-button-prev-custom',
+                },
+                breakpoints: {
+                    0: { slidesPerView: 1 },
+                    640: { slidesPerView: 1 },
+                    900: { slidesPerView: 2 },
+                    1024: { slidesPerView: 3 },
+                },
+            });
+        });
+    </script>
+
+    <script>
+        // Custom dropdown for budget
+        const budgetBtn = document.getElementById('budget-dropdown-btn');
+        const budgetMenu = document.getElementById('budget-dropdown-menu');
+        const budgetSelected = document.getElementById('budget-dropdown-selected');
+        const budgetInput = document.getElementById('budget-dropdown-input');
+
+        budgetBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            budgetMenu.classList.toggle('hidden');
+        });
+
+        budgetMenu.querySelectorAll('button').forEach(option => {
+            option.addEventListener('click', function () {
+                budgetSelected.textContent = this.textContent;
+                budgetInput.value = this.getAttribute('data-value');
+                budgetMenu.classList.add('hidden');
+            });
+        });
+
+        document.addEventListener('click', function (e) {
+            if (!document.getElementById('budget-dropdown-wrapper').contains(e.target)) {
+                budgetMenu.classList.add('hidden');
+            }
+        });
+    </script>
+
+</body>
+
+</html>
