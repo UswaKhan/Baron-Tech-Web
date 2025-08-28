@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gen AI App Development</title>
+  <title>Computer Vision Solution</title>
   <link href="./dist/output.css" rel="stylesheet">
   <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -14,6 +14,11 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <style>
+
+  .overlay{
+    background-color: rgb(0 0 0 / 0.5);
+    }
+    
   @media (max-width: 1024px) {
     .expertise-container {
       flex-direction: row;
@@ -265,23 +270,23 @@
 
   @media (max-width: 425px) {
 
-    #navbar {
+    #navbar{
       padding: 1rem !important;
     }
 
-    #getQuoteBtn {
+    #getQuoteBtn{
       display: none;
     }
 
-    .hero-sec {
+    .hero-sec{
       padding: 1rem !important;
     }
 
-    .slide1 .slide {
+    .slide1 .slide{
       width: 100%;
     }
 
-    .slide1 {
+    .slide1{
       margin-top: 60px;
     }
 
@@ -298,20 +303,20 @@
   }
 
   @media (max-width: 767px) {
-
-    #navbar {
+ 
+    #navbar{
       padding: 2rem;
     }
 
-    .hero-sec {
+    .hero-sec{
       padding: 2rem !important;
     }
 
-    .slide1 .slide {
+    .slide1 .slide{
       width: 100%;
     }
 
-    .slide1 {
+    .slide1{
       margin-top: 60px;
     }
 
@@ -328,7 +333,7 @@
       margin-right: 140px;
     }
 
-    .time-line {
+    .time-line{
       margin-top: 80px;
     }
 
@@ -361,38 +366,12 @@
       height: 140px !important;
     }
   }
-
-  .overlay {
-    background-color: rgb(0 0 0 / 0.5);
-  }
-
-  .transition-transform {
-    transition: transform 0.5s ease-in-out;
-  }
-
-  @media (max-width: 425px){
-    .heading-impact{
-      margin-right: 0;
-      font-size: 22px;
-      padding: 0 8px;
-
-    }
-
-    .impact{
-      padding: 0 20px !important;
-      margin: 80px 0;
-    }
-
-    .tools{
-      margin: 0px 20px 80px !important;
-    }
-  }
 </style>
 
 <body class="font-sans h-full">
   <section class="hero relative w-screen min-h-screen overflow-hidden bg-black">
 
-   <!-- Navbar -->
+    <!-- Navbar -->
     <nav id="navbar"
       class="navbar fixed top-0 left-0 w-full z-50 px-20 py-4 flex items-center justify-between bg-transparent text-white group/nav hover:bg-white transition-all duration-300 ease-linear">
       <div class="flex items-center gap-10 z-40">
@@ -416,13 +395,14 @@
                     src="/src/assets/arrow-blue.png" alt=""></div>
                 <div class="space-y-2">
                   <h1 class="text-2xl font-bold">Software Development</h1>
-                  <a href="mobile-app.html" class="block hover:text-logo-blue-0 text-gray-700">Mobile App Development</a>
-                  <a href="#" class="block hover:text-logo-blue-0 text-gray-700">Custom Website Development</a>
-                  <a href="#" class="block hover:text-logo-blue-0 text-gray-700">Shopify Development</a>
-                  <a href="#" class="block hover:text-logo-blue-0 text-gray-700">WordPress Development</a>
-                  <a href="#" class="block hover:text-logo-blue-0 text-gray-700">Graphics and Designing</a>
-                  <a href="#" class="block hover:text-logo-blue-0 text-gray-700">Baron Tech Special Services</a>
-                  <a href="#" class="block hover:text-logo-blue-0 text-gray-700">CMS Development</a>
+                  <a href="mobile-app.html" class="block hover:text-logo-blue-0 text-gray-700">Mobile App
+                    Development</a>
+                  <a href="custom-website.html" class="block hover:text-logo-blue-0 text-gray-700">Custom Website Development</a>
+                  <a href="shopify.html" class="block hover:text-logo-blue-0 text-gray-700">Shopify Development</a>
+                  <a href="wordpress.html" class="block hover:text-logo-blue-0 text-gray-700">WordPress Development</a>
+                  <a href="graphic-designing.html" class="block hover:text-logo-blue-0 text-gray-700">Graphics and Designing</a>
+                  <a href="baron-tech-services.html" class="block hover:text-logo-blue-0 text-gray-700">Baron Tech Special Services</a>
+                  <a href="cms.html" class="block hover:text-logo-blue-0 text-gray-700">CMS Development</a>
                 </div>
               </div>
 
@@ -433,18 +413,18 @@
                       src="/src/assets/arrow-blue.png" alt=""></div>
                   <div class="space-y-2">
                     <h1 class="text-2xl font-bold">AI Development</h1>
-                    <a href="agent_development 2.html" class="block hover:text-logo-blue-0 text-gray-700">AI Agent
+                    <a href="ai-agent-development.html" class="block hover:text-logo-blue-0 text-gray-700">AI Agent
                       Development</a>
-                    <a href="gen ai app development.html" class="block hover:text-logo-blue-0 text-gray-700">Gen AI App
+                    <a href="gen-ai-app-development.html" class="block hover:text-logo-blue-0 text-gray-700">Gen AI App
                       Development</a>
-                    <a href="Ai chatbot development.html" class="block hover:text-logo-blue-0 text-gray-700">AI Chatbot
+                    <a href="ai-chatbot-development.html" class="block hover:text-logo-blue-0 text-gray-700">AI Chatbot
                       Development</a>
-                    <a href="ai development services.html" class="block hover:text-logo-blue-0 text-gray-700">AI
+                    <a href="ai-development-services.html" class="block hover:text-logo-blue-0 text-gray-700">AI
                       Development
                       Services</a>
-                    <a href="Ai proof of concept.html" class="block hover:text-logo-blue-0 text-gray-700">AI Proof of
+                    <a href="ai-proof-of-concept.html" class="block hover:text-logo-blue-0 text-gray-700">AI Proof of
                       Concept</a>
-                    <a href="computer vision solution.html" class="block hover:text-logo-blue-0 text-gray-700">Computer
+                    <a href="computer-vision-solution.html" class="block hover:text-logo-blue-0 text-gray-700">Computer
                       Vision
                       Solutions</a>
                   </div>
@@ -454,23 +434,25 @@
               <!-- Industries -->
               <div class=" flex flex-col items-start gap-4">
                 <div class="flex justify-center items-start gap-4">
-                <div class="border-[0.5px] rounded-full border-logo-blue-0 mt-2"><img class=" h-6"
-                    src="/src/assets/arrow-blue.png" alt=""></div>
-                <div class="space-y-2">
-                  <h1 class="text-2xl font-bold">Optimization</h1>
-                  <a href="quality-assurance.html" class="block hover:text-logo-blue-0 text-gray-700">Quality Assurance and Testing</a>
-                  <a href="support.html" class="block hover:text-logo-blue-0 text-gray-700">Support and Maintenance</a>
-                </div>
+                  <div class="border-[0.5px] rounded-full border-logo-blue-0 mt-2"><img class=" h-6"
+                      src="/src/assets/arrow-blue.png" alt=""></div>
+                  <div class="space-y-2">
+                    <h1 class="text-2xl font-bold">Optimization</h1>
+                    <a href="quality-assurance.html" class="block hover:text-logo-blue-0 text-gray-700">Quality
+                      Assurance and Testing</a>
+                    <a href="support.html" class="block hover:text-logo-blue-0 text-gray-700">Support and
+                      Maintenance</a>
+                  </div>
                 </div>
                 <div class="flex justify-center items-start gap-4">
-                <div class="border-[0.5px] rounded-full border-logo-blue-0 mt-2"><img class=" h-6"
-                    src="/src/assets/arrow-blue.png" alt=""></div>
-                <div class="space-y-2">
-                  <h1 class="text-2xl font-bold">Company</h1>
-                  <a href="services.html" class="block hover:text-logo-blue-0 text-gray-700">Services</a>
-                  <a href="work_page.html" class="block hover:text-logo-blue-0 text-gray-700">Work</a>
-                  <a href="Contact Us.html" class="block hover:text-logo-blue-0 text-gray-700">Contact Us</a>
-                </div>
+                  <div class="border-[0.5px] rounded-full border-logo-blue-0 mt-2"><img class=" h-6"
+                      src="/src/assets/arrow-blue.png" alt=""></div>
+                  <div class="space-y-2">
+                    <h1 class="text-2xl font-bold">Company</h1>
+                    <a href="services.html" class="block hover:text-logo-blue-0 text-gray-700">Services</a>
+                    <a href="work_page.html" class="block hover:text-logo-blue-0 text-gray-700">Work</a>
+                    <a href="contact-us.html" class="block hover:text-logo-blue-0 text-gray-700">Contact Us</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -544,13 +526,14 @@
 
                 <div class="space-y-2">
                   <h1 class="text-xl font-bold">Software Development</h1>
-                  <a href="mobile-app.html" class="block hover:text-logo-blue-0 text-gray-700">Mobile App Development</a>
-                  <a href="#" class="block hover:text-logo-blue-0 text-gray-700">Custom Website Development</a>
-                  <a href="#" class="block hover:text-logo-blue-0 text-gray-700">Shopify Development</a>
-                  <a href="#" class="block hover:text-logo-blue-0 text-gray-700">WordPress Development</a>
-                  <a href="#" class="block hover:text-logo-blue-0 text-gray-700">Graphics and Designing</a>
-                  <a href="#" class="block hover:text-logo-blue-0 text-gray-700">Baron Tech Special Services</a>
-                  <a href="#" class="block hover:text-logo-blue-0 text-gray-700">CMS Development</a>
+                  <a href="mobile-app.html" class="block hover:text-logo-blue-0 text-gray-700">Mobile App
+                    Development</a>
+                  <a href="custom-website.html" class="block hover:text-logo-blue-0 text-gray-700">Custom Website Development</a>
+                  <a href="shopify.html" class="block hover:text-logo-blue-0 text-gray-700">Shopify Development</a>
+                  <a href="wordpress.html" class="block hover:text-logo-blue-0 text-gray-700">WordPress Development</a>
+                  <a href="graphic-designing.html" class="block hover:text-logo-blue-0 text-gray-700">Graphics and Designing</a>
+                  <a href="baron-tech-services.html" class="block hover:text-logo-blue-0 text-gray-700">Baron Tech Special Services</a>
+                  <a href="cms.html" class="block hover:text-logo-blue-0 text-gray-700">CMS Development</a>
                 </div>
 
 
@@ -561,18 +544,18 @@
                     src="/src/assets/arrow-blue.png" alt=""></div>
                 <div class="space-y-2">
                   <h1 class="text-xl font-bold">AI Development</h1>
-                  <a href="agent_development 2.html" class="block hover:text-logo-blue-0 text-gray-700">AI Agent
+                  <a href="ai-agent-development.html" class="block hover:text-logo-blue-0 text-gray-700">AI Agent
                     Development</a>
-                  <a href="gen ai app development.html" class="block hover:text-logo-blue-0 text-gray-700">Gen AI App
+                  <a href="gen-ai-app-development.html" class="block hover:text-logo-blue-0 text-gray-700">Gen AI App
                     Development</a>
-                  <a href="Ai chatbot development.html" class="block hover:text-logo-blue-0 text-gray-700">AI Chatbot
+                  <a href="ai-chatbot-development.html" class="block hover:text-logo-blue-0 text-gray-700">AI Chatbot
                     Development</a>
-                  <a href="ai development services.html" class="block hover:text-logo-blue-0 text-gray-700">AI
+                  <a href="ai-development-services.html" class="block hover:text-logo-blue-0 text-gray-700">AI
                     Development
                     Services</a>
-                  <a href="Ai proof of concept.html" class="block hover:text-logo-blue-0 text-gray-700">AI Proof of
+                  <a href="ai-proof-of-concept.html" class="block hover:text-logo-blue-0 text-gray-700">AI Proof of
                     Concept</a>
-                  <a href="computer vision solution.html" class="block hover:text-logo-blue-0 text-gray-700">Computer
+                  <a href="computer-vision-solution.html" class="block hover:text-logo-blue-0 text-gray-700">Computer
                     Vision
                     Solutions</a>
                 </div>
@@ -583,7 +566,8 @@
                     src="/src/assets/arrow-blue.png" alt=""></div>
                 <div class="space-y-2">
                   <h1 class="text-xl font-bold">Optimization</h1>
-                  <a href="quality-assurance.html" class="block hover:text-logo-blue-0 text-gray-700">Quality Assurance & Testing</a>
+                  <a href="quality-assurance.html" class="block hover:text-logo-blue-0 text-gray-700">Quality Assurance
+                    & Testing</a>
                   <a href="support.html" class="block hover:text-logo-blue-0 text-gray-700">Support & Maintenance</a>
                 </div>
               </div>
@@ -595,7 +579,7 @@
                   <h1 class="text-xl font-bold">Company</h1>
                   <a href="services.html" class="block hover:text-logo-blue-0 text-gray-700">Services</a>
                   <a href="work_page.html" class="block hover:text-logo-blue-0 text-gray-700">Work</a>
-                  <a href="Contact Us.html" class="block hover:text-logo-blue-0 text-gray-700">Contact Us</a>
+                  <a href="contact-us.html" class="block hover:text-logo-blue-0 text-gray-700">Contact Us</a>
                 </div>
               </div>
 
@@ -642,7 +626,7 @@
       class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden transition-opacity duration-300 lg:hidden">
     </div>
 
-    <div class="hero-sec min-h-screen relative flex text-white px-20 pt-0">
+    <div class="hero-sec min-h-screen relative flex items-center justify-center text-white px-20 pt-0">
       <video autoplay muted loop playsinline
         style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;">
         <source src="/src/assets/banner-vid-1.mp4" type="video/mp4">
@@ -655,11 +639,13 @@
 
       <!-- Content -->
       <div class="slide1 flex relative z-10">
-        <div class="slide flex flex-col justify-center gap-16 w-[90%]">
-          <h1 class="text-5xl font-semibold">Disrupt the ordinary with Generative AI solutions</h1>
+        <div class="slide flex flex-col justify-center gap-16 w-[60%]">
+          <h1 class="text-5xl font-semibold">AI Development Services</h1>
           <p class="text-xl">
-            Utilize Generative AI to enhance productivity, spark innovation, and achieve groundbreaking results
-            effortlessly.
+            Unlock the full potential of artificial intelligence with our cutting-edge AI development
+            services. Designed to fuel innovation, enhance efficiency, and propel your business toward
+            unprecedented success, our intelligent solutions redefine what’s possible in the digital
+            landscape.
           </p>
           <button
             class="w-[200px] get-quote2 group flex items-center justify-center gap-2 text-xl border-[0.5px] rounded-md px-8 py-2 hover:bg-logo-blue-0 hover:border-logo-blue-0">
@@ -700,14 +686,18 @@
     </div>
   </section>
 
-
-  <section class="sec1 bg-white px-20 mt-20 flex justify-center flex-col gap-12">
-    <h1 class="heading-impact text-black font-semibold text-3xl">How Generative AI address your biggest challenges</h1>
+  <section class="sec1 bg-white px-20 mt-20 flex justify-center">
     <div class="flex flex-col lg:flex-row max-w-[1600px]  gap-10 min-h-[600px]"
       style="margin-left: 20px; margin-right: 20px;">
       <!-- Left Section -->
-      <div>
-        <img class="h-[85%] rounded-lg" src="src/assets/Ai-img-3.jpg" alt="">
+      <div class="bg-dark-blue-0 text-white rounded-xl p-10 w-full lg:w-2/5 flex-shrink-0 flex flex-col justify-center"
+        style="height:530px;">
+        <h2 class="text-3xl font-bold mb-4">Unmatched AI Expertise</h2>
+        <p class="text-lg text-gray-300">
+          Leverage our deep AI expertise to develop intelligent solutions that enhance productivity, drive
+          engagement, and foster customer loyalty. Our cutting-edge AI technologies empower businesses to
+          innovate, automate, and scale with precision.
+        </p>
       </div>
 
       <!-- Right Section -->
@@ -717,266 +707,78 @@
           <div class="border-b" x-data="{ open: false }">
             <button class="w-full text-left text-xl flex justify-between items-center py-4 text-gray-700 font-medium"
               onclick="toggleAccordion(this)">
-              Consistently generate new ideas
+              AI-Powered Solutions for Every Platform
               <span class="text-2xl font-bold">+</span>
             </button>
             <div class="hidden pb-4 text-gray-600">
-              Overcome creative blocks with AI that generates innovative ideas and concepts, keeping your business ahead
-              of the curve.
+              Baron Tech (Pvt) Limited specializes in building cutting-edge AI-driven applications
+              tailored for businesses worldwide, leveraging advanced machine learning and automation to
+              drive innovation.
             </div>
           </div>
 
           <div class="border-b" x-data="{ open: false }">
             <button class="w-full text-left text-xl flex justify-between items-center py-4 text-gray-700 font-medium"
               onclick="toggleAccordion(this)">
-              Automate repetitive tasks
+              Full-Stack AI Engineering
               <span class="text-2xl font-bold">+</span>
             </button>
             <div class="hidden pb-4 text-gray-600">
-              Save time and reduce errors by automating mundane tasks like data entry, report generation, and content
-              creation, allowing your team to focus on higher-value work.
+              Our expert AI engineers develop intelligent systems that seamlessly integrate across various
+              platforms, enhancing efficiency and delivering scalable solutions for diverse business
+              needs.
             </div>
           </div>
 
           <div class="border-b">
             <button class="w-full text-left text-xl flex justify-between items-center py-4 text-gray-700 font-medium"
               onclick="toggleAccordion(this)">
-              Optimize operational efficiency
+              AI-Driven Process Automation
               <span class="text-2xl font-bold">+</span>
             </button>
             <div class="hidden pb-4 text-gray-600">
-              Streamline and refine your business processes with AI-driven insights and automation, leading to
-              significant improvements in productivity and resource management.
+              We provide comprehensive AI-powered automation solutions, optimizing workflows, streamlining
+              operations, and enhancing productivity with precision and accuracy.
             </div>
           </div>
 
           <div class="border-b">
             <button class="w-full text-left text-xl flex justify-between items-center py-4 text-gray-700 font-medium"
               onclick="toggleAccordion(this)">
-              Optimize operational efficiency
+              Intelligent Reservation Systems
               <span class="text-2xl font-bold">+</span>
             </button>
             <div class="hidden pb-4 text-gray-600">
-              Streamline and refine your business processes with AI-driven insights and automation, leading to
-              significant improvements in productivity and resource management.
+              Leverage AI-driven reservation platforms designed with adaptive algorithms, ensuring
+              seamless user experiences and efficient resource management.
             </div>
           </div>
 
           <div class="border-b">
             <button class="w-full text-left text-xl flex justify-between items-center py-4 text-gray-700 font-medium"
               onclick="toggleAccordion(this)">
-              Making sense of large data
+              Cross-Platform AI Development
               <span class="text-2xl font-bold">+</span>
             </button>
             <div class="hidden pb-4 text-gray-600">
-              Use generative AI to analyze vast amounts of data quickly and accurately, providing you with clear,
-              actionable insights for strategic decision-making.
+              We build powerful AI-enabled solutions that function seamlessly across multiple platforms,
+              ensuring flexibility, performance, and user-centric experiences.
             </div>
           </div>
 
           <div class="border-b">
             <button class="w-full text-left text-xl flex justify-between items-center py-4 text-gray-700 font-medium"
               onclick="toggleAccordion(this)">
-              Improving customer personalization
+              AI-Enhanced User Experiences
               <span class="text-2xl font-bold">+</span>
             </button>
             <div class="hidden pb-4 text-gray-600">
-              Enhance customer satisfaction and loyalty by using AI to deliver tailored recommendations, customer
-              support, personalized marketing, and personalized service experiences.
+              Our AI-driven designs focus on intuitive user interfaces, creating seamless interactions
+              that enhance customer engagement and satisfaction.
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- how we impact your business -->
-  <section class=" impact relative bg-white mb-20 w-full px-20 sm:px-6 md:px-20">
-    <div class="impact-header flex justify-between items-center w-full mb-10">
-      <h1 class="heading-impact text-black font-semibold text-3xl">Set your growth trajectory with Generative AI
-        services</h1>
-      <!-- Swiper Arrows -->
-      <div class="swiper-buttons flex items-center space-x-3 ml-6">
-        <button
-          class="all-services flex group justify-center items-center border-[0.5px] border-logo-blue-0 text-logo-blue-0 gap-2 rounded-full px-4 py-2 hover:bg-logo-blue-0 hover:text-white transition-all 3s ease-linear">All
-          Services
-          <img
-            class="group-hover:rotate-45 transition-all 3s ease-linear h-6 filter group-hover:invert group-hover:brightness-0 group-hover:contrast-200"
-            src="/src/assets/arrow-blue.png" alt="">
-        </button>
-        <button
-          class="swiper-button-prev-custom border-[0.5px] border-logo-blue-0 rounded-full w-11 h-11 flex items-center justify-center transition hover:bg-logo-blue-0 hover:border-logo-blue-0 group">
-          <img src="/src/assets/left-blue.png" alt="Left Arrow"
-            class="h-8 w-8 transition-all duration-300 group-hover:invert group-hover:brightness-0 group-hover:contrast-200" />
-        </button>
-        <button
-          class="swiper-button-next-custom border-[0.5px] border-logo-blue-0 rounded-full w-11 h-11 flex items-center justify-center transition hover:bg-logo-blue-0 hover:border-logo-blue-0 group">
-          <img src="/src/assets/arrow-blue.png" alt="Right Arrow"
-            class="h-8 w-8 rotate-45 transition-all duration-300 group-hover:invert group-hover:brightness-0 group-hover:contrast-200" />
-
-        </button>
-      </div>
-    </div>
-
-    <div class="w-full">
-      <div class="swiper project-swiper w-full">
-        <div class="swiper-wrapper">
-          <!-- Card 1 -->
-          <div
-            class="swiper-slide group border-logo-blue-0 border-[1px] p-4 flex items-center justify-center min-w-[260px] !h-[440px] transition-all duration-300 relative cursor-pointer overflow-hidden rounded-md bg-white">
-            <div class="flex flex-col justify-center items-center h-full w-full">
-              <!-- Content Section -->
-              <div class="flex flex-col gap-4 items-center text-center transition-all duration-500 z-10">
-                <div><img class="h-20 transition-all duration-300" src="/src/assets/rocket.png" alt=""></div>
-                <div class="flex flex-col gap-4">
-                  <h1 class="text-2xl font-semibold">Generative AI Consulting</h1>
-                  <p class="text-lg">We provide guidance in strategizing, implementing and optimizing generative AI
-                    solutions tailored to your business needs. Our approach involves understanding your unique
-                    requirements AI techniques to address them effectively.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 2 -->
-          <div
-            class="swiper-slide group border-logo-blue-0 border-[1px] p-4 flex items-center justify-center min-w-[260px] !h-[440px] transition-all duration-300 relative cursor-pointer overflow-hidden rounded-md bg-white">
-            <div class="flex flex-col justify-center items-center h-full w-full">
-              <!-- Content Section -->
-              <div class="flex flex-col gap-4 items-center text-center transition-all duration-500 z-10">
-                <div><img class="h-20 transition-all duration-300" src="/src/assets/html.png" alt=""></div>
-                <div class="flex flex-col gap-4">
-                  <h1 class="text-2xl font-semibold">AI Copilot</h1>
-                  <p class="text-lg">Boost team productivity with AI copilot solutions that are tsilored to your
-                    workflow. Our AI systems are designed to assist users in their tasks, providing real-time support
-                    and guidance based on your specific needs.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 3 -->
-          <div
-            class="swiper-slide group border-logo-blue-0 border-[1px] p-4 flex items-center justify-center min-w-[260px] !h-[440px] transition-all duration-300 relative cursor-pointer overflow-hidden rounded-md bg-white">
-            <div class="flex flex-col justify-center items-center h-full w-full">
-              <!-- Content Section -->
-              <div class="flex flex-col gap-4 items-center text-center transition-all duration-500 z-10">
-                <div><img class="h-20 transition-all duration-300" src="/src/assets/ai.png" alt=""></div>
-                <div class="flex flex-col gap-4">
-                  <h1 class="text-2xl font-semibold">AI Computer Vision</h1>
-                  <p class="text-lg">Utilize advanced computer vision technologies to analyze and extract insights from
-                    visual data. Our solutions are customized to your requirements, ensuring that you get accurate and
-                    efficient results for your applications</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 4 -->
-          <div
-            class="swiper-slide group border-logo-blue-0 border-[1px] p-4 flex items-center justify-center min-w-[260px] !h-[440px] transition-all duration-300 relative cursor-pointer overflow-hidden rounded-md bg-white">
-            <div class="flex flex-col justify-center items-center h-full w-full">
-              <!-- Content Section -->
-              <div class="flex flex-col gap-4 items-center text-center transition-all duration-500 z-10">
-                <div><img class="h-20 transition-all duration-300" src="/src/assets/settings.png" alt=""></div>
-                <div class="flex flex-col gap-4">
-                  <h1 class="text-2xl font-semibold">LLM Powered Chatbots</h1>
-                  <p class="text-lg">Enhance customer service with chatbots powered by large language models (LLMs). Our
-                    chatbots are trained on your data to provide natural, context-aware conversations and improve
-                    customer interactions.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 5 -->
-          <div
-            class="swiper-slide group border-logo-blue-0 border-[1px] p-4 flex items-center justify-center min-w-[260px] !h-[440px] transition-all duration-300 relative cursor-pointer overflow-hidden rounded-md bg-white">
-            <div class="flex flex-col justify-center items-center h-full w-full">
-              <!-- Content Section -->
-              <div class="flex flex-col gap-4 items-center text-center transition-all duration-500 z-10">
-                <div><img class="h-20 transition-all duration-300" src="/src/assets/puzzle.png" alt=""></div>
-                <div class="flex flex-col gap-4">
-                  <h1 class="text-2xl font-semibold">Workflow Automation With Generative AI</h1>
-                  <p class="text-lg">Automate complex workflows with generative AI solutions that are tailored to your
-                    business processes. We analyze your workflows and develop AI systems that optimize operations,
-                    reduce manual effort, and minimize errors.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 6 -->
-          <div
-            class="swiper-slide group border-logo-blue-0 border-[1px] p-4 flex items-center justify-center min-w-[260px] !h-[440px] transition-all duration-300 relative cursor-pointer overflow-hidden rounded-md bg-white">
-            <div class="flex flex-col justify-center items-center h-full w-full">
-              <!-- Content Section -->
-              <div class="flex flex-col gap-4 items-center text-center transition-all duration-500 z-10">
-                <div><img class="h-20 transition-all duration-300" src="/src/assets/rocket.png" alt=""></div>
-                <div class="flex flex-col gap-4">
-                  <h1 class="text-2xl font-semibold">Knowledge Base Creation</h1>
-                  <p class="text-lg">Create comprehensive AI-driven knowledge bases that are customized to your needs.
-                    We analyze your information requirements and develop AI systems that organize and provide easy
-                    access to valuable information and insights.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 7 -->
-          <div
-            class="swiper-slide group border-logo-blue-0 border-[1px] p-4 flex items-center justify-center min-w-[260px] !h-[440px] transition-all duration-300 relative cursor-pointer overflow-hidden rounded-md bg-white">
-            <div class="flex flex-col justify-center items-center h-full w-full">
-              <!-- Content Section -->
-              <div class="flex flex-col gap-4 items-center text-center transition-all duration-500 z-10">
-                <div><img class="h-20 transition-all duration-300" src="/src/assets/html.png" alt=""></div>
-                <div class="flex flex-col gap-4">
-                  <h1 class="text-2xl font-semibold">Virtual Assistants</h1>
-                  <p class="text-lg">Improve user engagement and automate tasks with intelligent virtual assistants that
-                    are designed for your business. Our virtual assistants are trained on your data to provide
-                    personalized assistance and enhance overall user experience.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 8 -->
-          <div
-            class="swiper-slide group border-logo-blue-0 border-[1px] p-4 flex items-center justify-center min-w-[260px] !h-[440px] transition-all duration-300 relative cursor-pointer overflow-hidden rounded-md bg-white">
-            <div class="flex flex-col justify-center items-center h-full w-full">
-              <!-- Content Section -->
-              <div class="flex flex-col gap-4 items-center text-center transition-all duration-500 z-10">
-                <div><img class="h-20 transition-all duration-300" src="/src/assets/ai.png" alt=""></div>
-                <div class="flex flex-col gap-4">
-                  <h1 class="text-2xl font-semibold">Gen AI for Business Transformation</h1>
-                  <p class="text-lg">We transform your business operations with generative AI by analyzing your data and
-                    identifying opportunities for improvement. Our team develops and implements customized AI solutions
-                    to streamline workflows, enhance decision-making, and drive innovation.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 9 -->
-          <div
-            class="swiper-slide group border-logo-blue-0 border-[1px] p-4 flex items-center justify-center min-w-[260px] !h-[440px] transition-all duration-300 relative cursor-pointer overflow-hidden rounded-md bg-white">
-            <div class="flex flex-col justify-center items-center h-full w-full">
-              <!-- Content Section -->
-              <div class="flex flex-col gap-4 items-center text-center transition-all duration-500 z-10">
-                <div><img class="h-20 transition-all duration-300" src="/src/assets/settings.png" alt=""></div>
-                <div class="flex flex-col gap-4">
-                  <h1 class="text-2xl font-semibold">Generative AI Development for Product</h1>
-                  <p class="text-lg">Enhance your products with generative AI capabilities that are designed to meet
-                    your specific goals. We work closely with your team to understand your product requirements and
-                    develop AI algorithms that improve functionality and user experience.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
     </div>
   </section>
 
@@ -1018,6 +820,61 @@
           <h1 class="font-semibold text-2xl">Unlock the Power of AI for Your Business</h1>
           <p>Harness the potential of AI to formulate intelligent strategies that transform operations, reduce
             costs, and optimize business processes for sustained success.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Responsive Section (100% width, container centered, Tailwind CSS) -->
+  <section class="w-full bg-section-bg py-20  mt-20 font-sans">
+    <div class="container mx-auto px-6 flex flex-col lg:flex-row justify-between items-center w-full">
+      <!-- Left Side: Heading and Button -->
+      <div class="w-full lg:w-1/2 mb-12 lg:mb-0">
+        <h2 class="font-semibold text-section-heading mb-4 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[64px]">
+          It's been a great few <span class="hidden xs:inline"><br></span>years
+        </h2>
+        <p class="text-section-description mb-8 text-xs sm:text-sm md:text-base lg:text-lg xl:text-[18px]">
+          Because we believe in <span class="text-section-accent">#GrowingTogether</span> and <span
+            class="text-section-accent">#KeepRaisingTheBar</span>
+        </p>
+        <button
+          class="w-[200px] group flex items-center text-white justify-center gap-2 border-[0.5px] rounded-md py-2 hover:bg-logo-blue-0 hover:border-logo-blue-0">
+          <div>Get in Touch</div>
+          <img class="h-7 group-hover:rotate-45 transition duration-300 ease-linear"
+            src="/src/assets/arrow-up-right.png" alt="">
+        </button>
+      </div>
+      <!-- Right Side: Stats -->
+      <div class="w-full lg:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="border-t-2 border-section-line group p-2 flex flex-col relative">
+          <div class="flex justify-between items-start">
+            <span class="font-bold text-white text-[60px]">25+</span>
+            <img src="./src/assets/team.webp" alt="Team" class="w-10 h-10 object-contain mt-2" />
+          </div>
+          <p class="text-section-description mt-2">Strong team of engineers</p>
+        </div>
+        <div class="border-t-2 border-section-line group p-2 flex flex-col relative">
+          <div class="flex justify-between items-start">
+            <span class="font-bold text-white text-[60px]">500+</span>
+            <img src="./src/assets/web-page-1.webp" alt="Web Page" class="w-10 h-10 object-contain mt-2" />
+          </div>
+          <p class="text-section-description mt-2">Web Products Delivered</p>
+        </div>
+        <div class="border-t-2 border-section-line group p-2 flex flex-col relative">
+          <div class="flex justify-between items-start">
+            <span class="font-bold text-white text-[60px]">50+</span>
+            <img src="./src/assets/goal.webp" alt="Goal" class="w-10 h-10 object-contain mt-2" />
+          </div>
+          <p class="text-section-description mt-2"> Rescue Missions</p>
+        </div>
+        <div class="border-t-2 border-section-line group p-2 flex flex-col relative">
+          <div class="flex justify-between items-start">
+            <span class="font-bold text-white text-[55px]">Many</span>
+            <img src="./src/assets/guarantee-certificate.webp" alt="Guarantee Certificate"
+              class="w-10 h-10 object-contain mt-2" />
+          </div>
+          <p class="text-section-description mt-2">Award Winning Products</p>
         </div>
       </div>
     </div>
@@ -1110,7 +967,7 @@
   </section>
 
   <!-- How AI agents can deliver value for your industry -->
-  <section class="bg-white font-sans mt-12 min-h-[600px]">
+  <section class="bg-white font-sans min-h-[600px]">
     <div class="container mx-auto px-8 max-w-7xl">
       <h3 class="text-3xl font-bold mb-8 text-gray-800">How AI agents can deliver value for your industry</h3>
       <div class="flex flex-col md:flex-row gap-4 md:gap-8">
@@ -1595,15 +1452,67 @@
     </section>
   </section>
 
-  <section class="tools mx-20">
-      <h1 class="heading-impact text-black font-semibold text-3xl mb-12">Some generative AI technologies we use</h1>
-      <div class="w-full overflow-hidden border-gray-300 border-[1px] rounded-lg py-12 mb-16">
-        <div id="carousel-track" class="flex transition-transform whitespace-nowrap gap-10">
-          <!-- Logos will be injected with JS -->
+  <!-- why work with baron tech -->
+  <section class="sec1 work-with-baron w-full px-20 md:px-16 sm:px-6 xs:px-4 mb-20 font-sans">
+    <div>
+      <h1 class="text-black font-semibold text-3xl mb-10">Why Work With Baron Tech (Pvt) Limited?</h1>
+    </div>
+    <div class="max-w-none mx-auto">
+      <div class="whybaron-grid grid gap-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+        <div class="top-cards contents xl:flex xl:gap-4">
+          <!-- Card 1 -->
+          <div class="whybaron-card border rounded-xl p-6 shadow-sm font-sans"
+            style="background: rgb(249 249 249 / 1);">
+            <img src="/src/assets/coding.webp" alt="Icon" class="h-12 mb-4">
+            <h3 class="font-bold mb-2 text-lg">Worry-free software development</h3>
+            <p class="text-gray-700">Baron Tech (Pvt) Limited utilizes years of experience in the development of
+              projects of all sizes in various domains from start to finish of all the projects we undertake. Our
+              demonstrated ability to honestly produce products that satisfy our clients starts with our project
+              management approach and well-designed processes.</p>
+          </div>
+          <!-- Card 2 -->
+          <div class="whybaron-card border rounded-xl p-6 shadow-sm font-sans"
+            style="background: rgb(249 249 249 / 1);">
+            <img src="/src/assets/good-idea.webp" alt="Icon" class="h-12 mb-4">
+            <h3 class="font-bold mb-2 text-lg">Software Development Life Cycle</h3>
+            <p class="text-gray-700">It is a process that we design, develop and test state-of-the-art software. Baron
+              Tech (Pvt) Limited uses this process to produce high-quality software that meets customer expectations,
+              achieving completion between time and cost estimates. It contains a detailed program.</p>
+          </div>
+          <!-- Card 3 -->
+          <div class="whybaron-card border rounded-xl p-6 shadow-sm font-sans"
+            style="background: rgb(249 249 249 / 1);">
+            <img src="/src/assets/compliant.webp" alt="Icon" class="h-12 mb-4">
+            <h3 class="font-bold mb-2 text-lg">Life Cycle for Agile Software Development</h3>
+            <p class="text-gray-700">We use the Agile SDLC approach because we believe that every project needs to be
+              managed differently and the existing methods need to be adapted to best fit the needs of the project. In
+              Agile, tasks are divided into short-term intervals to deliver specific output features.</p>
+          </div>
+        </div>
+        <div class="bottom-cards contents xl:flex xl:gap-4">
+          <!-- Card 4 -->
+          <div class="whybaron-card border rounded-xl p-6 shadow-sm font-sans xl:flex-1"
+            style="background: rgb(249 249 249 / 1);">
+            <img src="/src/assets/coworking.webp" alt="Icon" class="h-12 mb-4">
+            <h3 class="font-bold mb-2 text-lg">First Meeting</h3>
+            <p class="text-gray-700">We will answer any questions you have about us through this meeting and listen to
+              the details of your project and your priorities. With a fully detailed process, we will be creating a
+              short proposal for your project at a reasonable cost.</p>
+          </div>
+          <!-- Card 5 -->
+          <div class="whybaron-card border rounded-xl p-6 shadow-sm font-sans xl:flex-1"
+            style="background: rgb(249 249 249 / 1);">
+            <img src="/src/assets/svgviewer-png-output.png" alt="Icon" class="h-16 mb-4">
+            <h3 class="font-bold mb-2 text-lg">Global security & quality standards</h3>
+            <p class="text-gray-700">Keeping your data and operations secure is paramount. We adhere to the highest
+              international security and quality standards, ensuring peace of mind throughout the modernization process.
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </section>
+
 
   <!-- how we impact your business -->
   <section class="sec1 impact relative bg-white mb-20 w-full px-20 sm:px-6 md:px-20">
@@ -1681,67 +1590,6 @@
                 Pakistan.</p>
             </div>
 
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- why work with baron tech -->
-  <section class="sec1 work-with-baron w-full px-20 md:px-16 sm:px-6 xs:px-4 mb-20 font-sans">
-    <div>
-      <h1 class="text-black font-semibold text-3xl mb-10">Why Work With Baron Tech (Pvt) Limited?</h1>
-    </div>
-    <div class="max-w-none mx-auto">
-      <div class="whybaron-grid grid gap-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
-        <div class="top-cards contents xl:flex xl:gap-4">
-          <!-- Card 1 -->
-          <div class="whybaron-card border rounded-xl p-6 shadow-sm font-sans"
-            style="background: rgb(249 249 249 / 1);">
-            <img src="/src/assets/coding.webp" alt="Icon" class="h-12 mb-4">
-            <h3 class="font-bold mb-2 text-lg">Worry-free software development</h3>
-            <p class="text-gray-700">Baron Tech (Pvt) Limited utilizes years of experience in the development of
-              projects of all sizes in various domains from start to finish of all the projects we undertake. Our
-              demonstrated ability to honestly produce products that satisfy our clients starts with our project
-              management approach and well-designed processes.</p>
-          </div>
-          <!-- Card 2 -->
-          <div class="whybaron-card border rounded-xl p-6 shadow-sm font-sans"
-            style="background: rgb(249 249 249 / 1);">
-            <img src="/src/assets/good-idea.webp" alt="Icon" class="h-12 mb-4">
-            <h3 class="font-bold mb-2 text-lg">Software Development Life Cycle</h3>
-            <p class="text-gray-700">It is a process that we design, develop and test state-of-the-art software. Baron
-              Tech (Pvt) Limited uses this process to produce high-quality software that meets customer expectations,
-              achieving completion between time and cost estimates. It contains a detailed program.</p>
-          </div>
-          <!-- Card 3 -->
-          <div class="whybaron-card border rounded-xl p-6 shadow-sm font-sans"
-            style="background: rgb(249 249 249 / 1);">
-            <img src="/src/assets/compliant.webp" alt="Icon" class="h-12 mb-4">
-            <h3 class="font-bold mb-2 text-lg">Life Cycle for Agile Software Development</h3>
-            <p class="text-gray-700">We use the Agile SDLC approach because we believe that every project needs to be
-              managed differently and the existing methods need to be adapted to best fit the needs of the project. In
-              Agile, tasks are divided into short-term intervals to deliver specific output features.</p>
-          </div>
-        </div>
-        <div class="bottom-cards contents xl:flex xl:gap-4">
-          <!-- Card 4 -->
-          <div class="whybaron-card border rounded-xl p-6 shadow-sm font-sans xl:flex-1"
-            style="background: rgb(249 249 249 / 1);">
-            <img src="/src/assets/coworking.webp" alt="Icon" class="h-12 mb-4">
-            <h3 class="font-bold mb-2 text-lg">First Meeting</h3>
-            <p class="text-gray-700">We will answer any questions you have about us through this meeting and listen to
-              the details of your project and your priorities. With a fully detailed process, we will be creating a
-              short proposal for your project at a reasonable cost.</p>
-          </div>
-          <!-- Card 5 -->
-          <div class="whybaron-card border rounded-xl p-6 shadow-sm font-sans xl:flex-1"
-            style="background: rgb(249 249 249 / 1);">
-            <img src="/src/assets/svgviewer-png-output.png" alt="Icon" class="h-16 mb-4">
-            <h3 class="font-bold mb-2 text-lg">Global security & quality standards</h3>
-            <p class="text-gray-700">Keeping your data and operations secure is paramount. We adhere to the highest
-              international security and quality standards, ensuring peace of mind throughout the modernization process.
-            </p>
           </div>
         </div>
       </div>
@@ -2060,64 +1908,5 @@
     });
   </script>
 
-  <script>
-    const logos = [
-      "/src/assets/tool-logo-1.svg",
-      "/src/assets/tool-logo-2.svg",
-      "/src/assets/tool-logo-3.svg",
-      "/src/assets/tool-logo-4.svg",
-      "/src/assets/tool-logo-5.svg",
-      "/src/assets/tool-logo-6.svg",
-      "/src/assets/tool-logo-7.svg",
-      "/src/assets/tool-logo-8.webp",
-      "/src/assets/tool-logo-9.webp",
-      "/src/assets/tool-logo-10.webp",
-      "/src/assets/tool-logo-11.webp",
-      "/src/assets/tool-logo-12.webp",
-      "/src/assets/tool-logo-13.webp",
-      "/src/assets/tool-logo-14.webp",
-      "/src/assets/tool-logo-15.webp"
-    ];
-
-    const track = document.getElementById("carousel-track");
-
-    // Create a large enough loop by duplicating logos
-    const totalClones = 20;
-    for (let i = 0; i < totalClones; i++) {
-      logos.forEach(src => {
-        const img = document.createElement("img");
-        img.src = src;
-        img.alt = "logo";
-        img.className = "h-16 w-auto mx-4 inline-block";
-        track.appendChild(img);
-      });
-    }
-
-    let currentIndex = 0;
-    const items = track.children;
-    const itemWidth = items[0].offsetWidth + 32; // width + mx-4 (16px + 16px)
-    const delay = 1000; // 1 seconds
-
-    function moveCarousel() {
-      currentIndex++;
-      track.style.transform = `translateX(-${itemWidth * currentIndex}px)`;
-
-      // Reset if halfway through to prevent overflow
-      if (currentIndex > items.length / 2) {
-        track.style.transition = "none";
-        currentIndex = 0;
-        track.style.transform = `translateX(0)`;
-
-        // Re-enable transition
-        requestAnimationFrame(() => {
-          track.style.transition = "transform 0.5s ease-in-out";
-        });
-      }
-    }
-
-    setInterval(moveCarousel, delay);
-  </script>
-
 </body>
-
 </html>
