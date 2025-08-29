@@ -3,125 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Team</title>
+  <title>Portfolio</title>
   <link href="./dist/output.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <style>
-  @media (max-width: 408px) {
-    .hide-br-408 { display: none !important; }
-    .main-para {
-      max-width: 98vw !important;
-      width: 98vw !important;
-      word-break: break-word !important;
-      white-space: normal !important;
-      text-align: start !important;
-      margin-left: 5px !important;
-    }
+@media (max-width: 1024px) {
+  .portfolio-content-gap {
+    margin-top: 32px;
   }
-  @media (max-width: 900px) {
-    .cont{
-      margin-top: 50px !important
-    }
-    .team-video-hide {
-      display: none !important;
-    }
-  }
-      @media (max-width: 425px) {
-    .para {
-      font-size: 14px !important;
-      font-weight : 200;
-    }
-  }
-   @media (max-width: 767px){
- .para {
-      font-size: 14px !important;
-      font-weight : 200;
-    }
+}
+@media (max-width: 425px) {
     .main-h1{
-      font-size: 35px !important;
-      margin-left: 5px !important;
-      width: 455px !important;
-      text-align: start;
+        font-size: 32px;
     }
-    .main-para{
- font-size: 20px !important;
-      margin-left: 5px !important;
-      width: 455px !important;
-      text-align: start;
-    }
+    
+}
+</style>
 
-   }
-    @media (max-width: 530px){
-  @media (max-width: 408px){
-    .main-para {
-      max-width: 98vw !important;
-      width: 98vw !important;
-      word-break: break-word !important;
-      white-space: normal !important;
-      text-align: start !important;
-      margin-left: 5px !important;
-    }
-  }
- .para {
-      font-size: 14px !important;
-      font-weight : 200;
-    }
-    .main-h1{
-  font-size: 22px !important;
-      margin-left: 5px !important;
-      width: 90% !important;
-      max-width: 98vw !important;
-      text-align: start;
-      box-sizing: border-box;
-    }
-    .main-para{
-      font-size: 16px !important;
-      margin-left: 5px !important;
-      width: 96% !important;
-      max-width: 99vw !important;
-      text-align: start;
-      justify-content: start;
-      box-sizing: border-box;
-    }
-      .main-team-section {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        width: 100vw !important;
-        max-width: 100vw !important;
-        box-sizing: border-box;
-      }
-      .main-team-inner {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        width: 100vw !important;
-        max-width: 100vw !important;
-        box-sizing: border-box;
-      }
-
-   }
-   @media (max-width: 640px){
- .responsive-team-img {
-      height: 110px !important;
-      width: 110px !important;
-      object-fit: cover;
-    }
-   }
-   @media (max-width: 1024px) and (min-width: 880px) {
-    .team-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-    }
-  }
-  
-  
-  </style>
 </head>
-
 <body class="font-sans h-full" style="overflow-x: hidden !important;">
   <!-- Navbar -->
   <nav id="navbar"
@@ -376,348 +277,49 @@
   <div id="sidebarOverlay"
     class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden transition-opacity duration-300 lg:hidden">
   </div>
-  <!-- main team section-->
-<section class="main-team-section bg-section-bg flex items-center justify-center min-h-screen font-sans">
-  <div class="main-team-inner flex flex-col md:flex-row w-full max-w-7xl p-10">
-    
-    <!-- Left Side Text -->
-    <div class="cont md:w-3/5 text-white text-center md:text-left font-sans p-6 md:pl-12 flex flex-col justify-center">
-      <h1 class="main-h1 text-4xl md:text-5xl font-bold leading-snug" style="width: 525px; margin-bottom: 20px;">
-        Team Baron Tech (Pvt) Limited
-      </h1>
-      <p class="main-para text-lg md:text-2xl mb-8 " style="color: #C9C9C9; font-size: 20px;">
-  "Alone we can do so little; together we can do so <br class='hide-br-408'>much."  — Helen Keller
-      </p>
-     <button class="main-btn flex group justify-center items-center border-[0.5px] bg-dark-blue-0 text-white gap-2 rounded-lg px-4  hover:bg-logo-blue-0 hover:text-white transition-all 3s " style="margin-top: 40px; width: 160px; padding-top: 11px;padding-bottom: 11px;">
+    <!-- Main Content -->
+  <section class="w-full flex items-center justify-center bg-section-bg py-16 font-sans" style="min-height: 600px;">
+    <div class="container mx-auto px-4 lg:px-8 flex flex-col lg:flex-row items-center gap-12">
+  <div class="lg:w-1/2 text-left pl-4 lg:pl-12 portfolio-content-gap">
+        <h2 class="main-h1 text-4xl font-bold text-white mb-4">Delivering Beyond Expectations.</h2>
+        <p class="text-white mb-6">Our work methodology is based around the success of our clients and them being able to launch their products on time and within budget.</p>
+       <button class="main-btn flex group justify-center items-center border-[0.5px] bg-dark-blue-0 text-white gap-2 rounded-lg px-4  hover:bg-logo-blue-0 hover:text-white transition-all 3s " style="margin-top: 40px; width: 160px; padding-top: 11px;padding-bottom: 11px;">
             Get a Quote
               <img class="main-img group-hover:rotate-45 transition-all 3s ease-linear h-6 filter invert brightness-0 contrast-200 group-hover:invert group-hover:brightness-0 group-hover:contrast-200" src="/src/assets/arrow-blue.png" alt="">
             </button>
+      </div>
+      <div class="lg:w-1/2 w-full h-64 lg:h-auto">
+        <img src="/src/assets/our-work-min-1024x537.webp" alt="Product Display" class="w-full h-full object-cover">
+      </div>
     </div>
-
-    <!-- Right Side GIF -->
-  <div class="md:w-2/5 mt-10 md:mt-0 team-video-hide flex items-center justify-center">
-      <img src="src/assets/0-People-Discussion-3840x2160-unscreen.gif" 
-           alt="Team Discussion" 
-           class="w-[500px] h-[400px] md:w-[600px] md:h-[450px] object-contain rounded-lg shadow-lg" />
-    </div>
-
-  </div>
-</section>
-
-  <!-- Team Section -->
-<section class="w-full bg-white py-12 font-sans">
-  <div class="text-center mb-10">
-    <h2 class="text-3xl md:text-4xl font-bold mb-2">Meet our Experts</h2>
-    <p class="para text-gray-600">Successful teamwork is essential for innovation and growth.</p>
-  </div>
-
-  <!-- ✅ Card Grid -->
-  <div class="team-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto px-6">
-
-
-     <!-- card 1 -->
-<!-- ✅ Card with two connected rectangles (centered, half inside image) -->
-<div class="flex flex-col items-center w-full max-w-xs">
-  <!-- Image -->
-  <div class="relative w-full">
-    <img src="src/assets/Khalid-Mehmood.webp" 
-         alt="Khalid Mahmood" 
-         class="w-full h-64 sm:h-40 md:h-52 lg:h-64 object-cover rounded-2xl grayscale hover:grayscale-0 transition duration-300">
-
-    <!-- First Rectangle (half inside image) -->
-    <div class="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-1/2 
-                bg-white w-48 px-4 py-2 rounded-t-xl flex justify-center items-center" style="width: 162px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
-      <h3 class="text-base font-bold text-gray-800 text-center">Khalid Mahmood</h3>
-    </div>
-  </div>
-
-  <!-- Second Rectangle (exactly aligned, continues below) -->
-  <div class="bg-white w-48 px-4 py-2 rounded-b-xl shadow-md -mt-1 flex justify-center items-center" style="width: 162px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
-    <p class="text-logo-blue-0 font-medium text-sm text-center">CEO &amp; Founder</p>
-  </div>
-</div>
-
-
-     <!-- card 2 -->
-<!-- ✅ Card with two connected rectangles (centered, half inside image) -->
-<div class="flex flex-col items-center w-full max-w-xs">
-  <!-- Image -->
-  <div class="relative w-full">
-    <img src="src/assets/Sajjad-ahmad.webp" 
-         alt="Sajjad Ahmad" 
-         class="w-full h-64 object-cover rounded-2xl grayscale hover:grayscale-0 transition duration-300">
-
-    <!-- First Rectangle (half inside image) -->
-    <div class="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-1/2 
-                bg-white w-48 px-4 py-2 rounded-t-xl flex justify-center items-center" style="width: 162px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
-      <h3 class="text-base font-bold text-gray-800 text-center">Sajjad Ahmad</h3>
-    </div>
-  </div>
-
-  <!-- Second Rectangle (exactly aligned, continues below) -->
-  <div class="bg-white w-48 px-4 py-2 rounded-b-xl shadow-md -mt-1 flex justify-center items-center" style="width: 162px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
-    <p class="text-logo-blue-0 font-medium text-sm text-center">Full Stack Developer</p>
-  </div>
-</div>
-     <!-- card 3 -->
-    <!-- ✅ Card with two connected rectangles (centered, half inside image) -->
-<div class="flex flex-col items-center w-full max-w-xs">
-  <!-- Image -->
-  <div class="relative w-full">
-    <img src="src/assets/aliraza.webp" 
-         alt="Ali Raza Haider" 
-         class="w-full h-64 object-cover rounded-2xl grayscale hover:grayscale-0 transition duration-300">
-
-    <!-- First Rectangle (half inside image) -->
-    <div class="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-1/2 
-                bg-white w-48 px-4 py-2 rounded-t-xl flex justify-center items-center" style="width: 162px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
-      <h3 class="text-base font-bold text-gray-800 text-center">Ali Raza Haider</h3>
-    </div>
-  </div>
-
-  <!-- Second Rectangle (exactly aligned, continues below) -->
-  <div class="bg-white w-48 px-4 py-2 rounded-b-xl shadow-md -mt-1 flex justify-center items-center" style="width: 162px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
-    <p class="text-logo-blue-0 font-medium text-sm text-center">Web Developer</p>
-  </div>
-</div>
-     <!-- card 4 -->
-    <!-- ✅ Card with two connected rectangles (centered, half inside image) -->
-<div class="flex flex-col items-center w-full max-w-xs">
-  <!-- Image -->
-  <div class="relative w-full">
-    <img src="src/assets/abdullah-developer.webp" 
-         alt="Abdullah Amjad" 
-         class="w-full h-64 object-cover rounded-2xl grayscale hover:grayscale-0 transition duration-300">
-
-    <!-- First Rectangle (half inside image) -->
-    <div class="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-1/2 
-                bg-white w-48 px-4 py-2 rounded-t-xl flex justify-center items-center" style="width: 162px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
-      <h3 class="text-base font-bold text-gray-800 text-center">Abdullah Amjad</h3>
-    </div>
-  </div>
-
-  <!-- Second Rectangle (exactly aligned, continues below) -->
-  <div class="bg-white w-48 px-4 py-2 rounded-b-xl shadow-md -mt-1 flex justify-center items-center" style="width: 162px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
-    <p class="text-logo-blue-0 font-medium text-sm text-center">JR Web Developer</p>
-  </div>
-</div>
+  </section>
+  <!-- Success Stories -->
+  <section class="sec1 impact relative bg-white mb-20 w-full px-20 sm:px-6 md:px-20">
     
-  <!-- ✅ Card5 with two connected rectangles (centered, half inside image) -->
-<div class="flex flex-col items-center w-full max-w-xs">
-  <!-- Image -->
-  <div class="relative w-full">
-    <img src="src/assets/wajeeh.webp" 
-         alt="Wajeeh ul Hassan" 
-         class="w-full h-64 object-cover rounded-2xl grayscale hover:grayscale-0 transition duration-300">
-
-    <!-- First Rectangle (half inside image) -->
-    <div class="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-1/2 
-                bg-white w-48 px-4 py-2 rounded-t-xl flex justify-center items-center" style="width: 180px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
-      <h3 class="text-base font-bold text-gray-800 text-center">Wajeeh ul Hassan</h3>
+          <!-- Card 1 -->
+          <div
+            class="swiper-slide group p-4 flex items-center justify-center min-w-[260px]  transition-all duration-300 relative cursor-pointer overflow-hidden rounded-md bg-white">
+            <div class="flex flex-col gap-4">
+              <div><img src="/src/assets/success-card-1.webp" alt=""></div>
+              <div><img class="h-12" src="src/assets/raviant.webp" alt=""></div>
+              <p>Our focus that we will provide competitive, high-quality electronic accessories to our
+                valuable customers around the world.</p>
+            </div>
+             <!-- Card 2 -->
+          <div
+            class="swiper-slide group p-4 flex items-center justify-center min-w-[260px]  transition-all duration-300 relative cursor-pointer overflow-hidden rounded-md bg-white">
+            <div class="flex flex-col gap-4">
+              <div><img src="/src/assets/success-card-1.webp" alt=""></div>
+              <div><img class="h-12" src="src/assets/raviant.webp" alt=""></div>
+              <p>Our focus that we will provide competitive, high-quality electronic accessories to our
+                valuable customers around the world.</p>
+            </div>
+          </div>
+          
     </div>
-  </div>
+    
+  </section>
 
-  <!-- Second Rectangle (exactly aligned, continues below) -->
-  <div class="bg-white w-48 px-4 py-2 rounded-b-xl shadow-md -mt-1 flex justify-center items-center" style="width: 180px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
-    <p class="text-logo-blue-0 font-medium text-sm text-center">ReactJs Developer</p>
-  </div>
-</div>
-
-
-    <!-- ✅ Card with two connected rectangles (centered, half inside image) -->
-<div class="flex flex-col items-center w-full max-w-xs">
-  <!-- Image -->
-  <div class="relative w-full">
-    <img src="src/assets/mubeen.webp" 
-         alt="Mubeen Yousaf" 
-         class="w-full h-64 object-cover rounded-2xl grayscale hover:grayscale-0 transition duration-300">
-
-    <!-- First Rectangle (half inside image) -->
-    <div class="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-1/2 
-                bg-white w-48 px-4 py-2 rounded-t-xl flex justify-center items-center" style="width: 195px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
-      <h3 class="text-base font-bold text-gray-800 text-center">Mubeen Yousaf</h3>
-    </div>
-  </div>
-
-  <!-- Second Rectangle (exactly aligned, continues below) -->
-  <div class="bg-white w-48 px-4 py-2 rounded-b-xl shadow-md -mt-1 flex justify-center items-center" style="width: 195px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
-    <p class="text-logo-blue-0 font-medium text-sm text-center">Junior ReactJs Developer</p>
-  </div>
-</div>
-     <!-- card 7 -->
-    <!-- ✅ Card with two connected rectangles (centered, half inside image) -->
-<div class="flex flex-col items-center w-full max-w-xs">
-  <!-- Image -->
-  <div class="relative w-full">
-    <img src="src/assets/sardarali.webp" 
-         alt="Sardar Ali" 
-         class="w-full h-64 object-cover rounded-2xl grayscale hover:grayscale-0 transition duration-300">
-
-    <!-- First Rectangle (half inside image) -->
-    <div class="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-1/2 
-                bg-white w-48 px-4 py-2 rounded-t-xl flex justify-center items-center" style="width: 162px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
-      <h3 class="text-base font-bold text-gray-800 text-center">Sardar Ali</h3>
-    </div>
-  </div>
-
-  <!-- Second Rectangle (exactly aligned, continues below) -->
-  <div class="bg-white w-48 px-4 py-2 rounded-b-xl shadow-md -mt-1 flex justify-center items-center" style="width: 162px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
-    <p class="text-logo-blue-0 font-medium text-sm text-center">Web Developer</p>
-  </div>
-</div>
-     <!-- card 8 -->
-    <!-- ✅ Card with two connected rectangles (centered, half inside image) -->
-<div class="flex flex-col items-center w-full max-w-xs">
-  <!-- Image -->
-  <div class="relative w-full">
-    <img src="src/assets/majid.webp" 
-         alt="Majid Hayat" 
-         class="w-full h-64 object-cover rounded-2xl grayscale hover:grayscale-0 transition duration-300">
-
-    <!-- First Rectangle (half inside image) -->
-    <div class="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-1/2 
-                bg-white w-48 px-4 py-2 rounded-t-xl flex justify-center items-center" style="width: 162px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
-      <h3 class="text-base font-bold text-gray-800 text-center">Majid Hayat</h3>
-    </div>
-  </div>
-
-  <!-- Second Rectangle (exactly aligned, continues below) -->
-  <div class="bg-white w-48 px-4 py-2 rounded-b-xl shadow-md -mt-1 flex justify-center items-center" style="width: 162px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
-    <p class="text-logo-blue-0 font-medium text-sm text-center">Business Developer</p>
-  </div>
-</div>
-     
-  
-     <!-- card 11 -->
-   <!-- ✅ Card with two connected rectangles (centered, half inside image) -->
-<div class="flex flex-col items-center w-full max-w-xs">
-  <!-- Image -->
-  <div class="relative w-full">
-    <img src="src/assets/T02FDSK8RM3-U0920K58108-a59e38bebfe2-192.png" 
-         alt="Sajid Ali" 
-         class="w-full h-64 object-cover rounded-2xl grayscale hover:grayscale-0 transition duration-300">
-
-    <!-- First Rectangle (half inside image) -->
-    <div class="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-1/2 
-                bg-white w-48 px-4 py-2 rounded-t-xl flex justify-center items-center" style="width: 162px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
-      <h3 class="text-base font-bold text-gray-800 text-center">Sajid Ali</h3>
-    </div>
-  </div>
-
-  <!-- Second Rectangle (exactly aligned, continues below) -->
-  <div class="bg-white w-48 px-4 py-2 rounded-b-xl shadow-md -mt-1 flex justify-center items-center" style="width: 162px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
-    <p class="text-logo-blue-0 font-medium text-sm text-center">Business Developer</p>
-  </div>
-</div>
-     <!-- card 12 -->
-    <!-- ✅ Card with two connected rectangles (centered, half inside image) -->
-<div class="flex flex-col items-center w-full max-w-xs">
-  <!-- Image -->
-  <div class="relative w-full">
-    <img src="src/assets/T02FDSK8RM3-U08TN1LD2CS-0150b8633588-192.png" 
-         alt="Khalid Mahmood" 
-         class="w-full h-64 object-cover rounded-2xl grayscale hover:grayscale-0 transition duration-300">
-
-    <!-- First Rectangle (half inside image) -->
-    <div class="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-1/2 
-                bg-white w-48 px-4 py-2 rounded-t-xl flex justify-center items-center" style="width: 180px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
-      <h3 class="text-base font-bold text-gray-800 text-center">Waleed</h3>
-    </div>
-  </div>
-
-  <!-- Second Rectangle (exactly aligned, continues below) -->
-  <div class="bg-white w-48 px-4 py-2 rounded-b-xl shadow-md -mt-1 flex justify-center items-center" style="width: 180px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
-    <p class="text-logo-blue-0 font-medium text-sm text-center">Lead Game Developer</p>
-  </div>
-</div>
-  <!-- ✅ Card 13with two connected rectangles (centered, half inside image) -->
-<div class="flex flex-col items-center w-full max-w-xs">
-  <!-- Image -->
-  <div class="relative w-full">
-    <img src="src/assets/T02FDSK8RM3-U08SSB3BQKU-3475ada159f6-192.jpeg" 
-         alt="Kamran Shaheen" 
-         class="w-full h-64 object-cover rounded-2xl grayscale hover:grayscale-0 transition duration-300">
-
-    <!-- First Rectangle (half inside image) -->
-    <div class="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-1/2 
-                bg-white w-48 px-4 py-2 rounded-t-xl flex justify-center items-center" style="width: 162px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
-      <h3 class="text-base font-bold text-gray-800 text-center">Kamran Shaheen</h3>
-    </div>
-  </div>
-
-  <!-- Second Rectangle (exactly aligned, continues below) -->
-  <div class="bg-white w-48 px-4 py-2 rounded-b-xl shadow-md -mt-1 flex justify-center items-center" style="width: 162px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
-    <p class="text-logo-blue-0 font-medium text-sm text-center">Business Developer</p>
-  </div>
-</div>
-
-    <!-- card 14 -->
-    <!-- ✅ Card with two connected rectangles (centered, half inside image) -->
-<div class="flex flex-col items-center w-full max-w-xs">
-  <!-- Image -->
-  <div class="relative w-full">
-    <img src="\src\assets\T02FDSK8RM3-U098MEBLHA4-3b432aadbd56-192.jpeg" 
-         alt="Ammar Aziz" 
-         class="w-full h-64 object-cover rounded-2xl grayscale hover:grayscale-0 transition duration-300">
-
-    <!-- First Rectangle (half inside image) -->
-    <div class="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-1/2 
-                bg-white w-48 px-4 py-2 rounded-t-xl flex justify-center items-center" style="width: 162px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
-      <h3 class="text-base font-bold text-gray-800 text-center">Ammar Aziz</h3>
-    </div>
-  </div>
-
-  <!-- Second Rectangle (exactly aligned, continues below) -->
-  <div class="bg-white w-48 px-4 py-2 rounded-b-xl shadow-md -mt-1 flex justify-center items-center" style="width: 162px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
-    <p class="text-logo-blue-0 font-medium text-sm text-center">''''</p>
-  </div>
-</div>
- <!-- ✅ Card 15with two connected rectangles (centered, half inside image) -->
-<div class="flex flex-col items-center w-full max-w-xs">
-  <!-- Image -->
-  <div class="relative w-full">
-    <img src="src/assets/Suleman.webp" 
-         alt="Suleman Ahmed" 
-         class="w-full h-64 object-cover rounded-2xl grayscale hover:grayscale-0 transition duration-300">
-
-    <!-- First Rectangle (half inside image) -->
-    <div class="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-1/2 
-                bg-white w-48 px-4 py-2 rounded-t-xl flex justify-center items-center" style="width: 180px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
-      <h3 class="text-base font-bold text-gray-800 text-center">Suleman Ahmed</h3>
-    </div>
-  </div>
-
-  <!-- Second Rectangle (exactly aligned, continues below) -->
-  <div class="bg-white w-48 px-4 py-2 rounded-b-xl shadow-md -mt-1 flex justify-center items-center" style="width: 180px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
-    <p class="text-logo-blue-0 font-medium text-sm text-center">Mobile App Team Lead</p>
-  </div>
-</div>
-
-
-    <!-- ✅ Card with two connected rectangles (centered, half inside image) -->
-<div class="flex flex-col items-center w-full max-w-xs">
-  <!-- Image -->
-  <div class="relative w-full">
-    <img src="src/assets/usama-laeeq.webp" 
-         alt="Usama Laeeq" 
-         class="w-full h-64 object-cover rounded-2xl grayscale hover:grayscale-0 transition duration-300">
-
-    <!-- First Rectangle (half inside image) -->
-    <div class="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-1/2 
-                bg-white w-48 px-4 py-2 rounded-t-xl flex justify-center items-center" style="width: 162px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
-      <h3 class="text-base font-bold text-gray-800 text-center">Usama Laeeq</h3>
-    </div>
-  </div>
-
-  <!-- Second Rectangle (exactly aligned, continues below) -->
-  <div class="bg-white w-48 px-4 py-2 rounded-b-xl shadow-md -mt-1 flex justify-center items-center" style="width: 162px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
-    <p class="text-logo-blue-0 font-medium text-sm text-center">Flutter Engineer</p>
-  </div>
-</div>
-    </div>
-    </div>
-  </div>
-</section>
   <!-- Contact Section (Styled like screenshot) -->
   <section class="w-full min-h-[60vh] bg-section-bg py-16 px-0 flex items-center justify-center font-sans">
     <div class="w-full mx-4 sm:mx-8 md:mx-16 flex flex-col md:flex-row gap-12 md:gap-0">
@@ -930,6 +532,7 @@
     </div>
    
     <script src="script.js"></script>
+
 </body>
 
 </html>

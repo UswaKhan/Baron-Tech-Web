@@ -9,6 +9,63 @@
   <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <style>
+  
+  @media (max-width: 425px) {
+    .teamwork-heading {
+      font-size: 1.5rem !important;
+    }
+  }
+  @media (max-width: 1080px) {
+    .three-steps-section,
+    .three-steps-grid.custom-responsive-steps {
+      margin-left: 12px !important;
+      margin-right: 12px !important;
+      box-sizing: border-box !important;
+      max-width: calc(100vw - 24px) !important;
+    }
+    .three-step-card {
+      min-width: 0 !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+    }
+  }
+  .three-steps-grid.custom-responsive-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+  @media (max-width: 1000px) {
+    .three-steps-grid.custom-responsive-steps {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, auto);
+    }
+    .three-steps-grid.custom-responsive-steps > .three-step-card:nth-child(1) { grid-column: 1; grid-row: 1; }
+    .three-steps-grid.custom-responsive-steps > .three-step-card:nth-child(2) { grid-column: 2; grid-row: 1; }
+    .three-steps-grid.custom-responsive-steps > .three-step-card:nth-child(3) {
+      grid-column: 1 / span 2;
+      grid-row: 2;
+      justify-self: center;
+      width: 60%;
+      min-width: 220px;
+      max-width: 400px;
+    }
+  }
+  @media (max-width: 650px) {
+    .three-steps-grid.custom-responsive-steps {
+      grid-template-columns: 1fr;
+      grid-template-rows: none;
+      gap: 2rem;
+    }
+    .three-steps-grid.custom-responsive-steps > .three-step-card {
+      grid-column: 1 !important;
+      grid-row: auto !important;
+      justify-self: center !important;
+      width: 85% !important;
+      min-width: 220px !important;
+      max-width: 400px !important;
+      height: 160px !important;
+    }
+  }
   @media (max-width: 408px) {
     .hide-br-408 { display: none !important; }
     .main-para {
@@ -105,23 +162,35 @@
       }
 
    }
-   @media (max-width: 640px){
- .responsive-team-img {
-      height: 110px !important;
-      width: 110px !important;
-      object-fit: cover;
+    @media (max-width: 1024px) {
+      .three-steps-section, .three-steps-grid.custom-responsive-steps {
+        margin-left: 18px !important;
+        margin-right: 28px !important;
+      }
     }
-   }
-   @media (max-width: 1024px) and (min-width: 880px) {
-    .team-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    @media (max-width: 650px) {
+      .three-steps-section, .three-steps-grid.custom-responsive-steps {
+        margin-left: 18px !important;
+        margin-right: 18px !important;
+      }
+      .three-steps-grid{
+        width: 400px;
+      }
+      .teamwork-heading{
+        font-size: 30px;
+      }
     }
-  }
-  
-  
-  </style>
+    @media (max-width: 425px) {
+      .three-steps-section, .three-steps-grid.custom-responsive-steps {
+        margin-left: 19px !important;
+        margin-right: 19px !important;
+      }
+       .three-steps-grid{
+  width: 96%;
+      }
+    }
+  </style> 
 </head>
-
 <body class="font-sans h-full" style="overflow-x: hidden !important;">
   <!-- Navbar -->
   <nav id="navbar"
@@ -383,10 +452,10 @@
     <!-- Left Side Text -->
     <div class="cont md:w-3/5 text-white text-center md:text-left font-sans p-6 md:pl-12 flex flex-col justify-center">
       <h1 class="main-h1 text-4xl md:text-5xl font-bold leading-snug" style="width: 525px; margin-bottom: 20px;">
-        Team Baron Tech (Pvt) Limited
+       We Build Breakthroughs in Tech-Products.
       </h1>
       <p class="main-para text-lg md:text-2xl mb-8 " style="color: #C9C9C9; font-size: 20px;">
-  "Alone we can do so little; together we can do so <br class='hide-br-408'>much."  — Helen Keller
+  "Empowering you about to achieve what you want in <br class='hide-br-408'>the best way possible.
       </p>
      <button class="main-btn flex group justify-center items-center border-[0.5px] bg-dark-blue-0 text-white gap-2 rounded-lg px-4  hover:bg-logo-blue-0 hover:text-white transition-all 3s " style="margin-top: 40px; width: 160px; padding-top: 11px;padding-bottom: 11px;">
             Get a Quote
@@ -403,321 +472,428 @@
 
   </div>
 </section>
-
-  <!-- Team Section -->
-<section class="w-full bg-white py-12 font-sans">
-  <div class="text-center mb-10">
-    <h2 class="text-3xl md:text-4xl font-bold mb-2">Meet our Experts</h2>
-    <p class="para text-gray-600">Successful teamwork is essential for innovation and growth.</p>
-  </div>
-
-  <!-- ✅ Card Grid -->
-  <div class="team-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto px-6">
-
-
-     <!-- card 1 -->
-<!-- ✅ Card with two connected rectangles (centered, half inside image) -->
-<div class="flex flex-col items-center w-full max-w-xs">
-  <!-- Image -->
-  <div class="relative w-full">
-    <img src="src/assets/Khalid-Mehmood.webp" 
-         alt="Khalid Mahmood" 
-         class="w-full h-64 sm:h-40 md:h-52 lg:h-64 object-cover rounded-2xl grayscale hover:grayscale-0 transition duration-300">
-
-    <!-- First Rectangle (half inside image) -->
-    <div class="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-1/2 
-                bg-white w-48 px-4 py-2 rounded-t-xl flex justify-center items-center" style="width: 162px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
-      <h3 class="text-base font-bold text-gray-800 text-center">Khalid Mahmood</h3>
-    </div>
-  </div>
-
-  <!-- Second Rectangle (exactly aligned, continues below) -->
-  <div class="bg-white w-48 px-4 py-2 rounded-b-xl shadow-md -mt-1 flex justify-center items-center" style="width: 162px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
-    <p class="text-logo-blue-0 font-medium text-sm text-center">CEO &amp; Founder</p>
-  </div>
-</div>
-
-
-     <!-- card 2 -->
-<!-- ✅ Card with two connected rectangles (centered, half inside image) -->
-<div class="flex flex-col items-center w-full max-w-xs">
-  <!-- Image -->
-  <div class="relative w-full">
-    <img src="src/assets/Sajjad-ahmad.webp" 
-         alt="Sajjad Ahmad" 
-         class="w-full h-64 object-cover rounded-2xl grayscale hover:grayscale-0 transition duration-300">
-
-    <!-- First Rectangle (half inside image) -->
-    <div class="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-1/2 
-                bg-white w-48 px-4 py-2 rounded-t-xl flex justify-center items-center" style="width: 162px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
-      <h3 class="text-base font-bold text-gray-800 text-center">Sajjad Ahmad</h3>
-    </div>
-  </div>
-
-  <!-- Second Rectangle (exactly aligned, continues below) -->
-  <div class="bg-white w-48 px-4 py-2 rounded-b-xl shadow-md -mt-1 flex justify-center items-center" style="width: 162px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
-    <p class="text-logo-blue-0 font-medium text-sm text-center">Full Stack Developer</p>
-  </div>
-</div>
-     <!-- card 3 -->
-    <!-- ✅ Card with two connected rectangles (centered, half inside image) -->
-<div class="flex flex-col items-center w-full max-w-xs">
-  <!-- Image -->
-  <div class="relative w-full">
-    <img src="src/assets/aliraza.webp" 
-         alt="Ali Raza Haider" 
-         class="w-full h-64 object-cover rounded-2xl grayscale hover:grayscale-0 transition duration-300">
-
-    <!-- First Rectangle (half inside image) -->
-    <div class="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-1/2 
-                bg-white w-48 px-4 py-2 rounded-t-xl flex justify-center items-center" style="width: 162px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
-      <h3 class="text-base font-bold text-gray-800 text-center">Ali Raza Haider</h3>
-    </div>
-  </div>
-
-  <!-- Second Rectangle (exactly aligned, continues below) -->
-  <div class="bg-white w-48 px-4 py-2 rounded-b-xl shadow-md -mt-1 flex justify-center items-center" style="width: 162px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
-    <p class="text-logo-blue-0 font-medium text-sm text-center">Web Developer</p>
-  </div>
-</div>
-     <!-- card 4 -->
-    <!-- ✅ Card with two connected rectangles (centered, half inside image) -->
-<div class="flex flex-col items-center w-full max-w-xs">
-  <!-- Image -->
-  <div class="relative w-full">
-    <img src="src/assets/abdullah-developer.webp" 
-         alt="Abdullah Amjad" 
-         class="w-full h-64 object-cover rounded-2xl grayscale hover:grayscale-0 transition duration-300">
-
-    <!-- First Rectangle (half inside image) -->
-    <div class="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-1/2 
-                bg-white w-48 px-4 py-2 rounded-t-xl flex justify-center items-center" style="width: 162px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
-      <h3 class="text-base font-bold text-gray-800 text-center">Abdullah Amjad</h3>
-    </div>
-  </div>
-
-  <!-- Second Rectangle (exactly aligned, continues below) -->
-  <div class="bg-white w-48 px-4 py-2 rounded-b-xl shadow-md -mt-1 flex justify-center items-center" style="width: 162px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
-    <p class="text-logo-blue-0 font-medium text-sm text-center">JR Web Developer</p>
-  </div>
-</div>
-    
-  <!-- ✅ Card5 with two connected rectangles (centered, half inside image) -->
-<div class="flex flex-col items-center w-full max-w-xs">
-  <!-- Image -->
-  <div class="relative w-full">
-    <img src="src/assets/wajeeh.webp" 
-         alt="Wajeeh ul Hassan" 
-         class="w-full h-64 object-cover rounded-2xl grayscale hover:grayscale-0 transition duration-300">
-
-    <!-- First Rectangle (half inside image) -->
-    <div class="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-1/2 
-                bg-white w-48 px-4 py-2 rounded-t-xl flex justify-center items-center" style="width: 180px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
-      <h3 class="text-base font-bold text-gray-800 text-center">Wajeeh ul Hassan</h3>
-    </div>
-  </div>
-
-  <!-- Second Rectangle (exactly aligned, continues below) -->
-  <div class="bg-white w-48 px-4 py-2 rounded-b-xl shadow-md -mt-1 flex justify-center items-center" style="width: 180px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
-    <p class="text-logo-blue-0 font-medium text-sm text-center">ReactJs Developer</p>
-  </div>
-</div>
-
-
-    <!-- ✅ Card with two connected rectangles (centered, half inside image) -->
-<div class="flex flex-col items-center w-full max-w-xs">
-  <!-- Image -->
-  <div class="relative w-full">
-    <img src="src/assets/mubeen.webp" 
-         alt="Mubeen Yousaf" 
-         class="w-full h-64 object-cover rounded-2xl grayscale hover:grayscale-0 transition duration-300">
-
-    <!-- First Rectangle (half inside image) -->
-    <div class="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-1/2 
-                bg-white w-48 px-4 py-2 rounded-t-xl flex justify-center items-center" style="width: 195px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
-      <h3 class="text-base font-bold text-gray-800 text-center">Mubeen Yousaf</h3>
-    </div>
-  </div>
-
-  <!-- Second Rectangle (exactly aligned, continues below) -->
-  <div class="bg-white w-48 px-4 py-2 rounded-b-xl shadow-md -mt-1 flex justify-center items-center" style="width: 195px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
-    <p class="text-logo-blue-0 font-medium text-sm text-center">Junior ReactJs Developer</p>
-  </div>
-</div>
-     <!-- card 7 -->
-    <!-- ✅ Card with two connected rectangles (centered, half inside image) -->
-<div class="flex flex-col items-center w-full max-w-xs">
-  <!-- Image -->
-  <div class="relative w-full">
-    <img src="src/assets/sardarali.webp" 
-         alt="Sardar Ali" 
-         class="w-full h-64 object-cover rounded-2xl grayscale hover:grayscale-0 transition duration-300">
-
-    <!-- First Rectangle (half inside image) -->
-    <div class="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-1/2 
-                bg-white w-48 px-4 py-2 rounded-t-xl flex justify-center items-center" style="width: 162px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
-      <h3 class="text-base font-bold text-gray-800 text-center">Sardar Ali</h3>
-    </div>
-  </div>
-
-  <!-- Second Rectangle (exactly aligned, continues below) -->
-  <div class="bg-white w-48 px-4 py-2 rounded-b-xl shadow-md -mt-1 flex justify-center items-center" style="width: 162px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
-    <p class="text-logo-blue-0 font-medium text-sm text-center">Web Developer</p>
-  </div>
-</div>
-     <!-- card 8 -->
-    <!-- ✅ Card with two connected rectangles (centered, half inside image) -->
-<div class="flex flex-col items-center w-full max-w-xs">
-  <!-- Image -->
-  <div class="relative w-full">
-    <img src="src/assets/majid.webp" 
-         alt="Majid Hayat" 
-         class="w-full h-64 object-cover rounded-2xl grayscale hover:grayscale-0 transition duration-300">
-
-    <!-- First Rectangle (half inside image) -->
-    <div class="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-1/2 
-                bg-white w-48 px-4 py-2 rounded-t-xl flex justify-center items-center" style="width: 162px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
-      <h3 class="text-base font-bold text-gray-800 text-center">Majid Hayat</h3>
-    </div>
-  </div>
-
-  <!-- Second Rectangle (exactly aligned, continues below) -->
-  <div class="bg-white w-48 px-4 py-2 rounded-b-xl shadow-md -mt-1 flex justify-center items-center" style="width: 162px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
-    <p class="text-logo-blue-0 font-medium text-sm text-center">Business Developer</p>
-  </div>
-</div>
-     
-  
-     <!-- card 11 -->
-   <!-- ✅ Card with two connected rectangles (centered, half inside image) -->
-<div class="flex flex-col items-center w-full max-w-xs">
-  <!-- Image -->
-  <div class="relative w-full">
-    <img src="src/assets/T02FDSK8RM3-U0920K58108-a59e38bebfe2-192.png" 
-         alt="Sajid Ali" 
-         class="w-full h-64 object-cover rounded-2xl grayscale hover:grayscale-0 transition duration-300">
-
-    <!-- First Rectangle (half inside image) -->
-    <div class="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-1/2 
-                bg-white w-48 px-4 py-2 rounded-t-xl flex justify-center items-center" style="width: 162px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
-      <h3 class="text-base font-bold text-gray-800 text-center">Sajid Ali</h3>
-    </div>
-  </div>
-
-  <!-- Second Rectangle (exactly aligned, continues below) -->
-  <div class="bg-white w-48 px-4 py-2 rounded-b-xl shadow-md -mt-1 flex justify-center items-center" style="width: 162px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
-    <p class="text-logo-blue-0 font-medium text-sm text-center">Business Developer</p>
-  </div>
-</div>
-     <!-- card 12 -->
-    <!-- ✅ Card with two connected rectangles (centered, half inside image) -->
-<div class="flex flex-col items-center w-full max-w-xs">
-  <!-- Image -->
-  <div class="relative w-full">
-    <img src="src/assets/T02FDSK8RM3-U08TN1LD2CS-0150b8633588-192.png" 
-         alt="Khalid Mahmood" 
-         class="w-full h-64 object-cover rounded-2xl grayscale hover:grayscale-0 transition duration-300">
-
-    <!-- First Rectangle (half inside image) -->
-    <div class="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-1/2 
-                bg-white w-48 px-4 py-2 rounded-t-xl flex justify-center items-center" style="width: 180px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
-      <h3 class="text-base font-bold text-gray-800 text-center">Waleed</h3>
-    </div>
-  </div>
-
-  <!-- Second Rectangle (exactly aligned, continues below) -->
-  <div class="bg-white w-48 px-4 py-2 rounded-b-xl shadow-md -mt-1 flex justify-center items-center" style="width: 180px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
-    <p class="text-logo-blue-0 font-medium text-sm text-center">Lead Game Developer</p>
-  </div>
-</div>
-  <!-- ✅ Card 13with two connected rectangles (centered, half inside image) -->
-<div class="flex flex-col items-center w-full max-w-xs">
-  <!-- Image -->
-  <div class="relative w-full">
-    <img src="src/assets/T02FDSK8RM3-U08SSB3BQKU-3475ada159f6-192.jpeg" 
-         alt="Kamran Shaheen" 
-         class="w-full h-64 object-cover rounded-2xl grayscale hover:grayscale-0 transition duration-300">
-
-    <!-- First Rectangle (half inside image) -->
-    <div class="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-1/2 
-                bg-white w-48 px-4 py-2 rounded-t-xl flex justify-center items-center" style="width: 162px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
-      <h3 class="text-base font-bold text-gray-800 text-center">Kamran Shaheen</h3>
-    </div>
-  </div>
-
-  <!-- Second Rectangle (exactly aligned, continues below) -->
-  <div class="bg-white w-48 px-4 py-2 rounded-b-xl shadow-md -mt-1 flex justify-center items-center" style="width: 162px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
-    <p class="text-logo-blue-0 font-medium text-sm text-center">Business Developer</p>
-  </div>
-</div>
-
-    <!-- card 14 -->
-    <!-- ✅ Card with two connected rectangles (centered, half inside image) -->
-<div class="flex flex-col items-center w-full max-w-xs">
-  <!-- Image -->
-  <div class="relative w-full">
-    <img src="\src\assets\T02FDSK8RM3-U098MEBLHA4-3b432aadbd56-192.jpeg" 
-         alt="Ammar Aziz" 
-         class="w-full h-64 object-cover rounded-2xl grayscale hover:grayscale-0 transition duration-300">
-
-    <!-- First Rectangle (half inside image) -->
-    <div class="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-1/2 
-                bg-white w-48 px-4 py-2 rounded-t-xl flex justify-center items-center" style="width: 162px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
-      <h3 class="text-base font-bold text-gray-800 text-center">Ammar Aziz</h3>
-    </div>
-  </div>
-
-  <!-- Second Rectangle (exactly aligned, continues below) -->
-  <div class="bg-white w-48 px-4 py-2 rounded-b-xl shadow-md -mt-1 flex justify-center items-center" style="width: 162px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
-    <p class="text-logo-blue-0 font-medium text-sm text-center">''''</p>
-  </div>
-</div>
- <!-- ✅ Card 15with two connected rectangles (centered, half inside image) -->
-<div class="flex flex-col items-center w-full max-w-xs">
-  <!-- Image -->
-  <div class="relative w-full">
-    <img src="src/assets/Suleman.webp" 
-         alt="Suleman Ahmed" 
-         class="w-full h-64 object-cover rounded-2xl grayscale hover:grayscale-0 transition duration-300">
-
-    <!-- First Rectangle (half inside image) -->
-    <div class="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-1/2 
-                bg-white w-48 px-4 py-2 rounded-t-xl flex justify-center items-center" style="width: 180px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
-      <h3 class="text-base font-bold text-gray-800 text-center">Suleman Ahmed</h3>
-    </div>
-  </div>
-
-  <!-- Second Rectangle (exactly aligned, continues below) -->
-  <div class="bg-white w-48 px-4 py-2 rounded-b-xl shadow-md -mt-1 flex justify-center items-center" style="width: 180px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
-    <p class="text-logo-blue-0 font-medium text-sm text-center">Mobile App Team Lead</p>
-  </div>
-</div>
-
-
-    <!-- ✅ Card with two connected rectangles (centered, half inside image) -->
-<div class="flex flex-col items-center w-full max-w-xs">
-  <!-- Image -->
-  <div class="relative w-full">
-    <img src="src/assets/usama-laeeq.webp" 
-         alt="Usama Laeeq" 
-         class="w-full h-64 object-cover rounded-2xl grayscale hover:grayscale-0 transition duration-300">
-
-    <!-- First Rectangle (half inside image) -->
-    <div class="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-1/2 
-                bg-white w-48 px-4 py-2 rounded-t-xl flex justify-center items-center" style="width: 162px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
-      <h3 class="text-base font-bold text-gray-800 text-center">Usama Laeeq</h3>
-    </div>
-  </div>
-
-  <!-- Second Rectangle (exactly aligned, continues below) -->
-  <div class="bg-white w-48 px-4 py-2 rounded-b-xl shadow-md -mt-1 flex justify-center items-center" style="width: 162px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
-    <p class="text-logo-blue-0 font-medium text-sm text-center">Flutter Engineer</p>
-  </div>
-</div>
-    </div>
+<!-- Three Steps Section -->
+<section class="three-steps-section w-full flex flex-col items-center justify-center py-16 bg-white font-sans" style="min-height: 450px;">
+  <div class="three-steps-container w-[96%] max-w-6xl mx-auto flex flex-col items-center">
+    <p class="three-steps-desc text-center text-lg md:text-xl  mb-12 font-sans" style="max-width: 800px; font-size: 19px; font-weight: 500; color:#1D1F21;">
+      With years of experience under our dominion, we know that the key to building a successful software agency revolves around 3 essential aspects.
+    </p>
+  <div class="three-steps-grid custom-responsive-steps w-full gap-10">
+      <!-- Step 1 -->
+  <div class="three-step-card flex flex-col items-center justify-center w-full md:w-1/3 bg-section-bg p-6 relative" style="min-width: 320px; min-height: 160px; border-radius: 0; box-shadow: 0 6px 24px 0 rgba(0,0,0,0.32);">
+        <div class="flex items-center justify-center" style="position: absolute; top: -23px; left: 50%; transform: translateX(-50%);">
+          <div class="rounded-full bg-logo-blue-0 text-white w-14 h-14 flex items-center justify-center font-medium shadow-md" style="font-size: 30px; width: 56px;">1</div>
+        </div>
+        <div class="flex flex-col items-center justify-center h-full mt-8">
+          <span class="text-white text-lg font-normal text-center">Putting together the<br>right team</span>
+        </div>
+      </div>
+      <!-- Step 2 -->
+  <div class="three-step-card flex flex-col items-center justify-center w-full md:w-1/3 bg-section-bg p-6 relative" style="min-width: 320px; min-height: 160px; border-radius: 0; box-shadow: 0 6px 24px 0 rgba(0,0,0,0.32);">
+        <div class="flex items-center justify-center" style="position: absolute; top: -23px; left: 50%; transform: translateX(-50%);">
+          <div class="rounded-full bg-logo-blue-0 text-white w-14 h-14 flex items-center justify-center font-medium shadow-md" style="font-size: 30px; width: 56px;">2</div>
+        </div>
+        <div class="flex flex-col items-center justify-center h-full mt-8">
+          <span class="text-white text-lg font-normal text-center">Defining the <b>"BEST"</b><br>development process</span>
+        </div>
+      </div>
+      <!-- Step 3 -->
+  <div class="three-step-card flex flex-col items-center justify-center w-full md:w-1/3 bg-section-bg p-6 relative" style="min-width: 320px; min-height: 160px; border-radius: 0; box-shadow: 0 6px 24px 0 rgba(0,0,0,0.32);">
+        <div class="flex items-center justify-center" style="position: absolute; top: -23px; left: 50%; transform: translateX(-50%);">
+          <div class="rounded-full bg-logo-blue-0 text-white w-14 h-14 flex items-center justify-center font-medium shadow-md" style="font-size: 30px; width: 56px;">3</div>
+        </div>
+        <div class="flex flex-col items-center justify-center h-full mt-8">
+          <span class="text-white text-lg font-normal text-center">Making the client feel at<br>home</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
+<!-- Teamwork Banner Section -->
+<section class="w-full bg-white flex flex-col items-center py-10">
+  <h2 class="teamwork-heading text-3xl md:text-4xl font-bold text-center " style="color: #1D1F21; margin-bottom: 40px;">Team work, Makes the dream work</h2>
+  <img 
+    src="src/assets/Banner-2-2 (1).webp" 
+    alt="Teamwork Banner" 
+    style="width: 100vw; height: auto; object-fit: cover; display: block; margin-left: calc(-50vw + 50%); margin-right: calc(-50vw + 50%);"
+  />
+</section>
+
+  <!-- Responsive Section (100% width, container centered, Tailwind CSS) -->
+  <section class="w-full bg-section-bg py-20 font-sans">
+    <div class="container mx-auto px-6 flex flex-col lg:flex-row justify-between items-center w-full">
+      <!-- Left Side: Heading and Button -->
+      <div class="w-full lg:w-1/2 mb-12 lg:mb-0">
+        <h2 class="font-semibold text-section-heading mb-4 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[64px]">
+          It's been a great few <span class="hidden xs:inline"><br></span>years
+        </h2>
+        <p class="text-section-description mb-8 text-xs sm:text-sm md:text-base lg:text-lg xl:text-[18px]">
+          Because we believe in <span class="text-section-accent">#GrowingTogether</span> and <span
+            class="text-section-accent">#KeepRaisingTheBar</span>
+        </p>
+        <button
+          class="w-[200px] group flex items-center text-white justify-center gap-2 border-[0.5px] rounded-md py-2 hover:bg-logo-blue-0 hover:border-logo-blue-0">
+          <div>Get in Touch</div>
+          <img class="h-7 group-hover:rotate-45 transition duration-300 ease-linear"
+            src="/src/assets/arrow-up-right.png" alt="">
+        </button>
+      </div>
+      <!-- Right Side: Stats -->
+      <div class="w-full lg:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="border-t-2 border-section-line group p-2 flex flex-col relative">
+          <div class="flex justify-between items-start">
+            <span class="font-bold text-white text-[60px]">25+</span>
+            <img src="./src/assets/team.webp" alt="Team" class="w-10 h-10 object-contain mt-2" />
+          </div>
+          <p class="text-section-description mt-2">Strong team of engineers</p>
+        </div>
+        <div class="border-t-2 border-section-line group p-2 flex flex-col relative">
+          <div class="flex justify-between items-start">
+            <span class="font-bold text-white text-[60px]">500+</span>
+            <img src="./src/assets/web-page-1.webp" alt="Web Page" class="w-10 h-10 object-contain mt-2" />
+          </div>
+          <p class="text-section-description mt-2">Web Products Delivered</p>
+        </div>
+        <div class="border-t-2 border-section-line group p-2 flex flex-col relative">
+          <div class="flex justify-between items-start">
+            <span class="font-bold text-white text-[60px]">50+</span>
+            <img src="./src/assets/goal.webp" alt="Goal" class="w-10 h-10 object-contain mt-2" />
+          </div>
+          <p class="text-section-description mt-2"> Rescue Missions</p>
+        </div>
+        <div class="border-t-2 border-section-line group p-2 flex flex-col relative">
+          <div class="flex justify-between items-start">
+            <span class="font-bold text-white text-[55px]">Many</span>
+            <img src="./src/assets/guarantee-certificate.webp" alt="Guarantee Certificate"
+              class="w-10 h-10 object-contain mt-2" />
+          </div>
+          <p class="text-section-description mt-2">Award Winning Products</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <!-- awards section  -->
+    <section class="py-16 px-6">
+      <div class="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-10 place-items-center">
+
+        <!-- Single Logo with Button -->
+        <div class="flex flex-col items-center gap-2 relative group">
+          <img src="/src/assets/client1.webp" alt="Nielsen" class="h-10 object-contain" />
+
+          <button class="tooltip border border-logo-blue-0 text-xs text-logo-blue-0 rounded-full px-2">
+            Case Study
+          </button>
+
+          <!-- Tooltip -->
+          <div class="tooltip absolute bottom-12 left-1/2 translate-x-1/4 w-96
+               bg-white text-gray-800 text-xs leading-snug rounded-lg shadow-lg p-4
+               opacity-0 scale-95 pointer-events-none
+               transition duration-200
+               group-hover:opacity-100 group-hover:scale-100 z-30 flex flex-col gap-6">
+            <div>
+              <img class="h-10" src="/src/assets/client1.webp" alt="">
+            </div>
+            <p class="text-[15px]">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis totam, odit qui
+              eius dolore,
+              doloremque corporis tenetur libero accusantium, aut tempore reprehenderit quibusdam quae nihil consequatur
+              eos perspiciatis aut itaque similique exercitationem.</p>
+            <div class="flex gap-2 border-t border-t-gray-500 pt-2">
+              <img class="rounded-full h-10 border border-dark-blue-0" src="/src/assets/tooltip.webp" alt="">
+              <div class="flex flex-col gap-1/2">
+                <span class="text-[14px]">Cyrus Pars</span>
+                <span class="text-[14px]">Associate Director-It Operations</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center gap-2">
+          <img src="/src/assets/client2.webp" alt="AstraZeneca" class="h-16 object-contain " />
+        </div>
+
+        <div class="flex flex-col items-center gap-2 relative group">
+          <img src="/src/assets/client3.webp" alt="Nielsen" class="h-16 object-contain" />
+
+          <button class="tooltip border border-logo-blue-0 text-xs text-logo-blue-0 rounded-full px-2">
+            Case Study
+          </button>
+
+          <!-- Tooltip -->
+          <div class="tooltip absolute bottom-12 left-1/2 -translate-x-1/2 w-96
+               bg-white text-gray-800 text-xs leading-snug rounded-lg shadow-lg p-4
+               opacity-0 scale-95 pointer-events-none
+               transition duration-200
+               group-hover:opacity-100 group-hover:scale-100 z-30 flex flex-col gap-6">
+            <div>
+              <img class="h-10" src="/src/assets/client3.webp" alt="">
+            </div>
+            <p class="text-[15px]">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis totam, odit qui
+              eius dolore,
+              doloremque corporis tenetur libero accusantium, aut tempore reprehenderit quibusdam quae nihil consequatur
+              eos perspiciatis aut itaque similique exercitationem.</p>
+            <div class="flex gap-2 border-t border-t-gray-500 pt-2">
+              <img class="rounded-full h-10 border border-dark-blue-0" src="/src/assets/tooltip.webp" alt="">
+              <div class="flex flex-col gap-1/2">
+                <span class="text-[14px]">Cyrus Pars</span>
+                <span class="text-[14px]">Associate Director-It Operations</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center gap-2">
+          <img src="/src/assets/client4.webp" alt="Caribbean Airlines" class="h-16 object-contain " />
+        </div>
+
+        <div class="flex flex-col items-center gap-2 relative group">
+          <img src="/src/assets/client5.webp" alt="Nielsen" class="h-10 object-contain" />
+
+          <button class="tooltip border border-logo-blue-0 text-xs text-logo-blue-0 rounded-full px-2">
+            Case Study
+          </button>
+
+          <!-- Tooltip -->
+          <div class="tooltip absolute bottom-12 right-1/2 translate-x-1/4 w-96
+               bg-white text-gray-800 text-xs leading-snug rounded-lg shadow-lg p-4
+               opacity-0 scale-95 pointer-events-none
+               transition duration-200
+               group-hover:opacity-100 group-hover:scale-100 z-30 flex flex-col gap-6">
+            <div>
+              <img class="h-10" src="/src/assets/client5.webp" alt="">
+            </div>
+            <p class="text-[15px]">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis totam, odit qui
+              eius dolore,
+              doloremque corporis tenetur libero accusantium, aut tempore reprehenderit quibusdam quae nihil consequatur
+              eos perspiciatis aut itaque similique exercitationem.</p>
+            <div class="flex gap-2 border-t border-t-gray-500 pt-2">
+              <img class="rounded-full h-10 border border-dark-blue-0" src="/src/assets/tooltip.webp" alt="">
+              <div class="flex flex-col gap-1/2">
+                <span class="text-[14px]">Cyrus Pars</span>
+                <span class="text-[14px]">Associate Director-It Operations</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Second Row -->
+        <div class="flex flex-col items-center gap-2">
+          <img src="/src/assets/client6.webp" alt="Pharmasift" class="h-16 object-contain " />
+        </div>
+
+        <div class="flex flex-col items-center gap-2 relative group">
+          <img src="/src/assets/client7.webp" alt="Nielsen" class="h-16 object-contain" />
+
+          <button class="tooltip border border-logo-blue-0 text-xs text-logo-blue-0 rounded-full px-2">
+            Case Study
+          </button>
+
+          <!-- Tooltip -->
+          <div class="tooltip absolute bottom-12 left-1/2 -translate-x-1/2 w-96
+               bg-white text-gray-800 text-xs leading-snug rounded-lg shadow-lg p-4
+               opacity-0 scale-95 pointer-events-none
+               transition duration-200
+               group-hover:opacity-100 group-hover:scale-100 z-30 flex flex-col gap-6">
+            <div>
+              <img class="h-10" src="/src/assets/client7.webp" alt="">
+            </div>
+            <p class="text-[15px]">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis totam, odit qui
+              eius dolore,
+              doloremque corporis tenetur libero accusantium, aut tempore reprehenderit quibusdam quae nihil consequatur
+              eos perspiciatis aut itaque similique exercitationem.</p>
+            <div class="flex gap-2 border-t border-t-gray-500 pt-2">
+              <img class="rounded-full h-10 border border-dark-blue-0" src="/src/assets/tooltip.webp" alt="">
+              <div class="flex flex-col gap-1/2">
+                <span class="text-[14px]">Cyrus Pars</span>
+                <span class="text-[14px]">Associate Director-It Operations</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center gap-2">
+          <img src="/src/assets/client8.webp" alt="DNA Behavior" class="h-8 object-contain " />
+        </div>
+
+        <div class="flex flex-col items-center gap-2 relative group">
+          <img src="/src/assets/client1.webp" alt="Nielsen" class="h-8 object-contain" />
+
+          <button class="tooltip border border-logo-blue-0 text-xs text-logo-blue-0 rounded-full px-2">
+            Case Study
+          </button>
+
+          <!-- Tooltip -->
+          <div class="tooltip absolute bottom-12 left-1/2 -translate-x-1/2 w-96
+               bg-white text-gray-800 text-xs leading-snug rounded-lg shadow-lg p-4
+               opacity-0 scale-95 pointer-events-none
+               transition duration-200
+               group-hover:opacity-100 group-hover:scale-100 z-30 flex flex-col gap-6">
+            <div>
+              <img class="h-10" src="/src/assets/client1.webp" alt="">
+            </div>
+            <p class="text-[15px]">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis totam, odit qui
+              eius dolore,
+              doloremque corporis tenetur libero accusantium, aut tempore reprehenderit quibusdam quae nihil consequatur
+              eos perspiciatis aut itaque similique exercitationem.</p>
+            <div class="flex gap-2 border-t border-t-gray-500 pt-2">
+              <img class="rounded-full h-10 border border-dark-blue-0" src="/src/assets/tooltip.webp" alt="">
+              <div class="flex flex-col gap-1/2">
+                <span class="text-[14px]">Cyrus Pars</span>
+                <span class="text-[14px]">Associate Director-It Operations</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center gap-2">
+          <img src="/src/assets/client2.webp" alt="Steel and Pipes" class="h-16 object-contain " />
+        </div>
+
+        <div class="flex flex-col items-center gap-2 relative group">
+          <img src="/src/assets/client3.webp" alt="Nielsen" class="h-16 object-contain" />
+
+          <button class="tooltip border border-logo-blue-0 text-xs text-logo-blue-0 rounded-full px-2">
+            Case Study
+          </button>
+
+          <!-- Tooltip -->
+          <div class="tooltip absolute bottom-12 left-1/2 translate-x-1/4 w-96
+               bg-white text-gray-800 text-xs leading-snug rounded-lg shadow-lg p-4
+               opacity-0 scale-95 pointer-events-none
+               transition duration-200
+               group-hover:opacity-100 group-hover:scale-100 z-30 flex flex-col gap-6">
+            <div>
+              <img class="h-10" src="/src/assets/client3.webp" alt="">
+            </div>
+            <p class="text-[15px]">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis totam, odit qui
+              eius dolore,
+              doloremque corporis tenetur libero accusantium, aut tempore reprehenderit quibusdam quae nihil consequatur
+              eos perspiciatis aut itaque similique exercitationem.</p>
+            <div class="flex gap-2 border-t border-t-gray-500 pt-2">
+              <img class="rounded-full h-10 border border-dark-blue-0" src="/src/assets/tooltip.webp" alt="">
+              <div class="flex flex-col gap-1/2">
+                <span class="text-[14px]">Cyrus Pars</span>
+                <span class="text-[14px]">Associate Director-It Operations</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center gap-2">
+          <img src="/src/assets/client4.webp" alt="Valis" class="h-16 object-contain " />
+        </div>
+
+        <div class="flex flex-col items-center gap-2 relative group">
+          <img src="/src/assets/client5.webp" alt="Nielsen" class="h-10 object-contain" />
+
+          <button class="tooltip border border-logo-blue-0 text-xs text-logo-blue-0 rounded-full px-2">
+            Case Study
+          </button>
+
+          <!-- Tooltip -->
+          <div class="tooltip absolute bottom-12 left-1/2 -translate-x-1/2 w-96
+               bg-white text-gray-800 text-xs leading-snug rounded-lg shadow-lg p-4
+               opacity-0 scale-95 pointer-events-none
+               transition duration-200
+               group-hover:opacity-100 group-hover:scale-100 z-30 flex flex-col gap-6">
+            <div>
+              <img class="h-10" src="/src/assets/client5.webp" alt="">
+            </div>
+            <p class="text-[15px]">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis totam, odit qui
+              eius dolore,
+              doloremque corporis tenetur libero accusantium, aut tempore reprehenderit quibusdam quae nihil consequatur
+              eos perspiciatis aut itaque similique exercitationem.</p>
+            <div class="flex gap-2 border-t border-t-gray-500 pt-2">
+              <img class="rounded-full h-10 border border-dark-blue-0" src="/src/assets/tooltip.webp" alt="">
+              <div class="flex flex-col gap-1/2">
+                <span class="text-[14px]">Cyrus Pars</span>
+                <span class="text-[14px]">Associate Director-It Operations</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center gap-2">
+          <img src="/src/assets/client6.webp" alt="Simplifed" class="h-16 object-contain " />
+        </div>
+
+        <div class="flex flex-col items-center gap-2 relative group">
+          <img src="/src/assets/client7.webp" alt="Nielsen" class="h-16 object-contain" />
+
+          <button class="tooltip border border-logo-blue-0 text-xs text-logo-blue-0 rounded-full px-2">
+            Case Study
+          </button>
+
+          <!-- Tooltip -->
+          <div class="tooltip absolute bottom-12 right-1/4 -translate-x-1/2 w-96
+               bg-white text-gray-800 text-xs leading-snug rounded-lg shadow-lg p-4
+               opacity-0 scale-95 pointer-events-none
+               transition duration-200
+               group-hover:opacity-100 group-hover:scale-100 z-30 flex flex-col gap-6">
+            <div>
+              <img class="h-8" src="/src/assets/client7.webp" alt="">
+            </div>
+            <p class="text-[15px]">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis totam, odit qui
+              eius dolore,
+              doloremque corporis tenetur libero accusantium, aut tempore reprehenderit quibusdam quae nihil consequatur
+              eos perspiciatis aut itaque similique exercitationem.</p>
+            <div class="flex gap-2 border-t border-t-gray-500 pt-2">
+              <img class="rounded-full h-10 border border-dark-blue-0" src="/src/assets/tooltip.webp" alt="">
+              <div class="flex flex-col gap-1/2">
+                <span class="text-[14px]">Cyrus Pars</span>
+                <span class="text-[14px]">Associate Director-It Operations</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+  <!-- Values Section -->
+<section class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="w-full mx-auto p-6">
+  <h2 class="text-3xl font-bold text-center mb-2" style="position: relative; top: -18px;">Our Promise</h2>
+      <p class="text-center text-gray-600 mb-10">The values which we live by</p>
+      <div class="w-full max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-section-bg p-6 text-center" style="box-shadow: 0 6px 24px 0 rgba(0,0,0,0.32); margin-left: 18px; margin-right: 18px;">
+          <div class="w-20 h-20 mx-auto mb-4 bg-gray-200 flex items-center justify-center"> 
+            <img src="/src/assets/icons8-trust-50.png" alt="Empathy" style="width:64px; height:64px; object-fit:contain; display:block; margin:auto;"> 
+          </div>
+          <h3 class="text-xl font-semibold text-white mb-2">Empathy</h3>
+          <p class="text-white">Bringing the power of empathy to the table</p>
+        </div>
+        <div class="bg-section-bg p-6 text-center" style="box-shadow: 0 6px 24px 0 rgba(0,0,0,0.32); margin-left: 18px; margin-right: 18px;">
+          <div class="w-20 h-20 mx-auto mb-4 bg-gray-200 flex items-center justify-center"> 
+            <img src="/src/assets/icons8-speed-50.png" alt="High Performance" style="width:64px; height:64px; object-fit:contain; display:block; margin:auto;"> 
+          </div>
+          <h3 class="text-xl font-semibold text-white mb-2">High Performance</h3>
+          <p class="text-white">Punch above your weight class</p>
+        </div>
+        <div class="bg-section-bg p-6 text-center" style="box-shadow: 0 6px 24px 0 rgba(0,0,0,0.32); margin-left: 18px; margin-right: 18px;">
+          <div class="w-20 h-20 mx-auto mb-4 bg-gray-200 flex items-center justify-center"> 
+            <img src="/src/assets/icons8-together-80.png" alt="Together" style="width:64px; height:64px; object-fit:contain; display:block; margin:auto;"> 
+          </div>
+          <h3 class="text-xl font-semibold text-white mb-2">Together</h3>
+          <p class="text-white">Teamwork makes the dream work</p>
+        </div>
+        <div class="bg-section-bg p-6 text-center" style="box-shadow: 0 6px 24px 0 rgba(0,0,0,0.32); margin-left: 18px; margin-right: 18px;">
+          <div class="w-20 h-20 mx-auto mb-4 bg-gray-200 flex items-center justify-center"> 
+            <img src="/src/assets/icons8-approval-50.png" alt="Transparency" style="width:64px; height:64px; object-fit:contain; display:block; margin:auto;"> 
+          </div>
+          <h3 class="text-xl font-semibold text-white mb-2">Transparency</h3>
+          <p class="text-white">Authenticity is everything</p>
+        </div>
+      </div>
+    </div>
+  </section>
   <!-- Contact Section (Styled like screenshot) -->
   <section class="w-full min-h-[60vh] bg-section-bg py-16 px-0 flex items-center justify-center font-sans">
     <div class="w-full mx-4 sm:mx-8 md:mx-16 flex flex-col md:flex-row gap-12 md:gap-0">
@@ -930,6 +1106,28 @@
     </div>
    
     <script src="script.js"></script>
+    <!-- JavaScript for Accordion -->
+<script>
+  document.querySelectorAll(".faq-toggle").forEach(button => {
+    button.addEventListener("click", () => {
+      const content = button.nextElementSibling;
+      const icon = button.querySelector(".faq-icon");
+      const text = button.querySelector("span");
+
+      // Close all first
+      document.querySelectorAll(".faq-content").forEach(c => c.classList.add("hidden"));
+      document.querySelectorAll(".faq-icon").forEach(i => i.classList.remove("rotate-180"));
+      document.querySelectorAll(".faq-toggle span").forEach(t => t.classList.remove("text-green-600"));
+
+      // Open this one
+      content.classList.toggle("hidden");
+      if (!content.classList.contains("hidden")) {
+        icon.classList.add("rotate-180");
+        text.classList.add("text-green-600");
+      }
+    });
+  });
+</script>
 </body>
 
 </html>
