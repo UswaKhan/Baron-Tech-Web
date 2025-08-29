@@ -193,21 +193,20 @@
 </head>
 <body class="font-sans h-full" style="overflow-x: hidden !important;">
   <!-- Navbar -->
-  <nav id="navbar"
-    class="navbar fixed top-0 left-0 w-full z-50 px-20 py-4 flex items-center justify-between bg-transparent text-white group/nav hover:bg-white transition-all duration-300 ease-linear">
-    <div class="flex items-center gap-10 z-40">
-      <a href="index.html" class="logo z-40">
-        <img class="h-14" src="/src/assets/baron-logo.webp" alt="">
-      </a>
-      <ul class="hidden md:flex space-x-6 text-lg gap-4 font-semibold group-hover/nav:text-black relative">
+    <nav id="navbar"
+      class="navbar fixed top-0 left-0 w-full z-50 px-20 py-4 flex items-center justify-between bg-transparent text-white group/nav hover:bg-white transition-all duration-300 ease-linear">
+      <div class="flex items-center gap-10 z-40">
+        <a href="index.html" class="logo z-40">
+          <img class="h-14" src="/src/assets/baron-logo.webp" alt="">
+        </a>
+        <ul class="hidden md:flex space-x-6 text-lg gap-4 font-semibold group-hover/nav:text-black relative">
 
-        <!-- Services Dropdown -->
-        <li class="relative group">
-          <a href="#" class="flex items-center gap-2 hover:text-logo-blue-0">
-            Services
-            <img src="/src/assets/down-arrow.png" class="h-3 mt-1 group-hover/nav:brightness-0" />
-          </a>
-
+          <!-- Services Dropdown -->
+          <li class="relative group">
+            <div class="flex items-center gap-2 hover:text-logo-blue-0">
+              Services
+              <img src="/src/assets/down-arrow.png" class="h-3 mt-1 group-hover/nav:brightness-0" />
+            </div>
             <div
               class="services-dropdown absolute hidden group-hover:flex justify-around pl-20 pr-60 bg-white text-black py-12 ml-[-180px] shadow-md w-[1503px] ">
               <!-- Software Development -->
@@ -218,11 +217,14 @@
                   <h1 class="text-2xl font-bold">Software Development</h1>
                   <a href="mobile-app.html" class="block hover:text-logo-blue-0 text-gray-700">Mobile App
                     Development</a>
-                  <a href="custom-website.html" class="block hover:text-logo-blue-0 text-gray-700">Custom Website Development</a>
+                  <a href="custom-website.html" class="block hover:text-logo-blue-0 text-gray-700">Custom Website
+                    Development</a>
                   <a href="shopify.html" class="block hover:text-logo-blue-0 text-gray-700">Shopify Development</a>
                   <a href="wordpress.html" class="block hover:text-logo-blue-0 text-gray-700">WordPress Development</a>
-                  <a href="graphic-designing.html" class="block hover:text-logo-blue-0 text-gray-700">Graphics and Designing</a>
-                  <a href="baron-tech-services.html" class="block hover:text-logo-blue-0 text-gray-700">Baron Tech Special Services</a>
+                  <a href="graphic-designing.html" class="block hover:text-logo-blue-0 text-gray-700">Graphics and
+                    Designing</a>
+                  <a href="baron-tech-services.html" class="block hover:text-logo-blue-0 text-gray-700">Baron Tech
+                    Special Services</a>
                   <a href="cms.html" class="block hover:text-logo-blue-0 text-gray-700">CMS Development</a>
                 </div>
               </div>
@@ -279,86 +281,89 @@
             </div>
           </li>
 
-        <!-- Our Company Dropdown -->
-        <li class="relative group">
-          <a href="#" class="hover:text-logo-blue-0 flex items-center justify-center gap-2">Our Company
-            <img class="h-3 mt-1 group-hover/nav:brightness-0" src="/src/assets/down-arrow.png" alt="">
-          </a>
-          <ul class="absolute hidden group-hover:block bg-white text-black px-4 py-6 w-60 space-y-2 font-semibold">
-            <li><a href="#" class="block hover:text-logo-blue-0">About</a></li>
-            <li><a href="#" class="block hover:text-logo-blue-0">Portfolio</a></li>
-            <li><a href="#" class="block hover:text-logo-blue-0">Team</a></li>
-          </ul>
-        </li>
+          <!-- Our Company Dropdown -->
+          <li class="relative group">
+            <a href="#" class="hover:text-logo-blue-0 flex items-center justify-center gap-2">Our Company
+              <img class="h-3 mt-1 group-hover/nav:brightness-0" src="/src/assets/down-arrow.png" alt="">
+            </a>
+            <ul class="absolute hidden group-hover:block bg-white text-black px-4 py-6 w-60 space-y-2 font-semibold">
+              <li><a href="About.html" class="block hover:text-logo-blue-0">About</a></li>
+              <li><a href="Portfolio.html" class="block hover:text-logo-blue-0">Portfolio</a></li>
+              <li><a href="Team.html" class="block hover:text-logo-blue-0">Team</a></li>
+            </ul>
+          </li>
 
-        <!-- Others -->
-        <li><a href="#" class="hover:text-logo-blue-0">Technologies</a></li>
-        <li><a href="#" class="hover:text-logo-blue-0">Blog</a></li>
-      </ul>
-    </div>
-
-    <div class="flex items-center gap-4">
-      <a href="#" class="whatsapp"><img class="h-6" src="/src/assets/whatsapp-svgrepo-com.png" alt=""></a>
-      <a href="#" class="num group-hover/nav:text-black text-lg">+1 (409) 916-8275</a>
-      <button id="getQuoteBtn"
-        class="get-quote group z-40 flex items-center justify-center gap-2 text-xl border-[0.5px] rounded-md px-8 py-2 hover:text-white group-hover/nav:bg-logo-blue-0 group-hover/nav:border-logo-blue-0">
-        Get Quote
-        <img id="arrow"
-          class="h-7 group-hover:rotate-45 transition duration-300 ease-linear filter invert brightness-0 contrast-200 group-hover:filter group-hover:invert group-hover:brightness-0 group-hover:contrast-200"
-          src="/src/assets/arrow-blue.png" alt="">
-        <!-- Mobile Menu Icon (optional) -->
-        <div class="block lg:hidden">
-          <button id="menu-btn" class="focus:outline-none group-hover/nav:text-black">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
-        </div>
-      </button>
-    </div>
-  </nav>
-
-  <!-- Sidebar (mobile) -->
-  <div id="mobileSidebar"
-    class="fixed top-0 right-0 h-full w-80 bg-white text-black shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50 lg:hidden overflow-y-auto">
-    <div class="p-6 flex flex-col space-y-6 font-semibold text-lg">
-      <!-- Logo and Close Button -->
-      <div class="flex justify-between items-start">
-        <div><img class="h-16" src="/src/assets/baron-logo.webp" alt=""></div>
-        <button id="closeSidebar" class="self-start text-black text-4xl">&times;</button>
+          <!-- Others -->
+          <li><a href="technologies.html" class="hover:text-logo-blue-0">Technologies</a></li>
+          <li><a href="blogs.html" class="hover:text-logo-blue-0">Blog</a></li>
+        </ul>
       </div>
 
-      <!-- Main Links -->
-      <div class="flex flex-col gap-4 !mt-10">
+      <div class="flex items-center gap-4">
+        <a href="#" class="whatsapp"><img class="h-6" src="/src/assets/whatsapp-svgrepo-com.png" alt=""></a>
+        <a href="#" class="num group-hover/nav:text-black text-lg">+1 (409) 916-8275</a>
+        <button id="getQuoteBtn"
+          class="get-quote group z-40 flex items-center justify-center gap-2 text-xl border-[0.5px] rounded-md px-8 py-2 hover:text-white group-hover/nav:bg-logo-blue-0 group-hover/nav:border-logo-blue-0">
+          Get Quote
+          <img id="arrow"
+            class="h-7 group-hover:rotate-45 transition duration-300 ease-linear filter invert brightness-0 contrast-200 group-hover:filter group-hover:invert group-hover:brightness-0 group-hover:contrast-200"
+            src="/src/assets/arrow-blue.png" alt="">
+          <!-- Mobile Menu Icon (optional) -->
+          <div class="block lg:hidden">
+            <button id="menu-btn" class="focus:outline-none group-hover/nav:text-black">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+        </button>
+      </div>
+    </nav>
 
-        <!-- Services Dropdown -->
-        <div>
-          <button id="servicesToggle"
-            class="w-full flex justify-between items-center hover:text-logo-blue-0 border-b-[0.5px] border-gray-300">
-            Services <img class="h-4 invert transition-transform duration-300" src="/src/assets/down-arrow.png"
-              id="servicesArrow" alt="">
-          </button>
+    <!-- Sidebar (mobile) -->
+    <div id="mobileSidebar"
+      class="fixed top-0 right-0 h-full w-80 bg-white text-black shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50 lg:hidden overflow-y-auto">
+      <div class="p-6 flex flex-col space-y-6 font-semibold text-lg">
+        <!-- Logo and Close Button -->
+        <div class="flex justify-between items-start">
+          <div><img class="h-16" src="/src/assets/baron-logo.webp" alt=""></div>
+          <button id="closeSidebar" class="self-start text-black text-4xl">&times;</button>
+        </div>
 
-          <div id="servicesMenu" class=" my-2 hidden text-sm space-y-2 text-gray-700">
+        <!-- Main Links -->
+        <div class="flex flex-col gap-4 !mt-10">
 
-            <div class=" flex justify-center items-start gap-4">
-              <div class="border-[0.5px] rounded-full border-logo-blue-0 mt-2"><img class=" h-6"
-                  src="/src/assets/arrow-blue.png" alt=""></div>
+          <!-- Services Dropdown -->
+          <div>
+            <button id="servicesToggle"
+              class="w-full flex justify-between items-center hover:text-logo-blue-0 border-b-[0.5px] border-gray-300">
+              Services <img class="h-4 invert transition-transform duration-300" src="/src/assets/down-arrow.png"
+                id="servicesArrow" alt="">
+            </button>
+
+            <div id="servicesMenu" class=" my-2 hidden text-sm space-y-2 text-gray-700">
+
+              <div class=" flex justify-center items-start gap-4">
+                <div class="border-[0.5px] rounded-full border-logo-blue-0 mt-2"><img class=" h-6"
+                    src="/src/assets/arrow-blue.png" alt=""></div>
 
                 <div class="space-y-2">
                   <h1 class="text-xl font-bold">Software Development</h1>
                   <a href="mobile-app.html" class="block hover:text-logo-blue-0 text-gray-700">Mobile App
                     Development</a>
-                  <a href="custom-website.html" class="block hover:text-logo-blue-0 text-gray-700">Custom Website Development</a>
+                  <a href="custom-website.html" class="block hover:text-logo-blue-0 text-gray-700">Custom Website
+                    Development</a>
                   <a href="shopify.html" class="block hover:text-logo-blue-0 text-gray-700">Shopify Development</a>
                   <a href="wordpress.html" class="block hover:text-logo-blue-0 text-gray-700">WordPress Development</a>
-                  <a href="graphic-designing.html" class="block hover:text-logo-blue-0 text-gray-700">Graphics and Designing</a>
-                  <a href="baron-tech-services.html" class="block hover:text-logo-blue-0 text-gray-700">Baron Tech Special Services</a>
+                  <a href="graphic-designing.html" class="block hover:text-logo-blue-0 text-gray-700">Graphics and
+                    Designing</a>
+                  <a href="baron-tech-services.html" class="block hover:text-logo-blue-0 text-gray-700">Baron Tech
+                    Special Services</a>
                   <a href="cms.html" class="block hover:text-logo-blue-0 text-gray-700">CMS Development</a>
                 </div>
 
 
-            </div>
+              </div>
 
               <div class=" flex justify-start items-start gap-4 mt-4">
                 <div class="border-[0.5px] rounded-full border-logo-blue-0 mt-2"><img class=" h-6"
@@ -404,43 +409,43 @@
                 </div>
               </div>
 
+            </div>
+
+
           </div>
 
+          <!-- Our Company Dropdown -->
+          <div>
+            <button id="companyToggle"
+              class="w-full flex justify-between items-center hover:text-logo-blue-0 border-b-[0.5px] border-gray-300 pb-2">
+              Our Company <img class="h-4 invert transition-transform duration-300" src="/src/assets/down-arrow.png"
+                id="companyArrow" alt="">
+            </button>
+            <div id="companyMenu" class="ml-4 mt-2 hidden text-sm space-y-2 text-gray-700">
+              <a href="About.html" class="block hover:text-logo-blue-0">About</a>
+              <a href="Portfolio.html" class="block hover:text-logo-blue-0">Portfolio</a>
+              <a href="Team.html" class="block hover:text-logo-blue-0">Team</a>
+            </div>
+          </div>
 
+          <!-- Other Links -->
+          <a href="technologies.html" class="hover:text-logo-blue-0 border-b-[0.5px] border-gray-300 pb-2">Technologies</a>
+          <a href="blogs.html" class="hover:text-logo-blue-0 border-b-[0.5px] border-gray-300 pb-2">Blog</a>
         </div>
 
-        <!-- Our Company Dropdown -->
+        <!-- Contact -->
         <div>
-          <button id="companyToggle"
-            class="w-full flex justify-between items-center hover:text-logo-blue-0 border-b-[0.5px] border-gray-300 pb-2">
-            Our Company <img class="h-4 invert transition-transform duration-300" src="/src/assets/down-arrow.png"
-              id="companyArrow" alt="">
-          </button>
-          <div id="companyMenu" class="ml-4 mt-2 hidden text-sm space-y-2 text-gray-700">
-            <a href="#" class="block hover:text-logo-blue-0">About</a>
-            <a href="#" class="block hover:text-logo-blue-0">Portfolio</a>
-            <a href="#" class="block hover:text-logo-blue-0">Team</a>
-          </div>
+          <p class="text-sm text-gray-500">Contact</p>
+          <a href="tel:+14099168275" class="hover:text-logo-blue-0">+1 (409) 916-8275</a>
         </div>
 
-        <!-- Other Links -->
-        <a href="#" class="hover:text-logo-blue-0 border-b-[0.5px] border-gray-300 pb-2">Technologies</a>
-        <a href="#" class="hover:text-logo-blue-0 border-b-[0.5px] border-gray-300 pb-2">Blog</a>
+        <!-- Button -->
+        <button
+          class="bg-logo-blue-0 text-white px-4 py-2 rounded-md border border-logo-blue-0 hover:bg-white hover:text-logo-blue-0 transition">
+          Get Quote
+        </button>
       </div>
-
-      <!-- Contact -->
-      <div>
-        <p class="text-sm text-gray-500">Contact</p>
-        <a href="tel:+14099168275" class="hover:text-logo-blue-0">+1 (409) 916-8275</a>
-      </div>
-
-      <!-- Button -->
-      <button
-        class="bg-logo-blue-0 text-white px-4 py-2 rounded-md border border-logo-blue-0 hover:bg-white hover:text-logo-blue-0 transition">
-        Get Quote
-      </button>
     </div>
-  </div>
   <!-- Backdrop Overlay -->
   <div id="sidebarOverlay"
     class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden transition-opacity duration-300 lg:hidden">
@@ -1018,30 +1023,30 @@
         <div>
           <h3 class="font-bold text-lg mb-4" style="margin-left: 20px;">Our Services</h3>
           <ul class="space-y-2 text-gray-700">
-            <li class="cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent">Mobile App
-              Development</li>
-            <li class="cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent">Custom Website
-              Development</li>
-            <li class="cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent">Shopify Development
+            <li class="cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent"><a href="mobile-app.html">Mobile App
+              Development</a></li>
+            <li class="cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent"><a href="custom-website.html">Custom Website
+              Development</a></li>
+            <li class="cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent"><a href="shopify.html">Shopify Development</a>
             </li>
-            <li class="cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent">WordPress Development
+            <li class="cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent"><a href="wordpress.html">WordPress Development</a>
             </li>
-            <li class="cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent">Graphics and
-              Designing</li>
-            <li class="cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent">Baron Tech Special
-              Services</li>
-            <li class="cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent">CMS Development</li>
+            <li class="cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent"><a href="graphic-designing.html">Graphics and
+              Designing</a></li>
+            <li class="cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent"><a href="baron-tech-services.html">Baron Tech Special
+              Services</a></li>
+            <li class="cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent"><a href="cms.html">CMS Development</a></li>
           </ul>
         </div>
         <!-- Industries -->
         <div>
           <h3 class="font-bold text-lg mb-4" style="margin-left: 20px;">Company</h3>
           <ul class="space-y-2 text-gray-700">
-            <li class="cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent">Services</li>
-            <li class="cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent">Work</li>
-            <li class="cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent">About Us</li>
-            <li class="cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent">Careers</li>
-            <li class="cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent">Contact Us</li>
+            <li class="cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent"><a href="services.html">Services</a></li>
+            <li class="cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent"><a href="work_page.html">Work</a></li>
+            <li class="cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent"><a href="About.html">About Us</a></li>
+            <li class="cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent"><a href="Portfolio.html">Portfolio</a></li>
+            <li class="cursor-pointer rounded px-2 py-1 transition mx-4 hover:text-section-accent"><a href="contact-us.html">Contact Us</a></li>
           </ul>
         </div>
         <!-- Connect With Us -->
