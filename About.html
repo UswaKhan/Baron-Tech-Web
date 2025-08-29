@@ -9,6 +9,12 @@
   <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <style>
+  
+  @media (max-width: 425px) {
+    .teamwork-heading {
+      font-size: 1.5rem !important;
+    }
+  }
   @media (max-width: 1080px) {
     .three-steps-section,
     .three-steps-grid.custom-responsive-steps {
@@ -170,6 +176,9 @@
       .three-steps-grid{
         width: 400px;
       }
+      .teamwork-heading{
+        font-size: 30px;
+      }
     }
     @media (max-width: 425px) {
       .three-steps-section, .three-steps-grid.custom-responsive-steps {
@@ -180,10 +189,8 @@
   width: 96%;
       }
     }
-  </style>
- 
+  </style> 
 </head>
-
 <body class="font-sans h-full" style="overflow-x: hidden !important;">
   <!-- Navbar -->
   <nav id="navbar"
@@ -502,82 +509,69 @@
     </div>
   </div>
 </section>
-
-<!-- FAQ Section -->
-<section class="w-full bg-section-bg py-12 font-sans">
-  <div class="max-w-5xl mx-auto bg-white rounded-lg shadow-md p-8">
-
-    <h2 class="text-3xl font-bold text-center mb-8">FAQs</h2>
-
-    <!-- FAQ Item -->
-    <div class="border-b">
-      <button class="faq-toggle w-full flex justify-between items-center py-4 text-left">
-        <span class="font-semibold text-green-600">What’s the average cost of a manufacturing software project?</span>
-        <svg class="faq-icon w-5 h-5 transform rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
-        </svg>
-      </button>
-      <div class="faq-content pb-4 text-gray-600">
-        Costs vary based on the system—whether it’s MES, ERP integration, or production analytics. 
-        As a manufacturing software development company, we tailor each project to your factory size, 
-        workflow needs, and digital maturity.
-      </div>
-    </div>
-
-    <!-- FAQ Item -->
-    <div class="border-b">
-      <button class="faq-toggle w-full flex justify-between items-center py-4 text-left">
-        <span class="font-semibold text-black">How long does it take to develop a custom manufacturing platform?</span>
-        <svg class="faq-icon w-5 h-5 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-        </svg>
-      </button>
-      <div class="faq-content hidden pb-4 text-gray-600">
-        Development time depends on project complexity, integrations, and features.
-      </div>
-    </div>
-
-    <!-- FAQ Item -->
-    <div class="border-b">
-      <button class="faq-toggle w-full flex justify-between items-center py-4 text-left">
-        <span class="font-semibold text-black">Can your software integrate with our legacy ERP or SCADA systems?</span>
-        <svg class="faq-icon w-5 h-5 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-        </svg>
-      </button>
-      <div class="faq-content hidden pb-4 text-gray-600">
-        Yes, we support integrations with most ERP and SCADA systems.
-      </div>
-    </div>
-
-    <!-- FAQ Item -->
-    <div class="border-b">
-      <button class="faq-toggle w-full flex justify-between items-center py-4 text-left">
-        <span class="font-semibold text-black">Do you offer support and upgrades post-deployment?</span>
-        <svg class="faq-icon w-5 h-5 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-        </svg>
-      </button>
-      <div class="faq-content hidden pb-4 text-gray-600">
-        Yes, we provide ongoing support, monitoring, and upgrades.
-      </div>
-    </div>
-
-    <!-- FAQ Item -->
-    <div>
-      <button class="faq-toggle w-full flex justify-between items-center py-4 text-left">
-        <span class="font-semibold text-black">Can your solutions help us with predictive maintenance and real-time visibility?</span>
-        <svg class="faq-icon w-5 h-5 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-        </svg>
-      </button>
-      <div class="faq-content hidden pb-4 text-gray-600">
-        Yes, we use AI-driven insights for predictive maintenance and real-time dashboards.
-      </div>
-    </div>
-
-  </div>
+<!-- Teamwork Banner Section -->
+<section class="w-full bg-white flex flex-col items-center py-10">
+  <h2 class="teamwork-heading text-3xl md:text-4xl font-bold text-center " style="color: #1D1F21; margin-bottom: 40px;">Team work, Makes the dream work</h2>
+  <img 
+    src="src/assets/Banner-2-2 (1).webp" 
+    alt="Teamwork Banner" 
+    style="width: 100vw; height: auto; object-fit: cover; display: block; margin-left: calc(-50vw + 50%); margin-right: calc(-50vw + 50%);"
+  />
 </section>
+
+  <!-- Responsive Section (100% width, container centered, Tailwind CSS) -->
+  <section class="w-full bg-section-bg py-20 font-sans">
+    <div class="container mx-auto px-6 flex flex-col lg:flex-row justify-between items-center w-full">
+      <!-- Left Side: Heading and Button -->
+      <div class="w-full lg:w-1/2 mb-12 lg:mb-0">
+        <h2 class="font-semibold text-section-heading mb-4 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[64px]">
+          It's been a great few <span class="hidden xs:inline"><br></span>years
+        </h2>
+        <p class="text-section-description mb-8 text-xs sm:text-sm md:text-base lg:text-lg xl:text-[18px]">
+          Because we believe in <span class="text-section-accent">#GrowingTogether</span> and <span
+            class="text-section-accent">#KeepRaisingTheBar</span>
+        </p>
+        <button
+          class="w-[200px] group flex items-center text-white justify-center gap-2 border-[0.5px] rounded-md py-2 hover:bg-logo-blue-0 hover:border-logo-blue-0">
+          <div>Get in Touch</div>
+          <img class="h-7 group-hover:rotate-45 transition duration-300 ease-linear"
+            src="/src/assets/arrow-up-right.png" alt="">
+        </button>
+      </div>
+      <!-- Right Side: Stats -->
+      <div class="w-full lg:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="border-t-2 border-section-line group p-2 flex flex-col relative">
+          <div class="flex justify-between items-start">
+            <span class="font-bold text-white text-[60px]">25+</span>
+            <img src="./src/assets/team.webp" alt="Team" class="w-10 h-10 object-contain mt-2" />
+          </div>
+          <p class="text-section-description mt-2">Strong team of engineers</p>
+        </div>
+        <div class="border-t-2 border-section-line group p-2 flex flex-col relative">
+          <div class="flex justify-between items-start">
+            <span class="font-bold text-white text-[60px]">500+</span>
+            <img src="./src/assets/web-page-1.webp" alt="Web Page" class="w-10 h-10 object-contain mt-2" />
+          </div>
+          <p class="text-section-description mt-2">Web Products Delivered</p>
+        </div>
+        <div class="border-t-2 border-section-line group p-2 flex flex-col relative">
+          <div class="flex justify-between items-start">
+            <span class="font-bold text-white text-[60px]">50+</span>
+            <img src="./src/assets/goal.webp" alt="Goal" class="w-10 h-10 object-contain mt-2" />
+          </div>
+          <p class="text-section-description mt-2"> Rescue Missions</p>
+        </div>
+        <div class="border-t-2 border-section-line group p-2 flex flex-col relative">
+          <div class="flex justify-between items-start">
+            <span class="font-bold text-white text-[55px]">Many</span>
+            <img src="./src/assets/guarantee-certificate.webp" alt="Guarantee Certificate"
+              class="w-10 h-10 object-contain mt-2" />
+          </div>
+          <p class="text-section-description mt-2">Award Winning Products</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
  <!-- awards section  -->
     <section class="py-16 px-6">
@@ -863,56 +857,39 @@
 
       </div>
     </section>
-
-  <!-- Responsive Section (100% width, container centered, Tailwind CSS) -->
-  <section class="w-full bg-section-bg py-20 font-sans">
-    <div class="container mx-auto px-6 flex flex-col lg:flex-row justify-between items-center w-full">
-      <!-- Left Side: Heading and Button -->
-      <div class="w-full lg:w-1/2 mb-12 lg:mb-0">
-        <h2 class="font-semibold text-section-heading mb-4 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[64px]">
-          It's been a great few <span class="hidden xs:inline"><br></span>years
-        </h2>
-        <p class="text-section-description mb-8 text-xs sm:text-sm md:text-base lg:text-lg xl:text-[18px]">
-          Because we believe in <span class="text-section-accent">#GrowingTogether</span> and <span
-            class="text-section-accent">#KeepRaisingTheBar</span>
-        </p>
-        <button
-          class="w-[200px] group flex items-center text-white justify-center gap-2 border-[0.5px] rounded-md py-2 hover:bg-logo-blue-0 hover:border-logo-blue-0">
-          <div>Get in Touch</div>
-          <img class="h-7 group-hover:rotate-45 transition duration-300 ease-linear"
-            src="/src/assets/arrow-up-right.png" alt="">
-        </button>
-      </div>
-      <!-- Right Side: Stats -->
-      <div class="w-full lg:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="border-t-2 border-section-line group p-2 flex flex-col relative">
-          <div class="flex justify-between items-start">
-            <span class="font-bold text-white text-[60px]">25+</span>
-            <img src="./src/assets/team.webp" alt="Team" class="w-10 h-10 object-contain mt-2" />
+  <!-- Values Section -->
+<section class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="w-full mx-auto p-6">
+  <h2 class="text-3xl font-bold text-center mb-2" style="position: relative; top: -18px;">Our Promise</h2>
+      <p class="text-center text-gray-600 mb-10">The values which we live by</p>
+      <div class="w-full max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-section-bg p-6 text-center" style="box-shadow: 0 6px 24px 0 rgba(0,0,0,0.32); margin-left: 18px; margin-right: 18px;">
+          <div class="w-20 h-20 mx-auto mb-4 bg-gray-200 flex items-center justify-center"> 
+            <img src="/src/assets/icons8-trust-50.png" alt="Empathy" style="width:64px; height:64px; object-fit:contain; display:block; margin:auto;"> 
           </div>
-          <p class="text-section-description mt-2">Strong team of engineers</p>
+          <h3 class="text-xl font-semibold text-white mb-2">Empathy</h3>
+          <p class="text-white">Bringing the power of empathy to the table</p>
         </div>
-        <div class="border-t-2 border-section-line group p-2 flex flex-col relative">
-          <div class="flex justify-between items-start">
-            <span class="font-bold text-white text-[60px]">500+</span>
-            <img src="./src/assets/web-page-1.webp" alt="Web Page" class="w-10 h-10 object-contain mt-2" />
+        <div class="bg-section-bg p-6 text-center" style="box-shadow: 0 6px 24px 0 rgba(0,0,0,0.32); margin-left: 18px; margin-right: 18px;">
+          <div class="w-20 h-20 mx-auto mb-4 bg-gray-200 flex items-center justify-center"> 
+            <img src="/src/assets/icons8-speed-50.png" alt="High Performance" style="width:64px; height:64px; object-fit:contain; display:block; margin:auto;"> 
           </div>
-          <p class="text-section-description mt-2">Web Products Delivered</p>
+          <h3 class="text-xl font-semibold text-white mb-2">High Performance</h3>
+          <p class="text-white">Punch above your weight class</p>
         </div>
-        <div class="border-t-2 border-section-line group p-2 flex flex-col relative">
-          <div class="flex justify-between items-start">
-            <span class="font-bold text-white text-[60px]">50+</span>
-            <img src="./src/assets/goal.webp" alt="Goal" class="w-10 h-10 object-contain mt-2" />
+        <div class="bg-section-bg p-6 text-center" style="box-shadow: 0 6px 24px 0 rgba(0,0,0,0.32); margin-left: 18px; margin-right: 18px;">
+          <div class="w-20 h-20 mx-auto mb-4 bg-gray-200 flex items-center justify-center"> 
+            <img src="/src/assets/icons8-together-80.png" alt="Together" style="width:64px; height:64px; object-fit:contain; display:block; margin:auto;"> 
           </div>
-          <p class="text-section-description mt-2"> Rescue Missions</p>
+          <h3 class="text-xl font-semibold text-white mb-2">Together</h3>
+          <p class="text-white">Teamwork makes the dream work</p>
         </div>
-        <div class="border-t-2 border-section-line group p-2 flex flex-col relative">
-          <div class="flex justify-between items-start">
-            <span class="font-bold text-white text-[55px]">Many</span>
-            <img src="./src/assets/guarantee-certificate.webp" alt="Guarantee Certificate"
-              class="w-10 h-10 object-contain mt-2" />
+        <div class="bg-section-bg p-6 text-center" style="box-shadow: 0 6px 24px 0 rgba(0,0,0,0.32); margin-left: 18px; margin-right: 18px;">
+          <div class="w-20 h-20 mx-auto mb-4 bg-gray-200 flex items-center justify-center"> 
+            <img src="/src/assets/icons8-approval-50.png" alt="Transparency" style="width:64px; height:64px; object-fit:contain; display:block; margin:auto;"> 
           </div>
-          <p class="text-section-description mt-2">Award Winning Products</p>
+          <h3 class="text-xl font-semibold text-white mb-2">Transparency</h3>
+          <p class="text-white">Authenticity is everything</p>
         </div>
       </div>
     </div>
